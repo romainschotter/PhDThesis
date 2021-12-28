@@ -1,0 +1,425 @@
+
+
+%_____________________________________________________________________________________
+%Pour les documentations sur les differents packages, voir le TeX catalogue on line 
+%        http://texcatalogue.sarovar.org/index.html,
+%_____________________________________________________________________________________
+
+
+%__________Definition of scientific commands
+
+%
+% 1 - some text editions
+%
+\newcommand {\stat}     {({\it stat.})~}
+\newcommand {\syst}     {({\it syst.})~}
+
+\newcommand{\ie}        {$i.e.$~}
+\newcommand{\eg}        {$e.g.$~}
+\newcommand{\Eg}        {$E.g.$~}
+\newcommand{\fig}       {\textsc{f}ig.~}
+\newcommand{\tab}       {\textsc{t}ab.~}
+\newcommand{\chap}      {\textsc{c}hap.~}
+\newcommand{\parag}     {\textsc{p}ar.~}
+\newcommand{\eq}        {\textsc{e}q.~}
+\newcommand{\opt}        {\textsc{o}pt.~}
+
+\newcommand{\tune}      {\emph{tune}}
+\newcommand{\tunes}     {\emph{tunes}\xspace}
+
+
+\newcommand{\orderOf}[1]{\ensuremath{\mathcal{O}}(#1)}
+
+\newcommand{\CheckGr}   {\textcolor{Green}{\normalsize \CheckmarkBold}} 
+\newcommand{\SurpriseGr}{\textcolor{Green}{\textbf{!}{\scriptsize !}}}
+\newcommand{\Wtf}       {\textcolor{IndianRed}{\textbf{?}!}}
+\newcommand{\NB}        {\textcolor{IndianRed}{\HandRight}}
+\newcommand{\Caution}   {\textcolor{IndianRed}{\scriptsize \textlhdbend}}
+\newcommand{\NoWay}     {\textcolor{IndianRed}{\normalsize \XSolidBrush}}
+\newcommand{\UnderWork} {\textcolor{Blue}{\Large \dsagricultural}}
+\newcommand{\ToDo}      {\textcolor{Gray}{\scriptsize \textsc{ToDo}}}
+
+
+%
+% 2 - some notations
+%
+% \text{} is more general than \mahtrm{} : 
+% it does not switch font to roman but just use the given font and write it straight (especially needed into title, sections..).
+% http://tex.stackexchange.com/questions/98406/which-command-should-i-use-for-textual-subscripts-in-math-mode
+
+% 2.1 - Physics quantities
+
+\newcommand {\pT}           {\ensuremath{p_{\text{\textsc{t}}}}\xspace}
+% \DeclareRobustCommand {\pT}        {\ensuremath{p_{\text{\textsc{t}}}}}
+\newcommand {\pZ}           {\ensuremath{p_{\text{\textsc{z}}}}}
+\newcommand {\pTlw}         {\ensuremath{p_{\text{\textsc{t}}}^{lw} }}
+\newcommand {\pTIdx}[1]     {\ensuremath{p_{\text{\textsc{t},#1}}}}
+\newcommand {\pTExp}[1]     {\ensuremath{p_{\text{\textsc{t}}}^{#1}}}
+\newcommand {\pTIdxExp}[2]  {\ensuremath{p_{\text{\textsc{t},#1}}^{#2}}}
+\newcommand {\pTof}[1]      {\ensuremath{p_{\text{\textsc{t}}} \text{(#1)}}}
+\newcommand {\pTchJet}      {\ensuremath{p_{\text{\textsc{t},jet}}^{\text{ch}}}}
+\newcommand {\pTchEmJet}    {\ensuremath{p_{\text{\textsc{t},jet}}^{\text{ch+em}}}}
+\newcommand {\sigmapT}      {\mbox{$\sigma_{\pT}$}}
+\newcommand {\meanpT}       {\ensuremath{\langle p_{\textsc{t}} \kern-0.1em\rangle}}
+\newcommand {\mean}[1]      {\ensuremath{\langle #1 \kern-0.1em\rangle}} 
+\newcommand {\sqrtSnn}      {\ensuremath{\sqrt{s_\text{\textsc{nn}}}}\xspace}
+\newcommand {\sqrtS}        {\ensuremath{\sqrt{s}}\xspace}
+\newcommand {\vTwo}         {\ensuremath{v_{\text{2}}}}
+\newcommand {\vThree}       {\ensuremath{v_{\text{3}}}}
+\newcommand {\vFour}        {\ensuremath{v_{\text{4}}}}
+\newcommand {\vFive}        {\ensuremath{v_{\text{5}}}}
+\newcommand {\vSix}         {\ensuremath{v_{\text{6}}}}
+\newcommand {\vN}           {\ensuremath{v_{\text{n}}}}
+\newcommand {\eT}           {\ensuremath{E_{\text{\textsc{t}}}}}
+\newcommand {\mT}           {\ensuremath{m_{\text{\textsc{t}}}}}
+\newcommand {\mTmZero}      {\ensuremath{m_{\text{\textsc{t}}} - m_0}}
+\newcommand {\mInvIdx}[1]   {\mbox{$m_{ #1 }$}}
+\newcommand {\mPart}[1]     {\mbox{$m[ #1 ]$}}
+\newcommand {\sigmaM}[1]    {\mbox{$\sigma_m[ #1 ]$}}
+\newcommand {\DeltaM}[1]    {\mbox{$\Delta m[ #1 ]$}}
+\newcommand {\sigmaIdx}[1]  {\ensuremath{\sigma_{ #1 }}}
+
+\newcommand {\Nsigma}[1]    {\ensuremath{n.\sigma_{ #1 }}}
+
+\newcommand {\rap}          {\mbox{$y$}}
+\newcommand {\rapLab}       {\mbox{$y_{\text{lab}}$}}
+\newcommand {\rapCms}       {\mbox{$y_{\text{\textsc{cms} }}$}}
+\newcommand {\absrap}       {\mbox{$\left | y \right | $}\xspace}
+\newcommand {\rapPart}[1]   {\mbox{$\left | y\text{(#1)} \right | $}}
+\newcommand {\rapXi}        {\mbox{$\left | y(\rmXi) \right | $}}
+\newcommand {\rapJpsi}      {\mbox{$y_{\tiny \rmJpsi}$}}
+\newcommand {\abspseudorap} {\mbox{$\left | \eta \right | $}\xspace}
+\newcommand {\pseudorap}    {\mbox{$\eta$}\xspace}
+\newcommand {\pseudorapLab} {\mbox{$\eta_{\,\text{lab}}$}}
+\newcommand {\pseudorapCms} {\mbox{$\eta_{\text{\textsc{cms} }}$}}
+\newcommand {\cTau}         {\ensuremath{c.\tau}\xspace}
+\newcommand {\sigee}        {$\sigma_E$/$E$}
+
+\newcommand {\oneOverpipT}  {\ensuremath{1/2\pi\pT}}
+\newcommand {\crossSec}[1]  {\mbox{$\sigma_{\scriptsize \rm #1}$}}
+\newcommand {\visCrossSec}[1]  {\mbox{$\sigma_{\scriptsize \rm #1}^{visible}$}}
+\newcommand {\dsigmady}     {\ensuremath{\text{d}\sigma/\text{d}y}}
+\newcommand {\dsigmadpt}    {\ensuremath{\text{d}^{2}\sigma/\text{d}\pT}}
+\newcommand {\dsigmadptdy}  {\ensuremath{\text{d}^{2}\sigma/\text{d}\pT\text{d}y}}
+\newcommand {\dsigmadptdeta}{\ensuremath{\text{d}^{2}\sigma/\text{d}\pT\text{d}\eta}}
+\newcommand {\dsigmaXdy}[1] {\ensuremath{\text{d}\sigma\text{(#1)}/\text{d}y}}
+\newcommand {\dsigmaXdpt}[1]{\ensuremath{\text{d}\sigma\text{(#1)}/\text{d}\pT}}
+\newcommand {\dsigmaXdptdy}[1]  {\ensuremath{\text{d}^{2}\sigma\text{(#1)}/\text{d}\pT\text{d}y}}
+\newcommand {\dNdy}         {\ensuremath{\text{d}N/\text{d}y}}
+\newcommand {\dNJpsidy}     {\ensuremath{\text{d}N_{\textsc{\rmJpsi}}/\text{d}y}}
+\newcommand {\dNdpt}        {\ensuremath{\text{d}N/\text{d}\pT }}
+\newcommand {\dNXdptdy}[1]  {\ensuremath{\text{d}^{2}N\text{(#1)}/\text{d}\pT\text{d}y}}
+\newcommand {\dNdptdy}      {\ensuremath{\text{d}^{2}N/\text{d}\pT\text{d}y }}
+\newcommand {\dNdptdeta}    {\ensuremath{\text{d}^{2}N/\text{d}\pT\text{d}\eta }}
+\newcommand {\fracdsigmadptdy}  {\ensuremath{ \frac{\text{d}^{2}\sigma}{\text{d}\pT\text{d}y}}}
+\newcommand {\fracdNdptdy}  {\ensuremath{ \frac{\text{d}^{2}N}{\text{d}\pT\text{d}y } }}
+\newcommand {\fracdNdy}     {\ensuremath{ \frac{\dN}{\dy}}}
+\newcommand {\fracdNdyBold} {\ensuremath{ \frac{\bm{\dN}}{\bm{\dy}}}}
+
+\newcommand {\dNdmtdy}      {\ensuremath{\text{d}^{2}N/\text{d}\mT\text{d}y }}
+\newcommand {\dN}           {\ensuremath{\text{d}N }}
+\newcommand {\Npp}          {\ensuremath{N_{\textsc{\pp}}}}
+\newcommand {\dNsquared}    {\ensuremath{\text{d}^{2}N }}
+\newcommand {\dsquared}     {\ensuremath{\text{d}^{2} }}
+\newcommand {\dpT}          {\ensuremath{\text{d}\pT }}
+\newcommand {\dy}           {\ensuremath{\text{d}y}}
+\newcommand {\dNdyBold}     {\ensuremath{\bm{\dN/\dy}}}
+\newcommand {\dNchdy}       {\ensuremath{\text{d}N_\text{ch}/\text{d}y }}
+\newcommand {\dNchdeta}     {\ensuremath{\text{d}N_\text{ch}/\text{d}\eta }}
+\newcommand {\dNchdptdeta}  {\ensuremath{\text{d}^{2}N_\text{ch}/\text{d}\pT\text{d}\eta }}
+\newcommand {\RAA}          {\ensuremath{R_\text{AA}}}
+\newcommand {\RpA}          {\ensuremath{R_\text{pA}}}
+\newcommand {\RpPb}         {\ensuremath{R_\text{pPb}}}
+\newcommand {\RPbp}         {\ensuremath{R_\text{Pbp}}}
+\newcommand {\RAuAu}        {\ensuremath{R_\text{AuAu}}}
+\newcommand {\RPbPb}        {\ensuremath{R_\text{PbPb}}}
+\newcommand {\Rcp}          {\ensuremath{R_\text{CP}}}
+\newcommand {\hPMVzsCorrel} {\ensuremath{(\text{\hPM-V0})}}
+\newcommand {\hVzsCorrel}   {\ensuremath{(\text{h-V0})}}
+\newcommand {\mPDG}[1]      {\ensuremath{m_{\textsc{pdg}}(#1)}}
+
+
+\newcommand {\Ntracklet}    {\ensuremath{N_{\text{tracklets}}^{|\eta| < 1}}}
+\newcommand {\Nevt}         {\ensuremath{N_\text{evt}}}
+\newcommand {\NevtINEL}     {\ensuremath{N_\text{evt}(\textsc{inel})}}
+\newcommand {\NevtNSD}      {\ensuremath{N_\text{evt}(\textsc{nsd})}}
+\newcommand {\INEL}         {\ensuremath{\textsc{inel}}}
+\newcommand {\INELZero}     {\ensuremath{\textsc{inel}>0}}
+\newcommand {\NSD}          {\ensuremath{\textsc{nsd}}}
+\newcommand {\dEdx}         {\ensuremath{\textup{d}E/\textup{d}x }}
+
+\newcommand {\bsTe}      {\ensuremath{\bm{T_e}}}
+\newcommand {\bsTb}      {\ensuremath{\bm{T_b}}}
+\newcommand {\bsTt}      {\ensuremath{\bm{T_T}}}
+\newcommand {\bsCt}      {\ensuremath{\bm{C_T}}}
+\newcommand {\bsNt}      {\ensuremath{\bm{n}}}
+\newcommand {\bsQt}      {\ensuremath{\bm{q}}}
+\newcommand {\bsVt}      {\ensuremath{\bm{V}}}
+\newcommand {\bsgVt}     {\ensuremath{\bm{g.V}}}
+\newcommand {\bsNb}      {\ensuremath{\bm{n}}}
+\newcommand {\bsFp}      {\ensuremath{\bm{f_P}}}
+\newcommand {\bsCp}      {\ensuremath{\bm{C_P}}}
+
+\newcommand {\Lint}         {\ensuremath{L_{\text{int}}}}
+
+\newcommand {\rphi}         {\mbox{\ensuremath{(r,\varphi)}}}
+\newcommand {\alphaS}       {\ensuremath{ \alpha_s}}
+\newcommand {\chLeptonAsymm}{\ensuremath{ A_{\ell\ell} }}
+
+\newcommand {\MeanNpart}    {\mbox{\ensuremath{\langle\kern-0.05em N_{part} \kern-0.05em \rangle}}}
+\newcommand {\MeanNcoll}    {\mbox{\ensuremath{\langle\kern-0.05em N_{coll} \kern-0.05em \rangle}}}
+\newcommand {\sigmaBarlow}  {\ensuremath{\sigma_{Barlow}}}
+\newcommand {\sigmaStat}    {\ensuremath{\sigma_{stat}}}
+\newcommand {\sigmaSyst}    {\ensuremath{\sigma_{syst}}}
+\newcommand {\sigmaTot}     {\ensuremath{\sqrt{\sigmaStat^2 + \sigmaSyst^2}}}
+\newcommand {\sigmaINELZero}{\ensuremath{\sigma/\sigma_{\text{INEL>0}}}\xspace}
+
+
+
+
+
+% 2.2 - some generator Names
+
+\newcommand{\Sherpa}        {\textsc{Sherpa}\xspace}
+\newcommand{\Herwig}        {\textsc{Herwig++}\xspace}
+\newcommand{\Epos}          {\textsc{Epos}\xspace}
+\newcommand{\Pythia}        {\textsc{Pythia}\xspace}
+\newcommand{\Pythiaeight}   {\Pythia~8\xspace}
+\newcommand{\Rivet}         {\textsc{Rivet}\xspace}
+\newcommand{\HepMC}         {\textsc{HepMc}\xspace}
+
+% 2.3 - some generator tunes
+
+\newcommand{\Monash}        {\textsc{Monash~2013}\xspace}
+\newcommand{\Perugia}       {\textsc{Perugia~2011}\xspace}
+
+% 2.4 - some propagator Names
+
+\newcommand{\Geantfour}     {\textsc{Geant~4}\xspace}
+\newcommand{\Geantthree}    {\textsc{Geant~3}\xspace}
+\newcommand{\Fluka}         {\textsc{Fluka}\xspace}
+
+%
+% 3 - Collisions Systems
+%
+\newcommand {\pp}        {\ensuremath{\mbox{\text {p\kern-0.05em p}}}\xspace}
+%\newcommand {\ppBoldMath} {\mbox{$\mathrm{ \mathbf p\kern-0.05em \mathbf p }$}}
+\newcommand {\ppbar}     {\mbox{$\text{p}\overline{\text{p}}$}} 
+\newcommand {\PbPb}      {\ensuremath{\mbox{\text{Pb--Pb}} }}
+\newcommand {\AuAu}      {\ensuremath{\mbox{\text{Au--Au}} }}
+\newcommand {\ArAr}      {\ensuremath{\mbox{\text{Ar--Ar}} }}
+\newcommand {\CuCu}      {\ensuremath{\mbox{\text{Cu--Cu}} }}
+\newcommand {\UU}        {\ensuremath{\mbox{\text{U--U}}   }}
+\renewcommand {\AA}      {\ensuremath{\mbox{\text{A--A}}   }}
+\newcommand {\pA}        {\ensuremath{\mbox{\text{p--A}}   }}
+\newcommand {\dA}        {\ensuremath{\mbox{\text{d--A}}   }}
+\newcommand {\pPb}       {\ensuremath{\mbox{\text{p--Pb}}  }}
+\newcommand {\Pbp}       {\ensuremath{\mbox{\text{Pb--p}}  }}
+\newcommand {\dAu}       {\ensuremath{\mbox{\text{d--Au}}  }}
+\newcommand {\EplusEminus}      {\ee}
+\newcommand {\ee}               {\mbox{$\text{e}^+\text{e}^-$}}
+\newcommand {\MuPlusMuMinus}    {\mbox{$\mu^+\mu^-$}}
+
+
+%
+% 4 - some units
+%
+\newcommand {\massStyle}[1] {\mbox{\ensuremath{\text{#1}\kern-0.1em /\kern-0.12em c^2}}}
+\newcommand {\mass}     {\massStyle{MeV}}
+\newcommand {\kmass}    {\massStyle{keV}}
+\newcommand {\mmass}    {\massStyle{MeV}}
+\newcommand {\gmass}    {\massStyle{GeV}}
+
+\newcommand {\unitStyle}[1] {\mbox{\ensuremath{\text{#1}}}}
+\newcommand {\tev}      {\unitStyle{TeV}}
+\newcommand {\gev}      {\unitStyle{GeV}}
+\newcommand {\mev}      {\unitStyle{MeV}}
+\newcommand {\kev}      {\unitStyle{keV}}
+%\newcommand {\tevBoldMath}  {\mbox{${\rm \mathbf{TeV}}$}}
+%\newcommand {\gevBoldMath}  {\mbox{${\rm \mathbf{GeV}}$}}
+
+\newcommand {\momStyle}[1] {\mbox{\ensuremath{\text{#1}\kern-0.1em /\kern-0.12em c}}}
+\newcommand {\mmom}     {\momStyle{MeV}}
+\newcommand {\gmom}     {\momStyle{GeV}}
+
+\newcommand {\fsec}       {\unitStyle{fs}}
+\newcommand {\psec}       {\unitStyle{ps}}
+\newcommand {\nsec}       {\unitStyle{ns}}
+\newcommand {\musec}      {\mbox{$\mu\unitStyle{s}$}}
+\newcommand {\millisec}   {\unitStyle{ms}}
+\newcommand {\second}     {\unitStyle{s}}
+
+\newcommand {\fmC}      {\mbox{$\unitStyle{fm}/\kern-0.12em c$}}
+
+\newcommand {\fm}       {\unitStyle{fm}}
+\newcommand {\nm}       {\unitStyle{nm}}
+\newcommand {\mum}      {\mbox{$\mu\unitStyle{m}$}}
+\newcommand {\mm}       {\unitStyle{mm}}
+\newcommand {\cm}       {\unitStyle{cm}\xspace}
+\newcommand {\m}        {\unitStyle{m}}
+
+\newcommand {\cmq}      {\mbox{$\cm^2$}}
+\newcommand {\mmq}      {\mbox{$\mm^2$}}
+\newcommand {\mumq}     {\mbox{$\mum^2$}}
+
+\newcommand {\fmCube}   {\mbox{\unitStyle{fm}$^3$}}
+
+\newcommand {\mug}      {\mbox{$\mu\unitStyle{g}$}}
+\newcommand {\mg}       {\unitStyle{mg}}
+\newcommand {\gram}     {\unitStyle{g}}
+\newcommand {\kg}       {\unitStyle{kg}}
+
+\newcommand {\dens}     {\mbox{$\unitStyle{g}/\unitStyle{cm}^{3}$}}
+
+\newcommand {\dg}       {\mbox{$\kern+0.1em ^\circ$}}
+
+
+\newcommand {\lumi}     {\mbox{$\cm^{-2}\second^{-1}$}}
+
+\newcommand {\barn}     {\unitStyle{b}}
+\newcommand {\fb}       {\unitStyle{fb}}
+\newcommand {\pb}       {\unitStyle{pb}}
+\newcommand {\nb}       {\unitStyle{nb}}
+\newcommand {\mub}      {\mbox{$\mu\unitStyle{b}$}}
+\newcommand {\mb}       {\unitStyle{mb}}
+\newcommand {\kb}       {\unitStyle{kb}}
+
+\newcommand {\invmub}   {\mbox{$\mub^{-1}$}}
+\newcommand {\invnb}    {\mbox{$\nb^{-1}$}}
+\newcommand {\invpb}    {\mbox{$\pb^{-1}$}}
+\newcommand {\invfb}    {\mbox{$\fb^{-1}$}}
+
+
+
+
+%
+% 5 - some particles
+%
+% For particles, there one may always use romant font -> mathrm
+
+\newcommand{\hPM}           {\ensuremath{h^{\pm}}}
+\newcommand{\ePlusMinus}    {\mbox{$\mathrm {e^{\pm}}$}}
+\newcommand{\muPlusMinus}   {\mbox{$\mathrm {\mu^{\pm}}$}}
+
+\newcommand{\piZero}        {\mbox{$\mathrm {\pi^0}$}}
+\newcommand{\piMinus}       {\mbox{$\mathrm {\pi^-}$}}
+\newcommand{\piPlus}        {\mbox{$\mathrm {\pi^+}$}}
+\newcommand{\piPlusMinus}   {\mbox{$\mathrm {\pi^{\pm}}$}}
+\newcommand{\rmPiPlusMinus} {\piPlusMinus}
+\newcommand{\rmPiPM}        {\piPlusMinus}
+
+\newcommand{\Kzs}        {\mbox{$\mathrm {K^0_S}$}}
+\newcommand{\rmKzero}    {\Kzs}
+\newcommand{\Kzl}        {\mbox{$\mathrm {K^0_L}$}}
+\newcommand{\rmKzeroL}   {\Kzl}
+\newcommand{\Kminus}     {\mbox{$\mathrm {K^-}$}}
+\newcommand{\rmKminus}   {\Kminus}
+\newcommand{\Kplus}      {\mbox{$\mathrm {K^+}$}}
+\newcommand{\rmKplus}    {\Kplus}
+\newcommand{\Kplusmin}   {\mbox{$\mathrm {K^{\pm}}$}}
+\newcommand{\rmKpm}      {\Kplusmin}
+\newcommand{\rmKstar}    {\mbox{$\mathrm{K}^*\mathrm{(892)}^0$}}
+\newcommand{\rmPhiMes}   {\mbox{$\mathrm {\phi(1020)}$}\xspace}
+
+\newcommand{\proton}    {\mbox{$\mathrm {p}$}}
+\newcommand{\pbar}      {\mbox{$\mathrm {\overline{p}}$}}
+% \newcommand{\pOrPbar}   {\mbox{$\mathrm{\vcenter{\offinterlineskip \vskip-0.1ex\hbox{\tiny \kern-0.05em- \kern-0.3em-} \vskip+0.2ex\hbox{p}}^{\protect \tiny ^{\hdots} \kern-0.75em _{+} \kern-.7em}}$ }}
+\newcommand{\pOrPbar}   {\mbox{$\mathrm {p^{\pm}}$}}
+
+
+\newcommand{\rmLambdaZ}         {\mbox{$\mathrm {\Lambda}$}}
+\newcommand{\rmAlambdaZ}        {\mbox{$\mathrm {\overline{\Lambda}}$}}
+\newcommand{\rmLambda}          {\mbox{$\mathrm {\Lambda}$}\xspace}
+\newcommand{\rmAlambda}         {\mbox{$\mathrm {\overline{\Lambda}}$}\xspace}
+\newcommand{\rmLambdas}         {\mbox{$\mathrm {\Lambda \kern-0.2em + \kern-0.2em \overline{\Lambda}}$}}
+\newcommand{\ratioLamOverKzs}   {\rmLambda/\rmKzero}
+
+\newcommand{\rmSigma}       {\mbox{$\mathrm {\Sigma}$}}
+\newcommand{\rmSigmaM}      {\mbox{$\mathrm{\Sigma}^{-}$}}
+\newcommand{\rmSigmaP}      {\mbox{$\mathrm{\Sigma}^{+}$}}
+\newcommand{\rmSigmaZero}   {\mbox{$\mathrm{\Sigma}^{0}$}}
+\newcommand{\rmSigmaMres}   {\mbox{$\mathrm{\Sigma(1385)}^{-}$}}
+\newcommand{\rmSigmaPres}   {\mbox{$\mathrm{\Sigma(1385)}^{+}$}}
+
+
+\newcommand{\rmXi}      {\mbox{$\mathrm{\Xi}$}\xspace}
+\newcommand{\rmXiM}     {\mbox{$\mathrm{\Xi}^{-}$}\xspace}
+\newcommand{\rmXiPM}    {\mbox{$\mathrm {\Xi^{\pm}}$}\xspace}
+% \newcommand{\rmXiPM} { \mbox{$\kern-0.1em \mathrm{\vcenter{\offinterlineskip \vskip-1.0ex\hbox{\tiny \kern-0.05em- \kern-0.3em- \kern-0.3em-} \vskip+0.01ex\hbox{$\Xi$}}^{\protect \underline{\fivedots}}} \kern-0.1em$} }
+% \newcommand{\rmXiPM} { \mbox{$\kern-0.0em \mathrm{\vcenter{\offinterlineskip \vskip-1.0ex\hbox{\tiny \kern+0.05em- \kern-0.3em- \kern-0.3em-} \vskip+0.1ex\hbox{$\Xi$}}^{\protect \tiny ^\fivedots \kern-0.75em _{\relbar} \kern-.3em}}$} }
+
+
+% \newcommand{\rmXiPM} {\mbox{$\kern-0.1em \mathrm{ \protect \overset{ {\tiny \kern-0.09em- \kern-0.3em- \kern-0.3em-} }{\Xi}^{\protect \tiny ^\fivedots \kern-0.3em / \kern-0.2em _- \kern-0.25em}}$}}
+
+
+
+% 
+% \tiny ^+ \kern-0.3em / \kern-0.2em _- \kern-0.25em
+\newcommand{\rmAxiP}    {\mbox{$\mathrm {\overline{\Xi}^{+}}$}}
+\newcommand{\rmXis}     {\mbox{$\mathrm {\Xi^{-} \kern-0.3em + \kern-0.1em \overline{\Xi}^{+}}$}}
+\newcommand{\rmXiZero}  {\mbox{$\mathrm {\Xi^{0}}$}}
+\newcommand{\rmXiZ}     {\rmXiZero}
+\newcommand{\rmXiZres}  {\mbox{$\mathrm {\Xi (1530)^{0}}$}}
+\newcommand{\rmAxiZres} {\mbox{$\mathrm {\overline{\Xi} (1530)^{0}}$}}
+\newcommand{\rmXiMres}  {\mbox{$\mathrm {\Xi (1530)^{-}}$}}
+\newcommand{\rmAxiPres} {\mbox{$\mathrm {\overline{\Xi}(1530)^{+}}$}}
+
+\newcommand{\rmOmega}   {\mbox{$\mathrm {\Omega}$}\xspace}
+\newcommand{\rmOmegaM}  {\mbox{$\mathrm {\Omega^{-}}$}\xspace}
+\newcommand{\rmAomegaP} {\mbox{$\mathrm {\overline{\Omega}^{+}}$}\xspace}
+\newcommand{\rmOmegas}  {\mbox{$\mathrm {\Omega^{-} \kern-0.3em +  \kern-0.1em \overline{\Omega}^{+}}$}\xspace}
+\newcommand{\rmOmegaPM} {\mbox{$\mathrm {\Omega^{\pm}}$}\xspace} 
+% \newcommand{\rmOmegaPM} {\mbox{$\kern+0.0em \mathrm{\vcenter{\offinterlineskip \vskip-1.0ex\hbox{\tiny \kern-0.05em- \kern-0.3em- \kern-0.3em- \kern-0.3em-} \vskip+0.1ex\hbox{$\Omega$}}^{\protect \tiny ^\fivedots \kern-0.8em _{\relbar} \kern-.3em}}$} }
+% \newcommand{\rmOmegaPM} {\mbox{$\kern-0.1em \mathrm{ \protect \overset{_\hbox{\Cutline}}{\Omega}^{\protect \underline{\fivedots}} \kern-0.1em}$}}
+
+
+\newcommand{\rmDeuton}   {\mbox{$\mathrm {d}$}}
+\newcommand{\rmTriton}   {\mbox{$\mathrm {t}$}}
+\newcommand{\rmHeThree}  {\mbox{$\mathrm {^3He}$}}
+\newcommand{\rmHeFour}   {\mbox{$\mathrm {^4He}$}}
+
+\newcommand{\rmJpsi}    {\mbox{$\mathrm{J\kern-0.05em /\kern-0.05em\psi}$}}
+\newcommand{\rmPsiTwoS} {\mbox{$\mathrm {\psi(2S)}$}}
+\newcommand{\rmChicZero}{\mbox{$\mathrm {\chi_{c_0}}$}}
+\newcommand{\rmChicOne} {\mbox{$\mathrm {\chi_{c_1}}$}}
+\newcommand{\rmChicTwo} {\mbox{$\mathrm {\chi_{c_2}}$}}
+\newcommand{\rmChicJ}   {\mbox{$\mathrm {\chi_{c_J}}$}}
+
+\newcommand{\rmLambdaC} {\mbox{$\mathrm {\Lambda}_{c}^{+}$}}
+
+\newcommand{\rmDzero}   {\mbox{$\mathrm {D}^{0}$}}
+\newcommand{\rmDzeroBar}{\mbox{$\mathrm {\overline{D}}^{0}$}}
+\newcommand{\rmDplus}   {\mbox{$\mathrm {D}^{+}$}}
+\newcommand{\rmDminus}  {\mbox{$\mathrm {D}^{+}$}}
+\newcommand{\rmDpm}     {\mbox{$\mathrm {D}^{\pm}$}}
+\newcommand{\rmDstar}   {\mbox{$\mathrm{D}^*\mathrm{(2010)}^+$}}
+\newcommand{\rmDs}      {\mbox{$\mathrm {D}^{+}_{s}$}}
+
+\newcommand{\rmBzero}       {\mbox{$\mathrm {B^{0}}$}}
+\newcommand{\rmBplus}       {\mbox{$\mathrm {B^{+}}$}}
+\newcommand{\rmBminus}      {\mbox{$\mathrm {B^{-}}$}}
+\newcommand{\rmBplusMinus}  {\mbox{$\mathrm {B^{\pm}}$}}
+\newcommand{\rmBzeroS}      {\mbox{$\mathrm {B^{0}_s}$}}
+
+
+\newcommand{\rmUpsOneS}         {\mbox{$\mathrm {\Upsilon(1S)}$}}
+\newcommand{\rmUpsTwoS}         {\mbox{$\mathrm {\Upsilon(2S)}$}}
+\newcommand{\rmUpsThreeS}       {\mbox{$\mathrm {\Upsilon(3S)}$}}
+\newcommand{\rmUpsTwoThreeS}    {\mbox{$\mathrm {\Upsilon(2S,3S)}$}}
+\newcommand{\rmUpsnS}           {\mbox{$\mathrm {\Upsilon(nS)}$}}
+\newcommand{\rmUpsOneTwoThreeS} {\mbox{$\mathrm {\Upsilon(1S,2S,3S)}$}}
+
+\newcommand{\rmPhoton}      {\mbox{$\mathrm {\gamma}$}}
+\newcommand{\rmWplus}       {\mbox{$\mathrm {W^{+}}$}}
+\newcommand{\rmWminus}      {\mbox{$\mathrm {W^{-}}$}}
+\newcommand{\rmWPlusMinus}  {\mbox{$\mathrm {W^{\pm}}$}}
+\newcommand{\rmZzero}       {\mbox{$\mathrm {Z}$}}
+
+
+
+\newcommand{\qqbar}             {\mbox{$q\overline{q}$}}
+\newcommand{\ccbar}             {\mbox{$c\overline{c}$}}
+\newcommand{\bbbar}             {\mbox{$b\overline{b}$}}
+\newcommand{\DDbar}             {\mbox{$\mathrm {D\overline{D}}$}}
+
+
