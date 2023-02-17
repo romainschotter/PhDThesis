@@ -244,41 +244,49 @@ FUNCTION {emphasize}
 
 INTEGERS { nameptr namesleft numnames }
 
-% FIXME : Modified R.Schotter (25 Aug 2021)
-% FIX to change the nbr of authors (corresponds to #5 = 5 authors "et al.")
+%FIX ME : Modified by R.Schotter
+% print only the three first autors, the rest is replaced by "et al."
 FUNCTION {format.names}
 { 's :=
-    #1 'nameptr :=
-    s num.names$ 'numnames :=
-    numnames 'namesleft :=
-    numnames #5 >
-        { s #1 "{ff~}{vv~}{ll}{, jj}" format.name$
-        " et~al." * }
-        {
-        { namesleft #0 > }
-        { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't :=
-        nameptr #1 >
-        { namesleft #1 >
-            { ", " * t * }
-            { numnames #2 >
-            { "," * }
+  #1 'nameptr :=
+  s num.names$ 'numnames :=
+  numnames 'namesleft :=
+    { namesleft #0 > }
+    { s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 't :=
+      nameptr #1 >
+		{
+          nameptr #3
+          #1 + =
+          numnames #4
+          > and
+            { "others" 't :=
+              #1 'namesleft := }
             'skip$
-            if$
-            t "others" =
-            { " et~al." * }
-            { " and " * t * }
-            if$
-            }
-            if$
-        }
-         't
-             if$
-                nameptr #1 + 'nameptr :=
-                namesleft #1 - 'namesleft :=
-        }
-        while$
-        }
-        if$
+          if$
+          namesleft #1 >
+            { ", " * t * }
+            {
+              s nameptr "{ll}" format.name$ duplicate$ "others" =
+                { 't := }
+                { pop$ }
+              if$
+              numnames #2 >
+		{ "," * }
+		'skip$
+	      if$
+	      t "others" =
+		{ " et~al." * }
+		{ " and " * t * }
+	      if$
+	    }
+	  if$
+	}
+	't
+      if$
+      nameptr #1 + 'nameptr :=
+      namesleft #1 - 'namesleft :=
+    }
+  while$
 }
 
 % FIXME : Modified A.Maire (22 Oct 2019)

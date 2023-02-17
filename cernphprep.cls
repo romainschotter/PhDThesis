@@ -23,10 +23,8 @@
 %     authors and the cross-references to institutes, etc.        %
 %  6 June  2010 (version 1.04)                                    %
 %   - Introduce \CERNCopyright command to define copyright text   %
-%  26 August 2021(version 1.04)                                   %
-%   - Remove requierement on subfigure   						 %
 %                                                                 %
-%  Last mod.: 26 August 2021 RS (Romain Schotter, PhD/IPHC)       %
+%  Last mod.:  6 June 2010 MG (Michel Goossens, IT/UDS)           %
 %                                                                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -56,19 +54,21 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions
 %\LoadClass[11pt,a4paper,twoside]{article}
-\LoadClass[11pt,a4paper]{article}
+%\LoadClass[11pt,a4paper]{article}
+%\LoadClass[12pt, twoside]{book} % 12 pt font, two-sided book style
+%\LoadClass[12pt, titlepage]{book} % 12 pt font, two-sided book style
+\LoadClass[12pt,a4paper]{book}
 \renewcommand{\rmdefault}{ptm}
 \usepackage{mathptmx}
 
-% Remove the requierement on subfigure, not compatible with subcaption
-%\RequirePackage{graphicx,amsmath,amssymb,array,tabularx,url,xspace,subfigure}
-\RequirePackage{graphicx,amsmath,amssymb,array,tabularx,url,xspace}
+\RequirePackage{graphicx,amsmath,amssymb,array,tabularx,url,xspace,subfigure}
 \RequirePackage{ifthen}
  
 \typeout{Document Class "cernphprep" 1.04 (6 June 2010)}
 
 %%% Customization of visible document elements
 
+%\renewcommand\thechapter 	 {\@arabic\c@chapter}
 \renewcommand\thesection      {\@arabic\c@section}
 \renewcommand\thesubsection   {\thesection.\@arabic\c@subsection}
 \renewcommand\thesubsubsection{\thesubsection.\@arabic\c@subsubsection}
@@ -77,18 +77,48 @@
 \renewcommand{\contentsname}{Contents}
 \renewcommand{\listfigurename}{List of Figures}
 \renewcommand{\listtablename}{List of Tables}
-\renewcommand{\refname}{References}
+%\renewcommand{\refname}{References}
 \renewcommand{\indexname}{Index}
 \renewcommand{\figurename}{Fig.}
 \renewcommand{\tablename}{Table}
 \renewcommand{\partname}{Part}
 \renewcommand{\appendixname}{Appendix}
-\renewcommand{\abstractname}{Abstract}
+%\renewcommand{\abstractname}{Abstract}
+
+%\let\latexchapter\chapter
+%\renewcommand{\chapter}{\@ifstar{\mychapterstar}{\mychapter}}
+%
+%\newcommand{\mychapter}[1]{
+%    \cleardoublepage % To make sure the previous headers are passed
+%    \phantomsection % To help hyperref link to the right page
+%    \latexchapter{#1}
+%    \renewcommand{\headrulewidth}{0pt} %removing the horizontal line in the header
+%    \addcontentsline{toc}{chapter}{#1} % Also adds the chapter name to the Contents
+%    %\fancyhead[LO, RE]{ \textbf{\textcolor{bluepoli}\thechapter\hsp\textcolor{bluepoli}{|   }\hsp \leftmark}}% Header
+%    \fancyhead[LE, RO]{\thepage}
+%    \vspace{-1cm}
+%}
+%
+%\newcommand{\mychapterstar}[1]{
+%    \cleardoublepage % To make sure the previous headers are passed
+%    \phantomsection % To help hyperref link to the right page
+%    \latexchapter*{#1} 
+%    \renewcommand{\headrulewidth}{0pt} %removing the horizontal line in the header
+%    \addcontentsline{toc}{chapter}{#1} % Also adds the chapter name to the Contents
+%    %\fancyhead[LO, RE]{ \bfseries \textcolor{bluepoli}{|   } #1} % Header \textbf{\leftmark} \hspace{1mm}}
+%    \fancyhead[LE, RO]{\thepage}
+%    \vspace{-1cm}
+%}
+
+%\renewcommand{\normalsize}{\fontsize{13}{10}\normalfont}
 
 % Short and long pages
 
 \newcommand{\longpage}[1][1]{\enlargethispage{#1\baselineskip}}
 \newcommand{\shortpage}[1][1]{\enlargethispage{-#1\baselineskip}}
+
+\usepackage[a4paper]{geometry} 
+\geometry{a4paper, includehead, headheight=0.6cm, inner=3.0cm ,outer=2.0cm, top=21mm, bottom=18mm, left=20mm,right=3cm}
 
 %  ****************************************
 %  *            Lists                     *
@@ -119,7 +149,8 @@
 
 \textheight 24cm       % Height of text (including footnotes and figures,
                        % excluding running head and foot).
-\textwidth 16cm        % Width of text line.
+%\textwidth 16cm        % Width of text line.
+\textwidth 426pt        % Width of text line.
 \topmargin -28pt       % offset of top header from voffset (1 inch)
 \headheight 13.6pt
 
@@ -128,8 +159,8 @@
       %%% margins : inner     =  30 mm =  86 pt
       %%%           outer     =  20 mm =  56 pt
       %%% \odd/evensidemargin are with respect to hoffset -->
-   \oddsidemargin   14pt    %   Left margin on odd-numbered pages.
-   \evensidemargin -14pt    %   Left margin on even-numbered pages.
+   \oddsidemargin   0pt%14pt    %   Left margin on odd-numbered pages.
+   \evensidemargin 0pt%-14pt    %   Left margin on even-numbered pages.
 \else         % Values for one-sided printing:
    \oddsidemargin    0pt    %   Note that \oddsidemargin = \evensidemargin
    \evensidemargin   0pt
@@ -252,7 +283,7 @@
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% \begin{titlepage}
+% \begin{page}
 %     \docnum{CERN--EP/90--xx}
 %     \date{}
 %     \title{ first  line \\
@@ -290,30 +321,63 @@
 % at bottom of page: copyright notice 
 %
 \renewcommand\title[1]{\setlength{\unitlength}{1mm}%
+\begin{center}
+\LARGE\textrm{Université de Strasbourg}\\
+\LARGE\textrm{\'Ecole Doctorale 182 -- Physique et Chimie-Physique}\\
+\LARGE\textrm{Institut Pluridisciplinaire Hubert Curien}
+\end{center}
 \begin{picture}(0.001,0.001)%
 %\graphpaper(0,-280)(210,290)
 %\put(80,-15){\makebox(0,0){\LARGE\itshape Final draft version \today}}
-\put(80,10){\makebox(0,0){\LARGE EUROPEAN ORGANIZATION FOR NUCLEAR RESEARCH}}
+%\put(80,10){\makebox(0,0){\LARGE EUROPEAN ORGANIZATION FOR NUCLEAR RESEARCH}}
 %----
 % Experiment's logo (optional) 
-\put(0,-20){\makebox(0,0)[lb]{\includegraphics[height=2cm]{\EXPLOGO}}}
+\put(15,-32){\makebox(0,0)[lb]{\includegraphics[height=2.5cm]{Universite_logo.png}}}
 % CERN logos
-\put(160,-20){\makebox(0,0)[rb]{\includegraphics[height=2cm]{cernlogo}}}
+\put(145,-35){\makebox(0,0)[rb]{\includegraphics[height=3.5cm]{IPHC_logo.png}}}
 % Experiment's preprint number (optional) 
 %\put(0,-25){\makebox(0,0)[lb]{\normalsize\@EXPnumber}}
 % Experiment date of approval
 %\put(0,-30){\makebox(0,0)[lb]{\normalsize\@EXPdate}}
 % CERN PH Preprint number 
-\put(160,-25){\makebox(0,0)[rb]{\normalsize CERN-PH-EP-\@PHyear-\@PHnumber}}
+%\put(160,-25){\makebox(0,0)[rb]{\normalsize CERN-PH-EP-\@PHyear-\@PHnumber}}
 % CERN PH Preprint date of approval
-\put(160,-30){\makebox(0,0)[rb]{\normalsize\@PHdate\ \@PHyear}}
-\put(0,-222){\makebox(0,0)[l]{\CERNCopyright}}
-\put(0,-227){\makebox(0,0)[l]{Reproduction of this article or parts of it is allowed as specified in the 
-\href{http://creativecommons.org/licenses/by/4.0}{CC-BY-4.0 license}.}}
-\end{picture}                
+%\put(160,-30){\makebox(0,0)[rb]{\normalsize\@PHdate\ \@PHyear}}
+%\put(0,-222){\makebox(0,0)[l]{\CERNCopyright}}
+%\put(0,-227){\makebox(0,0)[l]{Reproduction of this article or parts of it is allowed as specified in the 
+%\href{http://creativecommons.org/licenses/by/4.0}{CC-BY-4.0 license}.}}
+\end{picture}           
+\mbox{}\\[55mm]
+\large\textsc{Doctoral Thesis in Physics}
+\mbox{}\\[3mm]
+%\begin{center}
+%\rule{16 cm}{1pt} \\
+\huge\textbf{#1}\\%[-5mm]
+%\rule{16 cm}{1pt} \\
+%\end{center}
+\begin{picture}(0.001,0.001)
+\put(120,-20){\makebox(0,0){\large\textsl{October 2020 -- September 2023}}}
+%\put(135,-45){\makebox(0,0){\large\textsl{Candidate:}}}
+%\put(135,-53){\makebox(0,0){\large\textbf{Romain Schotter}}}
+%\put(135,-63){\makebox(0,0){\large\textsl{Thesis advisors:}}}
+%\put(135,-71){\makebox(0,0){\large Boris Hyppolite}}
+%\put(135,-79){\makebox(0,0){\large Antonin Maire}}
+\end{picture}       
+\mbox{}\\[60mm]
+\begin{minipage}{0.5\textwidth}
+\begin{flushleft}
+        \large\textsl{Candidate: }\\\textbf{Romain Schotter}\\
+\end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+\begin{flushright}
+    \large\textsl{Thesis advisors: } \\Antonin Maire, Boris Hippolyte
+\end{flushright}
+\end{minipage}
+\mbox{}
 \begin{center}
-\mbox{}\\[25mm]
-\Large\bf#1\\[10mm]
+\large January 2022
 \end{center}
 \gdef\Title{#1}
 }%%  end of title
@@ -343,6 +407,10 @@
 
 \newcommand\ShortAuthor[1]{\gdef\Authors{#1}}\gdef\Authors{\empty}
 \newcommand\ShortTitle[1]{\gdef\Title{#1}}\gdef\Title{\empty}
+
+\def\PhDCandidate#1{%% Treat the PhD candidate
+ #1\end{center}\@thanks
+ \gdef\Authors{\begingroup\let\thanks\@gobble\let\@thanks\@empty#1\endgroup}}
 
 \newenvironment{Authlist}{\center}{\endcenter}
 
@@ -437,14 +505,14 @@
 \renewcommand{\bottomfraction}{0.99}
 \renewcommand{\textfraction}{0.15}
 
-\setlength{\intextsep}{10pt plus 2pt minus 4pt}  % Space between in-text figures and text.
+\setlength{\intextsep}{20pt plus 2pt minus 4pt}  % Space between in-text figures and text.
 \setlength{\floatsep}{10pt plus 2pt minus 4pt}   % Space between adjacent floats moved to top or bottom of text page.
 \setlength{\textfloatsep}{10pt plus 2pt minus 4pt}% Space between main text and floats at top or bottom of page.
 \setlength{\dblfloatsep}{10pt plus 2pt minus 4pt} % Same for double column
 \setlength{\dbltextfloatsep}{10pt plus 2pt minus 4pt}
 
-\parskip.5\baselineskip
-\parindent0mm
+\parskip.0\baselineskip
+\setlength{\parindent}{2em} %was : \parindent0mm
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Equations                                                       %
