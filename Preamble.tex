@@ -8,7 +8,8 @@
 \usepackage[T1]{fontenc}    
     % for output font rendering, T1 rendering
     % textsc into section title http://en.wikibooks.org/wiki/LaTeX/Fonts#Font_encoding
-% \usepackage{lmodern}
+ \usepackage{lmodern}
+%\usepackage[varg]{txfonts}   % Web of Conferences font
     % choose specific font, lmodern (default : if installed = cm-super, rendering ok!)
     % There is nothing to change in your document to use CM Super fonts (assuming they are installed), 
     %      they will get loaded automatically if you use T1 encoding. 
@@ -16,27 +17,25 @@
     
 %\usepackage[latin1]{inputenc}
 \usepackage[utf8]{inputenc} % for input source code, accented characters like French spelling...
-
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{subcaption} %for subfigures, added 10.dec.20
+\usepackage{graphicx,subfigure}
+%\usepackage{subcaption} %for subfigures, added 10.dec.20
 
 %\usepackage[english,francais]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}  % boldsymbol, special characters
 \usepackage{mathrsfs} % pour le L du lagrangien ...
-%\usepackage{MnSymbol} % pour fivedots
-%\usepackage{bbding}   % pour checkmark spéciaux dans tableau d'inventaire
-%\usepackage{dictsym}  % pour dsaagricultural du tableau d'inventaire
+\usepackage{MnSymbol} % pour fivedots
+\usepackage{bbding}   % pour checkmark spéciaux dans tableau d'inventaire
+\usepackage{dictsym}  % pour dsaagricultural du tableau d'inventaire
 \usepackage{manfnt}   % pour le signe "virage dangereux" \textlhdbend
 %\usepackage{marvosym}  % Special Fonts, if need be. http://texdoc.net/texmf-dist/doc/fonts/marvosym/marvodoc.pdf
 % \usepackage{eurosym}  % symbole de l'euro, \officialeuro
 %     \DeclareUnicodeCharacter{20AC}{\euro}  % i.e. make the translation € UTF-8 char to be the LaTeX € symbol
-%\usepackage[retainorgcmds]{IEEEtrantools} % equation à la IEEE
+\usepackage[retainorgcmds]{IEEEtrantools} % equation à la IEEE
 \usepackage{multirow}
 \usepackage{xspace} 
 \usepackage{lineno}     % for line numbering
-\usepackage[showframe=false]{geometry}
+%\usepackage[showframe=false]{geometry}
 \usepackage{changepage} % for managing locally the width allowed for the text = useful for shifting leftwards too wide tables or figure
                         % e.g. \begin{adjustwidth}{-1cm}{} ... \end{adjustwidth}
 \usepackage{threeparttable} % for enabling footnote within a table
@@ -46,7 +45,24 @@
                         % \begin{enumerate}[label=(\alph*)], [label=(\Alph*)], [label=(\roman*)]
 \usepackage[normalem]{ulem} % pour tuner le soulignage, [normalem] = pour préserver le comportement normale de emph
 \usepackage{longtable}
+\usepackage{float}
+\usepackage{cellspace, tabularx, booktabs}
+%\usepackage{garamondx}
+\addparagraphcolumntypes{X}
 
+\usepackage{ifthen} % execute code with condition
+
+\usepackage{indentfirst}
+
+\usepackage{titlesec} % controls title spacing
+\titlespacing{\section}{0pt}{4.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing{\subsection}{0pt}{4.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing{\subsubsection}{0pt}{4.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\usepackage{feynmp-auto} %to draw Feyman diagram
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+%\setlength{\unitlength}{1cm}
 
 % after babel
 \usepackage{datetime} % pour afficher l'heure avec la commande \currenttime = \xxivtime
@@ -66,7 +82,9 @@
 
 %%% OPTION - pdflatex compiler
 \usepackage[pdftex,usenames,dvipsnames]{xcolor}
+%\usepackage{xcolor}
 %\usepackage[pdftex]{graphicx}
+\usepackage{eso-pic,graphicx, transparent}
 \usepackage{epstopdf}
 \DeclareGraphicsExtensions{.jpg,.eps,.png,.pdf}
 
@@ -133,10 +151,10 @@
 % empêcher la réinterprétation de la commande \newblock de la bibliographie
 % En conséquence, tout ce qui est \newblock dans natbib.sty = changer pour "\\"
 
-%\usepackage{array} 
+\usepackage{array} 
         %pour avoir \extrarowheight = gestion de la hauteur de ligne (voir chap. 4)
         % Ajout de hauteur suppl aux lignes pour éviter que la ligne horizontale ne touche le texte.
-        %\setlength{\extrarowheight}{3 pt}  à mettre au dessus du tableau considérée. 0 pt = valeur par défaut
+%        \setlength{\extrarowheight}{3 pt}  %à mettre au dessus du tableau considérée. 0 pt = valeur par défaut
         %Option m{largeur colonne} permet de centrer le texte verticalement (package array)
         
 \usepackage{textpos}  % pour la realisation de la page de titre
@@ -148,29 +166,7 @@
         \setlength{\epigraphwidth}{80mm}
         \renewcommand{\epigraphsize}{\footnotesize}
         
-%\usepackage{fancyhdr} %modification of page headers and footers
-% Already loaded by cernphprep.cls
-
-\pagestyle{fancy}
-    \addtolength{\headheight}{\baselineskip}
-    \renewcommand{\sectionmark}[1]{\markboth{\thesection.~~#1}{}}
-    \renewcommand{\subsectionmark}[1]{\markright{\thesubsection.~~#1}}
-
-\fancypagestyle{MainStyle}{%
-
-    \fancyhf{}
-    \fancyfoot[C]{\thepage}
-    % \fancyhead[RE]{\small\leftmark}
-    % \fancyhead[LO]{\small\rightmark}
-%     \fancyhead[L]{\truncate{1.0\headwidth}{\small\rightmark }}
-    \fancyhead[L]{\small\leftmark\footnotesize\rightmark}
-    \fancyhead[R]{\truncate{1.0\headwidth}{\hyperlink{LinkToTOC}{to TOC} ~/~~\thepage}}
-    \renewcommand{\headrulewidth}{0.2pt}
-}
-
-
-
-
+%\usepackage{fancyhdr} %modification des bas de pages et en-tetes
 %\usepackage{tocbibind} %allow integration de biblio+index dans la TOC(a comparer avec addcontentsline)
 %\usepackage{bibunits} %permet de faire une biblio par partie, chapitre, section...
         
@@ -202,7 +198,9 @@
 %in the environment "description", produce labels in italic, with colon at the end
 
 
-
+% write roman numbers in your text in lowercase or uppercase
+\newcommand{\upperRomannumeral}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\lowerromannumeral}[1]{\romannumeral#1\relax}
 
 
 %\renewcommand{\newblock}{\\}
@@ -374,6 +372,18 @@
 %   {\normalfont\sffamily\huge\bfseries\color{Sepia}}
 %   % FIXME {\normalfont\sffamily\huge\bfseries\color{Black}}
 %   {-- \chaptertitlename\ \thechapter~-- }{20pt}{\Huge}
+
+% Title format: chapter
+\titleformat{\chapter}[display]
+	{\fontsize{30}{20}\selectfont\bfseries\filright}
+	{\chaptertitlename}
+	{20pt}
+	{
+	\ifthenelse{\thechapter>0}
+	{\fontsize{60}{0}\selectfont\thechapter\hspace{0pt}\hspace{2mm}{|   }\hspace{0pt}}
+	{\hspace{0pt}}
+	\fontsize{30}{60}\bfseries 
+	}
   
 %\titleclass{\section}{straight}  
 \titleformat{\section}[hang]

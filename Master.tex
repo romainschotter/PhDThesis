@@ -1,18 +1,21 @@
 \documentclass[ALICE,manyauthors]{cernphprep}
-
+%\documentclass[12pt,oneside,a4paper]{book} % This style for A4 format. 
 
 \include{Preamble}
-\include{ScientificNotations}
+\include{ScientificNotationCommands}
+
+
+
 
 % Numbering of lines
     \modulolinenumbers[2]
     % \pagewiselinenumbers
     \switchlinenumbers   % allow to put line numbers on the outer margins
-    \linenumbers
+    %\linenumbers
 
 
 % Draft ID
-    \def\currentVersion{\version{$\alpha.1$}{\input{|"git log -n1 | awk '/commit/ {print $2}' | cut -c 1-7"}}}
+    \def\currentVersion{\version{$\beta.1$}{\input{|"git log -n1 | awk '/commit/ {print $2}' | cut -c 1-7"}}}
 %     \def\currentVersion{\version{$\beta.0$}{dummy}}
 %     \def\currentVersion{\version{$\beta.0$}{\input{|"svn info | awk -F : '/vision/ {print $2}' | head -n 1"}}}
         % Trick to get the git rev:
@@ -20,7 +23,8 @@
         % Inconvenience:
         %   One needs to authorise the bash command to be executed, with --shell-escape
         %   = pdflatex --shell-escape aliceCDSpreprint_hV0Correl_PbPb_Master.tex
-    \backgroundsetup{contents=\currentVersion}
+%    \backgroundsetup{contents=\currentVersion}
+    \backgroundsetup{contents=}
         % define the draft watermark from the background package
 
     
@@ -31,95 +35,62 @@
         % Inconvenience :
         %   One needs to authorise the bash command to be executed, with --shell-escape
         %   = pdflatex --shell-escape aliceCDSpreprint_Master.tex
-    \backgroundsetup{contents=\currentVersion}
+    %\backgroundsetup{contents=\currentVersion}
         % define the draft watermark from the background package
 
-\begin{document}%
 
-\pagestyle{MainStyle}
+\begin{document}%
 
 %______________________________________________________________________________
 %______________________________________________________________ Title
 
 
 \begin{titlepage}
+%	\AddToShipoutPictureBG*{{\transparent{0.2}\includegraphics[width=\paperwidth,height=\paperheight]{ARP-backcover.pdf}}}
+	
+	\title{Precision measurements in the \\multi-strange baryon sector at the LHC with the ALICE experiment}
+	
+%	\author{Romain}
     %
-    \PHyear{2021}
-    \PHnumber{XXX}      % required, will be obtained from PH
-    \PHdate{\monthname[\month]}  % required, will be obtained from PH
-    %
-
-    %%% Put your own title + short title here:
-    \title{Study of correlated production of strangeness via the measurement of the yield ratio of \rmOmegaPM\ and \rmPhiMes\ with \pp\ data of LHC run II}
-    \ShortTitle{Short title}   % appears on right page headers
-
-    %%% Do not change the next lines
-    %\Collaboration{ALICE Collaboration\thanks{See Appendix~\ref{app:collab} for the list of collaboration members}}
-    \ShortAuthor{ALICE Collaboration} % appears on left page headers, do not change
-
-    
-
-    \Collaboration{%    
-    \thanks{by alphabetical order}
-        Antonin Maire$^{1,2}$, Boris Hippolyte$^{1.2}$, Romain Schotter$^1$\\        
-            \footnotesize \color{Gray}
-            1. Université de Strasbourg, IPHC, 23 rue du Loess 67037 Strasbourg, France. \\
-            2. CNRS, UMR7178, 67037 Strasbourg, France.\\
-            ~\newline
-            \normalsize \color{Black}    
-            \vspace*{0.2cm}~
-          {\Large ALICE analysis note}\\
-          \vspace{0.5cm}~
-          PWG-LF / PAG-Strangeness
-    }
-    
-    
-    \begin{abstract}
-
-        \begin{center}
-            \textcolor{Gray}{\currentVersion}
-        \end{center}
-        
-        \vspace*{0.2 cm}
-
-
-        \vspace*{0.5 cm}
-
-        \textit{Keywords:}\\        
-        \null~~~~ \rmAomegaP, \rmOmegaM, \rmPhiMes,\\ 
-        \null~~~~ALICE, \pp, \sqrtS\ = 13 \tev\ (2016+2017+2018), LHC, runII, strangeness.
-
-
-    \end{abstract}
+%    \PHyear{2022}
+%    \PHnumber{XXX}      % required, will be obtained from PH
+%    \PHdate{\monthname[\month]}  % required, will be obtained from PH
+%    %
+%
 
 \end{titlepage}
 \setcounter{page}{2}
 
 
+\include{Resume} % Resume
+\include{Abstract} % Abstract
+
+%______________________________________________________________________________
+%______________________________________________________________ Acknowledgements
+
+%\newenvironment{acknowledgement}{\relax}{\relax}
+%\begin{acknowledgement}
+\include{Acknowledgements}
+%\input{acknowledgements.tex}    %%%%%%% done by webmaster team
+%\end{acknowledgement}
+
+
 %______________________________________________________________________________
 %______________________________________________________________ Core document
 
-
-\hypertarget{LinkToTOC}
 \tableofcontents
+
 \cleardoublepage 
 \phantomsection 
 
-\newpage
-%\part{Data sets and analysis strategy}
+\include{Introduction} % Introduction
+\include{StandardModel} % Data sets
+\include{ALICEExperiment} % The ALICE experiment
+\include{CPTAnalysis} % The CPT analysis
+\include{CorrelationAnalysis} % Correlation analysis
+\include{Discussion} % Discusssion
+\include{Conclusion} % Conclusion
 
-%\input{PrePrint_Sec01_Introduction} % Introduction
-%\input{PrePrint_Sec02_Datasets} % Data sets
-%\input{PrePrint_Sec03_EventSelections} % Event selections
-%\input{PrePrint_Sec04_TrackSelections} % Track and topological selections
-
-%\input{PrePrint_Sec05_Systematics} % Systematic checks
-
-%\newpage
-%\part{Results and discussion}
-
-%\input{PrePrint_Sec06_Results} % Results
-%\input{PrePrint_Sec07_Discussion} % Discussion
 
 
 % http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Bibliography_in_the_table_of_contents
@@ -129,22 +100,13 @@
 
 
 
-
-%______________________________________________________________________________
-%______________________________________________________________ Acknowledgements
-
-\newenvironment{acknowledgement}{\relax}{\relax}
-\addcontentsline{toc}{section}{Acknowledgements}
-\begin{acknowledgement}
-\section*{Acknowledgements}
-\input{Acknowledgements.tex}    
-%% complemented here with the QMat aknowledgements
-%%%%%%% done by webmaster team, a priori
-\end{acknowledgement}
-
 %______________________________________________________________________________
 %______________________________________________________________ Bibliography
 % (In case of using bibtex generate the bbl requested by arXiv)
+
+
+
+
 \footnotesize
 
 %\bibliographystyle{utphys}   
@@ -156,7 +118,9 @@
 \phantomsection % With hyperref package, you should also use \phantomsection command to enable hyperlinking from the table of contents to bibliography.
 
 \addcontentsline{toc}{section}{References} 
-\bibliography{References.bib}
+\bibliography{References}
+
+
         
 \normalsize
 
