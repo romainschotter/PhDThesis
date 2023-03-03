@@ -51,6 +51,7 @@
 \addparagraphcolumntypes{X}
 
 \usepackage{ifthen} % execute code with condition
+\usepackage{nicefrac} % to get nice fractions of type x / y
 
 \usepackage{indentfirst}
 
@@ -335,7 +336,7 @@
 %\renewcommand{\thechapter} {\Roman{chapter}}
 \renewcommand{\thesection} {\Roman{section}}
 \renewcommand{\thesubsection}   {~~\thesection-{\small \Alph{subsection}}}
-\renewcommand{\thesubsubsection} {~~~~\underline{\thesection-{\small \Alph{subsection}}.{\footnotesize \roman{subsubsection}}}}
+\renewcommand{\thesubsubsection} {~~~~\thesection-{\small \Alph{subsection}}.{\footnotesize \roman{subsubsection}}}
 % pour avoir une structure du type "I.A -1.i" au lieu de "1.1.1.1"
 
 
@@ -387,7 +388,8 @@
   
 %\titleclass{\section}{straight}  
 \titleformat{\section}[hang]
-  {\normalfont\rmfamily\Large\bfseries\color{OrangeRed4}}
+%  {\normalfont\rmfamily\Large\bfseries\color{OrangeRed4}}
+  {\normalfont\rmfamily\Large\bfseries\color{RoyalBlue4}}
   % FIXME {\normalfont\rmfamily\Large\bfseries\color{Black}}
   {\thesection}{1em}{}
 
@@ -397,7 +399,7 @@
   {\thesubsection}{1em}{}
 
 \titleformat{\subsubsection}[hang]
-  {\itshape\rmfamily\large\bfseries\color{LightGray}}
+  {\normalfont\rmfamily\large\bfseries\color{DarkGray}}
   % FIXME {\itshape\rmfamily\large\bfseries\color{Black}}
   {\thesubsubsection}{1em}{}
 
@@ -426,7 +428,8 @@
 
 \titlecontents{section}%
 [4.5em]% retrait à gauche
-{\addvspace{8pt}\mdseries\color{OrangeRed4}}% matériel avant commun aux entrées numérotées ou pas
+%{\addvspace{8pt}\mdseries\color{OrangeRed4}}% matériel avant commun aux entrées numérotées ou pas
+{\addvspace{8pt}\mdseries\color{RoyalBlue4}}% matériel avant commun aux entrées numérotées ou pas
 {\contentslabel{3.5em}}% avant lorsqu'il y a un numéro
 {\hspace{-3.5em}}% avant lorsqu'il n'y a pas de numéro
 {\dotfill\contentspage}% points de suspension et numéro de page
@@ -439,16 +442,16 @@
 {\contentslabel{4.5em}}% avant lorsqu'il y a un numéro
 {\hspace{-4.5em}}% avant lorsqu'il n'y a pas de numéro
 {\dotfill\contentspage}% points de suspension et numéro de page
-[\addvspace{-3pt}]% matériel après
+[\addvspace{-0pt}]% matériel après
 
 
 \titlecontents{subsubsection}%
 [6.5em]% retrait à gauche
-{\slshape\mdseries\color{LightGray}}% matériel avant commun aux entrées numérotées ou pas
+{\mdseries\mdseries\color{DarkGray}}% matériel avant commun aux entrées numérotées ou pas
 {\contentslabel{5.5em}}% avant lorsqu'il y a un numéro
 {\hspace{-5.5em}}% avant lorsqu'il n'y a pas de numéro
 {\dotfill\contentspage}% points de suspension et numéro de page
-[\addvspace{-3pt}]% matériel après
+[\addvspace{-0pt}]% matériel après
 
 
 % - 3 : Corrections nécessaires pour les TOC partiels
