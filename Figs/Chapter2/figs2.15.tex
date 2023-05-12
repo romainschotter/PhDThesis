@@ -1,0 +1,59 @@
+% Careful: to be compiled with LuaLatex
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{tikz-feynman}
+\tikzfeynmanset{compat=1.0.0}
+
+\begin{document}
+
+% For Romain's thesis:
+% g+g crossed to s+sbar
+\feynmandiagram [layered layout, vertical=b to d] {
+% Draw the top and bottom lines
+i1 [particle=\(g\)]
+-- [draw=none] b [dot]
+-- [fermion] f1 [particle=\(s\)],
+i2 [particle=\(g\)]
+-- [draw=none] d [dot]
+-- [anti fermion] f2 [particle=\(\overline{s}\)],
+i1 -- [gluon] d,
+i2 -- [gluon] b,
+% Draw the two internal fermion lines
+{ [same layer] b -- [anti fermion, edge label=\( \)] d},
+{ [same layer] i1 -- [draw=none] i2},
+};
+
+% g+g square to s+sbar
+\feynmandiagram [layered layout, vertical=b to d] {
+% Draw the top and bottom lines
+i1 [particle=\(g\)]
+-- [gluon] b [dot]
+-- [fermion] f1 [particle=\(s\)],
+i2 [particle=\(g\)]
+-- [gluon] d [dot]
+-- [anti fermion] f2 [particle=\(\overline{s}\)],
+% Draw the two internal fermion lines
+{ [same layer] b -- [anti fermion, edge label=\( \)] d},
+};
+
+% g+g to gluon  to s+sbar
+\feynmandiagram [baseline=(b.base), horizontal=a to b] {
+i1 [particle=\(g\)] -- [gluon] a [dot] -- [gluon] i2 [particle=\(g\)],
+a -- [gluon, edge label=\( \) %, momentum'=\(k\)
+] b [dot],
+f1 [particle=\(s\)] -- [anti fermion] b -- [anti fermion] f2 [particle=\(\overline{s}\)],
+};
+
+
+% q+qbar to gluon  to s+sbar
+\feynmandiagram [baseline=(a.base), horizontal=a to b] {
+i1 [particle=\(\overline{q}\)] -- [anti fermion] a [dot] -- [anti fermion] i2 [particle=\(q\)],
+a  -- [gluon, edge label=\( \) %, momentum'=\(k\)
+] b [dot],
+f1 [particle=\(s\)] -- [anti fermion] b  -- [anti fermion] f2 [particle=\(\overline{s}\)],
+};
+
+\end{document}

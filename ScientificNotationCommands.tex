@@ -67,6 +67,8 @@
 \newcommand{\Table}     {\textsc{t}able~}
 \newcommand{\Tables}    {\textsc{t}ables~}
 \newcommand{\chap}      {\textsc{c}hap.~}
+\newcommand{\Chapter}   {\textsc{c}hapter~}
+\newcommand{\Chapters}  {\textsc{c}hapters~}
 \newcommand{\parag}     {\textsc{p}ar.~}
 \newcommand{\appdx}     {\textsc{a}pp.~}
 \newcommand{\eq}        {\textsc{e}q.~}
@@ -144,7 +146,7 @@
 \newcommand {\pseudorap}    {\mbox{$\eta$}}
 \newcommand {\pseudorapLab} {\mbox{$\eta_{\,\text{lab}}$}}
 \newcommand {\pseudorapCms} {\mbox{$\eta_{\text{\textsc{cms} }}$}}
-\newcommand {\cTau}         {\ensuremath{c.\tau}}
+\newcommand {\cTau}         {\ensuremath{c.\tau}\xspace}
 \newcommand {\sigee}        {$\sigma_E$/$E$}
 
 \newcommand {\AxEff}        {\ensuremath{\mathscr{A}.\varepsilon}}
@@ -161,6 +163,7 @@
 \newcommand {\dsigmaXdpt}[1]{\ensuremath{\text{d}\sigma\text{(#1)}/\text{d}\pT}}
 \newcommand {\dsigmaXdptdy}[1]  {\ensuremath{\text{d}^{2}\sigma\text{(#1)}/\text{d}\pT\text{d}y}}
 \newcommand {\dNdy}         {\ensuremath{\text{d}N/\text{d}y}}
+\newcommand {\dNdeta}       {\ensuremath{\text{d}N/\text{d}\eta}\xspace}
 \newcommand {\dNXdy}[1]     {\ensuremath{\text{d}N\text{(#1)}/\text{d}y}}
 \newcommand {\dNJpsidy}     {\dNXdy{\rmJpsi}}
 \newcommand {\dNdpt}        {\ensuremath{\text{d}N/\text{d}\pT }}
@@ -235,7 +238,8 @@
 \newcommand{\rmChiSquare}   {\ensuremath{\chi^2}\xspace}
 \newcommand{\rmChiSquareNDF}{\ensuremath{\chi^2 / NDF}\xspace}
 \newcommand{\rmNTracklet}   {\ensuremath{N_{tracklets}}\xspace}
-\newcommand {\xXzero}       {\ensuremath{\textsc{x}/X_0}}
+\newcommand {\xXzero}       {\ensuremath{\textsc{x}/X_0}\xspace}
+\newcommand {\Xzero}        {\ensuremath{X_0}\xspace}
 
 
 % 2.2 - unit vector for frame basis
@@ -255,8 +259,13 @@
 \newcommand{\Epos}          {\textsc{Epos}\xspace}
 \newcommand{\Pythia}        {\textsc{Pythia}\xspace}
 \newcommand{\Pythiaeight}   {\Pythia~8\xspace}
+\newcommand{\Hijing}        {\textsc{Hijing}\xspace}
 \newcommand{\Rivet}         {\textsc{Rivet}\xspace}
 \newcommand{\HepMC}         {\textsc{HepMc}\xspace}
+
+\newcommand{\GeantThree}    {\textsc{Geant3}\xspace}
+\newcommand{\GeantFour}     {\textsc{Geant4}\xspace}
+\newcommand{\Fluka}         {\textsc{Fluka}\xspace}
 
 %
 % 3 - Collisions Systems
@@ -308,27 +317,27 @@
 %\newcommand {\gevBoldMath}  {\mbox{${\rm \mathbf{GeV}}$}}
 
 \newcommand {\momStyle}[1] {\mbox{\ensuremath{\text{#1}\kern-0.1em /\kern-0.12em c}}}
-\newcommand {\mmom}     {\momStyle{MeV}}
-\newcommand {\gmom}     {\momStyle{GeV}}
+\newcommand {\mmom}     {\momStyle{MeV}\xspace}
+\newcommand {\gmom}     {\momStyle{GeV}\xspace}
 
 \newcommand {\fsec}       {\unitStyle{fs}}
-\newcommand {\psec}       {\unitStyle{ps}}
+\newcommand {\psec}       {\unitStyle{ps}\xspace}
 \newcommand {\nsec}       {\unitStyle{ns}\xspace}
 \newcommand {\musec}      {\mbox{$\mu\unitStyle{s}$}\xspace}
 \newcommand {\millisec}   {\unitStyle{ms}}
-\newcommand {\second}     {\unitStyle{s}}
+\newcommand {\second}     {\unitStyle{s}\xspace}
 
 \newcommand {\MHz}     {\unitStyle{MHz}}
 \newcommand {\kHz}     {\unitStyle{kHz}}
 
 \newcommand {\fmC}      {\mbox{$\unitStyle{fm}/\kern-0.12em c$}\xspace}
 
-\newcommand {\fm}       {\unitStyle{fm}}
-\newcommand {\nm}       {\unitStyle{nm}}
-\newcommand {\mum}      {\mbox{$\mu\unitStyle{m}$}}
-\newcommand {\mm}       {\unitStyle{mm}}
+\newcommand {\fm}       {\unitStyle{fm}\xspace}
+\newcommand {\nm}       {\unitStyle{nm}\xspace}
+\newcommand {\mum}      {\mbox{$\mu\unitStyle{m}$}\xspace}
+\newcommand {\mm}       {\unitStyle{mm}\xspace}
 \newcommand {\cm}       {\unitStyle{cm}\xspace}
-\newcommand {\m}        {\unitStyle{m}}
+\newcommand {\m}        {\unitStyle{m}\xspace}
 
 \newcommand {\cmq}      {\mbox{$\cm^2$}}
 \newcommand {\mmq}      {\mbox{$\mm^2$}}
@@ -360,6 +369,7 @@
 \newcommand {\invnb}    {\mbox{$\nb^{-1}$}}
 \newcommand {\invpb}    {\mbox{$\pb^{-1}$}}
 \newcommand {\invfb}    {\mbox{$\fb^{-1}$}}
+\newcommand {\invb}     {\mbox{$\barn^{-1}$}}
 
 \newcommand{\Lagr}{\mathcal{L}}
 
@@ -371,7 +381,9 @@
 
 \newcommand{\hPM}           {\ensuremath{h^{\pm}}}
 \newcommand{\ePlusMinus}    {\mbox{$\mathrm {e^{\pm}}$}}
+\newcommand{\electron}      {\mbox{$\mathrm {e}$\xspace}}
 \newcommand{\muPlusMinus}   {\mbox{$\mathrm {\mu^{\pm}}$}}
+\newcommand{\muon}   	    {\mbox{$\mathrm {\mu}$}\xspace}
 
 \newcommand{\etaZero}       {\mbox{$\mathrm {\eta^0}$}}
 \newcommand{\piZero}        {\mbox{$\mathrm {\pi^0}$}}
@@ -388,6 +400,7 @@
 \newcommand{\rhoMinus}       {\mbox{$\mathrm {\rho^-}$}}
 \newcommand{\rhoPlus}        {\mbox{$\mathrm {\rho^+}$}}
 
+\newcommand{\rmKaon}     {\mbox{$\mathrm {K}$}\xspace}
 \newcommand{\Kzs}        {\mbox{$\mathrm {K^0_S}$}\xspace}
 \newcommand{\rmKzero}    {\Kzs}
 \newcommand{\rmAKzero}   {\ensuremath{\mathrm {\overline{K^0_S}}}}
@@ -407,7 +420,7 @@
 \newcommand{\rmPhiMes}   {\mbox{$\mathrm {\phi(1020)}$}\xspace}
 \newcommand{\rmPhi}   	{\mbox{$\mathrm {\phi}$}\xspace}
 
-\newcommand{\proton}    {\mbox{$\mathrm {p}$}}
+\newcommand{\proton}    {\mbox{$\mathrm {p}$}\xspace}
 \newcommand{\pbar}      {\mbox{$\mathrm {\overline{p}}$}}
 % \newcommand{\pOrPbar}   {\mbox{$\mathrm{\vcenter{\offinterlineskip \vskip-0.1ex\hbox{\tiny \kern-0.05em- \kern-0.3em-} \vskip+0.2ex\hbox{p}}^{\protect \tiny ^{\hdots} \kern-0.75em _{+} \kern-.7em}}$ }}
 \newcommand{\pOrPbar}   {\mbox{$\mathrm {p^{\pm}}$}}
@@ -460,14 +473,14 @@
 % \newcommand{\rmOmegaPM} {\mbox{$\kern-0.1em \mathrm{ \protect \overset{_\hbox{\Cutline}}{\Omega}^{\protect \underline{\fivedots}} \kern-0.1em}$}}
 
 
-\newcommand{\rmDeuton}   {\mbox{$\mathrm {d}$}}
+\newcommand{\rmDeuton}   {\mbox{$\mathrm {d}$}\xspace}
 \newcommand{\rmDeutonPM} {\mbox{$\mathrm {d}^{\pm}$}}
-\newcommand{\rmTriton}   {\mbox{$\mathrm {t}$}}
+\newcommand{\rmTriton}   {\mbox{$\mathrm {t}$}\xspace}
 \newcommand{\rmTritonPM} {\mbox{$\mathrm {t}^{\pm}$}}
-\newcommand{\rmHeThree}  {\mbox{$\mathrm {^3He}$}}
-\newcommand{\rmHeThreePM}{\mbox{$\mathrm {^3He^{2\pm}}$}}
-\newcommand{\rmHeFour}   {\mbox{$\mathrm {^4He}$}}
-\newcommand{\rmHeFourPM} {\mbox{$\mathrm {^4He^{2\pm}}$}}
+\newcommand{\rmHeThree}  {\mbox{$\mathrm {^3He}$}\xspace}
+\newcommand{\rmHeThreePM}{\mbox{$\mathrm {^3He^{2\pm}}$}\xspace}
+\newcommand{\rmHeFour}   {\mbox{$\mathrm {^4He}$}\xspace}
+\newcommand{\rmHeFourPM} {\mbox{$\mathrm {^4He^{2\pm}}$}\xspace}
 
 \newcommand{\rmHypertriton}  {\mbox{$^{3}_{\Lambda}\mathrm{H}$}}
 
