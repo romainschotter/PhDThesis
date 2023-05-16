@@ -359,15 +359,6 @@ gives the distance between measured \dEdx and the expected one under the particl
 \subsubsection{VZERO}
 \label{subsubsec:VZERO}
 
-The VZERO system consists in two scintillator arrays, VZERO-A and VZERO-C, covering the pseudo-rapidity ranges $2.8 < \eta < 5.1$ and $-3.7 < \eta < -1.7$ respectively (\fig\ref{fig:VZEROinALICE}). It plays a crucial role in the data taking of ALICE as it provides minimum-bias triggers for the experiment, measures the charged particle multiplicity and centrality, and participates in the beam luminosity determination.
-
-
-Each array is segmented in four rings, themselves being divided in eight sections, for a total of 32 cells made of 45\textdegree$\ $ wide plastic scintillators, as sketched in the \fig\ref{fig:VZEROarrays}. Because of the integration constraints (mainly coming from the muon absorber), the arrays come in two different designs. The 2.5 \cm thick VZERO-A sits at $z = 329$ \cm from the origin of the detector ($z = 0$). Since the VZERO-C stands in front of the muon absorber, the scintillator thickness has been reduced to 2 \cm and its rings are positionned between -86 and -88 \cm along the beam axis. 
-
-The passage of a charged particle in the scintillator generates light, that is guided to photomultiplier tubes via 1 \mm in diameter Wave-Length Shifting and optical fibers. For each of the 32 elementary cells, the photomultiplier tube outputs two analogue signals. The first measures the integrated charge, the second -- amplified by a factor 10 -- determines the pulse/arrival time relative to the LHC bunch clock with a resolution better than 1 \nsec. Each signal gives rise to a specific type of trigger algorithm. 
-
-Based on the coincidence between the time signals from the arrays, beam-induced background events\footnote{They typically correspond to beam-gas collisions, that is a collision between a bunch from the beam and a residual gas molecule in the beam pipe} can be rejected. \Fig\ref{fig:VZERObeamgas} shows an example of such rejection. A particle coming from the interaction point takes about 11 \nsec and 3 \nsec to reach the VZERO-A and the VZERO-C respectively. If the signals mesured in the both scintillator arrays matches these values --- as in the top right corner of \fig\ref{fig:VZERObeamgas} ---, this indicates that a beam-beam collision have occured. However, the signals arriving in coincidence at -12 \nsec (VZERO-A) and 3 \nsec (VZERO-C), and 11 \nsec (VZERO-A) and -3 \nsec (VZERO-C) are not the signatures of a beam-beam event. They correspond to beam-gas collisions coming from the A-side and C-side respectively. This is the first type of trigger algorithm.
-
 \begin{figure}[t]
 \centering
 \subfigure[]
@@ -384,16 +375,21 @@ Based on the coincidence between the time signals from the arrays, beam-induced 
 	\label{fig:VZEROdetector}
 \end{figure}
 
-\begin{figure}[h]
+The VZERO system consists in two scintillator arrays, VZERO-A and VZERO-C, covering the pseudo-rapidity ranges $2.8 < \eta < 5.1$ and $-3.7 < \eta < -1.7$ respectively (\fig\ref{fig:VZEROinALICE}). It plays a crucial role in the data taking of ALICE as it provides minimum-bias triggers for the experiment, measures the charged particle multiplicity and centrality, and participates in the beam luminosity determination.
+
+
+Each array is segmented in four rings, themselves being divided in eight sections, for a total of 32 cells made of 45\textdegree$\ $ wide plastic scintillators, as sketched in the \fig\ref{fig:VZEROarrays}. Because of the integration constraints (mainly coming from the muon absorber), the arrays come in two different designs. The 2.5 \cm thick VZERO-A sits at $z = 329$ \cm from the origin of the detector ($z = 0$). Since the VZERO-C stands in front of the muon absorber, the scintillator thickness has been reduced to 2 \cm and its rings are positionned between -86 and -88 \cm along the beam axis. 
+
+The passage of a charged particle in the scintillator generates light, that is guided to photomultiplier tubes via 1 \mm in diameter Wave-Length Shifting and optical fibers. For each of the 32 elementary cells, the photomultiplier tube outputs two analogue signals. The first measures the integrated charge, the second -- amplified by a factor 10 -- determines the pulse/arrival time relative to the LHC bunch clock with a resolution better than 1 \nsec. Each signal gives rise to a specific type of trigger algorithm. 
+
+Based on the coincidence between the time signals from the arrays, beam-induced background events\footnote{They typically correspond to beam-gas collisions, that is a collision between a bunch from the beam and a residual gas molecule in the beam pipe} can be rejected. \Fig\ref{fig:VZERObeamgas} shows an example of such rejection. A particle coming from the interaction point takes about 11 \nsec and 3 \nsec to reach the VZERO-A and the VZERO-C respectively. If the signals mesured in the both scintillator arrays matches these values --- as in the top right corner of \fig\ref{fig:VZERObeamgas} ---, this indicates that a beam-beam collision have occured. However, the signals arriving in coincidence at -12 \nsec (VZERO-A) and 3 \nsec (VZERO-C), and 11 \nsec (VZERO-A) and -3 \nsec (VZERO-C) are not the signatures of a beam-beam event. They correspond to beam-gas collisions coming from the A-side and C-side respectively. This is the first type of trigger algorithm.
+
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Figs/Chapter3/Fig6_2-4228.png}
 	\caption{Time of flight of the particles detected in the VZERO-C versus VZERO-A. Figure taken from \cite{alicecollaborationPerformanceALICEVZERO2013}.}
 	\label{fig:VZERObeamgas}
 \end{figure}
-
-
-
-The energy deposited in the scintillators provides a measurement of the charged particle multiplicity. Based on a simulation of the VZERO detectors, the total charge collected can be related to the number of primary charged particles, as shown in \fig\ref{fig:VZEROcentrality}. The second type of trigger algorithm consists in dividing the distribution of the V0 amplitudes in different multiplicity/centrality\footnote{In heavy-ion collisions, the impact parameter -- and, \textit{a fortiori}, its percentage value, the centrality -- cannot be measured directly, but the number of charged particle is measurable using -- among others -- the VZERO detectors. Since the centrality and the charged particle multiplicity in the event are correlated, the latter allows to recover the centrality (as confirmed by the Glauber fit in \fig\ref{fig:VZEROcentrality}, that also gives access to the centrality). Hence, for heavy-ion collisions, the different intervals in multiplicity in \fig\ref{fig:VZEROcentrality} are referred as \textit{centrality classes}.} classes from the 5\%-highest multiplicity to the 10\%-lowest multiplicity events, as represented in shaded areas. 
 
 \begin{figure}[h]
 	\centering
@@ -401,6 +397,8 @@ The energy deposited in the scintillators provides a measurement of the charged 
 	\caption{Total yield as a function of the signal amplitudes in the two VZERO arrays in Pb-Pb collisions at \sqrtSnn = 2.76 \tev, fitted with a Glauber model in red. The shaded areas correspond to different centrality classes. Figure taken from \cite{alicecollaborationPerformanceALICEVZERO2013}.}
 	\label{fig:VZEROcentrality}
 \end{figure}
+
+The energy deposited in the scintillators provides a measurement of the charged particle multiplicity. Based on a simulation of the VZERO detectors, the total charge collected can be related to the number of primary charged particles, as shown in \fig\ref{fig:VZEROcentrality}. The second type of trigger algorithm consists in dividing the distribution of the V0 amplitudes in different multiplicity/centrality\footnote{In heavy-ion collisions, the impact parameter -- and, \textit{a fortiori}, its percentage value, the centrality -- cannot be measured directly, but the number of charged particle is measurable using -- among others -- the VZERO detectors. Since the centrality and the charged particle multiplicity in the event are correlated, the latter allows to recover the centrality (as confirmed by the Glauber fit in \fig\ref{fig:VZEROcentrality}, that also gives access to the centrality). Hence, for heavy-ion collisions, the different intervals in multiplicity in \fig\ref{fig:VZEROcentrality} are referred as \textit{centrality classes}.} classes from the 5\%-highest multiplicity to the 10\%-lowest multiplicity events, as represented in shaded areas. 
 
 \subsubsection{Time-Of-Flight detector}
 \label{subsubsec:TOF}
@@ -448,7 +446,7 @@ m = \frac{p}{\beta \gamma} = p \ \sqrt{ \frac{1}{\beta^{2}} - 1 }& \qquad \textr
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Figs/Chapter3/TOFBetawoMismatchEtaCut_PbPb.eps}
+	\includegraphics[width=0.8\textwidth]{Figs/Chapter3/TOFBetawoMismatchEtaCut_PbPb.png}
 	\caption{Velocity ($\beta = v /c$) of electrons, pions, kaons, protons and deuterons as a function of their momentum (provided by the TPC), measured by the TOF detector, in Pb-Pb collisions at \sqrtSnn = 5.02 \tev. Figure taken from \cite{alicecollaborationALICEExperimentJourney2022}.}
 	\label{fig:TOFPID}
 \end{figure}
