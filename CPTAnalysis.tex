@@ -2,3 +2,249 @@
 \chapter{Mass measurements of multi-strange baryons in pp collisions at \sqrtS = 13 TeV}
 \label{chap:CPTAnalysis}
 %//-----------------------------------------------------------------------//
+
+The first analysis conducted in this thesis aims at measuring the \rmXiM, \rmAxiP, \rmOmegaM, \rmAomegaP masses and mass differences between particle and anti-particle. This chapter provides a description of the different elements needed for its achievement. 
+
+
+\section{Introduction}
+
+%Symmetries certainly stand as one of the most fruitful concepts in Physics. They are of two kinds: continuous --- such as the global translations in both space and time, or the Lorentz transformations --- and discrete --- for example, the space- (P) and time- (T) inversions, the charge conjugation (C), and their combined transformation given by CPT. In particular, the Lorentz and CPT symmetries are connected by the so-called CPT theorem which states that any local Lorentz-invariant quantum field theory must also (under some extra requirements) be CPT invariant \cite{cptstatus}. Consequently, the CPT violation implies the breaking of the Lorentz symmetry, and vice versa\footnote{In fact, there is another option; to allow for CPT to be violated, either the Lorentz symmetry must be broken -- as in the string theory \cite{string} or the Standard-Model Extension \cite{sme} -- or some of the other extra assumptions of the CPT theorem must be dropped, namely the energy positivity, local interactions, finite spin, etc \cite{cptimplieslorentz}\cite{cptsymmetryantitsviolation}. } \cite{sozzi}. Another implication involves the relation between the properties of matter and antimatter: due to the charge conjugation linking particles to antiparticles, the CPT symmetry imposes that they share the same invariant mass, energy spectra, lifetime, coupling constants, etc \cite{cptsymmetryantitsviolation}. Most of the experimental checks of CPT invariance stem from these physical consequences.
+
+As discussed in \Sec\ref{subsec:Theory}, the Standard Model is built upon a set of symmetries, each being either discrete -- such as the combination of the charge conjugation (C), parity (P) and time reversal (T), known as the CPT transformation -- or continuous -- for example, the Lorentz transformations that includes rotations and boosts. In particular, the Lorentz and CPT symmetries are connected by the so-called CPT theorem which establishes that any unitary, local Lorentz-invariant quantum field theory must be CPT invariant \cite{kosteleckyStatusCPT1998}. Consequently, the CPT violation implies the breaking of the Lorentz symmetry, and vice versa\footnote{In fact, another option exists; to allow for the CPT violation, either the Lorentz symmetry must be broken -- as in the case of string theory \cite{kosteleckySpontaneousBreakingLorentz1989} or the Standard-Model Extension \cite{colladayLorentzviolatingExtensionStandard1998} -- or some of the other additionnal assumptions of the CPT theorem must be dropped, namely the energy positivity \cite{abersDiseasesInfiniteComponentField1967}, local interactions \cite{carruthersIsospinSymmetryTCP1968}, finite spin \cite{oksakInvalidityTCPtheoremInfinitecomponent1968}, etc \cite{greenbergCPTViolationImplies2002}\cite{lehnertCPTSymmetryIts2016}. } \cite{sozziTestsDiscreteSymmetries2019}. Another implication involves the relation between the properties of matter and antimatter: due to the charge conjugation linking particles to antiparticles, the CPT symmetry imposes that they share the same invariant mass, energy spectra, lifetime, coupling constants, etc \cite{cptsymmetryantitsviolation}. Most of the experimental checks of CPT invariance stem from this last point, which imposes several constraints on the anti-particle properties. \\
+
+The Particle Data Group (PDG) \cite{particledatagroupReviewParticlePhysics2022} compiles a large variety of CPT tests from many experiments and with different degrees of precision; so far, no CPT violation have been observed. The most stringent test involves the \rmKzero-\rmAKzero mixing process, which depends on the mass and lifetime differences of these two states. In this way, assuming no other source of CPT violation in the decay of neutral kaons, these two quantities have been bounded \cite{particledatagroupReviewParticlePhysics2022}\cite{angelopoulosK0K0Mass1999} to 
+
+\begin{equation}
+2 \frac{\mid m_{\rmKzero} - m_{\rmAKzero} \mid}{m_{\rmKzero} + m_{\rmAKzero}} < 6 \times 10^{-19} \quad , \quad 2 \frac{\mid \Gamma_{\rmKzero} - \Gamma_{\rmAKzero} \mid}{\Gamma_{\rmKzero} + \Gamma_{\rmAKzero}} = (8 \pm 8) \times 10^{-18}.
+\end{equation}
+
+These indirect limits are much stronger than the ones extracted from direct tests. For example, in the hyperon sector, the precision on relative mass difference is typically of a few $10^{-5}$. In the latter case, it should be mentioned that there is still some room for improvements, and most particularly concerning the mass difference measurements between particle and anti-particle in the multi-strange baryon sector. The only test of this nature dates back to 2006 \cite{abdallahMassesLifetimesProduction2006} for the \rmXiM and \rmAxiP, and from 1998 \cite{chanMeasurementPropertiesOverline1998} for the \rmOmegaM and \rmAomegaP. The former was achieved by exploiting 3.25 million hadronic decays of the \rmZzero recorded by the DELPHI detector at LEP-1; the latter was obtained on the E756 spectrometer at Fermilab, using an 800 \gmom proton beam on a beryllium target. However, both studies suffer from low statistics: approximately 2500(2300) reconstructed \rmXiM (\rmAxiP) and about 6323(2607) reconstructed \rmOmegaM (\rmAomegaP) were used.\\
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{>{\centering\arraybackslash}b{1.5cm}@{\hspace{0.3cm}} >{\centering\arraybackslash}b{1.75cm}@{\hspace{0.3cm}} >{\centering\arraybackslash}b{2.85cm}@{\hspace{0.3cm}} >{\centering\arraybackslash}b{3.6cm}@{\hspace{0.3cm}} >{\centering\arraybackslash}b{2.5cm}@{\hspace{0.3cm}} >{\centering\arraybackslash}b{1cm}@{\hspace{0.3cm}}}
+    \noalign{\smallskip}\hline\noalign{\smallskip}
+	Particle & Quark content & Mass (\mmass) & Relative mass difference & Dominant decay channel & B.R.\\	
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    	
+	\rmKzeroS (\rmAKzeroS) & $d \bar{s}$ ($\bar{d} s$)& $497.611 \pm 0.013$ & $< 6 \times 10^{-19}$ & \piPlus \piMinus & 69.20\%\\
+	
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    
+    \rmLambda (\rmAlambda) & $u d s$ ($\bar{u}\bar{d}\bar{s}$) & $1115.683 \pm 0.006$ & $\left(-0.1 \pm 1.1\right) \times 10^{-5}$ & \proton \piMinus (\pbar \piPlus) & 63.9\% \\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}    
+    
+    \rmXiM (\rmAxiP) & $dss$ ($\bar{d}\bar{s}\bar{s}$) & $1321.71 \pm 0.07$ & $\left(-2.5 \pm 8.7\right) \times 10^{-5}$ & \rmLambda \piMinus (\rmAlambda \piPlus) & 99.9\% \\	
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    
+	\rmOmegaM (\rmAomegaP) & $sss$ ($\bar{s}\bar{s}\bar{s}$) & $1672.45 \pm 0.23$ & $\left(-1.44 \pm 7.98\right) \times 10^{-5}$ & \rmLambda \rmKminus (\rmAlambda \rmKplus) & 67.8\%\\    
+    \noalign{\smallskip}\hline\noalign{\smallskip}
+    \end{tabular}
+    \caption{A few characteristics, as of 2023, of the \rmLambda, \rmXi, \rmOmega hyperons and the \rmKzeroS meson: quark content, mass, relative mass difference values with their associated uncertainties and their dominant decay channel as well as the corresponding branching ratio \cite{particledatagroupReviewParticlePhysics2022}.}\label{tab:V0CascPDGMass}
+\end{table}
+
+In comparison, all the pp collisions at a centre-of-mass energy of 13 \tev collected by ALICE throughout the LHC Run-2 contains about 2 400 000 \rmXi and 129 000 \rmOmega, with little background. Therefore, in this thesis, the measurement of the mass difference of \rmXiM and \rmAxiP, and \rmOmegaM and \rmAomegaP hyperons is performed. It relies on data samples much larger than those exploited previously. These direct measurements of the mass difference offer a test of the CPT invariance to an unprecedented level of precision in the multi-strange baryon sector. The absolute masses are updated as well, with a precision substantially better than the current values listed in the PDG and presented in the \tab\ref{tab:V0CascDecay}.
+
+Furthermore, concerning the \rmLambda hyperon and \rmKzeroS meson, the PDG quotes a precision of a few \kmass on the mass value, and about $1 \times 10^{-5}$ on the relative mass difference value\footnote{This only concerns the relative mass difference between \rmLambda and \rmAlambda. As mentioned above, such quantity is much smaller by fourteen orders of magnitude in the case of \rmKzero.}. Abundantly produced, these two hadrons also exhibit an irresistible feature in the context of this thesis: both decay into a V0 in their dominant decay channel, and so can be identified in a similar manner as cascades using topological reconstruction. For those two reasons -- high precision on the PDG mass values, and similar decay topology as cascade --, the analysis is reproduced on \rmLambda and \rmKzeroS, both being used as a benchmark for the measurement.\\
+
+In the following, the term \textit{mass difference} always refers to the relative one, namely $(\mMassApart{part.} - \mMassPart{part.})/\mMassPart{part.}$, unless indicated otherwise.
+
+\section{Data samples and event selection}
+
+\subsection{The data samples}
+
+All the data samples employed for this measurement originates from the second campaign of data taking, the LHC Run-2. The latter comprises different collision systems at various energies, mainly pp collisions at \sqrtS = 13 \tev and Pb-Pb collisions at \sqrtSnn = 5.02 \tev. Based on the elements in \Sec\ref{subsec:HyperonAndALICE}, the analysis exploits the former ones as they provide a less dense collision environment, expectedly easier to reconstruct and thus more controllable. All these pp events have been collected during three data taking periods: between April and October 2016, May and November 2017, April and October 2018 (\Sec\ref{subsec:acceleratorprogramme}, \tab\ref{tab:LHCRunProgramm}).
+
+Considering the target precision on the mass and mass difference values, it is crucial to have a fine comprehension of the data reconstruction to keep it well under control. For that reason, the analysis uses data in ESD format as they contain all the informations related to event building, thus offering the possibility to replay \textit{offline} the V0 and cascade vertexings/formations. As mentioned in \Sec\ref{subsubsec:DataFormats}, the first full reconstruction cycle (\Sec\ref{subsubsec:computingmodel}), performed right after their recording of the data, produces ESD files labelled as \textit{pass-1}. Since then, other reconstruction cycles have been carried out, each iteration bringing its share of improvements or fixes. The events analysed for this measurement originates from the second reconstruction cycle, the pass-2, which offers better tracking performances: same version of analysis software over all the data taking periods leading to more uniform performances, better SPD and TPC alignments, improved TPC reconstruction and finer description of the distortions within the TPC gas.
+
+Each period consists in fact of dozens or hundreds of \textit{runs}, corresponding to sequences of events recorded in an uninterrupted manner\footnote{Throughout the data taking, it is more or less frequent to interrupt the data collection, \ie stop the run. This usually occurs when a detector encounters an error, unfixable while collecting data. Broadly speaking, a period regroups a set of runs that have been recorded within the same data taking conditions.}. The lists of approriated runs for physics analysis are defined by the ALICE Data Preparation Group (DPG). As its name suggests, the latter oversees the preparation, reconstruction, quality assurance of both collected and simulated data, as well as the upkeep of the analysis tools including the event and track selections \cite{alicecollaborationALICEDataPreparation2023}. The list of runs employed in this study follows the DPG's one for an analysis using central barrel detectors and requiring hadron PID. For a run to be in that list, all the detectors related to the tracking and PID must be operational -- \ie SPD, SDD, SSD (ITS), TPC, TOF --, as well as those in charge of triggering, that are the V0 and T0. Note that it does not mean that the PID performances are optimal, nor that the full acceptance of each detector is covered.\\
+
+Besides the real data sample, the measurement also relies on simulated data in order to estimate and optimize the performances of the analysis. To each run corresponds its simulated counterpart, anchored on pass-2 data, as described in \Sec\ref{subsubsec:MCData}. All the exploited MC productions employ \Pythiaeight (version 8.2, tune: Monash 2013) as event generator. For the transport and interaction with the material of the ALICE detector, most of them use \GeantThree; although \GeantFour runs faster, describes more accurately hadronic interactions at very low momentum and is better maintained, only a few of the exploited simulations rely on it \cite{barendsGeant4ValidationStudy2017}.
+
+Since both abundant (\rmKzeroS, \rmLambda and to a certain extent, \rmXi) and rare species (\rmXi and \rmOmega) are being studied, one may resort to two kinds of simulations: general-purpose MC productions for the first ones, and enriched MC productions for the others. Here, the enriched simulations have been obtained by selecting the events that includes, at least, a \rmKzeroS, \rmLambdaPM, \rmXiPM or \rmOmegaPM in $\abspseudorap < 1.2$.
+
+Furthermore, this analysis also makes use of the track references in the simulation. As mentioned in \Sec\ref{subsubsec:MCData}, these correspond to the MC informations of the considered track at the location where it crosses a given detection plane. Thereby, they allow to compare the reconstructed track informations with the actual/generated ones at any point along the particle trajectory\footnote{Strictly speaking, this comparison cannot be done at any point since the track reference is only available where the particle traverses a sensitive volume.}. Although the track references are effectively stored for only 10\% of the production\footnote{This is done in order to spare some disk space.}, this comparison is proving invaluable to control the tracking in ALICE.\\
+
+
+In total, the exploited data sample counts about 2.6 billions minimum bias events at \sqrtS = 13 \tev, and approximately 600 millions events in the associated MC productions.
+
+\subsection{The event selection}
+
+As mentioned in \Sec\ref{subsec:TriggerSystem}, the analysis focuses on minimum-bias and/or high-multiplicity events. More precisely, the respective trigger configurations correspond to the MB$_{\rm AND}$ and/or HM$_{\rm VZERO}$. Not all the events passing these trigger selections are considered; additional cuts are applied in order to filter out only those of \say{good} quality for a physics analysis. \\
+
+During the data acquisition (DAQ), the event-builder proceeds to the event reconstruction based on the sub-events from all contributing detectors. It may happen, however, that the detector's output can not be transmitted due to the associated data channel being closed\footnote{There are different reasons for the data channel to be closed. At the beginning or the end of each run, a specific procedure is performed on all detectors in order to effectively initiate the start or stop of the run. In particular, the \say{End Of Run} procedure has to close all the data channel connecting the event-builder and the sub-detectors -- \ie the GDCs and LDCs respectively (\Sec\ref{subsec:TriggerSystem}) --, but this termination can occur sooner in the case of a connection time-out for example.} \cite{alicecollaborationTriggerDataAcquisition}. The event-builder still reconstructs the event, although it is tagged as \say{incomplete DAQ} due to the missing informations. Such events are rejected in the present work.\\
+
+There exists three types of reconstructed primary vertex in ALICE, from the highest to the poorest quality: one estimated using the global ITS-TPC tracks (\Sec\ref{subsubsec:FinalVertexDet}), another based on the SPD tracklets (\Sec\ref{subsubsec:PreliminaryVertex}), and the last built from the TPC standalone tracks in a similar way as the former. By default, only the \say{best} available reconstructed primary vertex is considered. 
+
+Nevertheless, to ensure that the event has a vertex of a sufficiently good quality, the analysis relies exclusively on the first two aforementioned primary vertices. This boils down to requiring the presence of, at least, the one reconstructed using tracklets\footnote{As mentioned in \Sec\ref{subsubsec:PreliminaryVertex}, the event cannot be built without the primary vertex based on SPD tracklets. Hence, by construction, the presence of such vertex is guaranteed in the event.}. Moreover, the resolution of the latter in the longitudinal direction should not exceed 0.25 \cm. In cases when both SPD tracklets and global ITS-TPC track vertices are available, their positions along the beam axis must coincide within a 0.5 \cm window.
+
+As a prerequisite for guaranteeing an uniform reconstruction efficiency, particles must remain within the acceptance of all the central detectors involved in their reconstruction, that is $\abspseudorap < 0.9$. For particles originating from the interaction point, this condition implies a constraint on the longitudinal position of the primary vertex: the distance between the interaction point and the centre of ALICE should be below 10 \cm along the beam axis\footnote{Note that there is no selection of such nature concerning the transverse position of the primary vertex, except that it must be located below the beam pipe.}. \\
+
+A key element of the event quality concerns the pile-up level. The latter occurs when there are two or more collisions coming from the same bunch crossing -- this is the \textit{in-bunch} pile-up -- and/or from different bunch crossings occuring within the readout time of the detectors -- also called \textit{out-of-bunch} pile-up. One approach to remove both types of pile-up consists in rejecting events with multiple reconstructed primary vertices. This selection depends on the nature of the best primary vertex available.
+\begin{itemize}
+\item[$\bullet$] If it is the one reconstructed using ITS-TPC tracks, the event selection algorithm checks the presence of another vertex of reasonably good quality ($\rmChiSquareNDF < 5$, with $NDF$ the number of degree of freedom), formed out of at least five tracks, and separated from the first one by more than $15 \sigma$\footnote{Here, $\sigma$ denotes the uncertainty on the distance between the two vertices.}. If such vertex exists, the event is discarded. 
+\item[$\bullet$] Otherwise, it corresponds to the one built from SPD tracklets. To maximise the selection efficiency, the cuts adapt to the tracklet multiplicity. Hence, if a second vertex is found to be away from the first one by more than 0.8 \cm along the beam axis, with at least three, four or five associated tracklets for a total number of reconstructed tracklets (\rmNTracklet) inferior to 20, $20 < \rmNTracklet \leq 50 $ and \rmNTracklet > 50 respectively, then the event is rejected.
+\end{itemize}
+
+
+Along the same line, the two innermost layers of the ITS can help to identify the remaining beam-induced background -- that have not been removed by the MB$_{\rm AND}$ trigger selection -- and pile-up events. As mentioned in \ref{subsubsec:PreliminaryVertex}, a tracklet is formed out of pair of clusters found in the two SPD layers, separated by an angle of 0.01 rad at most. Therefore, the number of clusters increases, so does the amount of reconstructed tracklet. However, in the case of beam-gas event, there should be many clusters but only a small number of tracklets could be formed using the previous definition. In pile-up events, only the tracklets associated with the primary vertex are considered; for that reason, the number of clusters should be relatively larger than expected at such tracklet multiplicity \cite{alicecollaborationALICEPhysicsForum2016}. In this way, based on this correlation between the number of SPD clusters and tracklets, the remaining events flagged as background or pile-up are rejected. \\
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=1\textwidth]{Figs/Chapter5/EventSelection.eps}
+	\caption{Fraction of rejected events in the present data sample for each event selection: trigger selections (MB$_{\rm AND}$ and/or HM$_{\rm VZERO}$), incomplete DAQ, consistency between the global track and SPD tracklet vertices, longitudinal position of the primary vertex ($\mid \Delta z \mid < 10 $ \cm), pile-up removal for ITS-TPC track and SPD tracklet vertices, correlation between SPD tracklets and clusters.}
+	\label{fig:EvtSelection}
+\end{figure}
+
+
+The \fig\ref{fig:EvtSelection} provides the fraction of rejected events as a function of the above selections in pp collisions at \sqrtS = 13 \tev.
+
+\section{Analysis of the hyperon masses}
+
+\subsection{Track selections}
+\label{subsec:TrackSelections}
+
+The identification of V0s and cascades strongly depends on the quality of the daughter tracks, and more precisely on their momentum resolution and trajectory. For that reason, the strange particle reconstruction relies exclusively on ITS-TPC combined tracks, since they offer the best momentum resolution as discussed in \Sec\ref{subsubsec:TrackReco} and shown in \fig\ref{fig:MomResolution}. In order to ensure an excellent momentum resolution as well as a fine estimation of the particle trajectory, various selection criteria are applied on the daughter tracks.\\
+
+The analysis concentrates exclusively on tracks comprised within the pseudo-rapidity region $\abspseudorap < 0.8$. The latter corresponds to the acceptance volume of all the central detectors, which provides a flat reconstruction efficiency. Moreover, any track containing ITS and/or TPC shared clusters is rejected, as they potentially correspond to wrongly assigned clusters that could bias the tracking quality.
+
+Each track should have passed the final refit in the TPC. This means that its parameters have been estimated successfully in the TPC during the third stage of the tracking, when the track is propagated inwards to their distance of closest approach to the primary vertex (\Sec\ref{subsubsec:TrackReco}). To guarantee a good momentum resolution and a stable particle identification (PID) based on the energy deposit (\dEdx) in the TPC, the tracks need to be associated to at least 70 readout pad rows in the TPC out of 159 in total. These selections eliminate the contribution of short tracks and, incidentally, pairs of tracks formed out of the clusters from a single actual particle.\\
+
+The reconstruction of V0s and cascades presented in \chap\ref{chap:V0CascReconstruction} does not resort to any kind of selections on the nature of the daughter particles, apart from their electric charge. This yields \textit{de facto} to an outstanding amount of background candidates. One way of suppressing the latter with a minimal cost in terms of signal candidates consists in using the PID informations provided by the TPC. In practice, the idea is to reject every association that involves tracks inconsistent with the expected identities for either a \rmKzeroS, \rmLambdaPM, \rmXiPM or \rmOmegaPM decay.
+
+As explained in \Sec\ref{subsubsec:TPC}, a track can be labeled as a pion, proton or kaon by making use the PID estimator in \eq\ref{eq:PIDEstimator}, \Nsigma, which evaluates the difference between the measured \dEdx and the expected one under a given particle mass hypothesis in units of relative resolution. The separation power of such estimator evolves with the particle momentum which, in turn, influences the selection threshold and has some implications in terms of purity and efficiency: the tighter the selection on \Nsigma, the higher the purity but at the price of a small efficiency; conversely, a looser cut on \Nsigma deteriorates the purity in favour of a higher efficiency.
+
+The identification strategy adopted here consists in selecting only the tracks compatible with their expected mass hypothesis within \Nsigma = $\pm 3$ at most. This selection is applied on each decay daughters, irrespective of their momentum or the one of the mother particle. This therefore imposes that:
+\begin{itemize}
+\item[$\bullet$] the bachelor track must consistent with the \rmPiPM or \rmKPM mass hypothesis, in the case of \rmXiPM or \rmOmegaPM respectively,
+\item[$\bullet$] the positive track needs to be compatible with a proton hypothesis,
+\item[$\bullet$] and the negative track has to agree with energy loss band of the pion.
+\end{itemize}
+Note that the last two constraints only allow to identify a \rmLambda and, associated with the bachelor track, a \rmXiM or \rmOmegaM. In order to select their anti-particle, one needs to swap the mass hypothesis of these two items, namely the positive track corresponds to a pion and the negative track, an anti-proton. For the \rmKzeroS, the particle is indistinguishable from the anti-particle in exploited V0 decay channel; both positive and negative tracks should be compatible with the pion hypthesis.
+
+
+\subsection{Topological and kinematic selections}
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Candidate variable & Selections \rmLambdaPM & Selections \rmKzero \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}    
+    V0 \pT interval (\gmom) & \multicolumn{2}{c}{1 < \pT < 5} \\
+    V0 rapidity interval & \multicolumn{2}{c}{\absrap < 0.5} \\
+    Competing mass rejection (\gmass) & > 0.010 & > 0.005 \\
+    MC association (MC only) & \multicolumn{2}{c}{Correct identity assumption} \\ 
+
+    \noalign{\smallskip} \hline \noalign{\smallskip}
+    \bf Track variable & Selections \rmLambdaPM & Selections \rmKzero \\
+    \noalign{\smallskip} \hline \noalign{\smallskip}
+    Pseudo-rapidity interval & \multicolumn{2}{c}{\abspseudorap < 0.8} \\
+    TPC refit & \multicolumn{2}{c}{\CheckGr} \\
+    Nbr of crossed TPC readout rows & \multicolumn{2}{c}{ > 70} \\
+    $\Nsigma^{\rm TPC}$ & \multicolumn{2}{c}{< 3} \\
+    Out-of-bunch pile-up rejection & \multicolumn{2}{c}{ITS or TOF matching} \\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Topological variable & Selections \rmLambdaPM & Selections \rmKzero \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    
+    V0 decay radius (\cm) & \multicolumn{2}{c}{> 0.5}\\
+    V0 Lifetime (\cm) & \multicolumn{2}{c}{< 3 $\times$ \cTau}\\
+    V0 cosine of pointing angle & \multicolumn{2}{c}{> 0.998}\\
+    DCA proton to prim. vtx (\cm) & > 0.06 & \NoWay \\
+    DCA pion to prim. vtx (\cm) & \multicolumn{2}{c}{> 0.06} \\
+%    DCA V0 to prim. vtx (\cm) & < 1 & < 0.06 \\
+    DCA between V0 daughters (std dev) & \multicolumn{2}{c}{< 1} \\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the topological selections and track selections used for the reconstruction of \rmLambdaPM and \rmKzero.}\label{tab:V0Selections}
+\end{table}
+
+Once the events and tracks have been selected, the topological reconstruction of V0s and cascades comes into play, as explained in \chap\ref{chap:V0CascReconstruction}. However, not all the candidates are considered in the analysis. As suggested in \Sec\ref{subsec:HyperonAndALICE}, ALICE is well suited for studying hyperons but only at mid-rapidity. This means that the V0s and cascades are reconstructed in the rapidity window $\absrap < 0.5$.
+
+The above selections on the track quality in TPC exclude the possibility of studying the particles of interest at low momentum ($\pT \leq 0.6$ \gmom). At such values, the V0s and cascades decay into very low momentum tracks, that can only be reconstructed via the ITS standalone tracking. Even when these tracks reach the TPC, they form short tracks and are thus rejected (\Sec\ref{subsec:TrackSelections}). As a matter of fact, in order to secure a reasonably good momentum resolution on the decay daughters, this analysis only considers candidates from 1 to 5 \gmom. On one hand, the \eq\ref{eq:Gluckstern} indicates that the momentum resolution deteriorates at low momentum ($\pT \leq 1$ \gmom) due to their relatively \say{short} track length, \say{small} number of clusters and the dominant contribution of multiple scattering. On the other hand, at high \pT ($\pT \geq 5$ \gmom), the resolution also decreases as a consequence of less pronunced track curvature.\\
+
+To further remove the contribution from out-of-bunch pile-up events, it is required for at least one of the daughter tracks to either have passed the final refit in the ITS or  match with a hit in the TOF. The former uses the fast readout time of the SPD to limit the pile-up to tracks produced in collisions within $\pm$ 300 \nsec, that is twelve bunch crossings; the latter exploits the highly precise timing information of the TOF to identify the bunch crossing from which the particle originates, with an efficiency of approximately 70 to 80\% for intermediate or high \pT particles and drops rapidly for lower momentum due to mismatches \cite{alicecollaborationALICEDPGPileup}. This selection has been thoroughly studied in the context of a strange particle production analysis \cite{alicecollaborationMultiplicityDependenceMulti2020}; it was shown that applying this ITS-TOF matching condition to one of the decay daughters is sufficient to eliminate most of the remaining pile-up contamination.
+
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Candidate variable & Selections \rmXiPM & Selections \rmOmegaPM \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}    
+    Cascade \pT interval (\gmom) & \multicolumn{2}{c}{1 < \pT < 5} \\
+    Cascade rapidity interval & \multicolumn{2}{c}{\absrap < 0.5} \\
+    Competing mass rejection (\gmass) & \NoWay & > 0.008 \\
+    MC association (MC only) & \multicolumn{2}{c}{Correct identity assumption} \\ 
+
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Track variable & Selections \rmXiPM & Selections \rmOmegaPM \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    Pseudo-rapidity interval & \multicolumn{2}{c}{\abspseudorap < 0.8} \\
+    TPC refit & \multicolumn{2}{c}{\CheckGr} \\
+    Nbr of crossed TPC readout rows & \multicolumn{2}{c}{ > 70} \\
+    $\Nsigma^{\rm TPC}$ & \multicolumn{2}{c}{< 3} \\
+    Out-of-bunch pile-up rejection & \multicolumn{2}{c}{ITS or TOF matching} \\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Topological variable & Selections \rmXiPM & Selections \rmOmegaPM \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    
+    \multicolumn{3}{l}{\textbf{V0}} \\
+    V0 decay radius (\cm) & > 1.2 & > 1.1\\
+    V0 cosine of pointing angle & \multicolumn{2}{c}{> 0.97}\\
+    |$m$($V0$) - \mPDG\rmLambda| (\gmass) & \multicolumn{2}{c}{< 0.008} \\
+    DCA proton to prim. vtx (\cm) & \multicolumn{2}{c}{> 0.03} \\
+    DCA pion to prim. vtx (\cm) & \multicolumn{2}{c}{> 0.04} \\
+    DCA V0 to prim. vtx (\cm) & \multicolumn{2}{c}{> 0.06} \\
+    DCA between V0 daughters (std dev) & \multicolumn{2}{c}{< 1.5} \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    
+    \multicolumn{3}{l}{\textbf{Cascade}} \\
+    Cascade decay radius (\cm) & > 0.6 & > 0.5 \\
+    Cascade Lifetime (\cm) & \multicolumn{2}{c}{< 3 $\times$ \cTau}\\
+    DCA bachelor to prim. vtx (\cm) & \multicolumn{2}{c}{> 0.04} \\
+    DCA between cascade daughters (std dev) & \multicolumn{2}{c}{< 1.3} \\
+    Cascade cosine of pointing angle & \multicolumn{2}{c}{> 0.998} \\
+    Bachelor-proton pointing angle (rad) & \multicolumn{2}{c}{> 0.04} \\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the topological selections and track selections used for the reconstruction of \rmXiPM and \rmOmegaPM.}\label{tab:CascadeSelections}
+\end{table}
+
+\subsection{Mass extraction}
+
+\subsection{Correction on the extracted mass}
+
+\section{Study of the systematic uncertainties}
+
+\subsection{Momentum scale}
+
+\subsubsection{Energy loss corrections}
+
+\subsubsection{Imprecision on the magnetic field}
+
+\subsection{Topological and track selections}
+
+\subsection{Pile-up treatment}
+
+\subsection{Mass extraction}
+
+\subsubsection{Choice of the fit function}
+
+\subsubsection{Choice of the fitting range}
+
+\subsubsection{Choice of the binning}
+
+\subsection{Correction on the extracted mass}
+
+\subsection{Precision on the tabulated masses}
+
+\subsection{Other possible biases}
+
+\section{Results}

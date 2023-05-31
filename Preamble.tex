@@ -338,10 +338,10 @@
 %__________Mise en place de la structure en chap., section ... + toc
 
 \renewcommand{\thepart} {\Alph{part}.}
-%\renewcommand{\thechapter} {\Roman{chapter}}
-\renewcommand{\thesection} {\Roman{section}}
-\renewcommand{\thesubsection}   {~~\thesection-{\small \Alph{subsection}}}
-\renewcommand{\thesubsubsection} {~~~~\thesection-{\small \Alph{subsection}}.{\footnotesize \roman{subsubsection}}}
+\renewcommand{\thechapter} {\arabic{chapter}}
+\renewcommand{\thesection} {\thechapter|{\small \Roman{section}}}
+\renewcommand{\thesubsection}   {\thesection-{\small \Alph{subsection}}}
+\renewcommand{\thesubsubsection} {\thesection-{\small \Alph{subsection}}.{\footnotesize \roman{subsubsection}}}
 % pour avoir une structure du type "I.A -1.i" au lieu de "1.1.1.1"
 
 
@@ -386,7 +386,7 @@
 	{20pt}
 	{
 	\ifthenelse{\thechapter>0}
-	{\fontsize{60}{0}\selectfont\thechapter\hspace{0pt}\hspace{2mm}{|   }\hspace{0pt}}
+	{\fontsize{60}{0}\selectfont\arabic{chapter}\hspace{0pt}\hspace{2mm}{|   }\hspace{0pt}}
 	{\hspace{0pt}}
 	\fontsize{30}{60}\bfseries 
 	}
@@ -396,17 +396,17 @@
 %  {\normalfont\rmfamily\Large\bfseries\color{OrangeRed4}}
   {\normalfont\rmfamily\Large\bfseries\color{RoyalBlue4}}
   % FIXME {\normalfont\rmfamily\Large\bfseries\color{Black}}
-  {\thesection}{1em}{}
+  {\Roman{section}}{1em}{}
 
 \titleformat{\subsection}[hang]
   {\normalfont\rmfamily\large\bfseries\color{DarkGray}}
   % FIXME {\normalfont\rmfamily\large\bfseries\color{Black}}
-  {\thesubsection}{1em}{}
+  {~~\Roman{section}-{\small \Alph{subsection}}}{1em}{}
 
 \titleformat{\subsubsection}[hang]
   {\normalfont\rmfamily\large\bfseries\color{DarkGray}}
   % FIXME {\itshape\rmfamily\large\bfseries\color{Black}}
-  {\thesubsubsection}{1em}{}
+  {~~~~\Roman{section}-{\small \Alph{subsection}}}{1em}{}
 
 % - 2.
 \usepackage{titletoc}

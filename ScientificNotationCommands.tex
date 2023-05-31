@@ -126,14 +126,14 @@
 \newcommand {\eT}           {\ensuremath{E_{\text{\textsc{t}}}}}
 \newcommand {\mT}           {\ensuremath{m_{\text{\textsc{t}}}}}
 \newcommand {\mTmZero}      {\ensuremath{m_{\text{\textsc{t}}} - m_0}}
-\newcommand {\mInvIdx}[1]   {\ensuremath{m_{ \textsc{#1} }}}
 \newcommand {\mPart}[1]     {\mbox{$m[ #1 ]$}}
 \newcommand {\sigmaM}[1]    {\mbox{$\sigma_m[ #1 ]$}}
 \newcommand {\DeltaM}[1]    {\mbox{$\Delta m[ #1 ]$}}
 \newcommand {\sigmaIdx}[1]  {\ensuremath{\sigma_{ #1 }}}
 \newcommand {\sigmaPDG}     {\ensuremath{\sigma_{\textsc{pdg}}}\xspace}
 
-\newcommand {\Nsigma}[1]    {\ensuremath{n.\sigma_{ #1 }}}
+%\newcommand {\Nsigma}[1]    {\ensuremath{n.\sigma_{ #1 }}}
+\newcommand {\Nsigma}       {\ensuremath{n_{\sigma}}\xspace}
 
 \newcommand {\rap}          {\mbox{$y$}}
 \newcommand {\rapLab}       {\mbox{$y_{\text{lab}}$}}
@@ -198,7 +198,8 @@
 \newcommand {\hPMVzsCorrel} {\ensuremath{(\text{\hPM-V0})}}
 \newcommand {\hVzsCorrel}   {\ensuremath{(\text{h-V0})}}
 \newcommand {\mPDG}[1]      {\ensuremath{m_{\textsc{pdg}}(#1)}}
-
+\newcommand {\mMassPart}[1] {\ensuremath{m_{ \textsc{#1} }}}
+\newcommand {\mMassApart}[1]{\ensuremath{m_{ \overline{\textsc{#1}} }}}
 
 
 \newcommand {\Nevt}         {\ensuremath{N_\text{evt}}}
@@ -392,7 +393,7 @@
 \newcommand{\piPlusMinus}   {\mbox{$\mathrm {\pi^{\pm}}$}}
 \newcommand{\piMinusPlus}   {\mbox{$\mathrm {\pi^{\mp}}$}}
 \newcommand{\rmPiPlusMinus} {\piPlusMinus}
-\newcommand{\rmPiPM}        {\piPlusMinus}
+\newcommand{\rmPiPM}        {\piPlusMinus\xspace}
 \newcommand{\rmPiMP}        {\piMinusPlus}
 \newcommand{\rmPi}          {\mbox{$\mathrm {\pi}$}\xspace}
 
@@ -402,8 +403,10 @@
 
 \newcommand{\rmKaon}     {\mbox{$\mathrm {K}$}\xspace}
 \newcommand{\Kzs}        {\mbox{$\mathrm {K^0_S}$}\xspace}
-\newcommand{\rmKzero}    {\Kzs}
-\newcommand{\rmAKzero}   {\ensuremath{\mathrm {\overline{K^0_S}}}}
+\newcommand{\rmKzero}    {\ensuremath{\mathrm {K^0}}}
+\newcommand{\rmAKzero}   {\ensuremath{\mathrm {\overline{K^0}}}}
+\newcommand{\rmKzeroS}   {\Kzs}
+\newcommand{\rmAKzeroS}  {\ensuremath{\mathrm {\overline{K^0_S}}}}
 \newcommand{\Kzl}        {\mbox{$\mathrm {K^0_L}$}}
 \newcommand{\rmKzeroL}   {\Kzl}
 \newcommand{\Kminus}     {\mbox{$\mathrm {K^-}$}\xspace}
@@ -412,7 +415,7 @@
 \newcommand{\rmKplus}    {\Kplus}
 \newcommand{\Kplusmin}   {\mbox{$\mathrm {K^{\pm}}$}\xspace}
 \newcommand{\Kminplus}   {\mbox{$\mathrm {K^{\mp}}$}\xspace}
-\newcommand{\rmKpm}      {\Kplusmin}
+\newcommand{\rmKPM}      {\Kplusmin}
 \newcommand{\rmAKstarZero}{\mbox{$\overline{\mathrm{K}}^{*0}$}\xspace}
 \newcommand{\rmKstarZero}{\mbox{$\mathrm{K}^{*0}$}}
 \newcommand{\rmKstarPlus}{\mbox{$\mathrm{K}^{*+}$}}
