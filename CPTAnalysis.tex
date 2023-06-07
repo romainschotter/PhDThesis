@@ -107,7 +107,9 @@ The \fig\ref{fig:EvtSelection} provides the fraction of rejected events as a fun
 
 The identification of V0s and cascades strongly depends on the quality of the daughter tracks, and more precisely on their momentum resolution and trajectory. For that reason, the strange particle reconstruction relies exclusively on ITS-TPC combined tracks, since they offer the best momentum resolution as discussed in \Sec\ref{subsubsec:TrackReco} and shown in \fig\ref{fig:MomResolution}. In order to ensure an excellent momentum resolution as well as a fine estimation of the particle trajectory, various selection criteria are applied on the daughter tracks.\\
 
-The analysis concentrates exclusively on tracks comprised within the pseudo-rapidity region $\abspseudorap < 0.8$. The latter corresponds to the acceptance volume of all the central detectors, which provides a flat reconstruction efficiency. Moreover, any track containing ITS and/or TPC shared clusters is rejected, as they potentially correspond to wrongly assigned clusters that could bias the tracking quality.
+The analysis concentrates exclusively on tracks comprised within the pseudo-rapidity region $\abspseudorap < 0.8$. The latter corresponds to the acceptance volume of all the central detectors, which provides a flat reconstruction efficiency. Moreover, any track containing ITS and/or TPC shared clusters is rejected, as they potentially correspond to wrongly assigned clusters that could bias the tracking quality. 
+
+Tracks belonging to a \textit{kink} vertex are discarded from the analysis, as they most certainly do not originate from a cascade decay and thus represent an additional source of combinatorial background. A kink usually happens when a charged particle decays into a neutral and a charged particle, such as $\Kplusmin \rightarrow \piZero \rmPiPM$. The former being undetected, they are identified by forming pairs of tracks, that intersect in space with a large angle and share the same electric charge.
 
 Each track should have passed the final refit in the TPC. This means that its parameters have been estimated successfully in the TPC during the third stage of the tracking, when the track is propagated inwards to their distance of closest approach to the primary vertex (\Sec\ref{subsubsec:TrackReco}). To guarantee a good momentum resolution and a stable particle identification (PID) based on the energy deposit (\dEdx) in the TPC, the tracks need to be associated to at least 70 readout pad rows in the TPC out of 159 in total. These selections eliminate the contribution of short tracks and, incidentally, pairs of tracks formed out of the clusters from a single actual particle.\\
 
@@ -124,13 +126,18 @@ The identification strategy adopted here consists in selecting only the tracks c
 Note that the last two constraints only allow to identify a \rmLambda and, associated with the bachelor track, a \rmXiM or \rmOmegaM. In order to select their anti-particle, one needs to swap the mass hypothesis of these two items, namely the positive track corresponds to a pion and the negative track, an anti-proton. For the \rmKzeroS, the particle is indistinguishable from the anti-particle in exploited V0 decay channel; both positive and negative tracks should be compatible with the pion hypthesis.
 
 
-\subsection{Topological and kinematic selections}
+\subsection{V0s and cascades selections}
+\label{subsec:V0CascSelections}
+
+\subsubsection{Topological and kinematic selections}
+
+Once the events and tracks have been selected, the topological reconstruction of V0s and cascades comes into play, as explained in \chap\ref{chap:V0CascReconstruction}. However, not all the candidates are considered in the analysis. As suggested in \Sec\ref{subsec:HyperonAndALICE}, ALICE is well suited for studying hyperons but only at mid-rapidity. This means that the V0s and cascades are reconstructed in the rapidity window $\absrap < 0.5$.
 
 \begin{table}[t]
     \centering
     \begin{tabular}{c|c|c}
     \noalign{\smallskip}\hline \noalign{\smallskip}
-    \bf Candidate variable & Selections \rmLambdaPM & Selections \rmKzero \\
+    \bf Candidate variable & Selections \rmLambdaPM & Selections \rmKzeroS \\
     \noalign{\smallskip}\hline \noalign{\smallskip}    
     V0 \pT interval (\gmom) & \multicolumn{2}{c}{1 < \pT < 5} \\
     V0 rapidity interval & \multicolumn{2}{c}{\absrap < 0.5} \\
@@ -138,16 +145,17 @@ Note that the last two constraints only allow to identify a \rmLambda and, assoc
     MC association (MC only) & \multicolumn{2}{c}{Correct identity assumption} \\ 
 
     \noalign{\smallskip} \hline \noalign{\smallskip}
-    \bf Track variable & Selections \rmLambdaPM & Selections \rmKzero \\
+    \bf Track variable & Selections \rmLambdaPM & Selections \rmKzeroS \\
     \noalign{\smallskip} \hline \noalign{\smallskip}
     Pseudo-rapidity interval & \multicolumn{2}{c}{\abspseudorap < 0.8} \\
     TPC refit & \multicolumn{2}{c}{\CheckGr} \\
     Nbr of crossed TPC readout rows & \multicolumn{2}{c}{ > 70} \\
     $\Nsigma^{\rm TPC}$ & \multicolumn{2}{c}{< 3} \\
-    Out-of-bunch pile-up rejection & \multicolumn{2}{c}{ITS or TOF matching} \\
+    \multirow{ 2}{*}{Out-of-bunch pile-up rejection} & \multicolumn{2}{c}{at least one track with} \\
+     & \multicolumn{2}{c}{ITS-TOF matching} \\
     
     \noalign{\smallskip}\hline \noalign{\smallskip}
-    \bf Topological variable & Selections \rmLambdaPM & Selections \rmKzero \\
+    \bf Topological variable & Selections \rmLambdaPM & Selections \rmKzeroS \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
     
     V0 decay radius (\cm) & \multicolumn{2}{c}{> 0.5}\\
@@ -160,15 +168,12 @@ Note that the last two constraints only allow to identify a \rmLambda and, assoc
     
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \end{tabular}
-    \caption{Summary of the topological selections and track selections used for the reconstruction of \rmLambdaPM and \rmKzero.}\label{tab:V0Selections}
+    \caption{Summary of the topological and track selections, as well as the associated cut values, used in the reconstruction of \rmLambdaPM and \rmKzeroS in pp events at \sqrtS = 13 \tev. The \textit{competing mass rejection} refers to the removal of the background contamination from other mass hypotheses (\Sec\ref{subsubsec:InvariantMassSelection}). In the \rmLambdaPM case, this consists in comparing the invariant mass under the assumption of a \rmPiPlus\rmPiMinus and PDG mass of \rmKzeroS, that is the quantity $\mid\mInv{\rm hyp.\ \rmKzeroS} - \mPDG\rmKzeroS|$. When reconstructing \rmKzeroS candidates, the selection variable becomes $\mid\mInv{\rm hyp.\ \rmLambda} - \mPDG\rmLambda|$.}\label{tab:V0Selections}
 \end{table}
-
-Once the events and tracks have been selected, the topological reconstruction of V0s and cascades comes into play, as explained in \chap\ref{chap:V0CascReconstruction}. However, not all the candidates are considered in the analysis. As suggested in \Sec\ref{subsec:HyperonAndALICE}, ALICE is well suited for studying hyperons but only at mid-rapidity. This means that the V0s and cascades are reconstructed in the rapidity window $\absrap < 0.5$.
 
 The above selections on the track quality in TPC exclude the possibility of studying the particles of interest at low momentum ($\pT \leq 0.6$ \gmom). At such values, the V0s and cascades decay into very low momentum tracks, that can only be reconstructed via the ITS standalone tracking. Even when these tracks reach the TPC, they form short tracks and are thus rejected (\Sec\ref{subsec:TrackSelections}). As a matter of fact, in order to secure a reasonably good momentum resolution on the decay daughters, this analysis only considers candidates from 1 to 5 \gmom. On one hand, the \eq\ref{eq:Gluckstern} indicates that the momentum resolution deteriorates at low momentum ($\pT \leq 1$ \gmom) due to their relatively \say{short} track length, \say{small} number of clusters and the dominant contribution of multiple scattering. On the other hand, at high \pT ($\pT \geq 5$ \gmom), the resolution also decreases as a consequence of less pronunced track curvature.\\
 
-To further remove the contribution from out-of-bunch pile-up events, it is required for at least one of the daughter tracks to either have passed the final refit in the ITS or  match with a hit in the TOF. The former uses the fast readout time of the SPD to limit the pile-up to tracks produced in collisions within $\pm$ 300 \nsec, that is twelve bunch crossings; the latter exploits the highly precise timing information of the TOF to identify the bunch crossing from which the particle originates, with an efficiency of approximately 70 to 80\% for intermediate or high \pT particles and drops rapidly for lower momentum due to mismatches \cite{alicecollaborationALICEDPGPileup}. This selection has been thoroughly studied in the context of a strange particle production analysis \cite{alicecollaborationMultiplicityDependenceMulti2020}; it was shown that applying this ITS-TOF matching condition to one of the decay daughters is sufficient to eliminate most of the remaining pile-up contamination.
-
+To further remove the contribution from out-of-bunch pile-up events, it is required for at least one of the daughter tracks to either have a cluster in the innermost ITS layers\footnote{Technically, it is requested to have passed the final refit in the ITS and to have a hit in one of the two SPD layers.} or match with a hit in the TOF. The former uses the fast readout time of the SPD to limit the pile-up to tracks produced in collisions within $\pm$ 300 \nsec, that is twelve bunch crossings; the latter exploits the highly precise timing information of the TOF to identify the bunch crossing from which the particle originates, with an efficiency of approximately 70 to 80\% for intermediate or high \pT particles and drops rapidly for lower momentum due to mismatches \cite{alicecollaborationALICEDPGPileup}. This selection has been thoroughly studied in the context of a strange particle production analysis \cite{alicecollaborationMultiplicityDependenceMulti2020}; it was shown that applying this ITS-TOF matching condition on at least one of the decay daughters is sufficient to eliminate most of the remaining pile-up contamination.\\
 
 \begin{table}[t]
     \centering
@@ -188,7 +193,8 @@ To further remove the contribution from out-of-bunch pile-up events, it is requi
     TPC refit & \multicolumn{2}{c}{\CheckGr} \\
     Nbr of crossed TPC readout rows & \multicolumn{2}{c}{ > 70} \\
     $\Nsigma^{\rm TPC}$ & \multicolumn{2}{c}{< 3} \\
-    Out-of-bunch pile-up rejection & \multicolumn{2}{c}{ITS or TOF matching} \\
+    \multirow{ 2}{*}{Out-of-bunch pile-up rejection} & \multicolumn{2}{c}{at least one track with} \\
+     & \multicolumn{2}{c}{ITS-TOF matching} \\
     
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \bf Topological variable & Selections \rmXiPM & Selections \rmOmegaPM \\
@@ -214,22 +220,443 @@ To further remove the contribution from out-of-bunch pile-up events, it is requi
     
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \end{tabular}
-    \caption{Summary of the topological selections and track selections used for the reconstruction of \rmXiPM and \rmOmegaPM.}\label{tab:CascadeSelections}
+    \caption{Summary of the topological and track selections, as well as the associated cut values, used in the reconstruction of \rmXiPM and \rmOmegaPM in pp events at \sqrtS = 13 \tev. The \textit{competing mass rejection} refers to the removal of the background contamination from other mass hypotheses (\Sec\ref{subsubsec:InvariantMassSelection})}\label{tab:CascadeSelections}
 \end{table}
 
-\subsection{Mass extraction}
+In summary, the \tabs\ref{tab:V0Selections} and \ref{tab:CascadeSelections} provide a list of the track and topological selections employed in the reconstruction of V0s and cascades respectively, as well as the numerical cut values. Note the tight cut on the cosine of pointing angle of the cascade candidate; this is discussed later in \Sec\ref{subsec:MassExtraction}.
 
-\subsection{Correction on the extracted mass}
+\subsubsection{Structure in the invariant mass spectrum of cascades}
+\label{subsubsec:InvMassStructure}
+
+Among the topological selections listed in \tab\ref{tab:CascadeSelections}, one of them has not been introduced and discussed in \chap\ref{chap:V0CascReconstruction}, namely the cut on the pointing angle formed by the bachelor and the positive particles. Contrarily to the other selections, this one is not standard in ALICE; it has been introduced in 2020 by \cite{silvadealbuquerqueMultistrangeHadronsPb2019}. At that time, a structure in the invariant mass distribution of \rmXi and \rmOmega, similar to the one in \figs\ref{fig:WrongPA}, was observed in Pb-Pb collisions. It turned out that the bump background, between 1.28 and 1.31 \gmass on \figs\ref{fig:XiMinusWrongPA} and \ref{fig:XiPlusWrongPA}, originates from an erroneous track association in the cascade reconstruction. 
+
+A V0 decays into a baryon \proton/\pbar and a \rmPiMinus/\rmPiPlus, depending on whether this is a \rmLambda or \rmAlambda. In the situation where another negative/positive track in the event passes close by the proton/anti-proton, the reconstruction algorithm may interpret that as a V0 decay; this track plays the role of the negative/positive daughter particle of a \rmLambdaPM, and the proton/anti-proton corresponds to its positive/negative daughter particle. On the other hand, the \rmPiMinus/\rmPiPlus daughter of the actual \rmLambdaPM is combined to other particles, and most likely to the previously ill-formed V0. In such case, it acts like the bachelor particle of a cascade decay. In other words, while the actual topology is depicted in \fig\ref{fig:WrongV0}, it is reconstructed as a cascade, as illustrated in \fig\ref{fig:TrueV0}.
+
+The analysis \cite{silvadealbuquerqueMultistrangeHadronsPb2019} investigated different strategies in order to remove this background contamination. In the end, the best option consists in rejecting candidates with a small pointing angle for the actual V0, \ie the pointing angle between the bachelor and the proton, as shown in \fig\ref{fig:WrongPACut}.
+
+
+\begin{figure}[t]
+\hspace*{-1.5cm}
+\subfigure[]
+{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassXiMinus_WrongPA.eps}
+	\label{fig:XiMinusWrongPA}
+}
+\subfigure[]
+{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassXiPlus_WrongPA.eps}
+	\label{fig:XiPlusWrongPA}
+}
+\hspace*{-1.5cm}	
+\subfigure[]
+{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassOmegaMinus_WrongPA.eps}
+	\label{fig:OmegaMinusWrongPA}
+}
+\subfigure[]
+{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassOmegaPlus_WrongPA.eps}
+	\label{fig:OmegaPlusWrongPA}
+}	
+	\caption{Invariant mass distribution of \rmXiM (a), \rmAxiP (b), \rmOmegaM (c) and \rmAomegaP (d) in pp at \sqrtS = 13 \tev. These have been obtained using the cuts in \tab\ref{tab:CascadeSelections} (red markers), except for the bachelor-proton pointing angle selection in black. This comparison shows the latter selection manages to remove a structure in the invariant mass distribution while preserving the population under the peak. Notice the log-scale on the y-axis, that puts into perspective the signal and background levels.}
+	\label{fig:WrongPA}
+\end{figure}
+
+\begin{figure}[t]
+%\centering
+\hspace*{-2.cm}
+\subfigure[]
+{
+	\includegraphics[width=0.32\textwidth]{Figs/Chapter5/WrongV0.png}
+	\label{fig:WrongV0}
+}
+\subfigure[]
+{
+	\includegraphics[width=0.32\textwidth]{Figs/Chapter5/TrueV0.png}
+	\label{fig:TrueV0}
+}
+\subfigure[]
+{
+	\includegraphics[width=0.4\textwidth]{Figs/Chapter5/WrongPACut.png}
+	\label{fig:WrongPACut}
+}
+	\caption{Invariant mass distribution of \rmXiM (a), \rmAxiP (b), \rmOmegaM (c) and \rmAomegaP (d) in pp at \sqrtS = 13 \tev. These have been obtained using the cuts in \tab\ref{tab:CascadeSelections} (red markers), except for the bachelor-proton pointing angle selection in black. This comparison shows the latter selection manages to remove a structure in the invariant mass distribution while preserving the population under the peak.}
+	\label{fig:WrongTopology}
+\end{figure}
+
+\subsection{Mass measurement}
+\label{subsec:MassExtraction}
+
+\subsubsection{Principles of mass extraction}
+\label{subsubsec:PrinciplesOfMassExtraction}
+
+Out of all the candidates passing the above selection criteria, there contains true V0s/cascades -- depending on the particle of interest -- and background candidates. Taken individually, they are undistinguisable. The separation of these two can only be achieved statistically, based on the analysis of the invariant mass spectrum.
+
+The invariant mass of each candidate is calculated, as explained in \Sec\ref{subsubsec:CascadeFormation} and \Sec\ref{subsubsec:InvariantMassSelection}, and sorted according to their electric charge in order to separate the particles from the anti-particles. The V0s being electrically neutral, they follow a different approach: since the \rmKzeroS decays into two particles of the same nature --- a \rmPiPlus and a \rmPiMinus ---, it is hopeless to try separating particles and anti-particles. This is not the case of \rmLambda and \rmAlambda, though. However, it may happen that the same V0 candidate passes the particle and anti-particle selections in \tab\ref{tab:V0Selections}. To avoid such double-counting, each candidate needs to go through the \rmLambda selections first. If it satisfies all conditions, it is labeled as \rmLambda and we move to the next candidate. Otherwise, it is checked against the requirements for a \rmAlambda baryon.
+
+On one hand, most of the background candidates originate from a random association of two or three tracks. Those tracks being uncorrelated, the corresponding invariant mass spectrum should be flat or decreasing with the invariant mass value. On the other hand, the invariant mass of true V0s/cascades should be close to the tabulated mass \mPDG, such that there emerges an overpopulated region taking the shape of a peak. The \figs\ref{fig:InvMassCascades} show the invariant mass spectra of \rmXi and \rmOmega.  One can see that the signal for each species sits on top of a small background.\\
+
+\begin{figure}[!t]
+%\centering
+\hspace*{-1.5cm}
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassXiMinus_ModifiedGaussian.eps}
+	\label{fig:XiMinus_ModGaussian}
+} 
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassXiPlus_ModifiedGaussian.eps}
+	\label{fig:XiPlus_ModGaussian}
+} 
+\hspace*{-1.5cm}
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassOmegaMinus_ModifiedGaussian.eps}
+	\label{fig:OmegaMinus_ModGaussian}
+} 
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassOmegaPlus_ModifiedGaussian.eps}
+	\label{fig:OmegaPlus_ModGaussian}
+}  
+\caption{Invariant mass distribution of \rmXiM (a), \rmAxiP (b), \rmOmegaM (c) and \rmAomegaP (d) hyperons in pp collisions at \sqrtS = 13 \tev. Here, the peak is modeled by a modified Gaussian, and the background by a first order polynomial. Each distribution comes with an additional panel representing consistency between the data and the fit model, in the form of a ratio. The error bars encompasses the uncertainties on both quantities.}
+	\label{fig:InvMassCascades}
+\end{figure}
+
+To isolate the signal from the background, a fit of the invariant mass spectra is performed using the sum of two functions: one for modeling the signal peak, the other for describing the background. Several functions can be considered, as discussed in \Sec\ref{subsubsec:SignalBackShape}. In \figs\ref{fig:InvMassCascades}, the peak is represented by a modified Gaussian \cite{atlascollaborationKshortLambdaProduction2012} and the background by a linear function. Whatever their shape, the fitting procedure is performed with the maximum (log-)likelyhood method.
+
+If the procedure manages to converge, this fit allows to measure the mass of the considered particle: it corresponds to the centre of the invariant mass peak, given by the position of the maximum of the signal function denoted as $\mu$. The width of the peak -- the parameter $\sigma$ -- provides an estimation of the mass resolution. The uncertainties on both quantities come from the errors returned by the fitting procedure.
+
+From these parameters, two regions of interest can be delimited:
+\begin{itemize}
+\item[$\bullet$] the peak region, containing all the signal\footnote{More precisely, considering the definition of the peak region in this analysis, it should contain approximately 99.99995\% (\ie a $5 \sigma$ significance level) of the true V0s/cascades measured.} and some background, is defined in $\left[ \mu - 5 \sigma ; \mu + 5 \sigma \right]$;
+\item[$\bullet$] the side-bands region, solely constituted of background, consists in two bands of the same width\footnote{As a side note: the two side-bands do not need to be of the same size, but it avoids dealing with a scaling factor when comparing their total area to the one in the peak region. Most often, they have different widths because of an asymmetry in the invariant mass distribution, such as the structure reported in \Sec\ref{subsubsec:InvMassStructure} \cite{alicecollaborationProductionLightflavorHadrons2020}.}, surrounding the peak region and covering the range $\left[ \mu - 12 \sigma ; \mu - 7 \sigma \right] \bigcup \left[ \mu + 7 \sigma ; \mu + 12 \sigma \right]$.
+\end{itemize}
+Hence, the amount of raw signal and background can be evaluated. The peak ($S+B$) and background ($B$) populations are estimated by counting the
+number of candidates in their respective regions. The raw signal ($S$) in the peak region is obtained by subtracting the background from the peak population, that is $S = (S+B) - B$.
+
+In \figs\ref{fig:InvMassCascades}, all the fit are of reasonably good quality. The mass peak sits on a small background; 1 237 666 $\pm$ 1162 \rmXiM (1 168 882 $\pm$ 1128 \rmAxiP) and 65 232 $\pm$ 277 \rmOmegaM (63 842 $\pm$ 274 \rmAomegaP) were reconstructed with purities above 90\%, as shown in \tab\ref{tab:FitQuantities}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{b{5.35cm}@{\hspace{1cm}} b{2cm}@{\hspace{0.5cm}} b{2cm}@{\hspace{0.5cm}} b{1.5cm}@{\hspace{0.5cm}} b{1.5cm}@{\hspace{0.1cm}}}
+    \noalign{\smallskip}\hline\noalign{\smallskip}
+	Particle & \rmXiM & \rmAxiP & \rmOmegaM & \rmAomegaP \\	
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    Reduced $\chi^2$ & 12.689 & 11.273 & 5.051 & 4.707\\
+    	Raw signal, $S$ &  1 237 666 & 1 168 882 & 65 232 & 63 842\\
+    	Background, $B$ & 55 375 & 51 269 & 5758 & 5490 \\
+    	$S/B$ & 22.4 & 22.8 & 11.4 & 11.7 \\
+    	Purity, $S/(S+B)$ & 95.7\% & 95.8\% & 91.8\% & 92.1\% \\
+    Signal significance, $S/\sqrt{S+B}$ & 1089 & 1059 & 245 & 243 \\
+    \noalign{\smallskip}\hline\noalign{\smallskip}
+    \end{tabular}
+    \caption{Results from the fit of the invariant mass distributions in \fig\ref{fig:InvMassCascades} concerning the samples of \rmXiM, \rmAxiP, \rmOmegaM and \rmAomegaP. Therefore, this table reports the reduced $\chi^{2}$, raw signal, background, ratio $S/B$, purity and signal significance.}\label{tab:FitQuantities}
+\end{table}
+
+\subsubsection{Shape of the peak and background functions}
+\label{subsubsec:SignalBackShape}
+
+Since the mass extraction depends on the peak description, it is crucial to identify functional forms that reproduce accurately its shape. Different functions have been studied in MC simulations, based solely on true V0/cascade candidates. Thus, the invariant mass spectra contains no background candidates and follows approximately a Gaussian distribution centred on the injected mass, which usually corresponds to the PDG mass. The objective here is to define a list of functions, that fit correctly the invariant mass peak and thus display a good reduced $\chi^2$.
+
+
+\begin{itemize}
+\item[$\bullet$] \textbf{Symmetric function}: although the core of the invariant distribution exhibits an almost Gaussian shape due to the detector smearing, this is usually not the case for the tails. 
+
+\begin{itemize}
+\item \textbf{Triple Gaussian}: One option consists in taking the sum of an infinite number of Gaussians with a common mean. Here, three offer a reasonably good fit quality.
+	\begin{equation}
+	\dNdX{\mInv[]} = A_{1} \cdot \exp \left[ - \dfrac{ (\mInv[] - \mu )^2}{ 2 \sigma_{1}^2} \right] + A_{2} \cdot \exp \left[ - \dfrac{ (\mInv[] - \mu )^2}{ 2 \sigma_{2}^2} \right] + A_{3} \cdot \exp \left[ - \dfrac{ (\mInv[] - \mu )^2}{ 2 \sigma_{3}^2} \right]
+	\label{eq:Gaus}
+	\end{equation}
+	with A the amplitude, $\mu$ the mean value of the distribution and $\sigma$ the width of the peak.
+%	
+%\item \textbf{Double Gaussian} : it consists in a sum of two Gaussian functions with different parameters but the mean value which is common.
+%	\begin{equation}
+%	\dNXdX{\rmXiPM(\rmOmegaPM)}{\mInvIdx{\rmLambdaPM \piPlusMinus (\rmLambdaPM \Kplusmin)}} = A_{1} \cdot \exp \left[ - \dfrac{ (\mInvIdx{\rmLambdaPM \piPlusMinus (\rmLambdaPM \Kplusmin)} - \mu )^2}{ 2 \sigma_{1}^2} \right] + A_{2} \cdot \exp \left[ - \dfrac{ (\mInvIdx{\rmLambdaPM \piPlusMinus (\rmLambdaPM \Kplusmin)} - \mu )^2}{ 2 \sigma_{2}^2} \right]
+%	\end{equation}\label{eq:DoubleGaus}
+%	where $A_1$ and $A_2$ are the respective amplitudes of the two Gaussian, $\mu$ corresponds to the center of the peak (common for the two Gaussian), and their widths are denoted as $\sigma_1$ and $\sigma_2$.
+%	
+\item \textbf{Modified Gaussian} \cite{atlascollaboration2012} : it provides a similar shape for the peak as the Double Gaussian, but with fewer parameters. Therefore, the fit procedure converges more easily and the \rmChiSquareNDF is generally smaller than with the Double Gaussian.
+	\begin{equation}
+	\dNdX{\mInv} = A \cdot \exp \left[ - \frac{1}{2} u^{1 + \frac{1}{1+ 0.5 u}} \right] \quad ; \quad  u = \left\rvert \frac{\mInv - \mu }{\sigma} \right\rvert
+	\end{equation}\label{eq:ModifiedGaus}
+	with $A$ the normalization, $\mu$ the mean, and $\sigma$ the width.
+	
+\end{itemize}
+
+	\item[$\bullet$] \textbf{Asymmetric function}: Previous functions are all different flavours of Gaussian, and so are all symmetric. However, the tails of the invariant mass peak are not necessarly symmetric, and therefore asymmetric functions may be more suited for describing the peak.
+
+	
+	\begin{itemize}
+\item \textbf{Bukin} \cite{bukin2007}\cite{niel2021} : the Bukin belongs to this class of functions. It has been built on the base of the convolution of a Gaussian and an exponential distributions.
+	\begin{equation}
+	\dNdX{\mInv} = 
+		\begin{cases}
+	      A \cdot \exp \left[ \rho_{\rm L} \frac{(u-x_{\rm L})^2}{(\mu-x_{\rm L})^2} - \ln(2) + 4 \cdot \ln(2)  \frac{(u-x_{\rm L})}{2 \sigma \sqrt{ 2  \ln 2 }} \cdot  \frac{\xi}{\sqrt{\xi^2+1} + \xi}  \frac{\sqrt{\xi^2+1}}{(\sqrt{\xi^2+1}-\xi)^2} \right], \qquad u\leq x_{\rm L} \\
+	      \\
+	      A \cdot \exp \left[ -\ln(2) \cdot \left( \frac{ \ln(1 + 4 \xi \sqrt{\xi^2+1} \frac{u - \mu}{2 \sigma \sqrt{2 \ln 2}}) }{ \ln( 1 + 2 \xi (\xi - \sqrt{\xi^2+1})) } \right)^2 \right], \qquad  x_{\rm L} < u < x_{\rm R} \\
+	      \\
+	      A \cdot \exp \left[ \rho_{\rm R} \frac{(u-x_{\rm R})^2}{(\mu-x_{\rm R})^2} - \ln(2) + 4 \cdot \ln(2) \frac{(u-x_{\rm R})}{2 \sigma \sqrt{ 2  \ln 2 }} \cdot  \frac{\xi}{\sqrt{\xi^2+1} + \xi} \frac{\sqrt{\xi^2+1}}{(\sqrt{\xi^2+1}-\xi)^2} \right], \qquad u \geq x_{\rm R} 
+	     \end{cases}
+	\end{equation}\label{eq:Bukin}
+	with 
+	\begin{equation}
+		x_{\rm L, R} = \mu + \sigma \sqrt{ 2 \ln 2 } \left( \frac{ \xi}{ \sqrt{\xi^2 + 1 } } \mp 1 \right)
+	\end{equation}
+	where $u$ coincides with \mInv, $A$ is the normalization parameter, $\mu$ and $\sigma$ are the mean and the width of the peak, $\xi$ is an asymmetry parameter, $\rho_{\rm L}$ and $\rho_{R}$ are left and right exponential tail coefficients. The implementation has been taken from the \texttt{RooBukinPdf} class, in the \texttt{Roofit} package of ROOT \cite{verkerke2008}.
+
+\end{itemize}
+
+\end{itemize}
+
+
+
+The origin of the data sample purity has to be found in the (very) tight cut on the cosine of pointing angle of the cascade candidate in \tab\ref{tab:CascadeSelections}. As a matter of fact, this selection has been tuned to reach such level of purity. Contrarily to the peak shape, the form of background is \textit{a priori} lesser known. For that reason, it is essential to control the level of background, and most particularly its profile, such that it can be modeled by one of the expected functional form.
+
+
+For the background, two functional forms are studied :
+
+\begin{itemize}
+\item \textbf{Constant} : Combinatorial background is \textit{a priori} unstructured, so it can be approximated by a constant function.
+\item \textbf{Linear} 
+\end{itemize}
+
+\subsubsection{Correction on the extracted mass}
+
+Although the functions in \Sec\ref{subsubsec:SignalBackShape} describe well the invariant mass peak, the extracted mass does not agree with the injected mass, the PDG mass, as shown in \fig. This seemingly bias may stem from several elements. It can be due to the way data are processed, that might overestimate the reconstructed mass in a systematic manner. The analysis, and particularly the employed selections, may introduce a distortion in the invariant mass distribution, resulting in a different mass than the expected one. The fit procedure could also be the origin of such inconsistency; for instance, one of the tails may pre-dominate the procedure and drive the parameters in a certain direction.
+
+Anyhow, in order to correct for any bias due to the data processing, the analysis or the fit procedure, an offset is applied on the extracted mass in simulated events such that it coincides with the injected value. It follows that this correction is then reported on the measured mass in real data. However, such a correction assumes a good agreement between the data and MC. To ensure that, the simulation is re-weighted to match the \pT spectra from the data.
+
+This re-weighting procedure starts off by extracting the raw \pT spectra in the data. Similarly to the estimation of the amount of raw signal in \Sec\ref{subsubsec:PrinciplesOfMassExtraction}, the latter is given by subtracting the \pT spectrum in the side-bands region from the one in the peak region. It is then compared to the injected transverse momentum distribution of true V0/cascade candidates; the ratio of the \pT spectra in the data and MC provides the weighting factors.
+
+
+\begin{figure}[!t]
+%\centering
+\hspace*{-1.5cm}
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/RawPtSpectra_Xi.eps}
+	\label{fig:XiMinus_ModGaussian}
+} 
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/WeightingFactors_Xi.eps}
+	\label{fig:XiPlus_ModGaussian}
+} 
+\hspace*{-1.5cm}
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/RawPtSpectra_Omega.eps}
+	\label{fig:OmegaMinus_ModGaussian}
+} 
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/WeightingFactors_Omega.eps}
+	\label{fig:OmegaPlus_ModGaussian}
+}  
+\caption{Invariant mass distribution of \rmXiM (a), \rmAxiP (b), \rmOmegaM (c) and \rmAomegaP (d) hyperons in pp collisions at \sqrtS = 13 \tev. Here, the peak is modeled by a modified Gaussian, and the background by a first order polynomial. Each distribution comes with an additional panel representing consistency between the data and the fit model, in the form of a ratio. The error bars encompasses the uncertainties on both quantities.}
+	\label{fig:PtSpectra}
+\end{figure}
+
+
+Once the simulated data have been re-weighted, the mass offset observed in MC with respect to the injected mass is assessed, corrected and taken into account in the mass measurement in real data. The \tab\ref{tab:MCMassOffset} presents these corrections as well as the corrected mass values. From these derive the (relative) mass difference between particle and anti-particle, given by
+\begin{equation}
+\frac{\Delta \mu}{\mu}=  \frac{\mu_{\overline{\textsc{part.}}} - \mu_{\textsc{part.}}}{\mu_{\textsc{part.}}}.
+\end{equation}
+The \tab\ref{tab:MCMassDiffOffset} shows mass difference for \rmXi and \rmOmega, in the data and MC, as well as the corrected value.
+
+\begin{table}[!h]
+    \centering
+    \footnotesize
+    \begin{tabular}{b{2.5cm}@{\hspace{0.5cm}} b{2.5cm}@{\hspace{0.5cm}} b{2.5cm}@{\hspace{0.5cm}} b{2.5cm}@{\hspace{0.5cm}} b{2.5cm}@{\hspace{0.5cm}}}
+    \noalign{\smallskip}\hline\noalign{\smallskip}
+    \bf Particle & \bf \rmXiM & \bf \rmAxiP & \bf \rmOmegaM & \bf \rmAomegaP \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}    
+    Offset in data & $0.004 \pm 0.004$  & $0.055\pm 0.004$ & $0.090\pm 0.014$ & $0.066 \pm 0.014$ \\
+    Offset in MC & $-0.127 \pm 0.003$  & $-0.125\pm 0.003$ & $-0.023\pm 0.004$ & $-0.005 \pm 0.004$ \\
+    	Corrected mass & $1321.841 \pm 0.005$ & $1321.890 \pm 0.005$ & $1672.517 \pm 0.015$ & $1672.511 \pm 0.015$\\
+    \noalign{\smallskip}\hline\noalign{\smallskip}
+    \end{tabular}
+    \caption{Measurements of the mass offset with respect to the PDG value (coinciding with the injected mass in MC) in the data and MC, as well as the final corrected masses of $\Xi^{-}$, $\overline{\Xi}^{+}$, $\Omega^{-}$, $\overline{\Omega}^{+}$. The uncertainties on the mass values correspond only to the statistical one. These measurements have been obtained using the selections in \tab\ref{tab:CascadeSelections}, a modified Gaussian for the peak modelisation and a linear function for the background (in the data only).}\label{tab:MCMassOffset}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+%    \footnotesize
+    \begin{tabular}{b{7.5cm}@{\hspace{0.5cm}} b{3cm}@{\hspace{0.5cm}} b{3cm}@{\hspace{0.5cm}}}
+    	\noalign{\smallskip}\hline \noalign{\smallskip}    
+    \bf Particle & \bf \rmXi & \bf \rmOmega\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}  
+    Mass difference offset in data ($\times 10^{-5}$) & $0.004 \pm 0.004$  & $0.004 \pm 0.004$ \\
+    Mass difference offset in MC ($\times 10^{-5}$)& $0.004 \pm 0.004$ & $0.004 \pm 0.004$  \\
+    	Corrected mass difference ($\times 10^{-5}$) & $0.004 \pm 0.004$ & $0.004 \pm 0.004$ \\
+    
+    \noalign{\smallskip}\hline\noalign{\smallskip}
+    \end{tabular}
+    \caption{Measurements of the mass difference in the data and MC, as well as the final corrected mass difference for $\Xi^{\pm}$ and $\Omega^{\pm}$. The uncertainties on the mass differences correspond only to the statistical one. These measurements have been obtained using the selections in \tab\ref{tab:CascadeSelections}, a modified Gaussian for the peak modelisation and a linear function for the background (in the data only).} 
+    \label{tab:MCMassDiffOffset}
+\end{table}
 
 \section{Study of the systematic uncertainties}
+
+A systematic study consists in reviewing an analysis via the test of its different elements. It involves identifying the source of systematic errors that might affect the values of the extracted mass and their corresponding uncertainties. Usually, this is achieved by repeating the analysis with a few minor changes, in the hope that there will be no effect. If that is the case, meaning that the obtained values are consistent, then one could argue that the analysis is free of systematic effect and under control: no additional measure are requested. On the contrary, a large deviation in the values indicates the presence of a systematic effect, that should be treated seriously. 
+
+In pratice, one needs to define what "small" and "large" deviations mean. If an analysis is performed in two different ways: the first approach gives the result $a_1$ with an uncertainty $\sigma_1$ ; the second $a_2$ with an uncertainty $\sigma_2$. The difference between the results is given by $\Delta = a_1 - a_2$ and the error on the difference by $\sigma_{\Delta} = \sqrt{ |\sigma_{1}^{2} - \sigma_{2}^{2} | }$. If the ratio $\Delta/\sigma_{\Delta}$ is greater than a certain threshold value -- denoted \sigmaBarlow and to be defined by the analyser --, this points out a systematic effect that requires further investigation. This approach is known as the \textit{Barlow criterion}.
+
+As in cooking, what separates the good systematic study from the lesser good one is the choice of the seasoning, namely the choice of the threshold value. The larger the \sigmaBarlow, the more systematic effects would slip under the radar; conversely, the smaller the threshold, the higher the sensitivity to the systematic effects. Since the targeted precision on the mass and mass difference values is very low, the systematic effects must be well under control. Therefore, in the context of this analysis, the contribution of a potential source of systematics is said to be significant for $\sigmaBarlow\simeq 1$. \\
+
+However, the presence of a systematic effect does not necessarily imply a systematic uncertainty. In fact, there are two possibilites. Either a systematic correction can be applied and the error on that correction will be quoted as the systematic uncertainty, or the correction may be difficult (or impossible) to derive and therefore the systematic uncertainty will have to fully encompass the imprecision induced to the systematic effect.
+
+This treatement of the systematics corresponds to the one proposed by Roger Barlow \cite{barlow2000}\cite{barlow2002}. The following section presents the list of systematic sources studied for this analysis, with their estimated uncertainties or corrections.
+
+\subsection{Topological and track selections}
+
+As explained in \Sec\ref{subsec:TopoReco}, the identification of the charged \rmXi and \rmOmega baryons relies on their characteristic cascade decay. The reconstruction of these decay topology revolves around, first, the association of two tracks to form \rmLambda candidates, and then these are matched with the remaining secondary tracks. In order to reduce the induced combinatorial background, various topological and kinematic cuts are being used. The choice of the employed cut values may obviously be the source of a bias. Such a systematic effect can be revealed by observing a variation of the mass and/or its uncertainty under a different set of selections.
+
+The standard approach consists in varying individually each selection, while keeping the others at their reference value. Although it allows to address the bias induced by a given cut, this does not take into account the correlations between topological variables. For instance, a higher cut on cascade decay radius also implies that the \rmLambda daughter decays further away in the detector. To tackle that, one needs to build a matrix containing the correlation factors for each pair of selection variables.
+
+However, a different approach is followed here. To go over the correlations between each variable, the sets of selections are randomly generated according to an uniform law, that spans over a certain variation range. 
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Track variable & Range & Signal variation \rmXiM (\rmAxiP) \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    Nbr of crossed TPC readout rows & $> \left[ 70 ; 90 \right]$ &  1\% (1\%)\\
+    $\Nsigma^{\rm TPC}$ & $<\left[ 1 ; 3 \right] $ &  60\% (60\%)\\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Topological variable & Range & Signal variation \rmXiM (\rmAxiP) \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    
+    \multicolumn{3}{l}{\textbf{V0}} \\
+    V0 decay radius (\cm) & $> \left[ 1.2 ; 8 \right]$ & 11\% (11\%)\\
+    V0 cosine of pointing angle & $> \left[ 0.97 ; 0.998 \right]$ & 10\% (10\%)\\
+    |$m$($V0$) - \mPDG\rmLambda| (\gmass) & $< \left[ 0.002 ; 0.007 \right]$ & 18\% (18\%)\\
+    DCA proton to prim. vtx (\cm) & > $\left[ 0.04 ; 0.5 \right]$ & 28\% (28\%)\\
+    DCA pion to prim. vtx (\cm) & > $\left[ 0.04 ; 0.95 \right]$ & 10\% (10\%)\\
+    DCA V0 to prim. vtx (\cm) & > $\left[ 0.06 ; 0.2 \right]$ & 12\% (12\%)\\
+    DCA between V0 daughters (std dev) & < $\left[ 0.4 ; 1.2 \right]$ & 12\% (12\%) \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    
+    \multicolumn{3}{l}{\textbf{Cascade}} \\
+    Cascade decay radius (\cm) & > $\left[ 0.5 ; 2.5 \right]$ & 11\% (11\%)\\
+    Cascade Lifetime (\cm) & < $\left[ 1.6 ; 3.40 \right]$ \cTau & 40\% (40\%)\\
+    DCA bachelor to prim. vtx (\cm) & > $\left[ 0.04 ; 0.5 \right]$ & 15\% (15\%) \\
+    DCA between the cascade daughters (std dev) & < $\left[ 0.25 ; 1.2 \right]$ & 12\% (12\%)\\
+    Cascade cosine of pointing angle & > $\left[ 0.995 ; 0.9995 \right]$ & 14\% (14\%)\\
+    Bachelor-proton pointing angle (rad) & > $\left[ 0.02 ; 0.05 \right]$ & 11\% (11\%) \\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the range variation on the topological and track selections used for the reconstruction of \rmXiM and \rmAxiP. The induced signal variation is indicated in the last column ; for more details, look at \fig\ref{fig:SignalVariation_TopoSel_XiMinus} and \fig\ref{fig:SignalVariation_TopoSel_XiPlus}.}\label{tab:SystematicSelectionsXi}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Candidate variable & Range & Signal variation \rmOmegaM (\rmAomegaP) \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}    
+    Competing mass rejection (\gmass) & $> \left[ 0.006 ; 0.010 \right]$ & 0.9\% (0.9\%)\\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Track variable & Range & Signal variation \rmOmegaM (\rmAomegaP) \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    Nbr of crossed TPC readout rows & $> \left[ 70 ; 90 \right]$ &  2.5\% (2.5\%)\\
+    $\Nsigma^{\rm TPC}$ & $< \left[ 1 ; 3 \right] $ &  60\% (60\%)\\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Topological variable & Range & Signal variation \rmOmegaM (\rmAomegaP) \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    
+    \multicolumn{3}{l}{\textbf{V0}} \\
+    V0 decay radius (\cm) & $> \left[ 1 ; 5.5 \right]$ & 11\% (11\%)\\
+    V0 cosine of pointing angle & $> \left[ 0.97 ; 0.998 \right]$ & 17\% (17\%)\\
+    |$m$($V0$) - \mPDG\rmLambda| (\gmass) & $< \left[ 0.002 ; 0.007 \right]$ & 17\% (17\%)\\
+    DCA proton to prim. vtx (\cm) & $> \left[ 0.04 ; 0.5 \right]$ & 34\% (34\%)\\
+    DCA pion to prim. vtx (\cm) & $> \left[ 0.04 ; 0.75 \right]$ & 10\% (10\%) \\
+    DCA V0 to prim. vtx (\cm) & $> \left[ 0.06 ; 0.2 \right]$ & 14\% (14\%)\\
+    DCA between V0 daughters (std dev) & $< \left[ 0.4 ; 1.2 \right]$ & 11\% (11\%)\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    
+    \multicolumn{3}{l}{\textbf{Cascade}} \\
+    Cascade decay radius (\cm) & $> \left[ 0.5 ; 1.6 \right]$ & 12\% (12\%)\\
+    Cascade Lifetime (\cm) & $< \left[ 1.6 ; 3.40 \right]$ \cTau & 14\% (14\%)\\
+    DCA bachelor to prim. vtx (\cm) & $> \left[ 0.05 ; 0.2 \right]$ & 13\% (13\%)\\
+    DCA between the cascade daughters (std dev) & $< \left[ 0.15 ; 1.2 \right]$ & 12\% (12\%)\\
+    Cascade cosine of pointing angle & $> \left[ 0.995 ; 0.9995 \right]$ & 17\% (17\%)\\
+    Bachelor-proton pointing angle & $> \left[ 0.02 ; 0.05 \right]$ & 13\% (13\%)\\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the range variation on the topological and track selections used for the reconstruction of \rmOmegaM and \rmAomegaP. The induced signal variation is indicated in the last column ; for more details, look at \fig\ref{fig:SignalVariation_TopoSel_OmegaMinus} and \fig\ref{fig:SignalVariation_TopoSel_OmegaPlus}.}\label{tab:SystematicSelectionsOmega}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Candidate variable & Range & Signal variation \rmKzeroS \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}    
+    Competing mass rejection (\gmass) & $> \left[ 0.002 ; 0.010 \right]$ & 1.1\% \\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Track variable & Range & Signal variation \rmKzeroS \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    Nbr of crossed TPC readout rows & $> \left[ 70 ; 90 \right]$ &  0.5\% \\
+    $\Nsigma^{\rm TPC}$ & $< \left[ 1 ; 3 \right] \ \sigma$ &  45\% \\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Topological variable & Range & Signal variation \rmKzeroS \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    
+    V0 decay radius (\cm) & $> \left[ 0.4 ; 2.2 \right]$ & 10\% \\
+    V0 Lifetime (\cm) & $< \left[ 1.57 ; 3.43 \right]$ \cTau & 12\% \\
+    V0 cosine of pointing angle & $> \left[ 0.995 ; 0.9998 \right]$ & 10\% \\
+    DCA pion to prim. vtx (\cm) & $> \left[ 0.04 ; 0.5 \right]$ & 24\% \\
+%    DCA V0 to prim. vtx (\cm) & < $\left[ 0.04 ; 1 \right]$ & 35\% \\
+    DCA between V0 daughters (std dev) & $< \left[ 0.2 ; 1.5 \right]$ & 12\%\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the range variation on the topological and track selections used for the reconstruction of \rmKzero. The induced signal variation is indicated in the last column ; for more details, look at \fig\ref{fig:SignalVariation_TopoSel_K0s}.}\label{tab:SystematicSelectionsK0s}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Candidate variable & Range & Signal variation \rmLambda (\rmAlambda) \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}    
+    Competing mass rejection (\gmass) & > $\left[ 0.005 ; 0.012 \right]$ & 3\% (3\%)\\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Track variable & Range & Signal variation \rmLambda (\rmAlambda) \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    Nbr of crossed TPC readout rows & > $\left[ 70 ; 90 \right]$ &  0.8\% (0.8\%)\\
+    $\Nsigma^{\rm TPC}$ & < $\left[ 1 ; 3 \right] \ \sigma$ &  45\% (45\%)\\
+    
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf Topological variable & Range & Signal variation \rmLambda (\rmAlambda) \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    
+    V0 decay radius (\cm) & $> \left[ 0.4 ; 3.5 \right]$ & 11\% (11\%)\\
+    V0 Lifetime (\cm) & $< \left[ 1.53 ; 3.43 \right]$ \cTau & 17\% (17\%)\\
+    V0 cosine of pointing angle & $> \left[ 0.995 ; 0.9998 \right]$ & 13\% (13\%)\\
+    DCA proton to prim. vtx (\cm) & $> \left[ 0.04 ; 0.15 \right]$ & 17\% (17\%)\\
+    DCA pion to prim. vtx (\cm) & $> \left[ 0.04 ; 0.5 \right]$ & 12\% (12\%) \\
+%    DCA V0 to prim. vtx (\cm) & $< \left[ 0.06 ; 0.2 \right]$ & 25\% (25\%)\\
+    DCA between V0 daughters (std dev) & $< \left[ 0.3 ; 1.5 \right]$ & 12\% (12\%)\\ 
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the range variation on the topological and track selections used for the reconstruction of \rmLambda and \rmAlambda. The induced signal variation is indicated in the last column ; for more details, look at \fig\ref{fig:SignalVariation_TopoSel_Lambda} and \fig\ref{fig:SignalVariation_TopoSel_AntiLambda}.}\label{tab:SystematicSelectionsLambda}
+\end{table}
+
+\subsubsection{Influence on the mass extraction}
+
+\subsubsection{Influence on the mass difference mass}
 
 \subsection{Momentum scale}
 
 \subsubsection{Energy loss corrections}
 
 \subsubsection{Imprecision on the magnetic field}
-
-\subsection{Topological and track selections}
 
 \subsection{Pile-up treatment}
 

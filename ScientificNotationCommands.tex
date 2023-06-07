@@ -64,6 +64,7 @@
 \newcommand{\Figures}   {\textsc{f}igures~}
 \newcommand{\Tab}       {\textsc{t}ab.~}
 \newcommand{\tab}       {\Tab}
+\newcommand{\tabs}      {\textsc{t}abs.~}
 \newcommand{\Table}     {\textsc{t}able~}
 \newcommand{\Tables}    {\textsc{t}ables~}
 \newcommand{\chap}      {\textsc{c}hap.~}
@@ -164,6 +165,7 @@
 \newcommand {\dsigmaXdptdy}[1]  {\ensuremath{\text{d}^{2}\sigma\text{(#1)}/\text{d}\pT\text{d}y}}
 \newcommand {\dNdy}         {\ensuremath{\text{d}N/\text{d}y}}
 \newcommand {\dNdeta}       {\ensuremath{\text{d}N/\text{d}\eta}\xspace}
+\newcommand {\dNdX}[1]      {\ensuremath{\frac{\text{d}N}{\text{d}\text{#1}}}}
 \newcommand {\dNXdy}[1]     {\ensuremath{\text{d}N\text{(#1)}/\text{d}y}}
 \newcommand {\dNJpsidy}     {\dNXdy{\rmJpsi}}
 \newcommand {\dNdpt}        {\ensuremath{\text{d}N/\text{d}\pT }}
@@ -197,7 +199,13 @@
 \newcommand {\Rcp}          {\ensuremath{R_\text{CP}}}
 \newcommand {\hPMVzsCorrel} {\ensuremath{(\text{\hPM-V0})}}
 \newcommand {\hVzsCorrel}   {\ensuremath{(\text{h-V0})}}
-\newcommand {\mPDG}[1]      {\ensuremath{m_{\textsc{pdg}}(#1)}}
+\newcommand {\mPDG}[1][]      {%
+\ifthenelse{\equal{#1}{}}{\ensuremath{m_{\textsc{pdg}}}}{\ensuremath{m_{\textsc{pdg}}(#1)}}%
+}
+\newcommand {\mInv}[1][]      {%
+\ifthenelse{\equal{#1}{}}{\ensuremath{m_{ \textrm{inv} }}}{\ensuremath{m_{ \textrm{inv} }(#1)}}%
+}
+%\newcommand {\mInv}[1] 	    {\ensuremath{m_{ \textrm{inv} }(#1)}}
 \newcommand {\mMassPart}[1] {\ensuremath{m_{ \textsc{#1} }}}
 \newcommand {\mMassApart}[1]{\ensuremath{m_{ \overline{\textsc{#1}} }}}
 
@@ -395,6 +403,8 @@
 \newcommand{\rmPiPlusMinus} {\piPlusMinus}
 \newcommand{\rmPiPM}        {\piPlusMinus\xspace}
 \newcommand{\rmPiMP}        {\piMinusPlus}
+\newcommand{\rmPiPlus}      {\piPlus}
+\newcommand{\rmPiMinus}     {\piMinus}
 \newcommand{\rmPi}          {\mbox{$\mathrm {\pi}$}\xspace}
 
 \newcommand{\rhoZero}        {\mbox{$\mathrm {\rho^0}$}}
@@ -415,6 +425,8 @@
 \newcommand{\rmKplus}    {\Kplus}
 \newcommand{\Kplusmin}   {\mbox{$\mathrm {K^{\pm}}$}\xspace}
 \newcommand{\Kminplus}   {\mbox{$\mathrm {K^{\mp}}$}\xspace}
+\newcommand{\rmKPlus}    {\rmKplus}
+\newcommand{\rmKMinus}   {\rmKminus}
 \newcommand{\rmKPM}      {\Kplusmin}
 \newcommand{\rmAKstarZero}{\mbox{$\overline{\mathrm{K}}^{*0}$}\xspace}
 \newcommand{\rmKstarZero}{\mbox{$\mathrm{K}^{*0}$}}
@@ -424,7 +436,7 @@
 \newcommand{\rmPhi}   	{\mbox{$\mathrm {\phi}$}\xspace}
 
 \newcommand{\proton}    {\mbox{$\mathrm {p}$}\xspace}
-\newcommand{\pbar}      {\mbox{$\mathrm {\overline{p}}$}}
+\newcommand{\pbar}      {\mbox{$\mathrm {\overline{p}}$}\xspace}
 % \newcommand{\pOrPbar}   {\mbox{$\mathrm{\vcenter{\offinterlineskip \vskip-0.1ex\hbox{\tiny \kern-0.05em- \kern-0.3em-} \vskip+0.2ex\hbox{p}}^{\protect \tiny ^{\hdots} \kern-0.75em _{+} \kern-.7em}}$ }}
 \newcommand{\pOrPbar}   {\mbox{$\mathrm {p^{\pm}}$}}
 
