@@ -130,7 +130,11 @@
 \newcommand {\mPart}[1]     {\mbox{$m[ #1 ]$}}
 \newcommand {\sigmaM}[1]    {\mbox{$\sigma_m[ #1 ]$}}
 \newcommand {\DeltaM}[1]    {\mbox{$\Delta m[ #1 ]$}}
-\newcommand {\sigmaIdx}[1]  {\ensuremath{\sigma_{ #1 }}}
+\newcommand {\sigmaIdx}[1][]{%
+\ifthenelse{\equal{#1}{}}{\ensuremath{\sigma}}{\ensuremath{\sigma_{ #1 } 
+}}
+}
+%\newcommand {\sigmaIdx}[1]  {\ensuremath{\sigma_{ #1 }}}
 \newcommand {\sigmaPDG}     {\ensuremath{\sigma_{\textsc{pdg}}}\xspace}
 
 %\newcommand {\Nsigma}[1]    {\ensuremath{n.\sigma_{ #1 }}}
@@ -163,20 +167,21 @@
 \newcommand {\dsigmaXdy}[1] {\ensuremath{\text{d}\sigma\text{(#1)}/\text{d}y}}
 \newcommand {\dsigmaXdpt}[1]{\ensuremath{\text{d}\sigma\text{(#1)}/\text{d}\pT}}
 \newcommand {\dsigmaXdptdy}[1]  {\ensuremath{\text{d}^{2}\sigma\text{(#1)}/\text{d}\pT\text{d}y}}
-\newcommand {\dNdy}         {\ensuremath{\text{d}N/\text{d}y}}
+\newcommand {\dNdy}         {\ensuremath{\frac{\text{d}N}{\text{d}y}}}
 \newcommand {\dNdeta}       {\ensuremath{\text{d}N/\text{d}\eta}\xspace}
 \newcommand {\dNdX}[1]      {\ensuremath{\frac{\text{d}N}{\text{d}\text{#1}}}}
-\newcommand {\dNXdy}[1]     {\ensuremath{\text{d}N\text{(#1)}/\text{d}y}}
+\newcommand {\dNXdy}[1]     {\ensuremath{\text{d}N_\text{#1}/\text{d}y}}
 \newcommand {\dNJpsidy}     {\dNXdy{\rmJpsi}}
 \newcommand {\dNdpt}        {\ensuremath{\text{d}N/\text{d}\pT }}
 \newcommand {\dNXdptdy}[1]  {\ensuremath{\text{d}^{2}N\text{(#1)}/\text{d}\pT\text{d}y}}
-\newcommand {\dNdptdy}      {\ensuremath{\text{d}^{2}N/\text{d}\pT\text{d}y }}
+\newcommand {\dNdptdy}      {\ensuremath{\frac{\text{d}^{2}N}{\text{d}\pT\text{d}y}}}
 \newcommand {\dNdptdeta}    {\ensuremath{\text{d}^{2}N/\text{d}\pT\text{d}\eta }}
 \newcommand {\fracdsigmadptdy}  {\ensuremath{ \frac{\text{d}^{2}\sigma}{\text{d}\pT\text{d}y}}}
 \newcommand {\fracdNdptdy}  {\ensuremath{ \frac{\text{d}^{2}N}{\text{d}\pT\text{d}y } }}
 \newcommand {\fracdNdy}     {\ensuremath{ \frac{\dN}{\dy}}}
 \newcommand {\fracdNdyBold} {\ensuremath{ \frac{\bm{\dN}}{\bm{\dy}}}}
-\newcommand {\dNXdX}[2]     {\ensuremath{ \frac{\dN_{\textsc{#1}}}{{\text{d}\textsc{#2}}} }}
+\newcommand {\dNXdX}[2]     {\ensuremath{ \frac{\dN_{\text{#1}}}{{\text{d}\textsc{#2}}} }}
+\newcommand {\dNXdXdy}[2]   {\ensuremath{ \frac{\text{d}^{2}N_{\text{#1}}}{{\text{d}y\text{d}\textsc{#2}}} }}
 
 
 \newcommand {\dNdmtdy}      {\ensuremath{\text{d}^{2}N/\text{d}\mT\text{d}y }}
@@ -214,7 +219,7 @@
 \newcommand {\NevtINEL}     {\ensuremath{N_\text{evt}(\textsc{inel})}}
 \newcommand {\NevtNSD}      {\ensuremath{N_\text{evt}(\textsc{nsd})}}
 \newcommand {\INEL}         {\ensuremath{\textsc{inel}}}
-\newcommand {\INELZero}     {\ensuremath{\textsc{inel}>0}}
+\newcommand {\INELZero}     {\ensuremath{\textsc{inel}>0}\xspace}
 \newcommand {\NSD}          {\ensuremath{\textsc{nsd}}}
 \newcommand {\dEdx}         {\ensuremath{\textup{d}E/\textup{d}x }\xspace}
 
@@ -264,8 +269,10 @@
 % 2.3 - some generator Names
 
 \newcommand{\Sherpa}        {\textsc{Sherpa}\xspace}
-\newcommand{\Herwig}        {\textsc{Herwig++}\xspace}
+\newcommand{\Herwig}        {\textsc{Herwig}\xspace}
+\newcommand{\Herwigplus}    {\textsc{Herwig++}\xspace}
 \newcommand{\Epos}          {\textsc{Epos}\xspace}
+\newcommand{\EposFour}      {\Epos~4\xspace}
 \newcommand{\Pythia}        {\textsc{Pythia}\xspace}
 \newcommand{\Pythiaeight}   {\Pythia~8\xspace}
 \newcommand{\Hijing}        {\textsc{Hijing}\xspace}
@@ -407,9 +414,10 @@
 \newcommand{\rmPiMinus}     {\piMinus}
 \newcommand{\rmPi}          {\mbox{$\mathrm {\pi}$}\xspace}
 
-\newcommand{\rhoZero}        {\mbox{$\mathrm {\rho^0}$}}
-\newcommand{\rhoMinus}       {\mbox{$\mathrm {\rho^-}$}}
-\newcommand{\rhoPlus}        {\mbox{$\mathrm {\rho^+}$}}
+\newcommand{\rhoMes}         {\mbox{$\mathrm {\rho}$}\xspace}
+\newcommand{\rhoZero}        {\mbox{$\mathrm {\rhoMes^0}$}}
+\newcommand{\rhoMinus}       {\mbox{$\mathrm {\rhoMes^-}$}}
+\newcommand{\rhoPlus}        {\mbox{$\mathrm {\rhoMes^+}$}}
 
 \newcommand{\rmKaon}     {\mbox{$\mathrm {K}$}\xspace}
 \newcommand{\Kzs}        {\mbox{$\mathrm {K^0_S}$}\xspace}
@@ -429,7 +437,7 @@
 \newcommand{\rmKMinus}   {\rmKminus}
 \newcommand{\rmKPM}      {\Kplusmin}
 \newcommand{\rmAKstarZero}{\mbox{$\overline{\mathrm{K}}^{*0}$}\xspace}
-\newcommand{\rmKstarZero}{\mbox{$\mathrm{K}^{*0}$}}
+\newcommand{\rmKstarZero}{\mbox{$\mathrm{K}^{*0}$}\xspace}
 \newcommand{\rmKstarPlus}{\mbox{$\mathrm{K}^{*+}$}}
 \newcommand{\rmKstarMinus}{\mbox{$\mathrm{K}^{*-}$}}
 \newcommand{\rmPhiMes}   {\mbox{$\mathrm {\phi(1020)}$}\xspace}

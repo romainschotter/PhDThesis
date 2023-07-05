@@ -118,7 +118,7 @@ The second step aims at forming pairs of secondary tracks of opposite charge -- 
 \end{figure}
 }
 
-The two daughter tracks are then propagated from their initial position (the point of closest approach to the primary vertex, \Sec\ref{subsubsec:TrackReco}) to the secondary decay point\footnote{Most importantly, here the propagation is performed without taking the energy losses into account. This point will be addressed in \chap\ref{chap:CPTAnalysis}}. This allows to calculate all the kinematic quantities of the V0, among which its momentum; the latter being equal to the momentum sum of the positive and negative particles at the secondary vertex, due to momentum conservation.
+The two daughter tracks are then propagated from their initial position (the point of closest approach to the primary vertex, \Sec\ref{subsubsec:TrackReco}) to the secondary decay point\footnote{Most importantly, here the propagation is performed without taking the energy losses into account. This point will be addressed in \chap\ref{chap:CPTAnalysis}\label{footnote:EnergyLossV0CascVertexing}}. This allows to calculate all the kinematic quantities of the V0, among which its momentum; the latter being equal to the momentum sum of the positive and negative particles at the secondary vertex, due to momentum conservation.
 
 \subsubsection{The reconstruction of cascade candidates}
 \label{subsubsec:CascadeFormation}
@@ -127,12 +127,12 @@ From the sample of V0 candidates (\Sec\ref{subsubsec:V0Formation}), only those c
 
 Primary and secondary V0s are separated resorting to the pointing direction in the lab frame, given by the momentum at the decay vertex. This direction coincides with the straight-line trajectory of the candidate\footnote{If the candidate corresponds to an actual \rmLambda or \rmAlambda (electrically neutral), its trajectory, not being curved under the influence of the magnetic field, must necessarily follow a straight line.} and allows to estimate its DCA to the interaction point (\fig\ref{fig:TopologicalRec}, V0.c). The latter being close to zero for primary V0s, a lower cut on this variable enables their rejection to retain only those tagged as secondary. 
 
-The identification of the V0 goes through the calculation of the invariant mass under  the \rmLambda or \rmAlambda hypothesis. This boils down to making an assumption on the mass of each decay daughter. In the case of a \rmLambda, the positive track corresponds to a proton, the negative to a \piMinus (\eq\ref{eq:LambdaInvMass}); conversely, for a \rmAlambda, they are considered as a \piPlus and an anti-proton respectively. If it turns out that the candidate is, in fact, a true \rmLambda or \rmAlambda, the reconstructed mass should lie within a window of typically a few \mmass\footnote{The width of the mass window depends directly on the ALICE performances in terms of transverse momentum resolution on the reconstructed tracks.} (\fig\ref{fig:TopologicalRec}, V0.d), centred around the nominal mass of the \rmLambda ($m_{\Lambda} = 1.115683$ \gmass). In most cases, only one of the two mass hypothesis passes the cut\footnote{The misidentification of the daughter particles usually results in a quite different invariant mass.}, making it possible to differentiate between a \rmLambda and a \rmAlambda. 
+The identification of the V0 goes through the calculation of the invariant mass under  the \rmLambda or \rmAlambda hypothesis. This boils down to making an assumption on the mass of each decay daughter. In the case of a \rmLambda, the positive track corresponds to a proton, the negative to a \piMinus (\eq\ref{eq:LambdaInvMass}); conversely, for a \rmAlambda, they are considered as a \piPlus and an anti-proton respectively. If it turns out that the candidate is, in fact, a true \rmLambda or \rmAlambda, the reconstructed mass should lie within a window of typically a few \mmass\footnote{The width of the mass window depends directly on the ALICE performances in terms of transverse momentum resolution, which sits around a few \mmom for low- and intermediate-\pT tracks.} (\fig\ref{fig:TopologicalRec}, V0.d), centred around the nominal mass of the \rmLambda ($m_{\Lambda} = 1.115683$ \gmass). In most cases, the misidentification of the daughter particles results in a quite different invariant mass. Therefore, only one of the two mass hypothesis passes the cut, making it possible to differentiate between a \rmLambda and a \rmAlambda. 
 
 \begin{align}
-M_{\rm candidate}^2(\rmLambda) &= ( E_{\rm pos.} + E_{\rm neg.} )^2 - ( \vec{p}_{\rm pos.} + \vec{p}_{\rm neg.})^2 \\
-&= \Big(\sqrt{ \vec{p}_{\rm pos.}^2 + m_{\rm pos.}^2} + \sqrt{ \vec{p}_{\rm neg.}^2 + m_{\rm neg.}^2}\Big)^2 - ( \vec{p}_{\rm pos.} + \vec{p}_{\rm neg.})^2\\
-&= \Big(\sqrt{ \vec{p}_{\rm pos.}^2 + m_{p^{+}}^2} + \sqrt{ \vec{p}_{\rm neg.}^2 + m_{\pi^{-}}^2}\Big)^2 - ( \vec{p}_{\rm pos.} + \vec{p}_{\rm neg.})^2 \label{eq:LambdaInvMass}
+M_{\rm candidate}^2(\rmLambda) &= ( E_{\rm pos.} + E_{\rm neg.} )^2 - ( \textrm{p}_{\rm pos.} + \textrm{p}_{\rm neg.})^2 \\
+&= \Big(\sqrt{ \textrm{p}_{\rm pos.}^2 + m_{\rm pos.}^2} + \sqrt{ \textrm{p}_{\rm neg.}^2 + m_{\rm neg.}^2}\Big)^2 - ( \textrm{p}_{\rm pos.} + \textrm{p}_{\rm neg.})^2\\
+&= \Big(\sqrt{ \textrm{p}_{\rm pos.}^2 + m_{p^{+}}^2} + \sqrt{ \textrm{p}_{\rm neg.}^2 + m_{\pi^{-}}^2}\Big)^2 - ( \textrm{p}_{\rm pos.} + \textrm{p}_{\rm neg.})^2 \label{eq:LambdaInvMass}
 \end{align}
 
 A last step consists in forming a cascade candidate via the association of a candidate \rmLambda (or \rmAlambda) with any track labelled as secondary\footnote{With the exception of the V0 daughters tracks.} (\fig\ref{fig:TopologicalRec}, Casc.a), playing the role of the bachelor particle. The procedure is analogous to what was done to build a V0 candidate: only pairs with a sufficiently small DCA between the reconstructed \rmLambda (or \rmAlambda) and the bachelor are considered (\fig\ref{fig:TopologicalRec}, Casc.b); primary cascades are set apart from secondary ones by introducing the \textit{pointing angle}. The latter corresponds to the angle defined by the direction of propagation (or pointing direction) of the candidate, and the line joining the primary and secondary vertices. This angle should be small for a primary candidate and, even though the magnetic field is bending their trajectory, the change in direction remains moderate. This selection usually goes through the cosine of the pointing angle, that is constrained to be close to unity in order to validate the cascade as primary (\fig\ref{fig:TopologicalRec}, Casc.c).
@@ -148,13 +148,13 @@ At this stage, the topological reconstruction is over; each triplet of tracks fo
 
 
 \begin{align}
-M_{\rm candidate}^2( \textrm{casc.}) &= ( E_{\rm V0} + E_{\rm bach.} )^2 - ( \vec{p}_{\rm V0} + \vec{p}_{\rm bach.})^2 \\
-&= \Big(\sqrt{ \vec{p}_{\rm V0}^2 + m_{\rmLambda}^2} + \sqrt{ \vec{p}_{\rm bach.}^2 + m_{\rm bach.}^2}\Big)^2 - ( \vec{p}_{\rm V0} + \vec{p}_{\rm bach.})^2 \label{eq:CascInvMass}
+M_{\rm candidate}^2( \textrm{casc.}) &= ( E_{\rm V0} + E_{\rm bach.} )^2 - ( \textbf{p}_{\rm V0} + \textbf{p}_{\rm bach.})^2 \\
+&= \Big(\sqrt{ \textbf{p}_{\rm V0}^2 + m_{\rmLambda}^2} + \sqrt{ \textbf{p}_{\rm bach.}^2 + m_{\rm bach.}^2}\Big)^2 - ( \textbf{p}_{\rm V0} + \textbf{p}_{\rm bach.})^2 \label{eq:CascInvMass}
 \end{align}
 
 \begin{align}
-M_{\rm candidate}^2( \rmXiPM ) &= \Big(\sqrt{ \vec{p}_{\rm V0}^2 + m_{\rmLambdaPM}^2} + \sqrt{ \vec{p}_{\rm bach.}^2 + m_{\pi^{\pm}}^2}\Big)^2 - ( \vec{p}_{\rm V0} + \vec{p}_{\rm bach.})^2 \label{eq:XiInvMass} \\
-M_{\rm candidate}^2( \rmOmegaPM ) &= \Big(\sqrt{ \vec{p}_{\rm V0}^2 + m_{\rmLambdaPM}^2} + \sqrt{ \vec{p}_{\rm bach.}^2 + m_{\rm K^{\pm}}^2}\Big)^2 - ( \vec{p}_{\rm V0} + \vec{p}_{\rm bach.})^2 
+M_{\rm candidate}^2( \rmXiPM ) &= \Big(\sqrt{ \textbf{p}_{\rm V0}^2 + m_{\rmLambdaPM}^2} + \sqrt{ \textbf{p}_{\rm bach.}^2 + m_{\pi^{\pm}}^2}\Big)^2 - ( \textbf{p}_{\rm V0} + \textbf{p}_{\rm bach.})^2 \label{eq:XiInvMass} \\
+M_{\rm candidate}^2( \rmOmegaPM ) &= \Big(\sqrt{ \textbf{p}_{\rm V0}^2 + m_{\rmLambdaPM}^2} + \sqrt{ \textbf{p}_{\rm bach.}^2 + m_{\rm K^{\pm}}^2}\Big)^2 - ( \textbf{p}_{\rm V0} + \textbf{p}_{\rm bach.})^2 
 \label{eq:OmegaInvMass}
 \end{align}
 

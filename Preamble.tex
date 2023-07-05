@@ -68,10 +68,14 @@
 % after babel
 \usepackage{datetime} % pour afficher l'heure avec la commande \currenttime = \xxivtime
 
-\usepackage{sidecap}
+\usepackage[outercaption]{sidecap}
 \usepackage{afterpage}
 \usepackage{dirtytalk}
 \usepackage{textcomp}
+\usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
+\usepackage{tablefootnote}
+\usepackage{diagbox}
+\usepackage{cancel}
 
 %%%%%%%%%%%%%package Romain
 % \usepackage[lofdepth,lotdepth,caption=false]{subfig}  
@@ -87,7 +91,7 @@
 
 
 %%% OPTION - pdflatex compiler
-\usepackage[pdftex,usenames,dvipsnames]{xcolor}
+\usepackage[pdftex,usenames,dvipsnames,table]{xcolor}
 %\usepackage{xcolor}
 %\usepackage[pdftex]{graphicx}
 \usepackage{eso-pic,graphicx, transparent}

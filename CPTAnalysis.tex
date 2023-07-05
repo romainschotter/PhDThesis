@@ -48,11 +48,12 @@ In comparison, all the pp collisions at a centre-of-mass energy of 13 \tev colle
 
 Furthermore, concerning the \rmLambda hyperon and \rmKzeroS meson, the PDG quotes a precision of a few \kmass on the mass value, and about $1 \times 10^{-5}$ on the relative mass difference value\footnote{This only concerns the relative mass difference between \rmLambda and \rmAlambda. As mentioned above, such quantity is much smaller by fourteen orders of magnitude in the case of \rmKzero.}. Abundantly produced, these two hadrons also exhibit an irresistible feature in the context of this thesis: both decay into a V0 in their dominant decay channel, and so can be identified in a similar manner as cascades using topological reconstruction. For those two reasons -- high precision on the PDG mass values, and similar decay topology as cascade --, the analysis is reproduced on \rmLambda and \rmKzeroS, both being used as a benchmark for the measurement.\\
 
-In the following, the term \textit{mass difference} always refers to the relative one, namely $(\mMassApart{part.} - \mMassPart{part.})/\mMassPart{part.}$, unless indicated otherwise.
+In the following, the term \textit{mass difference} always refers to the relative one, namely $2 \left(\mMassPart{part.} - \mMassApart{part.} \right)/\left(\mMassPart{part.} + \mMassApart{part.}\right)$, unless indicated otherwise.
 
 \section{Data samples and event selection}
 
 \subsection{The data samples}
+\label{subsec:DataSamples}
 
 All the data samples employed for this measurement originates from the second campaign of data taking, the LHC Run-2. The latter comprises different collision systems at various energies, mainly pp collisions at \sqrtS = 13 \tev and Pb-Pb collisions at \sqrtSnn = 5.02 \tev. Based on the elements in \Sec\ref{subsec:HyperonAndALICE}, the analysis exploits the former ones as they provide a less dense collision environment, expectedly easier to reconstruct and thus more controllable. All these pp events have been collected during three data taking periods: between April and October 2016, May and November 2017, April and October 2018 (\Sec\ref{subsec:acceleratorprogramme}, \tab\ref{tab:LHCRunProgramm}).
 
@@ -70,6 +71,7 @@ Furthermore, this analysis also makes use of the track references in the simulat
 In total, the exploited data sample counts about 2.6 billions minimum bias events at \sqrtS = 13 \tev, and approximately 600 millions events in the associated MC productions.
 
 \subsection{The event selection}
+\label{subsec:EventSelection}
 
 As mentioned in \Sec\ref{subsec:TriggerSystem}, the analysis focuses on minimum-bias and/or high-multiplicity events. More precisely, the respective trigger configurations correspond to the MB$_{\rm AND}$ and/or HM$_{\rm VZERO}$. Not all the events passing these trigger selections are considered; additional cuts are applied in order to filter out only those of \say{good} quality for a physics analysis. \\
 
@@ -351,22 +353,20 @@ In \figs\ref{fig:InvMassCascades}, all the fit are of reasonably good quality. T
     \caption{Results from the fit of the invariant mass distributions in \fig\ref{fig:InvMassCascades} concerning the samples of \rmXiM, \rmAxiP, \rmOmegaM and \rmAomegaP. Therefore, this table reports the reduced $\chi^{2}$, raw signal, background, ratio $S/B$, purity and signal significance.}\label{tab:FitQuantities}
 \end{table}
 
-\subsubsection{Shape of the peak and background functions}
-\label{subsubsec:SignalBackShape}
+\subsubsection{Shape of the peak functions}
+\label{subsubsec:SignalShape}
 
-Since the mass extraction depends on the peak description, it is crucial to identify functional forms that reproduce accurately its shape. Different functions have been studied in MC simulations, based solely on true V0/cascade candidates. Thus, the invariant mass spectra contains no background candidates and follows approximately a Gaussian distribution centred on the injected mass, which usually corresponds to the PDG mass. The objective here is to define a list of functions, that fit correctly the invariant mass peak and thus display a good reduced $\chi^2$.
+Since the mass extraction depends on the peak description, it is crucial to identify functional forms that reproduce accurately its shape. Different functions have been studied in MC simulations, based solely on true V0/cascade candidates. Thus, the invariant mass spectra contains no background candidates and follows approximately a Gaussian distribution centred on the injected mass, which usually corresponds to the PDG mass. The objective here is to define a list of functions, that describe correctly the shape of the invariant mass peak and are characterised by a resonably good reduced $\chi^{2}$. Two types of functional forms are considered: symmetric and asymmetric functions. 
 
-
-\begin{itemize}
-\item[$\bullet$] \textbf{Symmetric function}: although the core of the invariant distribution exhibits an almost Gaussian shape due to the detector smearing, this is usually not the case for the tails. 
+\paragraph{Symmetric function:} Due to the detector smearing, the core of the invariant mass distribution exhibits a quasi-Gaussian shape; in that respect, one may favour symmetric functions. The tails of the distribution, however, are usually not Gaussian-like, and thus not well described by this class of functions. This is due to the contribution of particles with different transverse momentum; as the \pT resolution varies with the transverse momentum and relates to the width of the invariant mass peak, the measured distribution consists in fact in an infinite sum of invariant mass distribution, each with a different width. Always with the aim of employing an symmetric function, the solution thus consists to take an infinite sum of Gaussian with a common mean\footnote{A more unusual approach would be to consider an infinite sum of Gaussian, each with a different mean. This would be relevant if the mass measurement is biased, in such a way that mass changes with momentum for example. In such case, a non-trivial question arises as of what value to take as a final mass measurement. As of today, there is still no clear answer.}. In the present analysis, it has been observed that three Gaussians (\eq\ref{eq:Gaus}) already offer a resonably good fit quality. Another option is to resort to slightly modified versions of a Gaussian, such that it provides a better description of the tails of the distribution (\eq\ref{eq:ModifiedGaus}).
 
 \begin{itemize}
-\item \textbf{Triple Gaussian}: One option consists in taking the sum of an infinite number of Gaussians with a common mean. Here, three offer a reasonably good fit quality.
+\item[$\bullet$] \textbf{Triple Gaussian}:
 	\begin{equation}
 	\dNdX{\mInv[]} = A_{1} \cdot \exp \left[ - \dfrac{ (\mInv[] - \mu )^2}{ 2 \sigma_{1}^2} \right] + A_{2} \cdot \exp \left[ - \dfrac{ (\mInv[] - \mu )^2}{ 2 \sigma_{2}^2} \right] + A_{3} \cdot \exp \left[ - \dfrac{ (\mInv[] - \mu )^2}{ 2 \sigma_{3}^2} \right]
 	\label{eq:Gaus}
 	\end{equation}
-	with A the amplitude, $\mu$ the mean value of the distribution and $\sigma$ the width of the peak.
+	with $A_{1}$, $A_{2}$, $A_{3}$ the amplitudes of the first, second and third Gaussian, $\mu$ the common mean value, and $\sigma_{1}$, $\sigma_{2}$, $\sigma_{3}$ the width of the first, second and third Gaussian.
 %	
 %\item \textbf{Double Gaussian} : it consists in a sum of two Gaussian functions with different parameters but the mean value which is common.
 %	\begin{equation}
@@ -374,19 +374,18 @@ Since the mass extraction depends on the peak description, it is crucial to iden
 %	\end{equation}\label{eq:DoubleGaus}
 %	where $A_1$ and $A_2$ are the respective amplitudes of the two Gaussian, $\mu$ corresponds to the center of the peak (common for the two Gaussian), and their widths are denoted as $\sigma_1$ and $\sigma_2$.
 %	
-\item \textbf{Modified Gaussian} \cite{atlascollaboration2012} : it provides a similar shape for the peak as the Double Gaussian, but with fewer parameters. Therefore, the fit procedure converges more easily and the \rmChiSquareNDF is generally smaller than with the Double Gaussian.
+\item[$\bullet$] \textbf{Modified Gaussian} \cite{atlascollaboration2012}:
 	\begin{equation}
 	\dNdX{\mInv} = A \cdot \exp \left[ - \frac{1}{2} u^{1 + \frac{1}{1+ 0.5 u}} \right] \quad ; \quad  u = \left\rvert \frac{\mInv - \mu }{\sigma} \right\rvert
 	\end{equation}\label{eq:ModifiedGaus}
-	with $A$ the normalization, $\mu$ the mean, and $\sigma$ the width.
+	with $A$ the normalization, $\mu$ the mean, and $\sigma$ the width.\\
 	
 \end{itemize}
 
-	\item[$\bullet$] \textbf{Asymmetric function}: Previous functions are all different flavours of Gaussian, and so are all symmetric. However, the tails of the invariant mass peak are not necessarly symmetric, and therefore asymmetric functions may be more suited for describing the peak.
+\paragraph{Asymmetric function:} Previous functions are all different flavours of Gaussian, and so are all symmetric. However, this is not necessarily the case for the tails of the invariant mass distribution. In such case, an asymmetric function seems more suited for describing the peak. Among those appears the Bukin function  \cite{niel2021}, that is modified Novosibirsk distribution, constructed from the convolution of a Gaussian and an exponential distributions. It is typically used to fit the invariant mass of \rmJpsi.
 
-	
-	\begin{itemize}
-\item \textbf{Bukin} \cite{bukin2007}\cite{niel2021} : the Bukin belongs to this class of functions. It has been built on the base of the convolution of a Gaussian and an exponential distributions.
+\begin{itemize}
+\item[$\bullet$] \textbf{Bukin}:
 	\begin{equation}
 	\dNdX{\mInv} = 
 		\begin{cases}
@@ -401,25 +400,39 @@ Since the mass extraction depends on the peak description, it is crucial to iden
 	\begin{equation}
 		x_{\rm L, R} = \mu + \sigma \sqrt{ 2 \ln 2 } \left( \frac{ \xi}{ \sqrt{\xi^2 + 1 } } \mp 1 \right)
 	\end{equation}
-	where $u$ coincides with \mInv, $A$ is the normalization parameter, $\mu$ and $\sigma$ are the mean and the width of the peak, $\xi$ is an asymmetry parameter, $\rho_{\rm L}$ and $\rho_{R}$ are left and right exponential tail coefficients. The implementation has been taken from the \texttt{RooBukinPdf} class, in the \texttt{Roofit} package of ROOT \cite{verkerke2008}.
+	where $u$ coincides with \mInv, $A$ is the normalization parameter, $\mu$ and $\sigma$ are the mean and the width of the peak, $\xi$ is an asymmetry parameter, $\rho_{\rm L}$ and $\rho_{R}$ are left and right exponential tail coefficients \cite{verkerke2008}.
+	
+\item[$\bullet$] \textbf{Double Sided Crystal Ball} \cite{atlascollaborationSearchResonancesDiphoton2016}:
+	\begin{equation}
+	\dNdX{\mInv} = 
+		\begin{cases}
+	      A \cdot \left(\frac{n_{\rm L}}{\alpha_{\rm L} (n_{\rm L} - \alpha_{\rm L}^{2} - u \alpha_{\rm L})}\right)^{n_{L}} \exp \left[ -0.5  \alpha_{\rm L}^{2} \right] , \qquad u < -\alpha_{\rm L} \\
+	      \\
+	      A \cdot \exp \left[ -0.5 u^{2} \right], \qquad  -\alpha_{\rm L} \leq u \leq \alpha_{\rm R} \\
+	      \\
+	      A \cdot \left(\frac{n_{\rm R}}{\alpha_{\rm R} (n_{\rm R} - \alpha_{\rm R}^{2} + u \alpha_{\rm R})}\right)^{n_{R}} \exp \left[ -0.5  \alpha_{\rm R}^{2} \right] , \qquad u < \alpha_{\rm R} 
+	     \end{cases}
+	\end{equation}\label{eq:DoubleSidedCrystalBallFunction}
+	with $u$ equals $\left(\mInv - \mu\right)/\sigma_{L}$ for $\mInv - \mu < 0$ and $\left(\mInv - \mu\right)/\sigma_{R}$ for $\mInv - \mu > 0$, $A$ is the normalization parameter, $\mu$ is the peak position, $\sigma_{\rm L}$ and $\sigma_{\rm R}$ parametrise the position where the peak starts to follow a power law towards the low and high mass values respectively, of exponents $n_{\rm L}$ and $n_{\rm R}$.
 
 \end{itemize}
 
-\end{itemize}
-
-
+\subsubsection{Shape of the background functions}
+\label{subsubsec:BackgroundShape}
 
 The origin of the data sample purity has to be found in the (very) tight cut on the cosine of pointing angle of the cascade candidate in \tab\ref{tab:CascadeSelections}. As a matter of fact, this selection has been tuned to reach such level of purity. Contrarily to the peak shape, the form of background is \textit{a priori} lesser known. For that reason, it is essential to control the level of background, and most particularly its profile, such that it can be modeled by one of the expected functional form.
 
-
-For the background, two functional forms are studied :
+For the background, different functional forms are considered :
 
 \begin{itemize}
-\item \textbf{Constant} : Combinatorial background is \textit{a priori} unstructured, so it can be approximated by a constant function.
-\item \textbf{Linear} 
+\item \textbf{Constant}: one may suspect the combinatorial background to be \textit{a priori} unstructured. In such case, it should follow an uniform distribution, and thus can be approximated by a constant function.
+\item \textbf{Linear}: The previous description can be refined by considering that the number of tracks decreases with momentum. Consequently, the misassociation of low momentum tracks should dominate the combinatorial background at the low invariant mass values, whereas the high values originate from tracks with higher momentum. Hence, the background reduces with the invariant mass value. This decrease may be parametrised, at first order, by a linear function.
+\item \textbf{Exponential}: Alternatively, the background can also be decreased by an exponential function.
+\item \textbf{Second order polynomial}: In case the background turns out not to be purely combinatorial, but has a physics origin like, for instance particles produced from the interaction with the detector material. In such scenario, the background may have a specific structure, that needs to be described by more parameters than in the above functions. To that end, a second order polynomial is also considered for modeling the background.
 \end{itemize}
 
 \subsubsection{Correction on the extracted mass}
+\label{subsubsec:CorrectionOnTheExtractedMass}
 
 Although the functions in \Sec\ref{subsubsec:SignalBackShape} describe well the invariant mass peak, the extracted mass does not agree with the injected mass, the PDG mass, as shown in \fig. This seemingly bias may stem from several elements. It can be due to the way data are processed, that might overestimate the reconstructed mass in a systematic manner. The analysis, and particularly the employed selections, may introduce a distortion in the invariant mass distribution, resulting in a different mass than the expected one. The fit procedure could also be the origin of such inconsistency; for instance, one of the tails may pre-dominate the procedure and drive the parameters in a certain direction.
 
@@ -455,11 +468,17 @@ This re-weighting procedure starts off by extracting the raw \pT spectra in the 
 
 Once the simulated data have been re-weighted, the mass offset observed in MC with respect to the injected mass is assessed, corrected and taken into account in the mass measurement in real data. The \tab\ref{tab:MCMassOffset} presents these corrections as well as the corrected mass values. From these derive the (relative) mass difference between particle and anti-particle, given by
 \begin{equation}
-\frac{\Delta \mu}{\mu}=  \frac{\mu_{\overline{\textsc{part.}}} - \mu_{\textsc{part.}}}{\mu_{\textsc{part.}}}.
+\frac{\Delta \mu}{\mu}=  2 \cdot \frac{\mu_{\textsc{part.}}-\mu_{\overline{\textsc{part.}}}}{\mu_{\textsc{part.}}+\mu_{\overline{\textsc{part.}}}}.
+\label{eq:MassDifference}
+\end{equation}
+Its (statistical) uncertainty is obtained via propagation of the ones on the mass values, assuming there is no correlation between the particle and anti-particle measurements -- \textit{a priori} correct, since $\mu_{\textsc{part.}}$ and $\mu_{\overline{\textsc{part.}}}$ have been extracted independently\footnote{The facts that i) the particle and anti-particle do not share the same data sample (\Sec\ref{subsubsec:PrinciplesOfMassExtraction}), and ii) the fitting procedure is run separately guarantee the independence of the mass measurements.}--,
+\begin{equation}
+\sigma_{\Delta \mu /\mu }=  4 \cdot \sqrt{ \left(\frac{-\mu_{\overline{\textsc{part.}}}}{\left(\mu_{\textsc{part.}} + \mu_{\overline{\textsc{part.}}} \right)^{2}}\right)^{2} \sigma_{\mu_{\textsc{part.}}}^{2} + \left(\frac{\mu_{\textsc{part.}}}{\left(\mu_{\textsc{part.}} + \mu_{\overline{\textsc{part.}}} \right)^{2}}\right)^{2} \sigma_{\mu_{\overline{\textsc{part.}}}}^{2} }.
+\label{eq:MassDifferenceUncertainty}
 \end{equation}
 The \tab\ref{tab:MCMassDiffOffset} shows mass difference for \rmXi and \rmOmega, in the data and MC, as well as the corrected value.
 
-\begin{table}[!h]
+\begin{table}[!t]
     \centering
     \footnotesize
     \begin{tabular}{b{2.5cm}@{\hspace{0.5cm}} b{2.5cm}@{\hspace{0.5cm}} b{2.5cm}@{\hspace{0.5cm}} b{2.5cm}@{\hspace{0.5cm}} b{2.5cm}@{\hspace{0.5cm}}}
@@ -474,7 +493,7 @@ The \tab\ref{tab:MCMassDiffOffset} shows mass difference for \rmXi and \rmOmega,
     \caption{Measurements of the mass offset with respect to the PDG value (coinciding with the injected mass in MC) in the data and MC, as well as the final corrected masses of $\Xi^{-}$, $\overline{\Xi}^{+}$, $\Omega^{-}$, $\overline{\Omega}^{+}$. The uncertainties on the mass values correspond only to the statistical one. These measurements have been obtained using the selections in \tab\ref{tab:CascadeSelections}, a modified Gaussian for the peak modelisation and a linear function for the background (in the data only).}\label{tab:MCMassOffset}
 \end{table}
 
-\begin{table}[!h]
+\begin{table}[!t]
     \centering
 %    \footnotesize
     \begin{tabular}{b{7.5cm}@{\hspace{0.5cm}} b{3cm}@{\hspace{0.5cm}} b{3cm}@{\hspace{0.5cm}}}
@@ -491,38 +510,41 @@ The \tab\ref{tab:MCMassDiffOffset} shows mass difference for \rmXi and \rmOmega,
     \label{tab:MCMassDiffOffset}
 \end{table}
 
-\section{Study of the systematic uncertainties}
+\section{Study of the systematic effects}
 
-A systematic study consists in reviewing an analysis via the test of its different elements. It involves identifying the source of systematic errors that might affect the values of the extracted mass and their corresponding uncertainties. Usually, this is achieved by repeating the analysis with a few minor changes, in the hope that there will be no effect. If that is the case, meaning that the obtained values are consistent, then one could argue that the analysis is free of systematic effect and under control: no additional measure are requested. On the contrary, a large deviation in the values indicates the presence of a systematic effect, that should be treated seriously. 
+A study of the systematic effets -- also called \textit{systematic study} in the particle physicist's jargon -- consists in reviewing an analysis via the test of its different elements. As its name suggests, it involves identifying the source of systematic uncertainties that might affect the values of the extracted mass and their corresponding uncertainties. Usually, this is achieved by repeating the analysis with a few \say{minor} changes, hoping that no effect will be observed. In such case, meaning that the obtained values are consistent, then one could argue that the analysis is free of systematic effect and under control: no additional measure are requested. On the contrary, a large deviation in the values indicates the presence of a systematic effect, that should be treated seriously. 
 
-In pratice, one needs to define what "small" and "large" deviations mean. If an analysis is performed in two different ways: the first approach gives the result $a_1$ with an uncertainty $\sigma_1$ ; the second $a_2$ with an uncertainty $\sigma_2$. The difference between the results is given by $\Delta = a_1 - a_2$ and the error on the difference by $\sigma_{\Delta} = \sqrt{ |\sigma_{1}^{2} - \sigma_{2}^{2} | }$. If the ratio $\Delta/\sigma_{\Delta}$ is greater than a certain threshold value -- denoted \sigmaBarlow and to be defined by the analyser --, this points out a systematic effect that requires further investigation. This approach is known as the \textit{Barlow criterion}.
+In pratice, one needs to define what \say{small} and \say{large} deviations mean. If an analysis is performed in two different ways: the first approach gives the result $a_1$ with an uncertainty $\sigma_1$ ; the second $a_2$ with an uncertainty $\sigma_2$. The difference between the results is given by $\Delta = a_1 - a_2$ and the error on the difference by $\sigma_{\Delta} = \sqrt{ |\sigma_{1}^{2} - \sigma_{2}^{2} | }$. If the ratio $\Delta/\sigma_{\Delta}$ is greater than a certain threshold value -- denoted \sigmaBarlow and to be defined by the analyser --, this points out a systematic effect that requires further investigation. This approach is known as the \textit{Barlow criterion}.
 
 As in cooking, what separates the good systematic study from the lesser good one is the choice of the seasoning, namely the choice of the threshold value. The larger the \sigmaBarlow, the more systematic effects would slip under the radar; conversely, the smaller the threshold, the higher the sensitivity to the systematic effects. Since the targeted precision on the mass and mass difference values is very low, the systematic effects must be well under control. Therefore, in the context of this analysis, the contribution of a potential source of systematics is said to be significant for $\sigmaBarlow\simeq 1$. \\
 
 However, the presence of a systematic effect does not necessarily imply a systematic uncertainty. In fact, there are two possibilites. Either a systematic correction can be applied and the error on that correction will be quoted as the systematic uncertainty, or the correction may be difficult (or impossible) to derive and therefore the systematic uncertainty will have to fully encompass the imprecision induced to the systematic effect.
 
-This treatement of the systematics corresponds to the one proposed by Roger Barlow \cite{barlow2000}\cite{barlow2002}. The following section presents the list of systematic sources studied for this analysis, with their estimated uncertainties or corrections.
+This treatement of the systematic biases corresponds to the one proposed by Roger Barlow \cite{barlow2000}\cite{barlow2002}. The following section presents the list of systematic sources studied for this analysis, with their estimated uncertainties or corrections.
 
 \subsection{Topological and track selections}
+\label{subsec:SystTopoAndTrackSelections}
 
-As explained in \Sec\ref{subsec:TopoReco}, the identification of the charged \rmXi and \rmOmega baryons relies on their characteristic cascade decay. The reconstruction of these decay topology revolves around, first, the association of two tracks to form \rmLambda candidates, and then these are matched with the remaining secondary tracks. In order to reduce the induced combinatorial background, various topological and kinematic cuts are being used. The choice of the employed cut values may obviously be the source of a bias. Such a systematic effect can be revealed by observing a variation of the mass and/or its uncertainty under a different set of selections.
+\subsubsection{Influence on the mass extraction}
+\label{subsubsec:SystTopoMass}
 
-The standard approach consists in varying individually each selection, while keeping the others at their reference value. Although it allows to address the bias induced by a given cut, this does not take into account the correlations between topological variables. For instance, a higher cut on cascade decay radius also implies that the \rmLambda daughter decays further away in the detector. To tackle that, one needs to build a matrix containing the correlation factors for each pair of selection variables.
+As explained in \Sec\ref{subsec:TopoReco}, the identification of the charged \rmXi and \rmOmega baryons relies on their characteristic cascade decay. The reconstruction of these decay topology revolves around, first, the association of two tracks to form \rmLambda candidates, and then these are matched with the remaining secondary tracks. In order to reduce the induced combinatorial background, various topological and kinematic cuts are being used. The choice of the employed cut values may obviously be the source of a bias. Such a systematic effect can be revealed by observing how a different set of selections affects the mass and its uncertainty.\\
 
-However, a different approach is followed here. To go over the correlations between each variable, the sets of selections are randomly generated according to an uniform law, that spans over a certain variation range. 
+The standard approach consists in varying individually each selection, while keeping the others at their reference value. Although it allows to address the bias induced by a given cut, this does not take into account the possible correlation between topological variables. For instance, a higher cut on cascade decay radius also implies that the \rmLambda daughter decays further away in the detector. To tackle that, one needs to build a matrix containing the correlation factors for each pair of selection variables.
 
+However, a different approach is followed here. To go over the correlations between each variable, the sets of selections are randomly generated according to an uniform law, that spans over a certain variation range. The critical point of this study resides in the choice of the variation range, where a careful balance must be found: it should not be too \say{severe} at the risk of losing all the signal, or too \say{gentle} to cause any significant shift. It is considered as satisfactory when the induced signal shift reaches approximately 10\%\footnote{Note that this condition is applied for each topological cuts. For other selections, it may be difficult to satisfy such criterion as they act on the background rather than the signal. This is the case, for example, with the competing mass rejection that could never reach the 10\% signal variation threshold, even with an excessively vast range of variation.}. The \tabs\ref{tab:SystematicSelectionsXi} and \ref{tab:SystematicSelectionsOmega}, list the considered selection variables, with their variation range as well as the induced signal variation for \rmXi and \rmOmega respectively. As for the \rmKzeroS and \rmLambda, this is summarised in \tabs\ref{tab:SystematicSelectionsK0s} and \ref{tab:SystematicSelectionsLambda}. \\
 
-\begin{table}[h]
+\begin{table}[t]
     \centering
     \begin{tabular}{c|c|c}
     \noalign{\smallskip}\hline \noalign{\smallskip}
-    \bf Track variable & Range & Signal variation \rmXiM (\rmAxiP) \\
+    \bf Track variable & Variation range & Signal variation \rmXiM (\rmAxiP) \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
     Nbr of crossed TPC readout rows & $> \left[ 70 ; 90 \right]$ &  1\% (1\%)\\
     $\Nsigma^{\rm TPC}$ & $<\left[ 1 ; 3 \right] $ &  60\% (60\%)\\
     
     \noalign{\smallskip}\hline \noalign{\smallskip}
-    \bf Topological variable & Range & Signal variation \rmXiM (\rmAxiP) \\
+    \bf Topological variable & Variation range & Signal variation \rmXiM (\rmAxiP) \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
     
     \multicolumn{3}{l}{\textbf{V0}} \\
@@ -545,10 +567,10 @@ However, a different approach is followed here. To go over the correlations betw
     
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \end{tabular}
-    \caption{Summary of the range variation on the topological and track selections used for the reconstruction of \rmXiM and \rmAxiP. The induced signal variation is indicated in the last column ; for more details, look at \fig\ref{fig:SignalVariation_TopoSel_XiMinus} and \fig\ref{fig:SignalVariation_TopoSel_XiPlus}.}\label{tab:SystematicSelectionsXi}
+    \caption{Summary of the variation ranges on the topological and track selections employed in the \rmXiM and \rmAxiP reconstruction. The last column indicates the \textit{maximum} induced signal variation; for more details, look at \fig\ref{fig:SignalVariation_TopoSel_XiMinus} and \fig\ref{fig:SignalVariation_TopoSel_XiPlus}.}\label{tab:SystematicSelectionsXi}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[t]
     \centering
     \begin{tabular}{c|c|c}
     \noalign{\smallskip}\hline \noalign{\smallskip}
@@ -586,92 +608,425 @@ However, a different approach is followed here. To go over the correlations betw
     
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \end{tabular}
-    \caption{Summary of the range variation on the topological and track selections used for the reconstruction of \rmOmegaM and \rmAomegaP. The induced signal variation is indicated in the last column ; for more details, look at \fig\ref{fig:SignalVariation_TopoSel_OmegaMinus} and \fig\ref{fig:SignalVariation_TopoSel_OmegaPlus}.}\label{tab:SystematicSelectionsOmega}
+    \caption{Summary of the variation ranges on the topological and track selections employed in the \rmOmegaM and \rmAomegaP reconstruction. The last column indicates the \textit{maximum} induced signal variation; for more details, look at \fig\ref{fig:SignalVariation_TopoSel_OmegaMinus} and \fig\ref{fig:SignalVariation_TopoSel_OmegaPlus}.}\label{tab:SystematicSelectionsOmega}
 \end{table}
+
+The analysis is repeated for each randomly generated set of cuts $i$, as detailed in \Sec\ref{subsec:MassExtraction}, meaning that a mass $\mu_{i}$ and its uncertainty $\sigma_{i}$ are extracted from the fit of the corresponding invariant mass distribution in the data and MC. However, only the values passing the following criteria are retained:
+
+\begin{itemize}
+\item[$\bullet$] the fitting procedure must have converged;
+\item[$\bullet$] to ensure a good fit quality, its reduced $\chi^{2}$ needs to be relatively to the unity, $\rmChiSquareNDF < 5$;
+\item[$\bullet$] the uncertainties on the mass value are expected to be below the \mmass. Since the \rmXi and \rmOmega masses are of the order of \gmass, a $\sigma_{\mu_{i}}$ at the level of 0.1\% of $\mu_{i}$ represents an uncertainty greater than 1 \mmass. In order to remove outliers, it is required that $\sigma_{\mu_{i}}/\mu_{i} < 0.1\%$.
+\end{itemize}
+
+Under these conditions and over a sufficiently large number of sets of cuts, the distributions $\mu_{i}$ and $\sigma_{\mu_{i}}$ can be built. These offer the opportunity to re-qualify the mass and its uncertainties:
+\begin{itemize}
+\item[$\bullet$] the \textit{measured mass} corresponds to the mean value of the $\mu_{i}$ distribution,
+\item[$\bullet$] the \textit{systematic uncertainty} due to the candidate selections is the standard deviation of the $\mu_{i}$ distribution,
+\item[$\bullet$] and the \textit{statistical uncertainty} is given by the mean value of the $\sigma_{\mu_{i}}$ distribution.
+\end{itemize}
+As opposed to most analyses, this re-definition allows to overcome the dependence on a reference set of cuts, making the analysis \textit{in principle} more robust.\\
+
+\begin{figure}[!p]
+%\centering
+\hspace*{-1.5cm}
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsNbrOfCutSets\_Xi.eps}
+	\label{fig:MassVsNbrOfCutSetsXi}
+} 
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsNbrOfCutSets\_Omega.eps}
+	\label{fig:MassVsNbrOfCutSetsOmega}
+} 
+\hspace*{-1.5cm}
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/StatErrVsNbrOfCutSets\_Xi.eps}
+	\label{fig:StatErrVsNbrOfCutSetsXi}
+} 
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/StatErrVsNbrOfCutSets\_Omega.eps}
+	\label{fig:StatErrVsNbrOfCutSetsOmega}
+} 
+\hspace*{-1.5cm}
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/SystErrVsNbrOfCutSets\_Xi.eps}
+	\label{fig:SystErrVsNbrOfCutSetsXi}
+} 
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/SystErrVsNbrOfCutSets\_Omega.eps}
+	\label{fig:SystErrVsNbrOfCutSetsOmega}
+}  
+\caption{Relative measured mass as well as its statistical and systematic uncertainties in pp collisions at \sqrtS = 13 \tev as a function of the number of cut sets, for \rmXi in (a), (c), (e) and \rmOmega in (b), (d), (f) respectively. The quantities on the y-axis are relative to the value taken as the final measurement. In this case, it corresponds to the quantity for 20 000 different sets of cuts. Here, the peak is modeled by a modified Gaussian, and the background by a first order polynomial. The error bars represents the uncertainty on the evaluation of the mean or standard deviation.}
+	\label{fig:MassVsNentries}
+\end{figure}
+%\clearpage
+
+The above quantities being extracted from a finite sample, one could expect them to depend on the number of cut sets, $N$. The stability of the results with the amount of sets employed has been studied and is shown on \fig\ref{fig:MassVsNentries}. At first, the mass value, its statistical and systematic uncertainties fluctuate with the $N$, until they reach a plateau region at approximately 5000-6000 different sets of cuts. Such amount should thus suffice to perform the mass measurement. However, in order to a guarantee an excellent stability, 20 000 sets are being used.
+
+The output results of this procedure are presented in the table \ref{tab:SystTopoKineSelections}.
 
 \begin{table}[h]
     \centering
-    \begin{tabular}{c|c|c}
-    \noalign{\smallskip}\hline \noalign{\smallskip}
-    \bf Candidate variable & Range & Signal variation \rmKzeroS \\
-    \noalign{\smallskip}\hline \noalign{\smallskip}    
-    Competing mass rejection (\gmass) & $> \left[ 0.002 ; 0.010 \right]$ & 1.1\% \\
-    
-    \noalign{\smallskip}\hline \noalign{\smallskip}
-    \bf Track variable & Range & Signal variation \rmKzeroS \\
-    \noalign{\smallskip}\hline \noalign{\smallskip}
-    Nbr of crossed TPC readout rows & $> \left[ 70 ; 90 \right]$ &  0.5\% \\
-    $\Nsigma^{\rm TPC}$ & $< \left[ 1 ; 3 \right] \ \sigma$ &  45\% \\
-    
-    \noalign{\smallskip}\hline \noalign{\smallskip}
-    \bf Topological variable & Range & Signal variation \rmKzeroS \\
-    \noalign{\smallskip}\hline \noalign{\smallskip}
-    
-    V0 decay radius (\cm) & $> \left[ 0.4 ; 2.2 \right]$ & 10\% \\
-    V0 Lifetime (\cm) & $< \left[ 1.57 ; 3.43 \right]$ \cTau & 12\% \\
-    V0 cosine of pointing angle & $> \left[ 0.995 ; 0.9998 \right]$ & 10\% \\
-    DCA pion to prim. vtx (\cm) & $> \left[ 0.04 ; 0.5 \right]$ & 24\% \\
-%    DCA V0 to prim. vtx (\cm) & < $\left[ 0.04 ; 1 \right]$ & 35\% \\
-    DCA between V0 daughters (std dev) & $< \left[ 0.2 ; 1.5 \right]$ & 12\%\\
-    \noalign{\smallskip}\hline \noalign{\smallskip}
-    \end{tabular}
-    \caption{Summary of the range variation on the topological and track selections used for the reconstruction of \rmKzero. The induced signal variation is indicated in the last column ; for more details, look at \fig\ref{fig:SignalVariation_TopoSel_K0s}.}\label{tab:SystematicSelectionsK0s}
-\end{table}
+    \begin{tabular}{cccc|ccc}
 
-\begin{table}[h]
-    \centering
-    \begin{tabular}{c|c|c}
+%    \begin{tabular}{b{2cm}@{\hspace{0.5cm}} b{3cm}@{\hspace{0.5cm}} b{2cm}@{\hspace{0.5cm}} b{2cm}@{\hspace{0.5cm}} b{5cm}@{\hspace{0.5cm}} b{3cm}@{\hspace{0.5cm}} b{3cm}@{\hspace{0.5cm}}}
     \noalign{\smallskip}\hline \noalign{\smallskip}
-    \bf Candidate variable & Range & Signal variation \rmLambda (\rmAlambda) \\
-    \noalign{\smallskip}\hline \noalign{\smallskip}    
-    Competing mass rejection (\gmass) & > $\left[ 0.005 ; 0.012 \right]$ & 3\% (3\%)\\
-    
+    \bf Particle & \bf Measured & \multicolumn{2}{c|}{\bf Uncertainty} & \bf Measured & \multicolumn{2}{c}{\bf Uncertainty}\\
+    & \bf mass & \bf stat. & \bf syst. & \bf mass difference & \bf stat. & \bf syst.\\
+    & (\mmass) & (\mmass) & (\mmass) & ($\times 10^{-5}$) & ($\times 10^{-5}$) & ($\times 10^{-5}$) \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
-    \bf Track variable & Range & Signal variation \rmLambda (\rmAlambda) \\
+    \rmKzeroS & 497.737 & 0.003 & 0.010 & / & / & / \\
+	\noalign{\smallskip}\hline \noalign{\smallskip}
+    \rmLambda & 1115.618 & 0.002 & 0.011 & \multirow{2}{*}{4.78} & \multirow{2}{*}{0.17} & \multirow{2}{*}{0.14} \\
+	\rmAlambda & 1115.671 & 0.002 & 0.012 & & & \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
-    Nbr of crossed TPC readout rows & > $\left[ 70 ; 90 \right]$ &  0.8\% (0.8\%)\\
-    $\Nsigma^{\rm TPC}$ & < $\left[ 1 ; 3 \right] \ \sigma$ &  45\% (45\%)\\
-    
+    \rmXiM & 1321.728 & 0.004 & 0.016 & \multirow{2}{*}{3.95} & \multirow{2}{*}{0.37} & \multirow{2}{*}{0.39} \\
+	\rmAxiP & 1321.780 & 0.004 & 0.019 & & & \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
-    \bf Topological variable & Range & Signal variation \rmLambda (\rmAlambda) \\
-    \noalign{\smallskip}\hline \noalign{\smallskip}
-    
-    V0 decay radius (\cm) & $> \left[ 0.4 ; 3.5 \right]$ & 11\% (11\%)\\
-    V0 Lifetime (\cm) & $< \left[ 1.53 ; 3.43 \right]$ \cTau & 17\% (17\%)\\
-    V0 cosine of pointing angle & $> \left[ 0.995 ; 0.9998 \right]$ & 13\% (13\%)\\
-    DCA proton to prim. vtx (\cm) & $> \left[ 0.04 ; 0.15 \right]$ & 17\% (17\%)\\
-    DCA pion to prim. vtx (\cm) & $> \left[ 0.04 ; 0.5 \right]$ & 12\% (12\%) \\
-%    DCA V0 to prim. vtx (\cm) & $< \left[ 0.06 ; 0.2 \right]$ & 25\% (25\%)\\
-    DCA between V0 daughters (std dev) & $< \left[ 0.3 ; 1.5 \right]$ & 12\% (12\%)\\ 
-    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \rmOmegaM & 1672.536 & 0.014 & 0.015 & \multirow{2}{*}{-1.31} & \multirow{2}{*}{1.14} & \multirow{2}{*}{0.76} \\ 
+    \rmAomegaP &  1672.514 & 0.014 & 0.015 & & & \\ 
+	\noalign{\smallskip}\hline \noalign{\smallskip}
     \end{tabular}
-    \caption{Summary of the range variation on the topological and track selections used for the reconstruction of \rmLambda and \rmAlambda. The induced signal variation is indicated in the last column ; for more details, look at \fig\ref{fig:SignalVariation_TopoSel_Lambda} and \fig\ref{fig:SignalVariation_TopoSel_AntiLambda}.}\label{tab:SystematicSelectionsLambda}
+    \caption{Measured masses and mass differences of \rmKzeroS, \rmLambda, \rmXi and \rmOmega, accompanied by their statistical and systematic (due to the topological and kinematic selections) uncertainties. Here, these measurements have been performed with a modified Gaussian for the signal and a first order polynomial for the background.}\label{tab:SystTopoKineSelections}
 \end{table}
-
-\subsubsection{Influence on the mass extraction}
 
 \subsubsection{Influence on the mass difference mass}
 
-\subsection{Momentum scale}
+In the \tab\ref{tab:SystTopoKineSelections}, the mass difference have been obtained taking the independently measured mass values of the particle and the anti-particle from the above procedure (\Sec\ref{subsubsec:SystTopoMass}), and using \eq\ref{eq:MassDifference}. The uncertainties are then propagated to obtain the statistical and systematic uncertainties on the mass difference. It does not result directly from the aforementioned procedure. In that sense, the mass difference measurement is \textit{indirect}. It carries the full systematic uncertainties from the particle and anti-particle mass values. By extracting the mass difference in a more \textit{direct} way -- similarly to what is done for the mass in \Sec\ref{subsubsec:SystTopoMass} --, part of the uncertainties from the particle and anti-particle masses would cancel out in the difference, resulting in a smaller systematic uncertainty.\\
 
-\subsubsection{Energy loss corrections}
+To that end, an additional step needs to be introduced in the previous strategy in \Sec\ref{subsubsec:SystTopoMass}. For each set of cuts $i$, both particle and anti-particle masses -- $\mu_{i, \textsc{part.}}$ and $\mu_{i, \overline{\textsc{part.}}}$ --  are extracted as well as their uncertainties, $\sigma_{i, \textsc{part.}}$ and $\sigma_{i, \overline{\textsc{part.}}}$. From these, the computation of the mass difference is performed, 
+\begin{equation}
+\frac{\Delta \mu_{i}}{  \mu_{i} } = 2 \cdot \frac{\mu_{i, \textsc{part.}}-\mu_{i, \overline{\textsc{part.}}}}{\mu_{i, \textsc{part.}}+\mu_{i, \overline{\textsc{part.}}}},
+\end{equation}
+and the uncertainties are propagated in order to get the one on the mass difference, 
+\begin{equation}
+\sigma_{\Delta \mu_{i} /\mu_{i} }=  4 \cdot \sqrt{ \left(\frac{-\mu_{i, \overline{\textsc{part.}}}}{\left(\mu_{i, \textsc{part.}} + \mu_{i, \overline{\textsc{part.}}} \right)^{2}}\right)^{2} \sigma_{\mu_{i, \textsc{part.}}}^{2} + \left(\frac{\mu_{i, \textsc{part.}}}{\left(\mu_{i, \textsc{part.}} + \mu_{i, \overline{\textsc{part.}}} \right)^{2}}\right)^{2} \sigma_{\mu_{i, \overline{\textsc{part.}}}}^{2} }.
+\end{equation}\\
+
+Similarly to the mass extraction, the mass difference and its uncertainties are calculated from the $\Delta \mu_{i}/  \mu_{i}$ and $\sigma_{\Delta \mu_{i} /\mu_{i} }$ distributions over $N$ different set of cuts:
+\begin{itemize}
+\item[$\bullet$] the \textit{measured mass difference} corresponds to the mean value of the $\Delta \mu_{i}/  \mu_{i}$ distribution,
+\item[$\bullet$] the \textit{systematic uncertainty} due to the candidate selections is the standard deviation of the $\Delta \mu_{i}/  \mu_{i}$ distribution,
+\item[$\bullet$] and the \textit{statistical uncertainty} is given by the mean value of the $\sigma_{\Delta \mu_{i} /\mu_{i} }$ distribution.
+\end{itemize}
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{cccc}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    Particle & Mass difference & \multicolumn{2}{c}{Uncertainty}\\  
+    & ($\times 10^{-5}$) & statistical ($\times 10^{-5}$) & systematic ($\times 10^{-5}$) \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \multicolumn{4}{l}{\bf \rmLambda} \\
+    Indirect & \bf 4.54 &  0.75 & 1.50 \\
+    Direct & \bf 4.68 & 0.77 & 0.79 \\ 
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \multicolumn{4}{l}{\bf \rmXi} \\
+    Indirect & \bf 4.54 &  0.75 & 1.50 \\
+    Direct & \bf 4.68 & 0.77 & 0.79 \\ 
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \multicolumn{4}{l}{\bf \rmOmega} \\
+    Indirect & \bf 0.48 & 1.74 & 1.57  \\
+    Direct & \bf 0.53 & 1.75 & 1.19   \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Comparison between \textit{direct} and \textit{indirect} mass difference values of \rmXi and \rmOmega baryons, with their respective uncertainties (statistical and systematical). The total uncertainty is obtained by summing quadratically the statistical and systematical uncertainties. Here, both direct and indirect measurements have been performed with a modified Gaussian for the peak and a first order polynomial for the side-bands.}\label{tab:SystMassDifference}
+\end{table}
+
+The results on the directly extracted mass difference are presented in \tab\ref{tab:SystMassDifference}. Although the values obtained directly are consistent with the indirect ones, the associated systematic uncertainties are smaller by approximately 48\% for \rmXi and 25\% for \rmOmega. Due to this gain in precision, from now on, the mass difference will always be extracted directly.
+
+\subsection{Stability of the results}
+\label{subsec:StabilityResults}
+
+\subsubsection{Dependence on the data taking period}
+
+\subsubsection{Dependence on the decay radius}
+
+
+
+\subsubsection{Dependence on the transverse momentum}
+\label{subsubsec:MassDependenceOnPt}
+
+Although the invariant mass expression in \eq\ref{eq:CascInvMass} involves only the momentum vector of the decay daughters, it can be re-written to show the \textit{explicit} dependency on the total momentum in \eq\ref{eq:InvMassPtotDependenceCasc},
+\begin{align}
+M_{\rm candidate}^2( \textrm{casc.}) &= \Big(\sqrt{ \textbf{p}_{\rm V0}^2 + m_{\rmLambda}^2} + \sqrt{ \textbf{p}_{\rm bach.}^2 + m_{\rm bach.}^2}\Big)^2 - ( \textbf{p}_{\rm V0} + \textbf{p}_{\rm bach.})^2 \\
+&= \Big(\sqrt{ p_{\rm V0}^2 + m_{\rmLambda}^2} + \sqrt{ p_{\rm bach.}^2 + m_{\rm bach.}^2}\Big)^2 - \left( p_{\rm V0}^{2} + p_{\rm bach.}^{2} + 2 \cdot p_{\rm V0} \cdot p_{\rm bach.} \cos \theta \right),
+\label{eq:InvMassPtotDependenceCasc}
+\end{align}
+and in particular, the \textit{explicit} dependency on the transverse and longitudinal momenta in \eq\ref{eq:InvMassPtPzDependenceCasc},
+\begin{equation}
+\begin{split}
+M_{\rm candidate}^2( \textrm{casc.}) &= \Big(\sqrt{ p_{\rm T, V0}^2 + p_{\rm z, V0}^2 + m_{\rmLambda}^2} + \sqrt{ p_{\rm T, bach.}^2 + p_{\rm z, bach.}^2 + m_{\rm bach.}^2}\Big)^2 \\
+&\quad - \big( p_{\rm T, V0}^{2} + p_{\rm T, bach.}^{2} + 2 \cdot p_{\rm T, V0} \cdot p_{\rm T, bach.} \cos \theta_{xy}\\
+&\quad + p_{\rm z, V0}^{2} + p_{\rm z, bach.}^{2} + 2 \cdot p_{\rm z, V0} \cdot p_{\rm z, bach.} \cos \theta_{z} \big),
+\end{split}
+\label{eq:InvMassPtPzDependenceCasc}
+\end{equation}
+where $\theta$, $\theta_{xy}$ and $\theta_z$ are opening angles, introduced and discussed in more details in the next section \Sec\ref{subsubsec:OpAngleDependence}.
+
+
+
+\subsubsection{Dependence on the opening angles}
+\label{subsubsec:OpAngleDependence}
+
+As Different opening angles can be considered.
+
+\begin{itemize}
+\item \textbf{the opening angle in 3D}, that will simply be called \textit{opening angle} or \textit{3D opening angle} :\\
+There are two ways to compute this quantity, depending if the wanted value needs to be signed or unsigned. Here, it has been decided that value of the opening angle would be unsigned. It can be calculated from the momentum vectors of the positive and negative decay daughters :
+\begin{align}
+&{\bf p_{\rm pos.}} \cdot {\bf p_{\rm neg.}} = p_{\rm pos.} p_{\rm neg.} \cos\left(\theta\right) \\
+\Rightarrow \qquad &\theta = \arccos \frac{ \left( {\bf p_{\rm pos.}} \cdot {\bf p_{\rm neg.}} \right) \cdot {\bf n}}{ p_{\rm pos.} \ p_{\rm neg.}}
+\label{eq:OpeningAngle3D}
+\end{align}
+\item \textbf{the transverse opening angle} :\\
+Here, the sign of the opening angle in the transverse plane is important, since it relates to cowboy and sailor configurations. A signed angle can be obtained using the cross product between the momentum vectors of the decay daughters :
+\begin{align}
+&{\bf p_{\rm pos.}} \times {\bf p_{\rm neg.}} = p_{\rm pos.} p_{\rm neg.} \sin\left(\theta\right) \ {\bf n} \\
+\Rightarrow \qquad &\theta = \arcsin \frac{ \left( {\bf p_{\rm pos.}} \times {\bf p_{\rm neg.}} \right) \cdot {\bf n}}{ p_{\rm pos.} \ p_{\rm neg.}}
+\label{eq:OpeningAngle2D}
+\end{align}
+The candidate is said to be in sailor configuration if $ B \left( p_{x, \text{pos}} \ p_{y, \text{neg}} - p_{x, \text{neg}} \ p_{y, \text{pos}} \right) > 0$, with B being the magnetic field. Conversely, it is in sailor configuration if $ B \left( p_{x, \text{pos}} \ p_{y, \text{neg}} - p_{x, \text{neg}} \ p_{y, \text{pos}} \right) < 0$
+
+\item \textbf{the longitudinal opening angle } :\\
+The opening angle in the longitudinal direction, $\theta_z$ can be deduced directly from the difference of longitudinal angle between the two decay daughters :
+\begin{equation}
+\theta_{z} = \theta_{z, \bf{pos.}} - \theta_{z, \bf{neg.}}
+\label{eq:OpeningAngleZ}
+\end{equation}
+\end{itemize}
+
+\subsubsection{Dependence on the azimuthal angles}
+
+\subsubsection{Dependence on the rapidity}
+
+\subsubsection{Dependence on the event multiplicity}
+\label{subsubsec:EventMultDependence}
+
+The event multiplicity is determined using the VZERO detectors as multiplicity estimator, as described in \Sec\ref{subsubsec:VZERO}. The total charge deposited in each VZERO arrays provides a measurement of the charge particle multiplicity, through the calculation of the average signal amplitude denoted as VZERO-M\footnote{In fact, the VZERO multiplicity estimator corresponds rather to the VZERO-M$/\langle \text{VZERO-M}\rangle$. This normalisation allows to account for the ageing of the scintillator arrays, that become less transparent over time leading to a deterioration of the detector performances.}. 
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{c|ccccc}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    Multiplicity Class & \upperRomannumeral{1} & \upperRomannumeral{2} & \upperRomannumeral{3} & \upperRomannumeral{4} & \upperRomannumeral{5} \\
+	\sigmaIdx[]/\sigmaIdx[\INELZero] & 0-0.95\% & 0.95-4.7\% & 4.7-9.5\% & 9.5-14\% & 14-19\% \\	        
+	$\langle \dNchdeta \rangle$ & $21.3 \pm 0.6$ & $16.5 \pm 0.5$ & $13.5 \pm 0.4$ & $11.5 \pm 0.3$ & $10.1 \pm 0.3$ \\
+	\noalign{\smallskip}\hline \noalign{\smallskip}
+	Multiplicity Class & \upperRomannumeral{6} & \upperRomannumeral{7} & \upperRomannumeral{8} & \upperRomannumeral{9} & \upperRomannumeral{10} \\
+	\sigmaIdx[]/\sigmaIdx[\INELZero] & 19-28\% & 28-38\% & 38-48\% & 48-68\% & 68-100\% \\
+	$\langle \dNchdeta \rangle$ & $8.45 \pm 0.25$ & $6.72 \pm 0.21$ & $5.40 \pm 0.17$ & $3.90 \pm 0.14$ & $2.26 \pm 0.12$ \\
+	\noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Event multiplicity classes, with the corresponding fraction of the total inelastic cross section \INELZero (\sigmaIdx[]/\sigmaIdx[\INELZero]) and average charged particle multiplicity at mid-rapidity in pp at \sqrtS = 7 \tev, $\langle \dNchdeta \rangle$. Table taken from \cite{alicecollaborationMultiplicityDependenceLightflavor2019}.}
+    \label{tab:MultiplicityClassesCPT}
+\end{table}
+
+\subsection{Momentum scale calibration}
+
+The dominant source of systematic uncertainty comes from the momentum scale calibration. This can originate from the uncertainty on the value of the magnetic field (\Sec\ref{subsubsec:ImprecisionMagneticField}) or imperfect energy loss corrections (\Sec\ref{subsubsec:ImperfectEnergyLossCorrections})
 
 \subsubsection{Imprecision on the magnetic field}
+\label{subsubsec:ImprecisionMagneticField}
 
-\subsection{Pile-up treatment}
+As shown on \fig, the data sample has been collected with two opposite magnetic field polarities, $B = \pm 0.5$ T. In complement to \Sec\ref{subsec:StabilityResults}, the stability of the mass and mass difference measurements is checked by dividing the data sample according to the field configuration. \\
+
+
+The measurement of the magnetic field in the L3 magnet has been performed in 2007 and is reported in \cite{shahoyanSummaryL3Magnet2007}. It uses 31 Hall probes, calibrated to a precision of 1 Gauss and distributed over two arms, that could rotate around the beam axis and translate along the very same axis. Based on a set of 480 measurement points, the field were interpolated in order to build the full magnetic field map within the L3 volume. Concerning the precision of the latter, the analysis \cite{shahoyanSummaryL3Magnet2007} concludes the following:
+\begin{quote}
+\textit{ [...] the difference between the corrected data and the obtained parameterization which gives an estimate of the uncertainty for the latter (on top of the mentioned constant transverse field): within the TPC volume the differences are contained in 2 Gauss range although on the periphery of the scanned region there are points with difference reaching 5-6 Gauss (these points constitute less than 1 \% of all data).} 
+\end{quote} 
+
+Since the daughter tracks are required to cross at least 70 readout rows in the TPC, likely distributed over different sectors, the contribution of the points located in the periphery of the scanned region (1 \% of all data) can reasonably be considered as negligible. Therefore, for the whole L3 volume, a 2 Gauss uncertainty on the magnetic field is retained.\\
+
+An uncertainty on the magnetic field translates into a shift of the transverse momentum components of the decay daughters. Transverse momentum is related to magnetic field $B_{0}$ and the track curvature $R$ through the relation ${\pT}_{0} = q B_{0} R$. If the magnetic field $B$ is smaller or greater than its nominal value, $B_{0}$, by 2 Gauss, the transverse momentum would respectively be scaled down or up by a factor $B/B_{0}$ :
+\begin{equation}
+{\pT}_{0} = q B_{0} R \qquad \Rightarrow \qquad \pT = \frac{B}{B_{0}} {\pT}_{0}
+\end{equation}
+
+Here is the strategy adopted to evaluate the impact of the magnetic field imprecision : the transverse components of all the decay daughters will be scaled up or down by $B/B_{0}$ -- with $B$ being equal to $B_{0}$ plus or minus 2 Gauss --, the mass will then be extracted as explained in section~\ref{sec:Section04.c-} and the maximum deviation with respect to the mass measured with the nominal value of the magnetic field will be quoted as our uncertainty due to the $B$-field imprecision. The numerical value of the latter can be found in \tab\ref{tab:BFieldPrecision} for \rmKzero, \rmLambda, \rmXi and \rmOmega.
+
+\begin{table}[!h]
+    \begin{center}
+        \begin{tabular}{l|c|c}       
+            \noalign{\smallskip} \hline \noalign{\smallskip}        
+            Particle & \multicolumn{2}{c}{Uncertainty on the} \\
+            & mass (\mmass) & mass difference ($\times 10^{-5}$) \\
+            \noalign{\smallskip}\hline \noalign{\smallskip}
+            \rmKzeroS & 0.080 & /\\
+            \noalign{\smallskip}\hline \noalign{\smallskip}
+            \rmLambda & 0.013 & negligible\\
+            \rmAlambda & 0.013 & negligible\\
+            \noalign{\smallskip}\hline \noalign{\smallskip}
+            \rmXiM & 0.024 & negligible\\
+            \rmAxiP & 0.024 & negligible\\
+            \noalign{\smallskip}\hline \noalign{\smallskip}
+            \rmOmegaM & 0.028 & negligible\\
+            \rmAomegaP & 0.028 & negligible\\
+            \noalign{\smallskip}\hline \noalign{\smallskip}
+        \end{tabular}
+        \caption{Systematic uncertainties on the mass (second row) and mass difference (third row) due to the imprecision on the magnetic field value for \rmKzero, \rmLambda, \rmXi and \rmOmega.}
+        \label{tab:BFieldPrecision}
+    \end{center}
+\end{table}
+
+\subsubsection{Energy loss corrections}
+\label{subsubsec:ImperfectEnergyLossCorrections}
+
+The uncertainty on the particle's energy losses stem from the calculation of its corrections. The latter arises at two different levels: on one hand, the actual amount of material budget may not be properly accounted for in the detector geometry. In other words, there could be a significant misknowledge on the amount of material budget in the detector. On the other hand, the calculation of the energy loss corrections could be erroneous.
+
+\begin{figure}[t]
+%\centering
+\hspace*{-1.5cm}
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsRadius\_Xi.eps}
+	\label{fig:MassVsNbrOfCutSetsXi}
+} 
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsRadius\_XiMC.eps}
+	\label{fig:MassVsNbrOfCutSetsOmega}
+} 
+\hspace*{-1.5cm}
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsRadius\_Omega.eps}
+	\label{fig:StatErrVsNbrOfCutSetsXi}
+} 
+\subfigure[]{
+	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsRadius\_OmegaMC.eps}
+	\label{fig:StatErrVsNbrOfCutSetsOmega}
+} 
+\caption{Measured mass of the \rmXi (top) and \rmOmega baryons (bottom), in the data (left) and in MC (right), as a function of the cascade decay radius. The average radial position for each ITS layer is indicated in dotted line. Note that, for the purpose of the comparison, the MC is \textit{not} re-weighted (\Sec\ref{CorrectionOnTheExtractedMass}).}
+	\label{fig:MassVsRadius}
+\end{figure}
+
+A hint of the latter is found in \fig\ref{fig:MassVsRadius}. Whatever the particle of interest, the reconstructed mass increases with the transverse momentum and the decay radius, in the data and MC. It turns out that this trend results from several approximations in the implementation of the energy loss corrections in the ALICE framework. There are three, that can be classified from the most to the \say{least} significant.
+
+\begin{enumerate}
+\item As explained in \Sec\ref{subsubsec:TrackReco}, in the final stage of the tracking, all tracks are propagated inwards to their DCA to the primary vertex, taking into account stochastic processes such as energy losses. While this makes sense for primary tracks, it introduces a bias for secondary ones. Being a decay product, the inward propagation of a secondary track should stop at the decay point, where its parameters are related to the mother particle. Instead, at each propagation step between the secondary and primary vertices, the track receives additional energy from \dEdx-corrections (footnote \ref{footnote:EnergyLoss}). This excess of energy builds up with the decay point position, biasing further the track parameters the further away the secondary vertex is. Nevertheless, at this stage of the event reconstruction, there is no way to distinguish a primary from a secondary particle\footnote{Concerning V0 decays, there is indeed no way to identify a secondary particle at this stage of the reconstruction using the so-called \textit{offline} reconstruction, presented \chap\ref{chap:V0CascReconstruction}. However, there exists another approach, dubbed \textit{on-the-fly}, that performs that track finding, track fitting and V0 vertexing simultaneously. Although it has been checked that on-the-fly V0s do not exhibit the mass dependence on the transverse momentum and radial position of the decay point, they can not be used in the analysis as there exists no on-the-fly cascades.}. For that reason, this bias is expected to be removed later, during the V0 and cascade reconstruction. However, as mentioned in \Sec\ref{subsubsec:V0Formation} (footnote \ref{footnote:EnergyLossV0CascVertexing}), the propagation of daughter tracks from the DCA to the primary vertex to the V0/cascade decay point is performed with no energy loss corrections. This means that the energy previously added during the final inward propagation of the tracking between the secondary and primary vertices, has not been subtracted, leading to additional energy/momentum in the track parameters at the
+secondary decay position and thus to an offset in the invariant mass.
+
+\item The energy loss calculation relies on the same parametrisation of the Bethe-Bloch formula (\eq\ref{eq:BetheBloch}) as \GeantThree and \GeantFour\footnote{Although \GeantThree and \GeantFour are two different version of \textsc{Geant} software series, their treatement of the energy losses of a charged particle in a medium remains the same.}. For the parameters related to material, they are using the database in \cite{geant4Geant4MaterialDatabase}. However, as explained in \Sec\ref{subsubsec:TrackReco}, the particle energy losses are calculated and corrected assuming that all the materials are made of Si in the ITS volume (including the beam pipe) and Ne in the TPC. This approximation leads inevitably to a systematic misevaluation of the actual energy losses, and thus to bias in the invariant mass.
+
+\item Along the same line, the Bethe-Bloch formula in \eq\ref{eq:BetheBloch} also depends on the particle traversing the material and, in particular, its charge, momentum and mass. While the Kalman filter provides the first two, the last one comes from the measurement of the energy deposit in the TPC volume, which offers a preliminary particle identification. There is no guarantee, though, that the latter coincides with the expected mass hypothesis  for a \rmKzeroS, \rmLambdaPM, \rmXiPM or \rmOmegaPM decay. For instance, \Sec\ref{subsubsec:TrackReco} explains that the pion mass is taken as default value. As a matter of fact, only a fraction of the candidates has the correct mass hypothesis for both decay daughters as shown in \fig\ref{fig:FractionOfPIDForTracking}. If the mass hypothesis used in the energy loss calculation turns out to be incorrect, the wrong amount of energy loss correction are applied.
+
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figs/Chapter5/FractionOfPIDForTracking.eps}
+	\caption{Pictural representation of the fix on the energy loss corrections applied on the proton daughter of a \rmLambdaPM.}
+	\label{fig:FractionOfPIDForTracking}
+\end{figure}
+
+
+There are different ways to address these issues. The approach followed in this analysis consists in i) replaying the track propagation in order to remove the previous energy loss corrections, and ii) re-applying them with the correct mass hypothesis, appropriate material parameters and stopping at the secondary decay position. The \fig\ref{fig:SchemeRetroCorrection} gives a description of this procedure, also called \textit{retro-corrections}.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=1\textwidth]{Figs/Chapter5/Schema-RetroCorrections.eps}
+	\caption{Pictural representation of the fix on the energy loss corrections applied on the proton daughter of a \rmLambdaPM. The general idea breaks off in two stages: removing the previous \dEdx-corrections below the TPC inner wall (1. and 2.), and re-applying them appropriately (3.). The first stage starts with the propagation of the track parameters, initially at the decay position, to its DCA to the primary vertex without accounting for energy loss (1.). Then, the track is propagated to the TPC inner wall (2.) as performed during the final stage of the tracking (\Sec\ref{subsubsec:TrackReco}). In the second stage, the energy loss corrections are re-applied with the correct mass hypothesis -- here, the proton mass -- and stopping at the secondary vertex position (3.). Modified version of the figure from \cite{maireTrackReconstructionPrinciple2011}.}
+	\label{fig:SchemeRetroCorrection}
+\end{figure}
+
+The procedure starts off with the track parameters at the V0/cascade decay point. They are extrapolated to its point of closest approach to the primary vertex, without accounting for energy losses (\fig\ref{fig:SchemeRetroCorrection}, 1.). This boils down to undo the track propagation in \Sec\ref{subsubsec:V0Formation} and recover the track parameters as they were before the V0/cascade reconstruction. From this point, the track is propagated to its position at the TPC inner wall, in the exactly same condition as in the final stage of the tracking (\Sec\ref{subsubsec:TrackReco}): same mass hypothesis, same consideration on the detector material. This means that, at each step, the track looses the identical amount of energy which was previously added. At the TPC inner wall, the aforementioned energy loss corrections \textit{in the ITS} have been fully removed (\fig\ref{fig:SchemeRetroCorrection}, 2.). As most of the material budget comes from the ITS, the wrong energy loss corrections in the TPC can be ignored in first approximation. This last point was later verified with a propagation up to the TPC outer wall; no significant change could have been observed.  
+
+The second stage takes over with the re-application of the energy loss corrections. From the TPC inner wall, the track parameters are propagated to the secondary vertex position with the appropriate mass hypothesis and the adequate material, in order to correct the right amount of energy losses this time (\fig\ref{fig:SchemeRetroCorrection}, 3.).
+
+The \fig shows the application of this procedure in the data and MC.\\
+
+Another source of systematic effect related to the energy loss corrections comes from the limited knowledge on the material budget in the detector. If there is a discrepancy between the amount of \textit{known} crossed material and the actual one, the estimation of the energy loss will be directly impacted. 
+
+The material budget of the ALICE detector has been estimated experimentally by reconstructing pairs of electron-position originating from photons converted in the detectors. The photon conversion probability being sensitive to the geometry, the composition of detector or the material budget, it provides a precise description of the material distribution. In the LHC Run-2, the material budget in the central barrel of the ALICE detector is known with a precision of about 4.5\% \cite{alicecollaborationPerformanceALICEExperiment2014}\cite{alicecollaborationValidationALICEMaterial2022}\footnote{As a matter of fact, at the time of the writing of this manuscript, another photon conversion analysis \cite{alicecollaborationDatadrivenPrecisionDetermination2023} has been performed, that quotes an uncertainty on the material budget of 2.5\%. However, not only the precision has changed, but also the amount of material budget. However, as of 2023, there have been no re-processing of the data nor production of MC simulations using this updated version of the material distribution. For that reason, the latter will not be used in this work.}. 
+
+
+By varying the material budget, the impact of the misknowledge on the actual material budget can be estimated. This kind of investigation is typically carried out on simulated data. The idea consists in running two simulations: one with an increased/decreased material density\footnote{There could be two ways to increase/decrease the material budget. One could increase the thickness of the detectors, but this option is rather disfavoured since it may introduce clipping, overlapping of detector volumes. An alternative is to vary the material density, such as changing the Si density by $\pm$ 4.5\%. This offers the same results as the first possibility without affecting the detector geometry.}, and another with the nominal one. In both cases, the event reconstruction uses the standard detector geometry, \ie with the standard amount of material budget. The comparison of the results from these two simulations allows to determine the systematic effect due to an uncertainty of 4.5\% on the material budget.
+
+In an ideal scenario, this study should rely on three MC productions: one with nominal material density serving as reference, another with a 4.5\% increase of the density with respect to the standard value, and a last one with a decrease by the same amount. In this way, the effect of a increase or decrease of the material budget can be fully assessed. 
+
+It turns out that there are no such MC productions in pp collisions at \sqrtS = 13 \tev. Instead, there exist only simulations with material budget increased 30\%. Here, the approach is slightly different: the goal is to change excessively the material density to guarantee the observation of a systematic effect. The latter is then scaled down to the actual precision on the material budget. In other words, by estimating the variation of the results induced by a 30\% increase of the material budget and by assuming linearity, the effect of increase of 4.5\% of the material density can derived. It is given by:
+\begin{equation}
+\begin{bmatrix}
+\textsc{\footnotesize Variation of the results due to}\\
+\textsc{\footnotesize 4.5\% extra material budget}
+\end{bmatrix}
+= \frac{4.5\%}{30\%} \times
+\begin{bmatrix}
+\textsc{\footnotesize Variation of the results due to}\\
+\textsc{\footnotesize 30\% extra material budget}
+\end{bmatrix}
+\end{equation}
+
+However, there exist simulations with an increase/decrease of the material density by 4.5\%, but in Pb-Pb collisions at \sqrtSnn = 5.02 \tev. Consequently, the results of this study are cross-checked with those obtained using these MC productions.
 
 \subsection{Mass extraction}
 
+The elements related to the mass extraction are also included in the present study. It covers the considered fit functions for modeling the peak and the background, the fitting range and the bin width of the invariant mass distribution.
+
 \subsubsection{Choice of the fit function}
 
+By exploiting different peak and background functions for the mass extraction, one can estimate the systematic effect due to the choice of model. The considered functions for each particle have been explained and detailed in \Sec\ref{subsubsec:SignalBackShape}. In total, four combinations of peak and background models are tested, for which the masses and mass differences, as well as their statistical and systematic uncertainties, are measured using the procedure presented in \Sec\ref{subsec:SystTopoAndTrackSelections}. 
+
 \subsubsection{Choice of the fitting range}
+\label{subsubsec:SystFittingRange}
+
+In order to study the effect that element of the fit, masses and mass differences have been measured for 20 000 randomly generated fitting range and fixing the cascade candidate selections to their values in Tab. 3. The randomization is performed on both edges of the adjustement range, according to an uniform distribution on the intervals presented in Tab. 13. The standard deviation over the the whole set of fitting range provides the uncertainty due to the choice of the adjustement interval.
+
+The results are presented in the two last columns of \tab\ref{tab:SystFittingRange}. The order of magnitude of the uncertainties due to the choice of the fitting range on the mass difference of \rmXi and \rmOmega were about $10^{-7}-10^{-8}$ ; to be conservative, we will quote an error of $10^{-7}$ on their mass difference values.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ccc|cc}
+    \noalign{\smallskip}\hline \hline \noalign{\smallskip}
+    Particle & \multicolumn{2}{c}{Randomization interval (\mmass) }  & \multicolumn{2}{c}{Uncertainty on the ...}  \\
+    & Bottom edge & Top edge & ...mass (\mmass) & ...mass difference $(\times 10^{-5})$\\
+    \noalign{\smallskip}\hline \hline \noalign{\smallskip}
+    \rmKzero & \bf $\left[ 0.460\ ; \ 0.475 \right]$ & \bf $\left[ 0.520\ ; \ 0.540 \right]$ & 0.002 & / \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \rmLambda & \bf $\left[ 1.098\ ; \ 1.108 \right]$ & \bf $\left[ 1.125\ ; \ 1.135 \right]$ & 0.001 & 0.02 \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \rmXi & \bf $\left[ 1.265\ ; \ 1.3 \right]$ & \bf $\left[ 1.345\ ; \ 1.38 \right]$ & 0.001 & 0.01 \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \rmOmega & \bf $\left[ 1.615\ ; \ 1.65 \right]$ & \bf $\left[ 1.695\ ; \ 1.73 \right]$ &  0.001 & 0.02 \\
+    \noalign{\smallskip}\hline \hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Randomization intervals on the bottom and top edges of the fitting range for \rmKzero, \rmLambda, \rmXi and \rmOmega. The adjustement ranges are generated according to an uniform law. The uncertainties due to the choice of the fitting range are indicated in the two last columns.}\label{tab:SystFittingRange}
+\end{table}
 
 \subsubsection{Choice of the binning}
+
+Similarly to the choice of the fitting range (\Sec\ref{subsubsec:SystFittingRange}), the binning of the invariant mass distributions may influence the output of the fit. By default, the binning is set at 0.5 \mmass. To evaluate its impact, the binning has been varied from 1 to 0.25 \mmass with a step of 0.25 \mmass. The standard deviation of the measurements performed using the different binning provides the systematic uncertainty due to the granularity of the invariant mass distributions.
+
+The results are presented in. This element of the analysis introduces an uncertainty of
+0.001 \mmass on the mass values, and 0.02, 0.06 and 0.13 $\times 10^{-5}$ on the mass difference values of \rmLambda, \rmXi and \rmOmega respectively.
+
+\subsection{Pile-up treatment}
+
+A contribution to the systematic uncertainty can also originate from the pile-up rejection introduced in \Sec\ref{subsec:V0CascSelections}. It is evaluated by varying the rejection requirements. 
+
+Pile-up events may induce a bias in the mass measurement due to the association of tracks coming from different collisions, which possibly lead to the formation of a V0 or cascade candidate. Considering the tight selections applied on the candidate variables -- and most particularly, on the cosine of the pointing angle to the primary vertex (\tabs\ref{tab:V0Selections} and \ref{tab:CascadeSelections}) --, the probablity of such misassociation is expected to be relatively low. Therefore, the measurement is performed with and without the pile-up rejection cut. If the effect turns out to be statistically significant, the absolute deviation with respect to the standard configuration is taken as systematic uncertainty.
 
 \subsection{Correction on the extracted mass}
 
 \subsection{Precision on the tabulated masses}
 
-\subsection{Other possible biases}
+The V0 and cascade masses are extracted from their invariant mass distribution, as explained in \Sec\ref{subsec:MassExtraction}. The \eq\ref{eq:LambdaInvMass} and \ref{eq:CascInvMass} highlight the quantities entering into the invariant mass calculation of a candidate, \ie the mass and momenta of each daughter particle. In particular, even for the \rmLambdaPM daughter of \rmXiPM or \rmOmegaPM decay, the former always corresponds to the tabulated mass in the PDG. As presented in \tab\ref{tab:PDGmass}, the latter has a finite precision. Although the PDG mass values of proton and pion are determined with a high degree of precision (\sigmaPDG < 1 \kmass), this is not the case of the \rmKPM and \rmLambdaPM (\sigmaPDG $\sim$\orderOf{10} \kmass). Consequently, they can possibly induce the systematic bias in the invariant mass calculation; all the more so for the cascades, since the latter is one of the products of the \rmXi decay, and both the former and the latter are the two decay daughters of the \rmOmega. 
+
+\begin{table}[t]
+    \begin{center}
+        \begin{tabular}{lcccc}       
+            \noalign{\smallskip}\hline \noalign{\smallskip}        
+            Particle & \rmPiPM & \Kplusmin & \pOrPbar & \rmLambdaPM \\
+            \noalign{\smallskip}\hline \noalign{\smallskip}
+			\mPDG (\mmass) & 139.57039 & 497.677 & 938.27208816 & 1115.683 \\
+            \sigmaPDG (\mmass) & 0.00018 & 0.016 & 0.00000029 & 0.006 \\ 
+            \noalign{\smallskip}\hline \noalign{\smallskip}
+        \end{tabular}
+        \caption{Particle mass (\mPDG) as well as its uncertainty (\sigmaPDG) for the decay daughters of \rmKzeroS, \rmLambda, \rmXi and \rmOmega, listed into \cite{particledatagroupReviewParticlePhysics2022}, as of 2023.}
+        \label{tab:PDGmass}
+    \end{center}
+\end{table}
+
+Similarly as in \Sec\ref{subsec:SystTopoAndTrackSelections}, the mass of each decay daughter is varied randomly 20 000 times, according to a Gaussian distribution centred on the PDG value and with the associated uncertainty \sigmaPDG as standard deviation. In case, a systematic effect is observed, the standard deviation of the results over the whole set of generated particle masses is taken as systematic uncertainty.
+
 
 \section{Results}

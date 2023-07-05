@@ -462,6 +462,7 @@ In \eq\ref{eq:tTOF}, $t_{\textrm{exp}}$ corresponds to the \textit{expected time
 
 \begin{equation}
 n_{\sigma} = \frac{t_{\rm TOF} - t_{\rm ev} - t_{\rm exp, i} }{\sigma_{\rm PID, i}}, \qquad \text{with} \quad \sigma_{\rm PID, i}^{2} = \sigma_{t_{\rm TOF}}^{2} + \sigma_{t_{\rm ev}}^{2} + \sigma_{t_{\rm exp, i}}^{2}.
+\label{eq:PIDestimatorTOF}
 \end{equation}
 
 Therefore, the TOF detector is capable of identifying charged particles in the intermediate momentum range, with a separation power better than 3$\sigma$ between pions and kaons below 2.5 \gmom, and up to 4 \gmom between kaons and protons.
@@ -532,7 +533,7 @@ In ALICE, the Kalman-filtering track reconstruction uses three passes, as illust
 The first inward stage (first path on \fig\ref{fig:Kalmanfiltering}) starts by looking for the first clusters of a track candidate, dubbed \textit{track seed}, in order to initate the Kalman-filter procedure. This search commences in the best tracking device of the experiment, \ie the TPC, and particularly at its outer radius where the low track density limits the number of ambiguous cluster association. At first, the seeds consist of two TPC clusters and the preliminary vertex point. This initial guess relies on the fact that the track originates from the interaction point. This process is reiterated later without such constraint, which would correspond to secondary tracks coming from a decay. In such case, the seeds are formed out of three clusters.
 
 Once the seeds have been built, they are propagated inwards to the TPC inner radius.
-As described above, at each step, the seeds are updated with the nearest space point whenever one passes a proximity cut, taking into account multiple scatterings and energy losses. At the end, only the tracks with at least 20 (out of 159) attached clusters and with a minimum of 50\% of the predicted measurement points matching an associated hit, are selected. 
+As described above, at each step, the seeds are updated with the nearest space point whenever one passes a proximity cut, taking into account multiple scatterings and energy losses\footnote{To keep in mind: for an outward propgation (for instance, from the primary vertex to the TPC), taking into account energy losses means subtracting energy to the track parameters, as this corresponds to the actual direction of flight of the charged particle and in which it looses energy while traversing material. Conversely, for an inward propagation (from TPC to the primary vertex, for example), energy needs to be added to the track parameters, since the particle travels in the counter-flight direction.\label{footnote:EnergyLoss}}. At the end, only the tracks with at least 20 (out of 159) attached clusters and with a minimum of 50\% of the predicted measurement points matching an associated hit, are selected. 
 
 \begin{figure}[!t]
 	\centering
