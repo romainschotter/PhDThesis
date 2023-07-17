@@ -46,7 +46,7 @@
 \usepackage[normalem]{ulem} % pour tuner le soulignage, [normalem] = pour préserver le comportement normale de emph
 \usepackage{longtable}
 \usepackage{float}
-\usepackage{cellspace, tabularx, booktabs}
+\usepackage{cellspace, rotating, tabularx, booktabs}
 %\usepackage{garamondx}
 \addparagraphcolumntypes{X}
 
@@ -76,6 +76,7 @@
 \usepackage{tablefootnote}
 \usepackage{diagbox}
 \usepackage{cancel}
+\usepackage{url}
 
 %%%%%%%%%%%%%package Romain
 % \usepackage[lofdepth,lotdepth,caption=false]{subfig}  
@@ -118,7 +119,7 @@
 
 
 
-\usepackage[bookmarks]{hyperref}
+\usepackage[bookmarks,backref=page]{hyperref}
         % NOTE :
         % For colour choices : https://en.wikibooks.org/wiki/LaTeX/Colors
 
@@ -152,7 +153,15 @@
         % \hypersetup{colorlinks,  linktocpage, citecolor=Gray, filecolor=Gray, linkcolor=Gray, urlcolor=Gray} %FIXME : N&B
         \urlstyle{sf} % change the url font for sans serif sf, else rm
         
-        
+%\usepackage[backref=page]{hyperref}
+
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{\footnotesize[{\footnotesize%
+    \ifcase #1 Not cited.%
+          \or Cited on page~#2.%
+          \else Cited on pages #2.%
+    \fi%
+}]}       
 
 \usepackage[comma,square,numbers,sort&compress]{natbib}
 % \usepackage[numbers, sort&compress]{mynatbib} %pour avoir une génération automatique de réf. bib [1-6] au lieu de lister [1, 2, 3, 4, 5, 6].
