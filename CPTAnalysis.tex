@@ -3,21 +3,24 @@
 \label{chap:CPTAnalysis}
 %//-----------------------------------------------------------------------//
 
-The first analysis conducted in this thesis aims at measuring the masses and mass differences between particle and anti-particle of multi-strange baryons. The focus is on \rmXiM, \rmAxiP, \rmOmegaM and \rmAomegaP. This chapter provides a description of the different elements needed to achieve this goal. 
+The first analysis conducted in this thesis aims at measuring the masses and mass differences between particle and anti-particle of multi-strange baryons. The focus is on \rmXiM, \rmAxiP, \rmOmegaM and \rmAomegaP. This chapter provides a description of the different elements needed to achieve this goal. \\
+
+Once the context has been introduced (\Sec\ref{sec:IntroductionCPT}), the exploited data samples are presented in \Sec\ref{sec:DataSampleCPT}. This is followed by a detailed description and discussion of the various ingredients involved in the analysis (\Sec\ref{sec:AnalysisOfHyperonMasses}): the track, V0 and cascade candidate selections, and finally, the principles of the mass measurement. By design, such a measurement depends on the different elements of the analysis. Therefore, each of them must be studied in order to identify those affecting the mass extraction and account it in the final results. This review of the analysis is at the heart of \Sec\ref{sec:SystStudy}. Finally, this chapter comes to an end with a summary of the different systematic biases and associated uncertainties, and a discussion of the final results in \Sec\ref{sec:FinalResultsCPT}. 
 
 \section{Introduction}
+\label{sec:IntroductionCPT}
 
 %Symmetries certainly stand as one of the most fruitful concepts in Physics. They are of two kinds: continuous --- such as the global translations in both space and time, or the Lorentz transformations --- and discrete --- for example, the space- (P) and time- (T) inversions, the charge conjugation (C), and their combined transformation given by CPT. In particular, the Lorentz and CPT symmetries are connected by the so-called CPT theorem which states that any local Lorentz-invariant quantum field theory must also (under some extra requirements) be CPT invariant \cite{cptstatus}. Consequently, the CPT violation implies the breaking of the Lorentz symmetry, and vice versa\footnote{In fact, there is another option; to allow for CPT to be violated, either the Lorentz symmetry must be broken -- as in the string theory \cite{string} or the Standard-Model Extension \cite{sme} -- or some of the other extra assumptions of the CPT theorem must be dropped, namely the energy positivity, local interactions, finite spin, etc \cite{cptimplieslorentz}\cite{cptsymmetryantitsviolation}. } \cite{sozzi}. Another implication involves the relation between the properties of matter and antimatter: due to the charge conjugation linking particles to antiparticles, the CPT symmetry imposes that they share the same invariant mass, energy spectra, lifetime, coupling constants, etc \cite{cptsymmetryantitsviolation}. Most of the experimental checks of CPT invariance stem from these physical consequences.
 
-As discussed in \Sec\ref{subsec:Theory}, the Standard Model is built upon a set of symmetries, each being either discrete -- such as the combination of the charge conjugation (C), parity (P) and time reversal (T), known as the CPT transformation -- or continuous -- for example, the Lorentz transformations that includes rotations and boosts. In particular, the Lorentz and CPT symmetries are connected by the so-called CPT theorem which establishes that any unitary, local Lorentz-invariant quantum field theory must be CPT invariant \cite{kosteleckyStatusCPT1998}. Consequently, the CPT violation implies the breaking of the Lorentz symmetry, and vice versa\footnote{In fact, another option exists; to allow for the CPT violation, either the Lorentz symmetry must be broken -- as in the case of string theory \cite{kosteleckySpontaneousBreakingLorentz1989} or the Standard-Model Extension \cite{colladayLorentzviolatingExtensionStandard1998} -- or some of the other additionnal assumptions of the CPT theorem must be dropped, namely the energy positivity \cite{abersDiseasesInfiniteComponentField1967}, local interactions \cite{carruthersIsospinSymmetryTCP1968}, finite spin \cite{oksakInvalidityTCPtheoremInfinitecomponent1968}, etc \cite{greenbergCPTViolationImplies2002}\cite{lehnertCPTSymmetryIts2016}. } \cite{sozziTestsDiscreteSymmetries2019}. Another implication involves the relation between the properties of matter and antimatter: due to the charge conjugation linking particles to antiparticles, the CPT symmetry imposes that they share the same invariant mass, energy spectra, lifetime, coupling constants, etc \cite{cptsymmetryantitsviolation}. Most of the experimental checks of CPT invariance stem from this last point, which imposes several constraints on the anti-particle properties. \\
+As discussed in \Sec\ref{subsec:Theory}, the Standard Model is built upon a set of symmetries, each being either discrete -- such as the combination of the charge conjugation (C), parity (P) and time reversal (T), known as the CPT transformation -- or continuous -- for example, the Lorentz transformations that includes rotations and boosts. In particular, the Lorentz and CPT symmetries are connected by the so-called CPT theorem which establishes that any unitary, local Lorentz-invariant quantum field theory must be CPT invariant \cite{kosteleckyStatusCPT1998}. Consequently, the CPT violation implies the breaking of the Lorentz symmetry, and vice versa\footnote{In fact, another option exists; to allow for the CPT violation, either the Lorentz symmetry must be broken -- as in the case of string theory \cite{kosteleckySpontaneousBreakingLorentz1989} or the Standard-Model Extension \cite{colladayLorentzviolatingExtensionStandard1998} -- or some of the other additionnal assumptions of the CPT theorem must be dropped, namely the energy positivity \cite{abersDiseasesInfiniteComponentField1967}, local interactions \cite{carruthersIsospinSymmetryTCP1968}, finite spin \cite{oksakInvalidityTCPtheoremInfinitecomponent1968}, etc \cite{lehnertCPTSymmetryIts2016}\cite{greenbergCPTViolationImplies2002}. } \cite{sozziTestsDiscreteSymmetries2019}. Another implication involves the relation between the properties of matter and antimatter: due to the charge conjugation linking particles to antiparticles, the CPT symmetry imposes that they share the same invariant mass, energy spectra, lifetime, coupling constants, etc \cite{lehnertCPTSymmetryIts2016}. Most of the experimental checks of CPT invariance stem from this last point, which imposes several constraints on the anti-particle properties. \\
 
-The Particle Data Group (PDG) \cite{particledatagroupReviewParticlePhysics2022} compiles a large variety of CPT tests from many experiments and with different degrees of precision; so far, no CPT violation has been observed. The most stringent test involves the \rmKzero-\rmAKzero mixing process, which depends on the mass and lifetime differences of these two states. In this way, assuming no other source of CPT violation in the decay of neutral kaons, these two quantities have been bounded \cite{particledatagroupReviewParticlePhysics2022}\cite{angelopoulosK0K0Mass1999} to 
+The Particle Data Group (PDG) \cite{particledatagroupReviewParticlePhysics2022} compiles a large variety of CPT tests from many experiments and with different degrees of precision; so far, no CPT violation has been observed. The most stringent test involves the \rmKzero-\rmAKzero mixing process, which depends on the mass and lifetime differences of these two states. In this way, assuming no other source of CPT violation in the decay of neutral kaons, these two quantities have been bounded \cite{particledatagroupReviewParticlePhysics2022}\cite{angelopoulosK0OverlineK1999} to 
 
 \begin{equation}
 2 \frac{\mid m_{\rmKzero} - m_{\rmAKzero} \mid}{m_{\rmKzero} + m_{\rmAKzero}} < 6 \times 10^{-19} \quad , \quad 2 \frac{\mid \Gamma_{\rmKzero} - \Gamma_{\rmAKzero} \mid}{\Gamma_{\rmKzero} + \Gamma_{\rmAKzero}} = (8 \pm 8) \times 10^{-18}.
 \end{equation}
 
-These indirect limits are much stronger than the ones extracted from direct tests. For example, in the hyperon sector, the precision on relative mass difference is typically of a few $10^{-5}$. In the latter case, it should be mentioned that there is still some room for improvements, and most particularly concerning the mass difference measurements between particle and anti-particle in the multi-strange baryon sector. The only test of this nature dates back to 2006 \cite{abdallahMassesLifetimesProduction2006} for the \rmXiM and \rmAxiP, and from 1998 \cite{chanMeasurementPropertiesOverline1998} for the \rmOmegaM and \rmAomegaP. The former was achieved by exploiting 3.25 million hadronic decays of the \rmZzero recorded by the DELPHI detector at LEP-1; the latter was obtained on the E756 spectrometer at Fermilab, using an 800-\gmom proton beam on a beryllium target. However, both studies suffer from low statistics: approximately 2500(2300) reconstructed \rmXiM (\rmAxiP) and about 6323(2607) reconstructed \rmOmegaM (\rmAomegaP) were used.\\
+These indirect limits are much stronger than the ones extracted from direct tests. For example, in the hyperon sector, the precision on relative mass difference is typically of a few $10^{-5}$. In the latter case, it should be mentioned that there is still some room for improvements, and most particularly concerning the mass difference measurements between particle and anti-particle in the multi-strange baryon sector. The only test of this kind dates back to 2006 \cite{abdallahMassesLifetimesProduction2006} for the \rmXiM and \rmAxiP, and from 1998 \cite{chanMeasurementPropertiesOverline1998} for the \rmOmegaM and \rmAomegaP. The former was achieved by exploiting 3.25 million hadronic decays of the \rmZzero recorded by the DELPHI detector at LEP-1; the latter was obtained on the E756 spectrometer at Fermilab, using an 800-\gmom proton beam on a beryllium target. However, both studies suffer from low statistics: approximately 2500(2300) reconstructed \rmXiM (\rmAxiP) and about 6323(2607) reconstructed \rmOmegaM (\rmAomegaP) were used.\\
 
 \begin{table}[t]
     \centering
@@ -43,13 +46,14 @@ These indirect limits are much stronger than the ones extracted from direct test
     \caption{A few characteristics, as of 2023, of the \rmLambda, \rmXi, \rmOmega hyperons and the \rmKzeroS meson: quark content, mass, relative mass difference values with their associated uncertainties and their dominant decay channel as well as the corresponding branching ratio \cite{particledatagroupReviewParticlePhysics2022}.}\label{tab:V0CascPDGMass}
 \end{table}
 
-In comparison, all the pp collisions at a centre-of-mass energy of 13 \tev collected by ALICE throughout the LHC Run-2 contains about 2 500 000 \rmXi and 133 000 \rmOmega, with little background. Therefore, in this thesis, the measurement of the mass difference of \rmXiM and \rmAxiP, and \rmOmegaM and \rmAomegaP hyperons is performed. It relies on data samples much larger than those exploited previously. These direct measurements of the mass difference should offer a test of the CPT invariance to an unprecedented level of precision in the multi-strange baryon sector. The absolute masses are updated as well, with a precision substantially better than the past measurement, currently listed in the PDG and presented in the \tab\ref{tab:V0CascPDGMass}.
+In comparison, all the pp collisions at a centre-of-mass energy of 13 \tev collected by ALICE throughout the LHC Run-2 contains about 2 500 000 \rmXi and 133 000 \rmOmega, with little background. Therefore, in this thesis, the measurement of the mass difference of \rmXiM and \rmAxiP, and \rmOmegaM and \rmAomegaP hyperons is performed. It relies on data samples much larger than those exploited previously. These direct measurements of the mass difference should offer a test of the CPT invariance to an unprecedented level of precision in the multi-strange baryon sector. The absolute masses are updated as well, with a precision substantially better than the past measurement, currently listed in the PDG and used in the calculation of world average values. The latter are presented in \tab\ref{tab:V0CascPDGMass}.
 
 Furthermore, concerning the \rmLambda hyperon and \rmKzeroS meson, the PDG quotes a precision of a few \kmass on the mass value, and about $1 \times 10^{-5}$ on the relative mass difference value\footnote{This only concerns the relative mass difference between \rmLambda and \rmAlambda. As mentioned above, such quantity is much smaller by fourteen orders of magnitude in the case of \rmKzero.}. Abundantly produced, these two hadrons also exhibit an irresistible feature in the context of this thesis: both decay into a V0 in their dominant decay channel, and so can be identified in a similar manner as cascades using topological reconstruction. For those two reasons -- high precision on the PDG mass values, and similar decay topology as cascade --, the analysis is reproduced on \rmLambda and \rmKzeroS, both being used as a benchmark for the measurement.\\
 
 In the following, the term \textit{mass difference} always refers to the \emph{relative} one  -- unless indicated otherwise --, namely the mass \emph{difference} over the mass \emph{average}, $2 \left(\mMassPart{part.} - \mMassApart{part.} \right)/\left(\mMassPart{part.} + \mMassApart{part.}\right)$.
 
 \section{Data samples and event selection}
+\label{sec:DataSampleCPT}
 
 \subsection{The data samples}
 \label{subsec:DataSamples}
@@ -62,25 +66,25 @@ Each period consists in fact of dozens or hundreds of \textit{runs}, correspondi
 
 Besides the real data sample, the measurement also relies on simulated data in order to estimate and optimize the performances of the analysis. To each run corresponds its simulated counterpart, anchored on pass-2 data, as described in \Sec\ref{subsubsec:MCData}. All the exploited MC productions employ \Pythiaeight (version 8.2, tune: Monash 2013) as event generator. For the transport and interaction with the material of the ALICE detector, most of them use \GeantThree; although \GeantFour describes more accurately hadronic interactions at very low momentum and is better maintained, only a few of simulations rely on it, because of its higher consumption of computing resources \cite{barendsGeant4ValidationStudy2017}. 
 
-Since both abundant (\rmKzeroS, \rmLambda and to a certain extent, \rmXi) and rare species (\rmXi and \rmOmega) are being studied, one may resort to two kinds of simulations: general-purpose MC productions for the first ones, and enriched MC productions for the others. Here, the enriched simulations have been obtained by selecting the events that include, at least, a \rmKzeroS, \rmLambdaPM, \rmXiPM or \rmOmegaPM in $\abspseudorap < 1.2$. It turns out that most of the studies carried out in the present analysis use on the latter simulations because of i) the enrichment in strangeness, ii) they cover all the periods of the considered LHC Run-2 data, and iii) they use \GeantFour.
+Since both abundant (\rmKzeroS, \rmLambda and to a certain extent, \rmXi) and rare\break species (\rmXi and \rmOmega) are being studied, one may resort to two kinds of simulations: general-purpose MC productions for the first ones, and enriched MC productions for the others. Here, the enriched simulations have been obtained by selecting the events that include, at least, a \rmKzeroS, \rmLambdaPM, \rmXiPM or \rmOmegaPM in $\abspseudorap < 1.2$. It turns out that most of the studies carried out in the present analysis use on the latter simulations because of i)~the enrichment in strangeness, ii)~they cover all the periods of the considered LHC Run-2 data, and iii) they use \GeantFour.
 
 Furthermore, this analysis also makes use of the track references in the simulation. As mentioned in \Sec\ref{subsubsec:MCData}, these correspond to the MC informations of the considered track at the location where it crosses a given detection plane. Thereby, they allow for comparing the reconstructed track properties with the actual/generated ones at any point along the particle trajectory\footnote{Strictly speaking, this comparison cannot be done at any point since the track reference is only available where the particle traverses a sensitive volume.}. Although the track references are effectively stored for only 10\% of the production\footnote{This is done in order to spare some disk space.}, this comparison is proving invaluable to control the tracking in ALICE.\\
 
 
-In total, the exploited data sample counts about 2.6 billions minimum bias events at \sqrtS = 13 \tev, and approximately 600 millions events in the associated MC productions.
+In total, the exploited data sample counts about 2.6 billion minimum bias events at \sqrtS = 13 \tev, and approximately 600 million events in the associated MC productions.
 
 \subsection{The event selection}
 \label{subsec:EventSelection}
 
 As mentioned in \Sec\ref{subsec:TriggerSystem}, the analysis focuses on minimum-bias and/or high-multiplicity events. More precisely, the respective trigger configurations correspond to the MB$_{\rm AND}$ and/or HM$_{\rm VZERO}$. Not all the events passing these trigger selections are considered; additional cuts are applied in order to filter out only those of \say{good} quality suitable for a physics analysis. \\
 
-During the data acquisition (DAQ), the event-builder proceeds to the event reconstruction based on the sub-events from all contributing detectors. It may happen, however, that a detector's output cannot be transmitted due to the associated data channel being closed\footnote{There are different reasons for the data channel to be closed. At the beginning or the end of each run, a specific procedure is performed on all detectors in order to effectively initiate the start or stop of the run. In particular, the \say{End Of Run} procedure has to close all the data channel connecting the event-builder and the sub-detectors -- \ie the GDCs and LDCs respectively (\Sec\ref{subsec:TriggerSystem}) --, but this termination can occur sooner in the case of a connection time-out for example.} \cite{alicecollaborationTriggerDataAcquisition}. The event-builder still reconstructs the event, although it is tagged as \say{incomplete DAQ} due to the missing informations. Such events are rejected in the present work.\\
+During the data acquisition (DAQ), the event-builder proceeds to the event reconstruction based on the sub-events from all contributing detectors. It may happen, however, that the output of a detector cannot be transmitted due to the associated data channel being closed\footnote{There are different reasons for the data channel to be closed. At the beginning or the end of each run, a specific procedure is performed on all detectors in order to effectively initiate the start or stop of the run. In particular, the \say{End Of Run} procedure has to close all the data channel connecting the event-builder and the sub-detectors -- \ie the GDCs and LDCs respectively (\Sec\ref{subsec:TriggerSystem}) --, but such termination can occur sooner in the case of a connection time-out for example.} \cite{alicecollaborationTriggerDataAcquisition2004}. The event-builder still reconstructs the event, although it is tagged as \say{incomplete DAQ} due to the missing informations. Such events are rejected in the present work.\\
 
-There exists three types of reconstructed primary vertex in ALICE, from the highest to the poorest quality: one estimated using the global ITS-TPC tracks (\Sec\ref{subsubsec:FinalVertexDet}), another based on the SPD tracklets (\Sec\ref{subsubsec:PreliminaryVertex}), and the last optional one built from the TPC standalone tracks in a similar way as the former. By default, only the \say{best} available reconstructed primary vertex is considered. 
+There exists three types of reconstructed primary vertex in ALICE, from the highest to the lowest quality: one estimated using the global ITS-TPC tracks (\Sec\ref{subsubsec:FinalVertexDet}), another based on the SPD tracklets (\Sec\ref{subsubsec:PreliminaryVertex}), and the last optional one built from the TPC standalone tracks in a similar way as the former. By default, only the \say{best} available reconstructed primary vertex is considered. 
 
-Nevertheless, to ensure that the event has a vertex of a sufficiently good quality, the analysis relies exclusively on the first two aforementioned primary vertices. This boils down to requiring the presence of, at least, the one reconstructed using tracklets\footnote{As mentioned in \Sec\ref{subsubsec:PreliminaryVertex}, the event cannot be built without the primary vertex based on SPD tracklets. Hence, by construction, the presence of such vertex is guaranteed in the event.}. Moreover, the resolution of the latter in the longitudinal direction should not exceed 0.25 \cm. In cases when both SPD tracklets and global ITS-TPC track vertices are available, their positions along the beam axis must coincide within a 0.5-\cm window.
+Nevertheless, to ensure that the event has a vertex of a sufficiently good quality, the analysis relies exclusively on the first two aforementioned primary vertices. This means requiring the presence of, at least, the one reconstructed using tracklets\footnote{As mentioned in \Sec\ref{subsubsec:PreliminaryVertex}, the event cannot be built without the primary vertex based on SPD tracklets. Hence, by construction, the presence of such vertex is guaranteed in the event.}. Moreover, the resolution of the latter in the longitudinal direction should not exceed 0.25 \cm. In cases when both SPD tracklets and global ITS-TPC track vertices are available, their positions along the beam axis must coincide within a 0.5-\cm window.
 
-As a prerequisite for guaranteeing a uniform reconstruction efficiency, particles must remain within the acceptance of all the central detectors involved in their reconstruction, that is $\abspseudorap < 0.9$. For particles originating from the interaction point, this condition implies a constraint on the longitudinal position of the primary vertex: the absolute distance between the interaction point and the centre of ALICE should be below 10 \cm along the beam axis\footnote{Note that there is no selection of such nature concerning the \emph{transverse} position of the primary vertex, except that it must be located below the beam pipe.}. \\
+As a prerequisite for guaranteeing a uniform reconstruction efficiency, particles must remain within the acceptance of all the central detectors involved in their reconstruction, that is $\abspseudorap < 0.9$. For particles originating from the interaction point, this condition implies a constraint on the longitudinal position of the primary vertex: the absolute distance between the interaction point and the centre of ALICE should be below 10 \cm along the beam axis\footnote{Note that there is no selection of such nature concerning the \emph{transverse} position of the primary vertex, except that it must be located inside the beam pipe.}. \\
 
 A key element of the event quality concerns the pile-up level. The latter occurs when there are two or more collisions coming from the same bunch crossing -- this is the \textit{in-bunch} pile-up -- and/or from different bunch crossings occuring within the readout time of the detectors -- also called \textit{out-of-bunch} pile-up. One approach to remove both types of pile-up consists in rejecting events with multiple reconstructed primary vertices. This selection depends on the nature of the best primary vertex available.
 \begin{itemize}
@@ -89,7 +93,7 @@ A key element of the event quality concerns the pile-up level. The latter occurs
 \end{itemize}
 
 
-Along the same line, the two innermost layers of the ITS can help to identify the remaining beam-induced background -- that have not been removed by the MB$_{\rm AND}$ trigger selection -- and pile-up events. As mentioned in \ref{subsubsec:PreliminaryVertex}, a tracklet is formed out of pair of clusters found in the two SPD layers, separated by an angle of 0.01 rad at most. Therefore, if the number of clusters increases, so does the amount of reconstructed tracklets. However, in the case of beam-gas event, there should be many clusters but only a small number of tracklets could be formed using the previous definition. In pile-up events, only the tracklets associated with the primary vertex are considered; for that reason, the number of clusters should be relatively larger than expected at such tracklet multiplicity \cite{alicecollaborationALICEPhysicsForum2016}. In this way, based on this correlation between the number of SPD clusters and tracklets, the remaining events flagged as background or pile-up are rejected. \\
+Along the same line, the two innermost layers of the ITS can help to identify the remaining beam-induced background events -- that have not been removed by the MB$_{\rm AND}$ trigger selection -- and pile-up events. As mentioned in \ref{subsubsec:PreliminaryVertex}, a tracklet is formed out of pair of clusters found in the two SPD layers, separated by an angle of 0.01 radian at most. Therefore, if the number of clusters increases, so does the amount of reconstructed tracklets. However, in the case of beam-gas event, there should be many clusters but only a small number of tracklets could be formed using the previous definition. In pile-up events, only the tracklets associated with the primary vertex are considered; for that reason, the number of clusters should be relatively larger than expected at such tracklet multiplicity \cite{alicecollaborationALICEPhysicsForum2016}. In this way, based on this correlation between the number of SPD clusters and tracklets, the remaining events flagged as background or pile-up are rejected. \\
 
 \begin{figure}[t]
 	\centering
@@ -99,9 +103,10 @@ Along the same line, the two innermost layers of the ITS can help to identify th
 \end{figure}
 
 
-The \fig\ref{fig:EvtSelection} provides the fraction of rejected events as a function of the above selections in pp collisions at \sqrtS = 13 \tev.
+\Fig\ref{fig:EvtSelection} provides the fraction of rejected events as a function of the above selections in pp collisions at \sqrtS = 13 \tev.\\
 
 \section{Analysis of the hyperon masses}
+\label{sec:AnalysisOfHyperonMasses}
 
 \subsection{Track selections}
 \label{subsec:TrackSelections}
@@ -124,7 +129,7 @@ The identification strategy adopted here consists in selecting only the tracks c
 \item[$\bullet$] the positive track needs to be compatible with a proton hypothesis,
 \item[$\bullet$] and the negative track has to agree with energy loss band of the pion.
 \end{itemize}
-In the case of \rmAxiP or \rmAomegaP, one needs to swap the electric charge of the  decay daughters, namely the positive track needs to be compatible with a pion hypothesis and the negative track, an anti-proton. For the \rmKzeroS, both positive and negative tracks should be compatible with the pion hypthesis.
+In the case of \rmAxiP or \rmAomegaP, one needs to swap the electric charge of the  decay daughters, namely the positive track needs to be compatible with a pion hypothesis and the negative track, an anti-proton. For the \rmKzeroS, both positive and negative tracks should be compatible with the pion hypothesis.
 
 
 \subsection{V0s and cascades selections}
@@ -154,7 +159,7 @@ Once the events and tracks have been selected, the topological reconstruction of
     $\Nsigma^{\rm TPC}$ & \multicolumn{2}{c}{< 3} \\
     \multirow{ 2}{*}{Out-of-bunch pile-up rejection} & \multicolumn{2}{c}{at least one track with} \\
      & \multicolumn{2}{c}{ITS-TOF matching} \\
-    
+     Anterior ITS cluster rejection & \multicolumn{2}{c}{> 1 $\sigma_{\rm R}$} \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \bf Topological variable & Selections \rmLambdaPM & Selections \rmKzeroS \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
@@ -169,14 +174,10 @@ Once the events and tracks have been selected, the topological reconstruction of
     
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \end{tabular}
-    \caption{Summary of the topological and track selections, as well as the associated cut values, used in the reconstruction of \rmLambdaPM and \rmKzeroS in pp events at \sqrtS = 13 \tev. The \textit{competing mass rejection} refers to the removal of the background contamination from other mass hypotheses (\Sec\ref{subsubsec:InvariantMassSelection}). In the \rmLambdaPM case, this consists in comparing the invariant mass under the assumption of a \rmPiPlus\rmPiMinus and PDG mass of \rmKzeroS, that is the quantity $\mid\mInv{\rm hyp.\ \rmKzeroS} - \mPDG\rmKzeroS|$. When reconstructing \rmKzeroS candidates, the selection variable becomes $\mid\mInv{\rm hyp.\ \rmLambda} - \mPDG\rmLambda|$.}\label{tab:V0Selections}
+    \caption{Summary of the topological and track selections, as well as the associated cut values, used in the reconstruction of \rmLambdaPM and \rmKzeroS in pp events at \sqrtS = 13 \tev. The \textit{competing mass rejection} refers to the removal of the background contamination from other mass hypotheses (\Sec\ref{subsubsec:InvariantMassSelection}). In the \rmLambdaPM case, this consists in comparing the invariant mass under the assumption of a \rmPiPlus\rmPiMinus and PDG mass of \rmKzeroS, that is the quantity $\mid\mInv[\rm hyp.\ \rmKzeroS] - \mPDG[\rmKzeroS]|$. When reconstructing \rmKzeroS candidates, the selection variable becomes $\mid\mInv[\rm hyp.\ \rmLambda] - \mPDG[\rmLambda]|$.}\label{tab:V0Selections}
 \end{table}
 
-The above selections on the track quality in TPC exclude the possibility of studying the particles of interest at low momentum ($\pT \leq 0.6$ \gmom). At such values, the V0s and cascades decay into very low momentum tracks, that can only be reconstructed via the ITS standalone tracking. Even when these tracks reach the TPC, they form short tracks and are thus rejected (\Sec\ref{subsec:TrackSelections}). As a matter of fact, in order to secure a reasonably good momentum resolution on the decay daughters, this analysis only considers candidates from 1 to 5 \gmom. On the one hand, the \eq\ref{eq:Gluckstern} indicates that the momentum resolution deteriorates at low momentum ($\pT \leq 1$ \gmom) due to their relatively \say{short} track length, \say{small} number of clusters and the dominant contribution of multiple scattering. On the other hand, at high \pT ($\pT \geq 5$ \gmom), the resolution also decreases as a consequence of less pronounced track curvature.\\
-
-To further remove the contribution from out-of-bunch pile-up events, it is required for at least one of the daughter tracks to either have a cluster in the innermost ITS layers\footnote{Technically, it is requested to have passed the final refit in the ITS and to have a hit in one of the two SPD layers.} or match with a hit in the TOF. The former uses the fast readout time of the SPD to limit the pile-up to tracks produced in collisions within $\pm$ 300 \nsec, that is $\pm$ 12 bunch crossings\footnote{Keep in mind that, in ALICE during the LHC Run-2, the average number of collisions per bunch crossing is not about 30-50 as for ATLAS and CMS, or 1-2 for LHCb; it is smaller than 1-5\%, \ie a low trend in terms of pile-up.}; the latter exploits the highly precise timing information of the TOF to identify the bunch crossing from which the particle originates, with an efficiency of approximately 70 to 80\% for intermediate or high \pT particles and drops rapidly for lower momentum due to mismatches \cite{alicecollaborationALICEDPGPileup}. This selection has been thoroughly studied in the context of a strange particle production analysis \cite{alicecollaborationMultiplicityDependenceMulti2020}; it was shown that applying this ITS-TOF matching condition on at least one of the decay daughters is sufficient to eliminate most of the remaining pile-up contamination.\\
-
-Moreover, the reconstruction procedure presented in the \chap\ref{chap:V0CascReconstruction} corresponds to a so-called \emph{offline} reconstruction: V0s and cascades are formed by combining tracks, that have already been reconstructed during the event building (\Sec\ref{subsec:EventReco}). However, in the tracking stage, there is no way to know \textit{a priori} that they are, in fact, the decay daughters of a hyperon; they are thus reconstructed as any other track in the event. As a consequence, there is no causality check\footnote{There is, however, a causality check performed in the cascade reconstruction in order to ensure that the V0 decay point does not sit downstream from the cascade decay position.} against assigned ITS clusters anterior to the V0 and/or cascade decays. Due to the possible bias that might be introduced in the invariant mass of the mother particle, all the daughter tracks updated with an ITS cluster \emph{below} the associated decay point by more than 1 $\sigma_{\rm R}$\footnote{$\sigma_{\rm R}$ refers to the resolution on the radial decay position of the V0 or cascade.} are discarded. This requirement applies for both V0 and cascade candidates.
+The above selections on the track quality in TPC exclude the possibility of studying the particles of interest at low momentum ($\pT \leq 0.6$ \gmom). At such values, the V0s and cascades decay into very low momentum tracks, that can only be reconstructed via the ITS standalone tracking. Even when these tracks reach the TPC, they form short tracks and are thus rejected (\Sec\ref{subsec:TrackSelections}). As a matter of fact, in order to secure a reasonably good momentum resolution on the decay daughters, this analysis only considers candidates from 1 to 5 \gmom. On the one hand, \eq\ref{eq:Gluckstern} indicates that the momentum resolution deteriorates at low momentum ($\pT \leq 1$ \gmom) due to their relatively \say{short} track length, \say{small} number of clusters and the dominant contribution of multiple scattering. On the other hand, at high \pT ($\pT \geq 5$ \gmom), the resolution also decreases as a consequence of less pronounced track curvature.\\
 
 \begin{table}[p]
     \centering
@@ -206,7 +207,7 @@ Moreover, the reconstruction procedure presented in the \chap\ref{chap:V0CascRec
     \multicolumn{3}{l}{\textbf{V0}} \\
     V0 decay radius (\cm) & > 1.2 & > 1.1\\
     V0 cosine of pointing angle & \multicolumn{2}{c}{> 0.97}\\
-    |$m$($V0$) - \mPDG\rmLambda| (\gmass) & \multicolumn{2}{c}{< 0.008} \\
+    |$m$(V0) - \mPDG[\rmLambda]| (\gmass) & \multicolumn{2}{c}{< 0.008} \\
     DCA proton to prim. vtx (\cm) & \multicolumn{2}{c}{> 0.03} \\
     DCA pion to prim. vtx (\cm) & \multicolumn{2}{c}{> 0.04} \\
     DCA V0 to prim. vtx (\cm) & \multicolumn{2}{c}{> 0.06} \\
@@ -226,16 +227,21 @@ Moreover, the reconstruction procedure presented in the \chap\ref{chap:V0CascRec
     \caption{Summary of the topological and track selections, as well as the associated cut values, used in the reconstruction of \rmXiPM and \rmOmegaPM in pp events at \sqrtS = 13 \tev. The \textit{competing mass rejection} refers to the removal of the background contamination from other cascade hypothesis (\Sec\ref{subsubsec:InvariantMassSelection})}\label{tab:CascadeSelections}
 \end{table}
 
-In summary, the \tabs\ref{tab:V0Selections} and \ref{tab:CascadeSelections} provide a list of the track and topological selections employed in the reconstruction of V0s and cascades respectively, as well as the numerical cut values. Note the tight cut on the cosine of pointing angle of the cascade candidate; this is discussed later in \Sec\ref{subsec:MassExtraction}.
+
+To further remove the contribution from out-of-bunch pile-up events, it is required that at least one of the daughter tracks to either have a cluster in the innermost ITS layers\footnote{Technically, it is requested to have passed the final refit in the ITS and to have a hit in one of the two SPD layers.} or match with a hit in the TOF. The former uses the fast readout time of the SPD to limit the pile-up to tracks produced in collisions within~$\pm$~300~\nsec, that is $\pm$ 12 bunch crossings\footnote{Keep in mind that, in ALICE during the LHC Run-2, the average number of collisions per bunch crossing is not about 30-50 as for ATLAS and CMS, or 1-2 for LHCb; it is smaller than 1-5\%, \ie a low trend in terms of pile-up.}; the latter exploits the highly precise timing information of the TOF to identify the bunch crossing from which the particle originates, with an efficiency of approximately 70 to 80\% for intermediate or high \pT particles and drops rapidly for lower momentum due to mismatches \cite{alicecollaborationALICEDPGPileup2021}. This selection has been thoroughly studied in the context of a strange particle production analysis \cite{alicecollaborationMultiplicityDependenceMulti2020}; it was shown that applying this ITS-TOF matching condition on at least one of the decay daughters is sufficient to eliminate most of the remaining pile-up contamination.\\
+
+Moreover, the reconstruction procedure presented in the \chap\ref{chap:V0CascReconstruction} corresponds to a so-called \emph{offline} reconstruction: V0s and cascades are formed by combining tracks, that have already been reconstructed during the event reconstruction (\Sec\ref{subsec:EventReco}). However, during the tracking stage, there is no way to know \textit{a priori} that they actually originate from a hyperon; they are thus reconstructed as any other track in the event. As a consequence, there is no causality check\footnote{There is, however, a causality check performed in the cascade reconstruction in order to ensure that the V0 decay point does not sit downstream from the cascade decay position.} against assigned ITS clusters anterior to the V0 and/or cascade decays. Due to the possible bias that might be introduced in the invariant mass of the mother particle, all the daughter tracks updated with an ITS cluster \emph{below} the associated decay point by more than~1~$\sigma_{\rm R}$\footnote{$\sigma_{\rm R}$ refers to the resolution on the radial decay position of the V0 or cascade.} are discarded. This requirement applies for both V0 and cascade candidates.
+
+In summary, \tabs\ref{tab:V0Selections} and \ref{tab:CascadeSelections} provide a list of the track and topological selections employed in the reconstruction of V0s and cascades respectively, as well as the numerical cut values. Note the tight cut on the cosine of pointing angle of the cascade candidate; this is discussed later in \Sec\ref{subsec:MassExtraction}.
 
 \subsubsection{Structure in the invariant mass spectrum of cascades}
 \label{subsubsec:InvMassStructure}
 
 Among the topological selections listed in \tab\ref{tab:CascadeSelections}, one of them has not been introduced and discussed in \chap\ref{chap:V0CascReconstruction}, namely the cut on the pointing angle formed by the bachelor and the positive particles. Contrarily to the other selections, this one is not standard in ALICE; it has been introduced in 2020 by \cite{silvadealbuquerqueMultistrangeHadronsPb2019}. At that time, a structure in the invariant mass distribution of \rmXi and \rmOmega, similar to the one in \figs\ref{fig:WrongPA}, was observed in Pb-Pb collisions. It turned out that the bump background, between 1.28 and 1.31 \gmass on \figs\ref{fig:XiMinusWrongPA} and \ref{fig:XiPlusWrongPA}, originates from an erroneous track association in the cascade reconstruction. 
 
-A V0 decays into a baryon \proton/\pbar and a \rmPiMinus/\rmPiPlus, depending on whether this is a \rmLambda or \rmAlambda. In the situation where another negative/positive track in the event passes close by the proton/anti-proton, the reconstruction algorithm may interpret that as a V0 decay; this track plays the role of the negative/positive daughter particle of a \rmLambdaPM, and the proton/anti-proton corresponds to its positive/negative daughter particle. On the other hand, the remaining \rmPiMinus/\rmPiPlus daughter of the actual \rmLambdaPM is combined to other particles, and most likely to the previously ill-formed V0. In such case, it acts like the bachelor particle of a cascade decay. In other words, while the actual topology is depicted in \fig\ref{fig:WrongV0}, it is reconstructed as a cascade, as illustrated in \fig\ref{fig:TrueV0}.
+A V0 decays into a baryon \proton/\pbar and a \rmPiMinus/\rmPiPlus, depending on whether this is a \rmLambda or \rmAlambda. In the situation where another negative/positive track in the event passes close by the proton/anti-proton, the reconstruction algorithm may interpret that as a V0~decay; this track plays the role of the negative/positive daughter particle of a \rmLambdaPM, and the proton/anti-proton corresponds to its positive/negative daughter particle. On the other hand, the remaining \rmPiMinus/\rmPiPlus daughter of the actual \rmLambdaPM is combined to other particles, and most likely to the previously ill-formed V0. In such case, it acts like the bachelor particle of a cascade decay. In other words, while the actual topology is depicted in \fig\ref{fig:WrongV0}, it is reconstructed as a cascade, as illustrated in \fig\ref{fig:TrueV0}.
 
-The analysis \cite{silvadealbuquerqueMultistrangeHadronsPb2019} investigated different strategies in order to remove this background contamination. In the end, the best option consists in rejecting candidates with a \emph{small} pointing angle for the dummy V0, \ie the pointing angle formed by the V0 made of the bachelor and the proton, as shown in \fig\ref{fig:WrongPACut}.
+The analysis in \cite{silvadealbuquerqueMultistrangeHadronsPb2019} investigated different strategies in order to remove this background contamination. In the end, the best option consists in rejecting candidates with a \emph{small} pointing angle for the dummy V0, \ie the pointing angle formed by the V0 made of the bachelor and the proton, as shown in \fig\ref{fig:WrongPACut}.
 
 
 \begin{figure}[t]
@@ -261,81 +267,107 @@ The analysis \cite{silvadealbuquerqueMultistrangeHadronsPb2019} investigated dif
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassOmegaPlus_WrongPA.eps}
 	\label{fig:OmegaPlusWrongPA}
 }	
-	\caption{Invariant mass distribution of \rmXiM (a), \rmAxiP (b), \rmOmegaM (c) and \rmAomegaP (d) in pp at \sqrtS = 13 \tev. These have been obtained using the cuts in \tab\ref{tab:CascadeSelections} (red markers), and also without the bachelor-proton pointing angle selection (black markers). This comparison shows the latter selection manages to remove a structure in the invariant mass distribution while preserving the population under the peak. Notice the log-scale on the y-axis, that puts into perspective the signal and background levels.}
+	\caption{Invariant mass distribution of \rmXiM (a), \rmAxiP (b), \rmOmegaM (c) and \rmAomegaP (d) in pp at \sqrtS = 13 \tev. These have been obtained using the cuts in \tab\ref{tab:CascadeSelections} (red markers), and also without the bachelor-proton pointing angle selection (black markers). This comparison shows the latter selection removes a structure in the invariant mass distribution while preserving the population under the peak. Notice the log-scale on the y-axis, that puts into perspective the signal and background levels.}
 	\label{fig:WrongPA}
 \end{figure}
 
+%\begin{figure}[t]
+%    \begin{minipage}[t]{.3\textwidth}
+%%        \centering
+%\hspace*{-2.cm}
+%        \includegraphics[width=1.25\textwidth]{Figs/Chapter5/WrongV0.eps}
+%        \subcaption{Image 1.}
+%	\label{fig:WrongV0}
+%    \end{minipage}
+%%    \hfill
+%    \begin{minipage}[t]{.3\textwidth}
+%%        \centering
+%	\hspace*{-0.5cm}
+%        \includegraphics[width=1.35\textwidth]{Figs/Chapter5/TrueV0.eps}
+%%        \subcaption{Image 1.}
+%	\label{fig:TrueV0}
+%    \end{minipage}  
+%    \begin{minipage}[t]{.3\textwidth}
+%%        \centering
+%	\hspace*{1.5cm}
+%        \includegraphics[width=1.45\textwidth]{Figs/Chapter5/WrongPACut.png}
+%%        \subcaption{Image 1.}
+%	\label{fig:WrongPACut}
+%    \end{minipage}  
+%    \caption{Illustrations of a \rmLambda decaying into a proton and a pion, with another pion passing close to the proton (a), identified as a cascade decay topology and reconstruted as such (b). (c) Distribution of the pointing angle formed by the bachelor and proton tracks for true associated \rmXi and for candidates in the background structure in the invariant mass distributions ("bump").}
+%\end{figure}
+
 \begin{figure}[t]
-%\centering
-\hspace*{-2.cm}
+\centering
+%\hspace*{-2.0cm}
 \subfigure[]
 {
-	\includegraphics[width=0.32\textwidth]{Figs/Chapter5/WrongV0.png}
+	\includegraphics[width=0.4\textwidth]{Figs/Chapter5/WrongV0.eps}
 	\label{fig:WrongV0}
 }
 \subfigure[]
 {
-	\includegraphics[width=0.32\textwidth]{Figs/Chapter5/TrueV0.png}
+	\includegraphics[width=0.45\textwidth]{Figs/Chapter5/TrueV0.eps}
 	\label{fig:TrueV0}
-}
+}\\
 \subfigure[]
 {
-	\includegraphics[width=0.4\textwidth]{Figs/Chapter5/WrongPACut.png}
+	\includegraphics[width=0.5\textwidth]{Figs/Chapter5/WrongPACut.png}
 	\label{fig:WrongPACut}
 }
-	\caption{Invariant mass distribution of \rmXiM (a), \rmAxiP (b), \rmOmegaM (c) and \rmAomegaP (d) in pp at \sqrtS = 13 \tev. These have been obtained using the cuts in \tab\ref{tab:CascadeSelections} (red markers), except for the bachelor-proton pointing angle selection in black. This comparison shows the latter selection manages to remove a structure in the invariant mass distribution while preserving the population under the peak.}
+	\caption{Illustrations of a \rmLambda decaying into a proton and a pion, with another pion passing close to the proton (a), identified as a cascade decay topology and reconstruted as such (b). (c) Distribution of the pointing angle formed by the bachelor and proton tracks for true associated \rmXi and for candidates in the background structure in the invariant mass distributions ("bump").}
 	\label{fig:WrongTopology}
 \end{figure}
 
 \subsection{Mass measurement}
 \label{subsec:MassExtraction}
 
-\subsubsection{Principles of mass extraction}
+\subsubsection{Principles of the mass extraction}
 \label{subsubsec:PrinciplesOfMassExtraction}
 
-Out of all the candidates passing the above selection criteria, there contain true V0s/cascades -- depending on the particle of interest -- and background candidates. Taken individually, they are undistinguisable. The separation of these two can only be achieved statistically, based on the analysis of the invariant mass spectrum.
+Out of all the candidates passing the above selection criteria, there contain true V0s/cascades -- depending on the particle of interest -- and background candidates. Taken individually, they are undistinguishable. The separation of these two can only be achieved statistically, based on the analysis of the invariant mass spectrum.
 
 The invariant mass of each candidate is calculated, as explained in \Sec\ref{subsubsec:CascadeFormation} and \Sec\ref{subsubsec:InvariantMassSelection}, and sorted according to their electric charge in order to separate the particles from the anti-particles. The V0s being electrically neutral, they follow a different approach: since the \rmKzeroS decays into two particles of the same nature --- a \rmPiPlus and a \rmPiMinus ---, it is hopeless to try separating particles and anti-particles. This is not the case of \rmLambda and \rmAlambda, though. However, it may happen that the same V0 candidate passes the particle and anti-particle selections in \tab\ref{tab:V0Selections}. To avoid such double-counting, each candidate needs to go through the \rmLambda selections first. If it satisfies all conditions, it is labeled as \rmLambda and we move to the next candidate. Otherwise, it is checked against the requirements for a \rmAlambda baryon.
 
-On one hand, most of the background candidates originate from a random association of two or three tracks. Those tracks being uncorrelated, the corresponding invariant mass spectrum should be flat or decreasing with the invariant mass value. On the other hand, the invariant mass of true V0s/cascades should be close to the tabulated mass \mPDG, such that there emerges an overpopulated region taking the shape of a peak. The \figs\ref{fig:InvMassCascades} show the invariant mass spectra of \rmXi and \rmOmega.  One can see that the signal for each species sits on top of a small background.\\
+On one hand, most of the background candidates originate from a random association of two or three tracks. Those tracks being uncorrelated, the corresponding invariant mass spectrum should be flat or decreasing with the invariant mass value. On the other hand, the invariant mass of true V0s/cascades should be close to the tabulated mass \mPDG, such that there emerges an overpopulated region taking the shape of a peak. \Figs\ref{fig:InvMassCascades} show the invariant mass spectra of \rmXi and \rmOmega.  One can see that the signal for each species sits on top of a small background.\\
 
-To isolate the signal from the background, a fit of the invariant mass spectra is performed using a sum of two functions: one for modeling the signal peak, the other for describing the background. Several functions can be considered, as discussed in \Sec\ref{subsubsec:SignalShape}. In \figs\ref{fig:InvMassCascades}, the peak is represented by a triple Gaussian \cite{atlascollaborationKshortLambdaProduction2012} and the background by an exponential function. Whatever the choosen functions are, the fitting procedure is performed with the maximum (log-)likelyhood method.
+To isolate the signal from the background, a fit of the invariant mass spectra is performed using a sum of two functions: one for modeling the signal peak, the other for describing the background. Several functions can be considered, as discussed in \Sec\ref{subsubsec:SignalShape}. In \figs\ref{fig:InvMassCascades}, the peak is represented by a triple Gaussian \cite{atlascollaborationKs02012} and the background by an exponential function. Whatever the choosen functions are, the fitting procedure is performed with the maximum (log-)likelyhood method.
 
 If the procedure manages to converge, this fit allows to measure the mass of the considered particle: it corresponds to the centre of the invariant mass peak, given by the position of the maximum of the signal function denoted as $\mu$. The width of the peak -- the parameter $\sigma$ -- provides an estimation of the experimental resolution on the mass. The uncertainties on both quantities come from the errors returned by the fitting procedure.
 
 From these parameters, two regions of interest can be delimited:
 \begin{itemize}
 \item[$\bullet$] the peak region, containing all the signal\footnote{More precisely, considering the definition of the peak region in this analysis, it should contain approximately 99.99995\% (\ie a $5 \sigma$ significance level) of the true V0s/cascades measured.} and some background, is defined within $\left[ \mu - 5 \sigma ; \mu + 5 \sigma \right]$;
-\item[$\bullet$] the side-bands region, solely constituted of background, consists in two bands of the same width\footnote{As a side note: the two side-bands do not need to be of the same size, but it avoids dealing with a scaling factor when comparing their total area to the one in the peak region. Most often, they have different widths because of an asymmetry in the invariant mass distribution, such as the structure reported in \Sec\ref{subsubsec:InvMassStructure} \cite{alicecollaborationProductionLightflavorHadrons2020}.}, surrounding the peak region and covering the range $\left[ \mu - 12 \sigma ; \mu - 7 \sigma \right] \bigcup \left[ \mu + 7 \sigma ; \mu + 12 \sigma \right]$.
+\item[$\bullet$] the side-bands region, solely constituted of background, consists in two bands of the same width\footnote{As a side note: the two side-bands do not need to be of the same size, but it avoids dealing with a scaling factor when comparing their total area to the one in the peak region. Most often, they have different widths because of an asymmetry in the invariant mass distribution, such as the structure reported in \Sec\ref{subsubsec:InvMassStructure} \cite{alicecollaborationProductionLightflavorHadrons2021}.}, surrounding the peak region and covering the range $\left[ \mu - 12 \sigma ; \mu - 7 \sigma \right] \bigcup \left[ \mu + 7 \sigma ; \mu + 12 \sigma \right]$.
 \end{itemize}
 Hence, the amount of raw signal and background can be evaluated. The peak ($S+B$) and background ($B$) populations are estimated by counting the
-number of candidates in their respective regions. The raw signal ($S$) in the peak region is obtained by subtracting the background from the peak population, that is $S = (S+B) - B$.
+number of candidates in their respective regions. The raw signal ($S$) in the peak region is obtained by subtracting the background from the peak population, that is\break $S=(S+B)-B$.
 
 \begin{figure}[p]
 %\centering
 \hspace*{-1.5cm}
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassXiMinus.eps}
-	\label{fig:XiMinus_ModGaussian}
+	\label{fig:XiMinus_TripleGaussian}
 } 
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassXiPlus.eps}
-	\label{fig:XiPlus_ModGaussian}
+	\label{fig:XiPlus_TripleGaussian}
 } 
 \hspace*{-1.5cm}
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassOmegaMinus.eps}
-	\label{fig:OmegaMinus_ModGaussian}
+	\label{fig:OmegaMinus_TripleGaussian}
 } 
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassOmegaPlus.eps}
-	\label{fig:OmegaPlus_ModGaussian}
+	\label{fig:OmegaPlus_TripleGaussian}
 }  
-\caption{Invariant mass distribution of \rmXiM (a), \rmAxiP (b), \rmOmegaM (c) and \rmAomegaP (d) hyperons in pp collisions at \sqrtS = 13 \tev. Here, the peak is modeled by a triple Gaussian, and the background by an exponential function. Each distribution comes with an additional panel representing the consistency between the data and the fit model, in the form of a ratio per invariant mass bin. The error bars encompasses the uncertainties on both quantities.}
+\caption{Invariant mass distributions of \rmXiM (a), \rmAxiP (b), \rmOmegaM (c) and \rmAomegaP (d) hyperons in pp collisions at \sqrtS = 13 \tev. Here, the peak is modeled by a triple Gaussian, and the background by an exponential function. Each distribution comes with an additional panel representing the consistency between the data and the fit model, in the form of a ratio per invariant mass bin. The error bars encompasses the uncertainties on both quantities.}
 	\label{fig:InvMassCascades}
 \end{figure}
 
-In \figs\ref{fig:InvMassCascades}, all the fit are of reasonably good quality\footnote{One may argue that, in the case of the \rmXiM, the reduced $\chi^{2}$  is relatively high. However, the comparison of the bottom panels of the \rmXiM and \rmAxiP allows to conclude that it certainly comes from a slightly worst description of the background.}. The bottom panels show that the data-model discrepancy does not exceed 5\% for the most precise points, \ie those in the peak region. The mass peak sits on a small background: 1 298 838 $\pm$ 1202 \rmXiM (1 229 531 $\pm$ 1168 \rmAxiP) and 67 210 $\pm$ 285 \rmOmegaM (66 199 $\pm$ 281 \rmAomegaP) were reconstructed with purities above 90\%, as shown in \tab\ref{tab:FitQuantities}.
+In \figs\ref{fig:InvMassCascades}, all the fits are of reasonably good quality\footnote{One may argue that, in the case of the \rmXiM, the reduced $\chi^{2}$  is relatively high. However, the comparison of the bottom panels of the \rmXiM and \rmAxiP allows to conclude that it certainly comes from a slightly worst description of the background.}. The bottom panels show that the data-model discrepancy does not exceed 5\% for the most precise points, \ie those in the peak region. The mass peak sits on a small background: 1~298~838~$\pm$~1202~\rmXiM (1~229~531~$\pm$~1168~\rmAxiP) and 67~210~$\pm$~285~\rmOmegaM (66~199~$\pm$~281~\rmAomegaP) were reconstructed with purities above 90\%, as shown in \tab\ref{tab:FitQuantities}.
 
 \begin{table}[h]
     \centering
@@ -367,7 +399,7 @@ Since the mass extraction depends on the peak description, it is crucial to iden
 	\dNdX{\mInv[]} = A_{1} \cdot \exp \left[ - \dfrac{ (\mInv[] - \mu )^2}{ 2 \sigma_{1}^2} \right] + A_{2} \cdot \exp \left[ - \dfrac{ (\mInv[] - \mu )^2}{ 2 \sigma_{2}^2} \right] + A_{3} \cdot \exp \left[ - \dfrac{ (\mInv[] - \mu )^2}{ 2 \sigma_{3}^2} \right]
 	\label{eq:Gaus}
 	\end{equation}
-	with $A_{1}$, $A_{2}$, $A_{3}$ the amplitudes of the first, second and third Gaussian, $\mu$ the common mean value, and $\sigma_{1}$, $\sigma_{2}$, $\sigma_{3}$ the width of the first, second and third Gaussian\footnote{In case of a fit with a triple Gaussian function, it is the weighted width that is considered for the definition of the peak and side-bands regions. The weighting factors for $\sigma_{1}$, $\sigma_{2}$, $\sigma_{3}$ are determined based on the relative contribution of each Gaussian in the fit, \ie $\sigma^{2} = \frac{A_{1}}{A_{1}+A_{2}+A_{3}} \sigma_{1}^{2} + \frac{A_{2}}{A_{1}+A_{2}+A_{3}} \sigma_{2}^{2} + \frac{A_{3}}{A_{1}+A_{2}+A_{3}} \sigma_{3}^{2}$}.
+	with $A_{1}$, $A_{2}$, $A_{3}$ the amplitudes of the first, second and third Gaussian, $\mu$ the common mean value, and $\sigma_{1}$, $\sigma_{2}$, $\sigma_{3}$ the width of the first, second and third Gaussian\footnote{In case of a fit with a triple Gaussian function, it is the weighted width that is considered for the definition of the peak and side-bands regions. The weighting factors for $\sigma_{1}$, $\sigma_{2}$, $\sigma_{3}$ are determined based on the relative contribution of each Gaussian in the fit,\break \ie$\sigma^{2} = \frac{A_{1}}{A_{1}+A_{2}+A_{3}} \sigma_{1}^{2} + \frac{A_{2}}{A_{1}+A_{2}+A_{3}} \sigma_{2}^{2} + \frac{A_{3}}{A_{1}+A_{2}+A_{3}} \sigma_{3}^{2}$}.
 %	
 %\item \textbf{Double Gaussian} : it consists in a sum of two Gaussian functions with different parameters but the mean value which is common.
 %	\begin{equation}
@@ -375,7 +407,7 @@ Since the mass extraction depends on the peak description, it is crucial to iden
 %	\end{equation}\label{eq:DoubleGaus}
 %	where $A_1$ and $A_2$ are the respective amplitudes of the two Gaussian, $\mu$ corresponds to the center of the peak (common for the two Gaussian), and their widths are denoted as $\sigma_1$ and $\sigma_2$.
 %	
-\item[$\bullet$] \textbf{Modified Gaussian} \cite{atlascollaborationKshortLambdaProduction2012}:
+\item[$\bullet$] \textbf{Modified Gaussian} \cite{atlascollaborationKs02012}:
 	\begin{equation}
 	\dNdX{\mInv} = A \cdot \exp \left[ - \frac{1}{2} u^{1 + \frac{1}{1+ 0.5 u}} \right] \quad ; \quad  u = \left\rvert \frac{\mInv - \mu }{\sigma} \right\rvert
 	\end{equation}\label{eq:ModifiedGaus}
@@ -390,11 +422,11 @@ Since the mass extraction depends on the peak description, it is crucial to iden
 	\begin{equation}
 	\dNdX{\mInv} = 
 		\begin{cases}
-	      A \cdot \exp \left[ \rho_{\rm L} \frac{(u-x_{\rm L})^2}{(\mu-x_{\rm L})^2} - \ln(2) + 4 \cdot \ln(2)  \frac{(u-x_{\rm L})}{2 \sigma \sqrt{ 2  \ln 2 }} \cdot  \frac{\xi}{\sqrt{\xi^2+1} + \xi}  \frac{\sqrt{\xi^2+1}}{(\sqrt{\xi^2+1}-\xi)^2} \right], \qquad u\leq x_{\rm L} \\
+	      A \cdot \exp \left[ \rho_{\rm L} \frac{(u-x_{\rm L})^2}{(\mu-x_{\rm L})^2} - \ln(2) + 4 \cdot \ln(2)  \frac{(u-x_{\rm L})}{2 \sigma \sqrt{ 2  \ln 2 }} \cdot  \frac{\xi}{\sqrt{\xi^2+1} + \xi}  \frac{\sqrt{\xi^2+1}}{(\sqrt{\xi^2+1}-\xi)^2} \right], \ u\leq x_{\rm L} \\
 	      \\
-	      A \cdot \exp \left[ -\ln(2) \cdot \left( \frac{ \ln(1 + 4 \xi \sqrt{\xi^2+1} \frac{u - \mu}{2 \sigma \sqrt{2 \ln 2}}) }{ \ln( 1 + 2 \xi (\xi - \sqrt{\xi^2+1})) } \right)^2 \right], \qquad  x_{\rm L} < u < x_{\rm R} \\
+	      A \cdot \exp \left[ -\ln(2) \cdot \left( \frac{ \ln(1 + 4 \xi \sqrt{\xi^2+1} \frac{u - \mu}{2 \sigma \sqrt{2 \ln 2}}) }{ \ln( 1 + 2 \xi (\xi - \sqrt{\xi^2+1})) } \right)^2 \right], \  x_{\rm L} < u < x_{\rm R} \\
 	      \\
-	      A \cdot \exp \left[ \rho_{\rm R} \frac{(u-x_{\rm R})^2}{(\mu-x_{\rm R})^2} - \ln(2) + 4 \cdot \ln(2) \frac{(u-x_{\rm R})}{2 \sigma \sqrt{ 2  \ln 2 }} \cdot  \frac{\xi}{\sqrt{\xi^2+1} + \xi} \frac{\sqrt{\xi^2+1}}{(\sqrt{\xi^2+1}-\xi)^2} \right], \qquad u \geq x_{\rm R} 
+	      A \cdot \exp \left[ \rho_{\rm R} \frac{(u-x_{\rm R})^2}{(\mu-x_{\rm R})^2} - \ln(2) + 4 \cdot \ln(2) \frac{(u-x_{\rm R})}{2 \sigma \sqrt{ 2  \ln 2 }} \cdot  \frac{\xi}{\sqrt{\xi^2+1} + \xi} \frac{\sqrt{\xi^2+1}}{(\sqrt{\xi^2+1}-\xi)^2} \right], \ u \geq x_{\rm R} 
 	     \end{cases}
 	\end{equation}\label{eq:Bukin}
 	with 
@@ -407,14 +439,14 @@ Since the mass extraction depends on the peak description, it is crucial to iden
 	\begin{equation}
 	\dNdX{\mInv} = 
 		\begin{cases}
-	      A \cdot \left(\frac{n_{\rm L}}{\alpha_{\rm L} (n_{\rm L} - \alpha_{\rm L}^{2} - u \alpha_{\rm L})}\right)^{n_{L}} \exp \left[ -0.5  \alpha_{\rm L}^{2} \right] , \qquad u < -\alpha_{\rm L} \\
+	      A \cdot \left(\frac{n_{\rm L}}{\alpha_{\rm L} (n_{\rm L} - \alpha_{\rm L}^{2} - u \alpha_{\rm L})}\right)^{n_{L}} \exp \left[ -0.5  \alpha_{\rm L}^{2} \right] , \ u < -\alpha_{\rm L} \\
 	      \\
-	      A \cdot \exp \left[ -0.5 u^{2} \right], \qquad  -\alpha_{\rm L} \leq u \leq \alpha_{\rm R} \\
+	      A \cdot \exp \left[ -0.5 u^{2} \right], \  -\alpha_{\rm L} \leq u \leq \alpha_{\rm R} \\
 	      \\
-	      A \cdot \left(\frac{n_{\rm R}}{\alpha_{\rm R} (n_{\rm R} - \alpha_{\rm R}^{2} + u \alpha_{\rm R})}\right)^{n_{R}} \exp \left[ -0.5  \alpha_{\rm R}^{2} \right] , \qquad u < \alpha_{\rm R} 
+	      A \cdot \left(\frac{n_{\rm R}}{\alpha_{\rm R} (n_{\rm R} - \alpha_{\rm R}^{2} + u \alpha_{\rm R})}\right)^{n_{R}} \exp \left[ -0.5  \alpha_{\rm R}^{2} \right] , \ u < \alpha_{\rm R} 
 	     \end{cases}
 	\end{equation}\label{eq:DoubleSidedCrystalBallFunction}
-	with $u$ equals $\left(\mInv - \mu\right)/\sigma_{L}$ for $\mInv - \mu < 0$ and $\left(\mInv - \mu\right)/\sigma_{R}$ for $\mInv - \mu > 0$, $A$ is the normalization parameter, $\mu$ is the peak position, $\sigma_{\rm L}$ and $\sigma_{\rm R}$ parametrise the position where the peak starts to follow a power law towards the low and high mass values respectively, of exponents $n_{\rm L}$ and $n_{\rm R}$.
+	with $u$ equals $\left(\mInv - \mu\right)/\sigma_{L}$ for $\mInv - \mu < 0$ and $\left(\mInv - \mu\right)/\sigma_{R}$ for $\mInv~-~\mu~>~0$, $A$ is the normalization parameter, $\mu$ is the peak position, $\sigma_{\rm L}$ and $\sigma_{\rm R}$ parametrise the position where the peak starts to follow a power law towards the low and high mass values respectively, of exponents $n_{\rm L}$ and $n_{\rm R}$.
 
 \end{itemize}
 
@@ -456,37 +488,37 @@ This re-weighting procedure starts off by extracting the raw \pT spectra in the 
 \hspace*{-1.5cm}
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/RawPtSpectra_Xi.eps}
-	\label{fig:XiMinus_ModGaussian}
+	\label{fig:PtSpectraXi}
 } 
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/WeightingFactors_Xi.eps}
-	\label{fig:XiPlus_ModGaussian}
+	\label{fig:WeightFactorsXi}
 } 
 \hspace*{-1.5cm}
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/RawPtSpectra_Omega.eps}
-	\label{fig:OmegaMinus_ModGaussian}
+	\label{fig:PtSpectraOmega}
 } 
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/WeightingFactors_Omega.eps}
-	\label{fig:OmegaPlus_ModGaussian}
+	\label{fig:WeightFactorsOmega}
 }  
-\caption{On the left: raw \pT spectra of \rmXiM and \rmAxiP (a), and \rmOmegaM and \rmAomegaP (c) hyperons in the data in full marker, and in simulations in open markers. On the right: weighting factors for \rmXiPM (b) and \rmOmegaPM (d), employed to match the \pT spectra in the data and MC. The error bars encompasses only the statistical uncertainties.}
+\caption{On the left: raw \pT spectra of \rmXiM and \rmAxiP (a), and \rmOmegaM and \rmAomegaP (c) hyperons in the data in full marker, and in simulations in open markers. On the right: weighting factors for \rmXiPM (b) and \rmOmegaPM (d), employed to match the \pT spectra in the data and MC. The error bars encompass only the statistical uncertainties.}
 	\label{fig:PtSpectra}
 \end{figure}
 
 
-Once the simulated data have been re-weighted, the mass offset observed in MC with respect to the injected mass is assessed, corrected and taken into account in the mass measurement in real data. The \tab\ref{tab:MCMassOffset} presents these corrections as well as the corrected mass values, \ie those measured in real data after correction of the initial offset in MC. From these derive the (relative) mass difference between particle and anti-particle, given by
+Once the simulated data have been re-weighted, the mass offset observed in MC with respect to the injected mass is assessed, corrected and taken into account in the mass measurement in real data. \Tab\ref{tab:MCMassOffset} presents these corrections as well as the corrected mass values, \ie those measured in real data after correction of the initial offset in MC. From these derive the (relative) mass difference between particle and anti-particle, given by
 \begin{equation}
 \frac{\Delta \mu}{\mu}=  2 \cdot \frac{\mu_{\textsc{part.}}-\mu_{\overline{\textsc{part.}}}}{\mu_{\textsc{part.}}+\mu_{\overline{\textsc{part.}}}}.
 \label{eq:MassDifference}
 \end{equation}
-Its (statistical) uncertainty is obtained via propagation of the ones on the mass values, assuming there is no correlation between the particle and anti-particle measurements -- \textit{a priori} correct, since $\mu_{\textsc{part.}}$ and $\mu_{\overline{\textsc{part.}}}$ have been extracted independently\footnote{The facts that i) the particle and anti-particle do not share the same data sample (\Sec\ref{subsubsec:PrinciplesOfMassExtraction}), and ii) the fitting procedure is run separately guarantee the independence of the mass measurements.}--,
+Its (statistical) uncertainty is obtained via propagation of the ones on the mass values, assuming there is no correlation between the particle and anti-particle measurements -- \textit{a priori} correct, since $\mu_{\textsc{part.}}$ and $\mu_{\overline{\textsc{part.}}}$ have been extracted independently\footnote{The facts that i) the particle and anti-particle do not share the same data sample\break (see \Sec\ref{subsubsec:PrinciplesOfMassExtraction}), and ii) the fitting procedure is run separately guarantee the independence of the mass measurements.}--,
 \begin{equation}
 \sigma_{\Delta \mu /\mu }=  4 \cdot \sqrt{ \left(\frac{-\mu_{\overline{\textsc{part.}}}}{\left(\mu_{\textsc{part.}} + \mu_{\overline{\textsc{part.}}} \right)^{2}}\right)^{2} \sigma_{\mu_{\textsc{part.}}}^{2} + \left(\frac{\mu_{\textsc{part.}}}{\left(\mu_{\textsc{part.}} + \mu_{\overline{\textsc{part.}}} \right)^{2}}\right)^{2} \sigma_{\mu_{\overline{\textsc{part.}}}}^{2} }.
 \label{eq:MassDifferenceUncertainty}
 \end{equation}
-The \tab\ref{tab:MCMassDiffOffset} shows mass difference for \rmXi and \rmOmega, in the data and MC, as well as the corrected value.
+\Tab\ref{tab:MCMassDiffOffset} shows the mass difference for \rmXi and \rmOmega, in the data and MC, as well as the corrected value.
 
 \begin{table}[!t]
     \centering
@@ -495,13 +527,13 @@ The \tab\ref{tab:MCMassDiffOffset} shows mass difference for \rmXi and \rmOmega,
     \noalign{\smallskip}\hline\noalign{\smallskip}
     \bf Particle & \bf \rmXiM & \bf \rmAxiP & \bf \rmOmegaM & \bf \rmAomegaP \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
-    \multicolumn{5}{l}{\textit{In \mmass}} \\
+    \multicolumn{5}{l}{(In \mmass)} \\
     Offset in data & $0.215 \pm 0.002$  & $0.267\pm 0.002$ & $0.139\pm 0.008$ & $0.123 \pm 0.008$ \\
     Offset in MC & $-0.075 \pm 0.003$  & $-0.072\pm 0.003$ & $0.040\pm 0.005$ & $0.027 \pm 0.005$ \\
     	Corrected mass & $1322.000 \pm 0.003$ & $1322.049 \pm 0.005$ & $1672.549 \pm 0.008$ & $1672.546 \pm 0.008$\\
     \noalign{\smallskip}\hline\noalign{\smallskip}
     \end{tabular}
-    \caption{Measurements of the mass offset (the difference between the reconstructed and injected masses) with respect to the PDG value (coinciding with the injected mass in MC) in the data and MC, as well as the final masses of $\Xi^{-}$, $\overline{\Xi}^{+}$, $\Omega^{-}$, $\overline{\Omega}^{+}$ after correction of that offset in MC. The uncertainties on the mass values correspond only to the statistical one. These measurements have been obtained using the selections in \tab\ref{tab:CascadeSelections}, a modified Gaussian for the peak modelisation and a linear function for the background (in the data only).}\label{tab:MCMassOffset}
+    \caption{Measurements of the mass offset (the difference between the reconstructed and injected masses) with respect to the PDG value (coinciding with the injected mass in MC) in the data and MC, as well as the final masses of $\Xi^{-}$, $\overline{\Xi}^{+}$, $\Omega^{-}$, $\overline{\Omega}^{+}$ after correction of that offset in MC. The uncertainties on the mass values correspond only to the statistical ones. These measurements have been obtained using the selections in \tab\ref{tab:CascadeSelections}, a triple Gaussian for the peak modelisation and a linear function for the background (in the data only).}\label{tab:MCMassOffset}
 \end{table}
 
 \begin{table}[!t]
@@ -517,7 +549,7 @@ The \tab\ref{tab:MCMassDiffOffset} shows mass difference for \rmXi and \rmOmega,
     
     \noalign{\smallskip}\hline\noalign{\smallskip}
     \end{tabular}
-    \caption{Measurements of the mass difference in the data and MC, as well as the final mass difference for $\Xi^{\pm}$ and $\Omega^{\pm}$ using the corrected mass values in \tab\ref{tab:MCMassOffset}. The uncertainties on the mass differences correspond only to the statistical one. These measurements have been obtained using the selections in \tab\ref{tab:CascadeSelections}, a modified Gaussian for the peak modelisation and a linear function for the background (in the data only).} 
+    \caption{Measurements of the mass difference in the data and MC, as well as the final mass difference for $\Xi^{\pm}$ and $\Omega^{\pm}$ using the corrected mass values in \tab\ref{tab:MCMassOffset}. The uncertainties on the mass differences correspond only to the statistical ones. These measurements have been obtained using the selections in \tab\ref{tab:CascadeSelections}, a triple Gaussian for the peak modelisation and a linear function for the background (in the data only).} 
     \label{tab:MCMassDiffOffset}
 \end{table}
 
@@ -540,14 +572,12 @@ This treatement of the systematic biases corresponds to the one proposed by Roge
 \subsubsection{Influence on the mass extraction}
 \label{subsubsec:SystTopoMass}
 
-As explained in \Sec\ref{subsec:TopoReco}, the identification of the charged \rmXi and \rmOmega baryons relies on their characteristic cascade decay. The reconstruction of this decay topology revolves around, first, the association of two tracks to form \rmLambda candidates, and then these are matched with the remaining secondary tracks. In order to reduce the induced combinatorial background, various topological and kinematic cuts are being used. The choice of the employed cut values may obviously be the source of a bias. Such a systematic effect can be revealed by observing how a different set of selections affects the mass and its uncertainty.\\
+As explained in \Sec\ref{subsec:TopoReco}, the identification of the charged \rmXi and \rmOmega baryons relies on their characteristic cascade decay. The reconstruction of this decay topology revolves around, first, the association of two tracks to form \rmLambda candidates, and then these are matched with the remaining secondary tracks. In order to reduce the induced combinatorial background, various topological and kinematic cuts are used. The choice of the employed cut values may obviously be the source of a bias. Such a systematic effect can be revealed by observing how a different set of selections affects the mass and its uncertainty.\\
 
 The standard approach consists in varying individually each selection, while keeping the others at their reference value. Although it allows to address the bias induced by a given cut, this does not take into account the possible correlations between topological variables. For instance, a higher cut on cascade decay radius also implies that the \rmLambda daughter decays further away in the detector. To tackle that, one would need to build a matrix containing the correlation factors for each pair of selection variables. Since the cascade identification relies here on a set of seventeen selections, this boils down to determining a symmetric matrix of dimension $15 \times 15$.
 
-However, a different approach is followed here. To go over the correlations between each variable, the sets of selections are randomly generated according to uniform laws\footnote{An alternative approach has also been tried along the \say{natural} distribution of each selection variable, rather than the uniform distribution. In the end, both approaches yield to consistent systematic uncertainties (within a few \kmass). The extra complexity and CPU cost of the alternative way have weighed in, given the fact that the randomisations here are part and parcel of the default analysis flow (see later), and will be resorted to many times. Therefore, the uniform randomisation has been retained as default option for all what is coming next.}, that spans over a certain variation ranges. The critical point of this study resides in the choice of the variation ranges, where a careful balance must be found: it should not be too \say{severe} at the risk of losing all the signal, or too \say{gentle} to cause any significant shift. It is considered as satisfactory when the induced signal shift reaches approximately, at least, 10\%\footnote{Note that this condition is applied for each topological cuts. For other selections, it may be difficult to satisfy such criterion as they act on the background rather than the signal. This is the case, for example, with the competing mass rejection that could never reach the 10\% signal variation threshold, even with an excessively vast range of variation.}. The \tabs\ref{tab:SystematicSelectionsXi} and \ref{tab:SystematicSelectionsOmega}, list the considered selection variables, with their variation range as well as the induced signal variation\footnote{The signal variations have been estimated by varying each selection individually, while keeping all other selections to their values in \tab\ref{tab:CascadeSelections}.} for \rmXi and \rmOmega respectively. As for the \rmKzeroS and \rmLambda, this is summarised in \tabs\ref{tab:SystematicSelectionsK0s} and \ref{tab:SystematicSelectionsLambda}. \\
-
 \begin{table}[t]
-    \centering
+    \hspace*{-1.cm}
     \begin{tabular}{c|c|c}
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \bf Track variable & Variation range & Signal variation \rmXiM (\rmAxiP) \\
@@ -562,28 +592,30 @@ However, a different approach is followed here. To go over the correlations betw
     \multicolumn{3}{l}{\textbf{V0}} \\
     V0 decay radius (\cm) & $> \left[ 1.2 ; 8 \right]$ & 11\% (11\%)\\
     V0 cosine of pointing angle & $> \left[ 0.97 ; 0.998 \right]$ & 10\% (10\%)\\
-    |$m$($V0$) - \mPDG\rmLambda| (\gmass) & $< \left[ 0.002 ; 0.007 \right]$ & 18\% (18\%)\\
-    DCA proton to prim. vtx (\cm) & > $\left[ 0.04 ; 0.5 \right]$ & 28\% (28\%)\\
-    DCA pion to prim. vtx (\cm) & > $\left[ 0.04 ; 0.95 \right]$ & 10\% (10\%)\\
-    DCA V0 to prim. vtx (\cm) & > $\left[ 0.06 ; 0.2 \right]$ & 12\% (12\%)\\
-    DCA between V0 daughters (std dev) & < $\left[ 0.4 ; 1.2 \right]$ & 12\% (12\%) \\
+    |$m$(V0) - \mPDG[\rmLambda]| (\gmass) & $< \left[ 0.002 ; 0.007 \right]$ & 18\% (18\%)\\
+    DCA proton to prim. vtx (\cm) &  $> \left[ 0.04 ; 0.5 \right]$ & 28\% (28\%)\\
+    DCA pion to prim. vtx (\cm) &  $> \left[ 0.04 ; 0.95 \right]$ & 10\% (10\%)\\
+    DCA V0 to prim. vtx (\cm) & $> \left[ 0.06 ; 0.2 \right]$ & 12\% (12\%)\\
+    DCA between V0 daughters (std dev) & $< \left[ 0.4 ; 1.2 \right]$ & 12\% (12\%) \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
     
     \multicolumn{3}{l}{\textbf{Cascade}} \\
-    Cascade decay radius (\cm) & > $\left[ 0.5 ; 2.5 \right]$ & 11\% (11\%)\\
-    Cascade Lifetime (\cm) & < $\left[ 1.6 ; 3.40 \right]$ \cTau & 40\% (40\%)\\
-    DCA bachelor to prim. vtx (\cm) & > $\left[ 0.04 ; 0.5 \right]$ & 15\% (15\%) \\
-    DCA between the cascade daughters (std dev) & < $\left[ 0.25 ; 1.2 \right]$ & 12\% (12\%)\\
-    Cascade cosine of pointing angle & > $\left[ 0.995 ; 0.9995 \right]$ & 14\% (14\%)\\
-    Bachelor-proton pointing angle (rad) & > $\left[ 0.02 ; 0.05 \right]$ & 11\% (11\%) \\
+    Cascade decay radius (\cm) & $> \left[ 0.5 ; 2.5 \right]$ & 11\% (11\%)\\
+    Cascade Lifetime (\cm) & $< \left[ 1.6 ; 3.40 \right]$ \cTau & 40\% (40\%)\\
+    DCA bachelor to prim. vtx (\cm) & $> \left[ 0.04 ; 0.5 \right]$ & 15\% (15\%) \\
+    DCA between the cascade daughters (std dev) &  $< \left[ 0.25 ; 1.2 \right]$ & 12\% (12\%)\\
+    Cascade cosine of pointing angle & $> \left[ 0.995 ; 0.9995 \right]$ & 14\% (14\%)\\
+    Bachelor-proton pointing angle (rad) & $> \left[ 0.02 ; 0.05 \right]$ & 11\% (11\%) \\
     
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \end{tabular}
     \caption{Summary of the variation ranges on the topological and track selections employed in the \rmXiM and \rmAxiP reconstruction. The last column indicates the \textit{maximum} induced signal variation; for more details, look at \fig\ref{fig:SignalVariation_TopoSel_XiMinus} and \fig\ref{fig:SignalVariation_TopoSel_XiPlus}.}\label{tab:SystematicSelectionsXi}
 \end{table}
 
+However, a different approach is followed here. To go over the correlations between each variable, the sets of selections are randomly generated according to uniform laws\footnote{An alternative approach has also been tried along the \say{natural} distribution of each selection variable, rather than the uniform distribution. In the end, both approaches yield to consistent systematic uncertainties (within a few \kmass). The extra complexity and CPU cost of the alternative way have weighed in, given the fact that the randomisations here are part and parcel of the default analysis flow (see later), and will be resorted to many times. Therefore, the uniform randomisation has been retained as default option for all what is coming next.}, that spans over a certain variation ranges. The critical point of this study resides in the choice of the variation ranges, where a careful balance must be found: it should not be too \say{severe} at the risk of losing all the signal, or too \say{gentle} to cause any significant shift. It is considered as satisfactory when the induced signal shift reaches approximately, at least, 10\%\footnote{Note that this condition is applied for each topological cuts. For other selections, it may be difficult to satisfy such criterion as they act on the background rather than the signal. This is the case, for example, with the competing mass rejection that could never reach the 10\% signal variation threshold, even with an excessively vast range of variation.}. \Tabs\ref{tab:SystematicSelectionsXi} and \ref{tab:SystematicSelectionsOmega}, list the considered selection variables, with their variation range as well as the induced signal variation\footnote{The signal variations have been estimated by varying each selection individually, while keeping all other selections to their values in \tab\ref{tab:CascadeSelections}.} for \rmXi and \rmOmega respectively. As for the \rmKzeroS and \rmLambda, this is summarised in \tabs\ref{tab:SystematicSelectionsK0s} and \ref{tab:SystematicSelectionsLambda}. \\
+
 \begin{table}[t]
-    \centering
+    \hspace*{-1.cm}
     \begin{tabular}{c|c|c}
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \bf Candidate variable & Range & Signal variation \rmOmegaM (\rmAomegaP) \\
@@ -603,7 +635,7 @@ However, a different approach is followed here. To go over the correlations betw
     \multicolumn{3}{l}{\textbf{V0}} \\
     V0 decay radius (\cm) & $> \left[ 1 ; 5.5 \right]$ & 11\% (11\%)\\
     V0 cosine of pointing angle & $> \left[ 0.97 ; 0.998 \right]$ & 17\% (17\%)\\
-    |$m$($V0$) - \mPDG\rmLambda| (\gmass) & $< \left[ 0.002 ; 0.007 \right]$ & 17\% (17\%)\\
+    |$m$(V0) - \mPDG[\rmLambda]| (\gmass) & $< \left[ 0.002 ; 0.007 \right]$ & 17\% (17\%)\\
     DCA proton to prim. vtx (\cm) & $> \left[ 0.04 ; 0.5 \right]$ & 34\% (34\%)\\
     DCA pion to prim. vtx (\cm) & $> \left[ 0.04 ; 0.75 \right]$ & 10\% (10\%) \\
     DCA V0 to prim. vtx (\cm) & $> \left[ 0.06 ; 0.2 \right]$ & 14\% (14\%)\\
@@ -637,7 +669,7 @@ Under these conditions and over a sufficiently large number of sets of cuts, the
 \item[$\bullet$] the \textit{systematic uncertainty} due to the candidate selections is the standard deviation of the $\mu_{i}$ distribution,
 \item[$\bullet$] and the \textit{statistical uncertainty} is given by the mean value of the $\sigma_{\mu_{i}}$ distribution.
 \end{itemize}
-As opposed to most analyses, this re-definition allows to overcome the dependence on a reference set of cuts, making the analysis \textit{in principle} more robust.\\
+As opposed to most analyses, this re-definition allows to circumvent the dependence on a reference set of cuts, making the analysis \textit{in principle} more robust.\\
 
 \begin{figure}[!p]
 %\centering
@@ -668,17 +700,17 @@ As opposed to most analyses, this re-definition allows to overcome the dependenc
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/SystErrVsNbrOfCutSets\_Omega.eps}
 	\label{fig:SystErrVsNbrOfCutSetsOmega}
 }  
-\caption{Relative measured mass as well as its statistical and systematic uncertainties in pp collisions at \sqrtS = 13 \tev as a function of the number of cut sets, for \rmXi in (a), (c), (e) and \rmOmega in (b), (d), (f) respectively. The quantities on the y-axis are relative to the value taken as the final measurement. In this case, it corresponds to the quantity for 20 000 different sets of cuts. Here, the peak is modeled by a modified Gaussian, and the background by a first order polynomial. The error bars represents the uncertainty on the evaluation of the mean or standard deviation.}
+\caption{Relative measured mass as well as its statistical and systematic uncertainties in pp collisions at \sqrtS = 13 \tev as a function of the number of cut sets, for \rmXi in (a), (c), (e) and \rmOmega in (b), (d), (f) respectively. The quantities on the y-axis are relative to the value taken as the final measurement. In this case, it corresponds to the quantity for 20 000 different sets of cuts. Here, the peak is modeled by a modified Gaussian, and the background by a first order polynomial. The error bars represent the uncertainty on the evaluation of the mean or standard deviation.}
 	\label{fig:MassVsNentries}
 \end{figure}
 %\clearpage
 
 The above quantities being extracted from a finite sample, one could expect them to depend on the number of cut sets. The stability of the results with the amount of sets employed has been studied and is shown on \fig\ref{fig:MassVsNentries}. At first, the mass value, its statistical and systematic uncertainties fluctuate with the number of cut sets, until they reach a plateau region at approximately 5000-6000 different sets of cuts. Such amount should thus suffice to perform the mass measurement. However, in order to a guarantee an excellent stability, 20 000 sets are being used.
 
-The output results of this procedure are presented in the table \ref{tab:SystTopoKineSelections}.
+The output results of this procedure are presented in \tab\ref{tab:SystTopoKineSelections}.
 
 \begin{table}[h]
-    \centering
+    \hspace*{-0.4cm}
     \begin{tabular}{cccc|ccc}
 
 %    \begin{tabular}{b{2cm}@{\hspace{0.5cm}} b{3cm}@{\hspace{0.5cm}} b{2cm}@{\hspace{0.5cm}} b{2cm}@{\hspace{0.5cm}} b{5cm}@{\hspace{0.5cm}} b{3cm}@{\hspace{0.5cm}} b{3cm}@{\hspace{0.5cm}}}
@@ -699,12 +731,12 @@ The output results of this procedure are presented in the table \ref{tab:SystTop
     \rmAomegaP &  1672.514 & 0.014 & 0.015 & & & \\ 
 	\noalign{\smallskip}\hline \noalign{\smallskip}
     \end{tabular}
-    \caption{Measured masses and mass differences of \rmKzeroS, \rmLambda, \rmXi and \rmOmega, accompanied by their statistical and systematic (due to the topological and kinematic selections) uncertainties. Here, these measurements have been performed with a triple Gaussian for the signal and a first order polynomial for the background.}\label{tab:SystTopoKineSelections}
+    \caption{Measured masses and mass differences of \rmKzeroS, \rmLambda, \rmXi and \rmOmega, accompanied by their statistical and systematic (due to the topological and kinematic selections) uncertainties. Here, the measurements have been performed with a triple Gaussian for the signal and a first order polynomial for the background.}\label{tab:SystTopoKineSelections}
 \end{table}
 
 \subsubsection{Influence on the mass difference mass}
 
-In the \tab\ref{tab:SystTopoKineSelections}, the mass difference have been obtained taking the independently measured mass values of the particle and the anti-particle from the above procedure (\Sec\ref{subsubsec:SystTopoMass}), and using \eq\ref{eq:MassDifference}. The uncertainties are then propagated to obtain the statistical and systematic uncertainties on the mass difference. It does not result directly from the aforementioned procedure. In that sense, the mass difference measurement is \textit{indirect}. It carries the full systematic uncertainties from the particle and anti-particle mass values. By extracting the mass difference in a more \textit{direct} way -- similarly to what is done for the mass in \Sec\ref{subsubsec:SystTopoMass} --, part of the uncertainties from the particle and anti-particle masses would cancel out in the difference, resulting in a smaller systematic uncertainty.\\
+In \tab\ref{tab:SystTopoKineSelections}, the mass difference have been obtained taking the independently measured mass values of the particle and the anti-particle from the above procedure (\Sec\ref{subsubsec:SystTopoMass}), and using \eq\ref{eq:MassDifference}. The uncertainties are then propagated to obtain the statistical and systematic uncertainties on the mass difference. It does not result directly from the aforementioned procedure. In that sense, the mass difference measurement is \textit{indirect}. It carries the full systematic uncertainties from the particle and anti-particle mass values. By extracting the mass difference in a more \textit{direct} way -- similarly to what is done for the mass in \Sec\ref{subsubsec:SystTopoMass} --, part of the uncertainties from the particle and anti-particle masses would cancel out in the difference, resulting in a smaller systematic uncertainty.\\
 
 To that end, an additional step needs to be introduced in the previous strategy in \Sec\ref{subsubsec:SystTopoMass}. For each set of cuts $i$, both particle and anti-particle masses -- $\mu_{i, \textsc{part.}}$ and $\mu_{i, \overline{\textsc{part.}}}$ --  are extracted as well as their uncertainties, $\sigma_{i, \textsc{part.}}$ and $\sigma_{i, \overline{\textsc{part.}}}$. From these, the computation of the mass difference is performed, 
 \begin{equation}
@@ -759,27 +791,27 @@ The measurement of the mass \textit{a priori} relies on a countless number of pa
 
 As mentioned above, an important check involves the stability of the results over time, that is as a function of the data taking periods. \Sec\ref{subsec:DataSamples} specifies that all the pp collisions recorded in the 2016, 2017 and 2018 data taking periods are considered. This corresponds to 37 periods collected in different magnetic field configurations for the L3 solenoid magnet\footnote{For almost all the periods, the L3 solenoid and the dipole magnets share the magnetic field polarity, that is $(+,+)$ or $(-,-)$. Each rule has its exception: one data taking periods in 2018 has been collected with the dipole magnet off.} ($B = + 0.5, -0.5, -0.2$ T), TPC gas composition (Ar/CO$_{2}$ for 2016 and 2018; Ne/CO$_{2}$/N$_{2}$ for 2017), and trigger modes (\say{CENT} or \say{FAST}). They are designated by a tag made of two numbers -- corresponding to the last digits of the data taking year -- and a letter, labelling for the period.
 
-The \figs\ref{fig:MassVsPeriodsXi} and \ref{fig:MassVsPeriodsOmega} show the measured mass of \rmXi and \rmOmega hyperons respectively, as a function of the data sample. A striking feature on these figures is the fact that all the values seem to be systematically off by about 250 \kmass for the double strange baryons and 150 \kmass for the triple strange particles. This originates from a momentum bias occuring in the V0 and cascade reconstruction, which is addressed later in \Sec\ref{subsubsec:DecayRadiusDependence}. Once it is corrected, the mass measurements lie within the PDG uncertainties.
+\Figs\ref{fig:MassVsPeriodsXi} and \ref{fig:MassVsPeriodsOmega} show the measured mass of \rmXi and \rmOmega hyperons respectively, as a function of the data sample. A striking feature on these figures is the fact that all the values seem to be systematically off by about 250 \kmass for the double strange baryons and 150 \kmass for the triple strange particles. This originates from a momentum bias occuring in the V0 and cascade reconstruction, which is addressed later in \Sec\ref{subsubsec:DecayRadiusDependence}. Once it is corrected, the mass measurements lie within the PDG uncertainties.
 
 \begin{landscape}
 \begin{figure}[p]
 \centering
 %\hspace*{-1.5cm}
 \subfigure[]{
-	\includegraphics[width=1.45\textwidth]{Figs/Chapter5/MassVsPeriod\_Xi.eps}
+	\includegraphics[width=1.45\textwidth]{Figs/Chapter5/MassVsPeriod2\_Xi.eps}
 	\label{fig:MassVsPeriodsXi}
 } \\
 %\hspace*{-1.5cm}
 \subfigure[]{
-	\includegraphics[width=1.45\textwidth]{Figs/Chapter5/MassVsPeriod\_Omega.eps}
+	\includegraphics[width=1.45\textwidth]{Figs/Chapter5/MassVsPeriod2\_Omega.eps}
 	\label{fig:MassVsPeriodsOmega}
 } 
-\caption{Measured mass of the \rmXiM and \rmAxiP (top), and \rmOmegaM and \rmAomegaP baryons (bottom) as a function of the data taking period. These values have been obtained based on 20 000 different sets of selections (\Sec\ref{subsec:SystTopoAndTrackSelections}). Hence, the uncertainties correspond to the quadratic sum of the statistical and systematic uncertainties due to the candidate and track selections. The periods with a magnetic field of $B = +0.5$ T are indicated with blue circles, those with the opposite polarity are shown in red squares, and finally the data sample collected in a configuration of $B = -0.2$ T are represented in black diamonds. Moreover, the "/C" and "/F" tags are here to signify "CENT" and "FAST" trigger modes respectively.}
+\caption{Measured mass of the \rmXiM and \rmAxiP (top), and \rmOmegaM and \rmAomegaP baryons (bottom) as a function of the \textbf{data taking period}. These values have been obtained based on 20 000 different sets of selections (\Sec\ref{subsec:SystTopoAndTrackSelections}). Hence, the uncertainties correspond to the quadratic sum of the statistical and systematic uncertainties due to the candidate and track selections. The periods with a magnetic field of $B = +0.5$~T are indicated with blue circles, those with the opposite polarity are shown in red squares, and finally the data sample collected in a configuration of $B~=~-0.2$~T are represented in black diamonds. Moreover, the "/C" and "/F" tags are here to signify "CENT" and "FAST" trigger modes respectively.}
 	\label{fig:MassVsPeriods}
 \end{figure}
 \end{landscape}
 
-The mass measurements in periods collected with $B =- 0.2$ T stand out from the rest of the values. This behaviour is attributed to the lower magnetic field, which results in a deterioration of the momentum resolution. The \say{FAST} configuration -- \ie events collected without the two middle layers of the ITS, the SDDs -- exhibits a similar pattern. The latter is most certainly due to the missing SDD informations; without these constraints, the probability to incorrectly assigned a cluster to a track increases. As a consequence, the track quality in the ITS, as well as the tracking efficiency, drop but also the track momentum gets biased. This point has been cross-checked by repeating the analysis in pp collisions at \sqrtS = 5.02 \tev with $B = \pm 0.5$ T\footnote{For comparison, the exploited data sample of pp collisions at \sqrtS = 13 \tev counts about 2.6 billons minimum-bias events while, for the one at \sqrtS = 5.02 \tev, it amounts to approximately 520 millions minimum-bias events.}, in \say{CENT} and \say{FAST} modes. In the former configuration, the results agreed with those obtained at 13 \tev (for the same magnetic field polarity) whereas, in the latter case, the previous trend was again observed, pointing indeed towards a problem related to the missing SDD informations. Therefore, the data sample taken in a magnetic field of $B = -0.2$ T and/or collected with the \say{FAST} trigger mode are discarded for the rest of the analysis.
+The mass measurements in periods collected with $B =-0.2$~T stand out from the rest of the values. This behaviour is attributed to the lower magnetic field, which results in a deterioration of the momentum resolution. The \say{FAST} configuration -- \ie events collected without the two middle layers of the ITS, the SDDs -- exhibits a similar pattern. The latter is most certainly due to the missing SDD informations; without these constraints, the probability to incorrectly assigned a cluster to a track increases. As a consequence, the track quality in the ITS, as well as the tracking efficiency, drop but also the track momentum gets biased. This point has been cross-checked by repeating the analysis in pp collisions at \sqrtS = 5.02 \tev with $B = \pm 0.5$~T\footnote{For comparison, the exploited data sample of pp collisions at \sqrtS = 13 \tev counts about 2.6 billons minimum-bias events while, for the one at \sqrtS = 5.02 \tev, it amounts to approximately 520 millions minimum-bias events.}, in \say{CENT} and \say{FAST} modes. In the former configuration, the results agreed with those obtained at 13 \tev (for the same magnetic field polarity) whereas, in the latter case, the previous trend was again observed, pointing indeed towards a problem related to the missing SDD informations. Therefore, the data sample taken in a magnetic field of $B = -0.2$ T and/or collected with the \say{FAST} trigger mode are discarded for the rest of the analysis.
 
 Finally, concerning the periods with opposite polarities, the results shows a very good agreement. A fit with a constant function (not shown on the figure) displays a $\chi^2$ probability greater than 90\%.
 
@@ -810,7 +842,7 @@ Miscalculation of the energy losses can arise at two different levels: on one ha
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsRadius\_OmegaMC.eps}
 	\label{fig:MassVsRadiusOmegaMC}
 } 
-\caption{Measured mass of the \rmXi (top) and \rmOmega baryons (bottom), in the data (left) and in MC (right), as a function of the cascade decay radius. The average radial position for each ITS layer is indicated in dotted line. Note that, for the purpose of the comparison, the MC is \textit{not} re-weighted (\Sec\ref{subsubsec:CorrectionOnTheExtractedMass}). In both cases, the results have been obtained through a fit with a triple Gaussian function for the invariant mass peak and, only in the data, an exponential function for the background.}
+\caption{Measured mass of the \rmXi (top) and \rmOmega baryons (bottom), in the data (left) and in MC (right), as a function of the \textbf{cascade decay radius}. The average radial position for each ITS layer is indicated with dotted lines. Note that, for the purpose of the comparison, the MC is \textit{not} re-weighted (\Sec\ref{subsubsec:CorrectionOnTheExtractedMass}). In both cases, the results have been obtained through a fit with a triple Gaussian function for the invariant mass peak and, only in the data, an exponential function for the background.}
 	\label{fig:MassVsRadius}
 \end{figure}
 
@@ -827,17 +859,17 @@ First of all, the measured mass exhibits an unexpected behaviour with the decay 
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsRadiusResol\_OmegaMC.eps}
 	\label{fig:RadiusResolVsRadiusOmega}
 } 
-\caption{Resolution on the radial position of the \rmXi (top) and \rmOmega (bottom) decay point in MC, as a function of the cascade decay radius. The average radial position for each ITS layer is indicated in dotted line. Here, the MC data have not been \textit{not} re-weighted. In both cases, the results have been obtained through a fit with a triple Gaussian function for the invariant mass peak and an exponential function for the background.}
+\caption{Resolution on the radial position of the \rmXi (top) and \rmOmega (bottom) decay point in MC, as a function of the \textbf{cascade decay radius}. The average radial position for each ITS layer is indicated in dotted line. Here, the MC data have \textit{not} been re-weighted. In both cases, the results have been obtained through a fit with a triple Gaussian function for the invariant mass peak and an exponential function for the background.}
 	\label{fig:RadiusResolVsRadius}
 \end{figure}
 
-Furthermore, whatever the particle of interest, the measured mass in \fig\ref{fig:MassVsRadius} increases significantly with the decay radius by about 1 \mmass for the \rmXi, in both data and MC. It turns out that this trend results from several approximations in the implementation of the energy loss corrections in the ALICE framework. There are three, classified from the most to the \say{least} significant.
+Furthermore, whatever the particle of interest, the measured mass in \fig\ref{fig:MassVsRadius} increases significantly with the decay radius by about 1 \mmass for the \rmXi, in both data and MC. It turns out that this trend results from several approximations in the implementation of the energy loss corrections in the ALICE framework. There are three of them, classified from the most to the \say{least} significant.
 
 \begin{enumerate}
-\item As explained in \Sec\ref{subsubsec:TrackReco}, in the final stage of the tracking, all tracks are propagated inwards to their DCA to the primary vertex, taking into account stochastic processes such as energy losses. While this makes sense for primary tracks, it introduces a bias for secondary ones. Being a decay product, the inward propagation of a secondary track should stop at the decay point, where its parameters are related to the mother particle. Instead, at each propagation step between the secondary and primary vertices, the track receives additional energy from \dEdx-corrections (footnote \ref{footnote:EnergyLoss}). This excess of energy builds up with the decay point position, biasing further the track parameters the further away the secondary vertex is. Nevertheless, at this stage of the event reconstruction, there is no way to distinguish a primary from a secondary particle\footnote{Concerning V0 decays, there is indeed no way to identify a secondary particle at this stage of the reconstruction using the so-called \textit{offline} reconstruction, presented \chap\ref{chap:V0CascReconstruction}. However, there exists another approach, dubbed \textit{on-the-fly}, that performs the track finding, track fitting and V0 vertexing simultaneously. Although it has been checked that on-the-fly V0s do not exhibit the mass dependence on the radial position of the decay point, they can not be used in the analysis as there exists no on-the-fly cascade.}. For that reason, this bias is expected to be removed later, during the V0 and cascade reconstruction. However, as mentioned in \Sec\ref{subsubsec:V0Formation} (footnote \ref{footnote:EnergyLossV0CascVertexing}), the propagation of daughter tracks from the location of the DCA to the primary vertex to the V0/cascade decay point is performed with no energy loss corrections. This means that the energy previously added during the final inward propagation of the tracking between the secondary and primary vertices, has not been subtracted, leading to additional energy/momentum in the track parameters at the
+\item As explained in \Sec\ref{subsubsec:TrackReco}, in the final stage of the tracking, all tracks are propagated inwards to their DCA to the primary vertex, taking into account stochastic processes such as energy losses. While this makes sense for primary tracks, it introduces a bias for secondary ones. Being a decay product, the inward propagation of a secondary track should stop at the decay point, where its parameters are related to the mother particle. Instead, at each propagation step between the secondary and primary vertices, the track receives additional energy from \dEdx-corrections (footnote \ref{footnote:EnergyLoss}). This excess of energy builds up with the decay point position, the further away the secondary vertex is, the more biased the track parameters are. Nevertheless, at this stage of the event reconstruction, there is no way to distinguish a primary from a secondary particle\footnote{Concerning V0 decays, there is indeed no way to identify a secondary particle at this stage of the reconstruction using the so-called \textit{offline} reconstruction, presented \chap\ref{chap:V0CascReconstruction}. However, there exists another approach, dubbed \textit{on-the-fly}, that performs the track finding, track fitting and V0 vertexing simultaneously. Although it has been checked that on-the-fly V0s do not exhibit the mass dependence on the radial position of the decay point, they can not be used in the analysis as there exists no on-the-fly cascade.}. For that reason, this bias is expected to be removed later, during the V0 and cascade reconstruction. However, as mentioned in \Sec\ref{subsubsec:V0Formation} (footnote \ref{footnote:EnergyLossV0CascVertexing}), the propagation of daughter tracks from the location of the DCA to the primary vertex to the V0/cascade decay point is performed with no energy loss corrections. This means that the energy previously added during the final inward propagation of the tracking between the secondary and primary vertices, has not been subtracted, leading to additional energy/momentum in the track parameters at the
 secondary decay position and thus to an offset in the invariant mass.
 
-\item The energy loss calculation relies on the same parametrisation of the Bethe-Bloch formula (\eq\ref{eq:BetheBloch}) as \GeantThree and \GeantFour\footnote{Although \GeantThree and \GeantFour are two different version of \textsc{Geant} software series, their treatement of the energy losses of a charged particle in a medium remains the same.}. For the parameters related to material, they are using the database in \cite{geant4Geant4MaterialDatabase}. However, as explained in \Sec\ref{subsubsec:TrackReco}, the particle energy losses are calculated and corrected assuming that all the materials are made of Si in the ITS volume (including the beam pipe) and Ne in the TPC. This approximation leads inevitably to a systematic misevaluation of the actual energy losses, and thus to bias in the invariant mass.
+\item The energy loss calculation relies on the same parametrisation of the Bethe-Bloch formula (\eq\ref{eq:BetheBloch}) as \GeantThree and \GeantFour\footnote{Although \GeantThree and \GeantFour are two different version of \textsc{Geant} software series, their treatement of the energy losses of a charged particle in a medium remains the same.}. For the parameters related to material, they are using the database in \cite{geant4Geant4MaterialDatabase2022}. However, as explained in \Sec\ref{subsubsec:TrackReco}, the particle energy losses are calculated and corrected assuming that all the materials are made of Si in the ITS volume (including the beam pipe) and Ne in the TPC. This approximation leads inevitably to a systematic misevaluation of the actual energy losses, and thus to bias in the invariant mass.
 
 \begin{figure}[H]
 	\centering
@@ -846,7 +878,7 @@ secondary decay position and thus to an offset in the invariant mass.
 	\label{fig:FractionOfPIDForTracking}
 \end{figure}
 
-\item Along the same line, the Bethe-Bloch formula in \eq\ref{eq:BetheBloch} also depends on the particle traversing the material and, in particular, its charge, momentum and mass. While the Kalman filter provides the first two, the last one comes from the measurement of the energy deposit in the TPC volume, which offers a preliminary particle identification. There is no guarantee, though, that the latter coincides with the expected mass hypothesis  for a \rmKzeroS, \rmLambdaPM, \rmXiPM or \rmOmegaPM decay. For instance, \Sec\ref{subsubsec:TrackReco} explains that the pion mass is taken as default value. As a matter of fact, only a fraction of the candidates has the correct mass hypothesis for both decay daughters as shown in \fig\ref{fig:FractionOfPIDForTracking}. If the mass hypothesis used in the energy loss calculation turns out to be incorrect, the wrong amount of energy loss correction are applied.
+\item Along the same line, the Bethe-Bloch formula in \eq\ref{eq:BetheBloch} also depends on the particle traversing the material and, in particular, its charge, momentum and mass. While the Kalman filter provides the first two, the last one comes from the measurement of the energy deposit in the TPC volume, which offers a preliminary particle identification. There is no guarantee, though, that the latter coincides with the expected mass hypothesis  for a \rmKzeroS, \rmLambdaPM, \rmXiPM or \rmOmegaPM decay. For instance, \Sec\ref{subsubsec:TrackReco} explains that the pion mass is taken as default value. As a matter of fact, only a fraction of the candidates has the correct mass hypothesis for both decay daughters as shown in \fig\ref{fig:FractionOfPIDForTracking}. If the mass hypothesis used in the energy loss calculation turns out to be incorrect, the wrong amount of energy loss correction is applied.
 
 \end{enumerate}
 
@@ -860,7 +892,7 @@ There are different ways to address these issues. The approach followed in this 
 	\label{fig:SchemeRetroCorrection}
 \end{figure}
 
-The procedure starts off with the track parameters at the V0/cascade decay point. They are extrapolated to its point of closest approach to the primary vertex, without accounting for energy losses (\fig\ref{fig:SchemeRetroCorrection}, 1.). This boils down to undo the track propagation in \Sec\ref{subsubsec:V0Formation} and recover the track parameters as they were before the V0/cascade reconstruction. From this point, the track is propagated to its position at the TPC inner wall, in the exactly same condition as in the final stage of the tracking (\Sec\ref{subsubsec:TrackReco}): same mass hypothesis, same consideration on the detector material. This means that, at each step, the track looses the identical amount of energy which was previously added. At the TPC inner wall, the aforementioned energy loss corrections \textit{in the ITS} have been fully removed (\fig\ref{fig:SchemeRetroCorrection}, 2.). As most of the material budget comes from the ITS, the wrong energy loss corrections in the TPC can be ignored in first approximation. This last point was later verified with a propagation up to the TPC outer wall; no significant change could have been observed.  
+The procedure starts off with the track parameters at the V0/cascade decay point. They are extrapolated to its point of closest approach to the primary vertex, without accounting for energy losses (\fig\ref{fig:SchemeRetroCorrection}, 1.). This basically means undoing the track propagation in \Sec\ref{subsubsec:V0Formation} and recover the track parameters as they were before the V0/cascade reconstruction. From this point, the track is propagated to its position at the TPC inner wall, in the exactly same condition as in the final stage of the tracking (\Sec\ref{subsubsec:TrackReco}): same mass hypothesis, same consideration on the detector material. This means that, at each step, the track looses the identical amount of energy which was previously added. At the TPC inner wall, the aforementioned energy loss corrections \textit{in the ITS} have been fully\break removed (\fig\ref{fig:SchemeRetroCorrection}, 2.). As most of the material budget comes from the ITS, the wrong energy loss corrections in the TPC can be ignored in first approximation. This last point was later verified with a propagation up to the TPC outer wall; no~significant change could have been observed.  
 
 The second stage takes over with the re-application of the energy loss corrections. From the TPC inner wall, the track parameters are propagated to the secondary vertex position with the appropriate mass hypothesis and the adequate material, in order to correct the right amount of energy losses this time (\fig\ref{fig:SchemeRetroCorrection}, 3.).\\
 
@@ -869,38 +901,38 @@ The second stage takes over with the re-application of the energy loss correctio
 \hspace*{-2.cm}
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsRadius\_XiWithRetroCorr\_MC.eps}
-	\label{fig:MassVsRadiusXiMC}
+	\label{fig:MassVsRadiusXiMCRetroCorr}
 } 
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsRadius\_XiWithRetroCorr.eps}
-	\label{fig:MassVsRadiusXi}
+	\label{fig:MassVsRadiusXiRetroCorr}
 } 
 \hspace*{-2.cm}
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsRadius\_OmegaWithRetroCorr\_MC.eps}
-	\label{fig:MassVsRadiusOmegaMC}
+	\label{fig:MassVsRadiusOmegaMCRetroCorr}
 } 
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsRadius\_OmegaWithRetroCorr.eps}
-	\label{fig:MassVsRadiusOmega}
+	\label{fig:MassVsRadiusOmegaRetroCorr}
 } 
-\caption{Measured mass of the \rmXi (top) and \rmOmega baryons (bottom), in MC (left) and in the data (right), as a function of the cascade decay radius with the retro-corrections on (red) and off (blue). The regions close to ITS layers have been removed, as explained in \Sec\ref{subsubsec:DecayRadiusDependence}. The solid and dashed lines represent a fit with a constant function. Note that, for the purpose of the comparison, the MC is \textit{not} re-weighted (\Sec\ref{subsubsec:CorrectionOnTheExtractedMass}). In both cases, the results have been obtained through a fit with a triple Gaussian function for the invariant mass peak and, only in the data, an exponential function for the background.}
+\caption{Measured mass of the \rmXi (top) and \rmOmega baryons (bottom), in MC (left) and in the data (right), as a function of the \textbf{cascade decay radius} with the retro-corrections on (red) and off (blue). The regions close to ITS layers have been removed, as explained in \Sec\ref{subsubsec:DecayRadiusDependence}. The solid and dashed lines represent a fit with a constant function. Note that, for the purpose of the comparison, the MC is \textit{not} re-weighted (\Sec\ref{subsubsec:CorrectionOnTheExtractedMass}). In both cases, the results have been obtained through a fit with a triple Gaussian function for the invariant mass peak and, only in the data, an exponential function for the background.}
 	\label{fig:MassVsRadiusAfterRetrocorrection}
 \end{figure}
 
-The \fig\ref{fig:MassVsRadiusAfterRetrocorrection} shows the application of this procedure in the data and MC. The retro-corrections significantly reduces the mass offset with the decay radius. Most importantly, in MC, the trend with the radius seems to have disappeared and now follows a flat distribution. To quantify it, the measurements have been fitted with a constant function; the latter agrees very well the injected mass of \rmXi and displays a $\chi^{2}$ probability of at least 26\%. This validates that the energy losses are properly taken into account. In the data, a slight trend with radius can still be observed. This will flatten in the next sections in such way that, in the end, the residual dependence on the radius can be considered as negligible. 
+\Fig\ref{fig:MassVsRadiusAfterRetrocorrection} shows the application of this procedure in the data and MC. The retro-corrections significantly reduces the mass offset with the decay radius. Most importantly, in MC, the trend with the radius has disappeared and now follows a flat distribution. To quantify it, the measurements have been fitted with a constant function; the latter agrees very well the injected mass of \rmXi and displays a $\chi^{2}$ probability of at least 26\%. This validates that the energy losses are now properly taken into account. In the data, a slight trend with radius can still be observed. This will flatten in the next sections in such way that, in the end, the residual dependence on the radius can be considered as negligible. 
 
 
 \subsubsection{Dependence on momentum}
 \label{subsubsec:MassDependenceOnPt}
 
-Although the invariant mass expression in \eq\ref{eq:CascInvMass} involves only the momentum vector of the decay daughters, it can be re-written to show the \textit{explicit} dependency on the total momentum in \eq\ref{eq:InvMassPtotDependenceCasc},
+Although the invariant mass expression in \eq\ref{eq:CascInvMass} involves only the momentum vector of the decay daughters, it can be re-written to show the \textit{explicit} dependence on the total momentum in \eq\ref{eq:InvMassPtotDependenceCasc},
 \begin{align}
 M_{\rm candidate}^2( \textrm{casc.}) &= \Big(\sqrt{ \textbf{p}_{\rm V0}^2 + m_{\rmLambda}^2} + \sqrt{ \textbf{p}_{\rm bach.}^2 + m_{\rm bach.}^2}\Big)^2 - ( \textbf{p}_{\rm V0} + \textbf{p}_{\rm bach.})^2 \\
 &= \Big(\sqrt{ p_{\rm V0}^2 + m_{\rmLambda}^2} + \sqrt{ p_{\rm bach.}^2 + m_{\rm bach.}^2}\Big)^2 - \left( p_{\rm V0}^{2} + p_{\rm bach.}^{2} + 2 \cdot p_{\rm V0} \cdot p_{\rm bach.} \cos \theta \right),
 \label{eq:InvMassPtotDependenceCasc}
 \end{align}
-and in particular, the \textit{explicit} dependency on the transverse and longitudinal momenta in \eq\ref{eq:InvMassPtPzDependenceCasc},
+and in particular, the \textit{explicit} dependence on the transverse and longitudinal momenta in \eq\ref{eq:InvMassPtPzDependenceCasc},
 \begin{equation}
 \begin{split}
 M_{\rm candidate}^2( \textrm{casc.}) &= \Big(\sqrt{ p_{\rm T, V0}^2 + p_{\rm z, V0}^2 + m_{\rmLambda}^2} + \sqrt{ p_{\rm T, bach.}^2 + p_{\rm z, bach.}^2 + m_{\rm bach.}^2}\Big)^2 \\
@@ -924,7 +956,7 @@ It becomes clear that the invariant mass depends on both momenta and opening ang
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/InvMassOmegaVsPt.eps}
 	\label{fig:MassVsPtOmega}
 } 
-\caption{Measured mass of the \rmXi (top) and \rmOmega baryons (bottom) as a function of the transverse momentum. The dashed line represents the transverse momentum threshold, where the mass values can be considered as stable. In both cases, the results have been obtained through a fit with a triple Gaussian function for the invariant mass peak and, only in the data, an exponential function for the background.}
+\caption{Measured mass of the \rmXi (top) and \rmOmega baryons (bottom) as a function of the \textbf{transverse momentum}. The dashed line represents the transverse momentum threshold, where the mass values can be considered as stable. In both cases, the results have been obtained through a fit with a triple Gaussian function for the invariant mass peak and, only in the data, an exponential function for the background.}
 	\label{fig:MassVsPt}
 \end{figure}
 
@@ -939,16 +971,16 @@ It becomes clear that the invariant mass depends on both momenta and opening ang
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassXi\_pz\_Aside.eps}
 	\label{fig:MassVsPzXi}
 } 
-\caption{Measured mass of the \rmXi hyperons as a function of the longitudinal momentum. The solid and dashed lines represent a fit with a constant function. In both cases, the results have been obtained through a fit with a triple Gaussian function for the invariant mass peak and, only in the data, an exponential function for the background.}
+\caption{Measured mass of the \rmXi hyperons as a function of the \textbf{longitudinal momentum}. The solid and dashed lines represent a fit with a constant function. In both cases, the results have been obtained through a fit with a triple Gaussian function for the invariant mass peak and, only in the data, an exponential function for the background.}
 	\label{fig:MassXiVsPz}
 \end{figure}
 
 
-The \fig\ref{fig:MassVsPt} shows the measurd mass of the \rmXi and \rmOmega baryons as a function of the transverse momentum. At low \pT, the measured masses change rapidly with the transverse momentum, due to multiple scattering and (asymmetric) energy loss fluctuations. The latter becomes less dominant at intermediate \pT, and so this scaling reduces such that a flat dependence is reached at intermediate or high transverse momentum. 
+\Fig\ref{fig:MassVsPt} shows the measurd mass of the \rmXi and \rmOmega baryons as a function of the transverse momentum. At low \pT, the measured masses change rapidly with the transverse momentum, due to multiple scattering and (asymmetric) energy loss fluctuations. The latter becomes less dominant at intermediate \pT, and so this scaling reduces such that a flat dependence is reached at intermediate or high transverse momentum. 
 
 In order to ensure stable measurements with \pT, the analysis should be performed in this plateau region. Although the \rmKzeroS and \rmLambda follows the same V0 decay topology, their decay kinematics are different. This also holds for the \rmXi and \rmOmega baryons. Thereby, the position of this stability region has to be identified separately for each particle. For instance, the data points above $\pT > 2$ \gmom for the \rmLambda in \fig\ref{fig:MassVsPtXi} and $\pT > 2.4$ \gmom for the \rmXi in \fig\ref{fig:MassVsPtOmega} show little variations with the transverse momentum, and are all contained with a $1\sigma$ interval around the final measurement, after accounting for all the other sources of systematic effects. Therefore, in this region, the measurement can be considered as under control.\\
 
-Along the same line, the influence of the longitudinal momentum on the measured mass has been checked. It is presented in \fig\ref{fig:MassXiVsPz}. Both in the data and in MC, the dependence remains relatively small, such that it can be considered as negligible.
+Along the same line, the influence of the longitudinal momentum on the measured mass has been checked. It is presented in \fig\ref{fig:MassXiVsPz}. Both in the data and in MC, the dependence remains relatively small, such that it can be considered as negligible in the considered (pseudo-)rapidity interval.
 
 
 \subsubsection{Dependence on the opening angles}
@@ -967,6 +999,9 @@ There are two ways to compute this quantity, depending on whether the value must
 \label{eq:OpeningAngle3D}
 \end{align}
 
+\item[$\bullet$] \textbf{the transverse opening angle}.\\
+Here, the sign of the opening angle in the transverse plane might be important, as it relates to two vertex configurations, said \say{cowboy} and \say{sailor}~\cite{chinellatoTwotrackDCACalculation2018}. When reconstructing a V0, a search for the minimum distance of closest approach between two oppositely charged tracks is performed as illustrated in \fig\ref{fig:TwoTrackDCACalculationIdealCase}. However, this approach reaches its limit in case there are two minima, as in \fig\ref{fig:TwoTrackDCACalculationCowboySailor}. In such case, there is an ambiguity on the position of the DCA between the two tracks which, depending on the point taken as  V0 decay vertex, may lead to a bias in the momentum and thus in the reconstructed mass\footnote{There actually exists a procedure -- used in this analysis -- implemented in the V0 and cascade vertexing algorithm to lift this ambiguity. It consists in finding \textit{analytically} the possible positions of the decay vertex in the transverse plane, using them as a starting point to compute the distance of closest approach in 3-dimensions for each vertex candidate and selecting the one providing the minimum DCA \cite{chinellatoTwotrackDCACalculation2018}.}. The same argument could be made for cascade decays.
+
 \begin{figure}[h]
 \subfigure[]{
 	\includegraphics[width=0.5\textwidth]{Figs/Chapter5/IdealCase.eps}
@@ -976,12 +1011,9 @@ There are two ways to compute this quantity, depending on whether the value must
 	\includegraphics[width=0.5\textwidth]{Figs/Chapter5/CowboySailor.eps}
 	\label{fig:TwoTrackDCACalculationCowboySailor}
 }
-\caption{Sketch of the distance of closest approach between two tracks in (a) the most expected case, and in (b) the cowboy and sailor configurations. The reconstructed vertex is said to be in sailor configuration if $ B \left( p_{x, \text{pos.}} \ p_{y, \text{neg.}} - p_{x, \text{neg.}} \ p_{y, \text{pos.}} \right) > 0$, with $B$ being the magnetic field. Conversely, it is in cowboy configuration if $ B \left( p_{x, \text{pos.}} \ p_{y, \text{neg.}} - p_{x, \text{neg.}} \ p_{y, \text{pos.}} \right) < 0$.}
+\caption{Sketch of the distance of closest approach (DCA) between two tracks in (a) the most expected case, and in (b) the cowboy and sailor configurations. The reconstructed vertex is said to be in sailor configuration if $ B \left( p_{x, \text{pos.}} \ p_{y, \text{neg.}} - p_{x, \text{neg.}} \ p_{y, \text{pos.}} \right)~>~0$, with $B$ the magnetic field. Conversely, it is in cowboy configuration if $ B \left( p_{x, \text{pos.}} \ p_{y, \text{neg.}} - p_{x, \text{neg.}} \ p_{y, \text{pos.}} \right) < 0$.}
 	\label{fig:TwoTrackDCACalculation}
 \end{figure}
-
-\item[$\bullet$] \textbf{the transverse opening angle}.\\
-Here, the sign of the opening angle in the transverse plane might be important, as it relates to two vertex configurations, said \say{cowboy} and \say{sailor} \cite{chinellatoTwotrackDCACalculation2018}. When reconstructing a V0, a search for the minimum distance of closest approach between two oppositely charged tracks is performed as illustrated in \fig\ref{fig:TwoTrackDCACalculationIdealCase}. However, this approach reaches its limit in case there are two minima, as in \fig\ref{fig:TwoTrackDCACalculationCowboySailor}. In such case, there is an ambiguity on the position of the DCA between the two tracks which, depending on the point taken as  V0 decay vertex, may lead to a bias in the momentum and thus in the reconstructed mass\footnote{There actually exists a procedure -- used in this analysis -- implemented in the V0 and cascade vertexing algorithm to lift this ambiguity. It consists in finding \textit{analytically} the possible positions of the decay vertex in the transverse plane, using them as a starting point to compute the distance of closest approach in 3-dimensions for each vertex candidate and selecting the one providing the minimum DCA \cite{chinellatoTwotrackDCACalculation2018}.}. The same argument could be made for cascade decays.
 
 To obtain a signed angle, one takes the cross product between the momentum vectors of the decay daughters:
 \begin{align}
@@ -997,8 +1029,6 @@ Finally, the opening angle in the longitudinal direction, $\theta_z$ can be dedu
 \label{eq:OpeningAngleZ}
 \end{equation}
 \end{itemize}
-
-The \fig\ref{fig:MassVsOpeningAngleLambda} shows the distributions of the extracted mass of \rmLambda and \rmAlambda as a function of the different opening angles. All display the same trend, namely the measured mass is relatively high for large opening angle values and decreases with the opening angles until reaching a flat region close to the small opening angles. Furthermore, this pattern being well reproduced in the simulations, its origin can be investigated by making use of the MC truth. 
 
 \begin{figure}[!p]
 %\centering
@@ -1029,7 +1059,7 @@ The \fig\ref{fig:MassVsOpeningAngleLambda} shows the distributions of the extrac
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsOpeningAngleZ.eps}
 	\label{fig:MassVsOpeningAngleZLambda}
 } 
-\caption{Measured mass of the \rmLambda as a function of the opening angle in three dimensions, in the transverse plane as well as in the longitudinal direction, in MC on the left and in the data on the right. Note that, for the purpose of the comparison, the MC is \textit{not} re-weighted (\Sec\ref{subsubsec:CorrectionOnTheExtractedMass}). In both cases, the results have been obtained through a fit with a triple Gaussian function for the invariant mass peak and, only in the data, an exponential function for the background.}
+\caption{Measured mass of the \rmLambda as a function of the \textbf{opening angle} in three dimensions, in the transverse plane as well as in the longitudinal direction, in MC on the left and in the data on the right. Note that, for the purpose of the comparison, the MC is \textit{not} re-weighted (\Sec\ref{subsubsec:CorrectionOnTheExtractedMass}). In both cases, the results have been obtained through a fit with a triple Gaussian function for the invariant mass peak and, only in the data, an exponential function for the background.}
 	\label{fig:MassVsOpeningAngleLambda}
 \end{figure}
 
@@ -1038,28 +1068,30 @@ The \fig\ref{fig:MassVsOpeningAngleLambda} shows the distributions of the extrac
 \hspace*{-2.cm}
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/MassVsOpeningAngleXY\_MC.eps}
-	\label{fig:MassVsOpeningAngle}
+	\label{fig:MassVsOpeningAngleXY}
 } 
 \subfigure[]{
 	\includegraphics[width=0.6\textwidth]{Figs/Chapter5/OpAngle2DVsAvgDecayRadiusResol\_Lambda.eps}
 	\label{fig:DecayVtxResolVsOpeningAngle}
 } 
-\caption{On the left: the measured mass of \rmLambda hyperons as a function of the transverse opening angle in MC data. On the right: the average resolution on the decay radius as a function of the very same opening angle.}
+\caption{On the left: the measured mass of \rmLambda hyperons as a function of the \textbf{transverse opening angle} in MC data. On the right: the average resolution on the decay radius as a function of the very same opening angle.}
 	\label{fig:MassVsOpeningAngle}
 \end{figure}
 
-On the \fig\ref{fig:MassVsOpeningAngle}, the average resolution on the radial position of the decay vertex as a function of the transverse opening angle in MC simulations is shown. At large opening angle, the resolution on the decay vertex is quite poor: it tends to be located at a larger radius. It results in an over-estimation of the momentum of each decay daughters, and so in an increase of the reconstructed mass. As the opening angle becomes narrower, the resolution on the decay vertex improves and the momentum bias decreases. The \fig\ref{fig:MassVsOpeningAngle} only serves as an example; the same trend is observed for the opening angles in three dimensions and along the $z$-axis. To tackle that issue, the strategy followed by the present analysis consists to reject candidates with too large opening angles, for \rmKzeroS, \rmLambda, \rmAlambda, \rmXiPM and \rmOmegaPM. In this way, one also manages to obtain flat distribution of the measured mass as a function of these variables.
+\Fig\ref{fig:MassVsOpeningAngleLambda} shows the distributions of the extracted mass of \rmLambda and \rmAlambda as a function of the different opening angles. All display the same trend, namely the measured mass is relatively high for large opening angle values and decreases with the opening angles until reaching a flat region close to the small opening angles. Furthermore, this pattern being well reproduced in the simulations, its origin can be investigated by making use of the MC truth. 
+
+In \fig\ref{fig:MassVsOpeningAngle}, the average resolution on the radial position of the decay vertex as a function of the transverse opening angle in MC simulations is shown. At large opening angle, the resolution on the decay vertex is quite poor: it tends to be located at a larger radius. It results in an over-estimation of the momentum of each decay daughters, and so in an increase of the reconstructed mass. As the opening angle becomes narrower, the resolution on the decay vertex improves and the momentum bias decreases. \Fig\ref{fig:MassVsOpeningAngle} only serves as an example; the same trend is observed for the opening angles in three dimensions and along the $z$-axis. To tackle that issue, the strategy followed by the present analysis consists to reject candidates with too large opening angles, for \rmKzeroS, \rmLambda, \rmAlambda, \rmXiPM and \rmOmegaPM. In this way, one also manages to obtain flat distribution of the measured mass as a function of these variables.\\
 
 \subsubsection{Dependence on the azimuthal angles}
 \label{subsubsec:DependenceAzimuthalAngle}
 
-ALICE being a cylindrical detector, any (decay) point can be identified based on its distance from the origin $r$ and its azimuthal angle $\varphi$ in the transverse plane, as well as its longitudinal position $z$. The \Sec\ref{subsubsec:DecayRadiusDependence} investigated how the reconstructed mass varies as a function of the decay radius; along the same line, the dependence with the transverse direction of the decay can also be studied.
+ALICE being a cylindrical detector, any (decay) point can be identified based on its distance from the origin $r$ and its azimuthal angle $\varphi$ in the transverse plane, as well as its longitudinal position $z$. \Sec\ref{subsubsec:DecayRadiusDependence} investigated how the reconstructed mass varies as a function of the decay radius; along the same line, the dependence with the transverse direction of the decay can also be studied.
 
 Two definitions exist concerning the angle in the transverse plane; there are the \textit{position} and the \textit{momentum} azimuthal angles. The former refers to the spatial coordinate around the $z$-axis, the latter corresponds to the same coordinate but in momentum space. In other words, one can be calculated from the radial decay position, the other, using the transverse momenta. For a neutral particle, such as the \rmKzeroS and \rmLambda, these two angles should coincide\footnote{Assuming that the V0 originates from the primary vertex.}, whereas it should not for charged particles, including the \rmXi or \rmOmega. Due to their relatively short flight distance, the difference between these two angles for multi-strange baryons turns out to be negligible. Consequently, the term \textit{azimuthal angle} will be used to designate the momentum one, unless indicated otherwise.
 
 The ALICE volume has been divided into eighteen even azimuthal sectors: nine for the top barrel, and nine for the bottom barrel. This study employs such segmentation as it coincides with the TPC sectors (\fig\ref{fig:TPCDetector}), and thus may help to relate a possible pattern to problematic sectors.\\
 
-The \figs\ref{fig:MassVsACPhi}\ref{fig:MassVsPhiVsB}\ref{fig:MassVsACPhi} show the dependence on the momentum azimuthal angle for \rmKzeroS, \rmLambda, \rmXi in MC on the left hand-side, and in the data on the right hand-side. The measured masses vary strongly from one angular sector to the next, in the data \figs\ref{fig:MassVsPhiACK0s},\ref{fig:MassVsPhiACLambda},\ref{fig:MassVsPhiACXi}. A pattern emerges for all the considered particles: on the edges, the measurement points stay relatively at the same level, and change drastically as they approach $\varphi \simeq \pi$. At such location, the \rmLambda and \rmXi masses gain up to 200 \kmass, and up to 1.2 \mmass for the \rmKzeroS. In constrast, the masses extracted in MC simulations exhibit a relatively flat dependence with the azimuthal angle, compatible with a constant function with a $\chi^{2}$ probability varying between 1\% and 86\%. The trend observed in real data is not reproduced in the simulations, suggesting that one or several elements of the experiment are not accounted for in the MC productions.
+\Figs\ref{fig:MassVsACPhi}, \ref{fig:MassVsPhiVsB}, \ref{fig:MassVsPhiAVsC} show the dependence on the momentum azimuthal angle for \rmKzeroS, \rmLambda, \rmXi in MC on the left hand-side, and in the data on the right hand-side. The measured masses vary strongly from one angular sector to the next, in the data \figs\ref{fig:MassVsPhiACK0s}, \ref{fig:MassVsPhiACLambda}, \ref{fig:MassVsPhiACXi}. A pattern emerges for all the considered particles: on the edges, the measurement points stay relatively at the same level, and change drastically as they approach $\varphi \simeq \pi$. At such location, the \rmLambda and \rmXi masses gain up to 200 \kmass, and up to 1.2 \mmass for the \rmKzeroS. In constrast, the masses extracted in MC simulations exhibit a relatively flat dependence with the azimuthal angle, compatible with a constant function with a $\chi^{2}$ probability varying between 1\% and 86\%. The trend observed in real data is not reproduced in the simulations, suggesting that one or several elements of the experiment are not accounted for in the MC productions.
 
 \begin{figure}[!p]
 %\centering
@@ -1148,23 +1180,23 @@ The \figs\ref{fig:MassVsACPhi}\ref{fig:MassVsPhiVsB}\ref{fig:MassVsACPhi} show t
 	\label{fig:MassVsPhiAsideXi}
 }  
 \caption{Measured mass in pp collisions at \sqrtS = 13 \tev as a function of the momentum \textbf{azimuthal angle in C-side} (left) and \textbf{A-side} (right) of the ALICE detector. To each row corresponds a given particle: \rmKzeroS (a) and (b), \rmLambda (c) and (d), \rmXi in (e) and (f). The uncertainties comprise only the statistical ones. Beware the fact that the ordinate ranges differ here between the C-side and A-side panels.}
-	\label{fig:MassVsACPhi}
+	\label{fig:MassVsPhiAVsC}
 \end{figure}
 
 Different possible origins for this \say{odd} behaviour have been investigated:
 \begin{enumerate}
-\item One possible explanation involves the material distribution within the detector. The \Sec\ref{subsubsec:ImperfectEnergyLossCorrections} provides a short explanation on how the material budget is evaluated in ALICE. This section also provides a systematic uncertainty on our mass measurement, which proves to be too small to account for the large mass variations in \figs\ref{fig:MassVsACPhi}. Nevertheless, it is \textit{a priori} possible that some material have not been taken into account in the detector geometry. In particular, an underestimated amount of material budget in the region $\varphi \simeq \pi$ could explain the trend. In such a case, this structure is expected to change with the radial position of the decay vertex, as a V0/cascade decaying beyond the region with additional or underestimated material budget should not be affected by it. However, it turns out that the decay radius of the V0 and/or cascade shows no influence on the azimuthal trend.
+\item One possible explanation involves the material distribution within the detector. \Sec\ref{subsubsec:ImperfectEnergyLossCorrections} provides a short explanation on how the material budget is evaluated in ALICE. This section also provides a systematic uncertainty on our mass measurement, which proves to be too small to account for the large mass variations in \figs\ref{fig:MassVsACPhi}. Nevertheless, it is \textit{a priori} possible that some material have not been taken into account in the detector geometry. In particular, an underestimated amount of material budget in the region $\varphi \simeq \pi$ could explain the trend. In such a case, this structure is expected to change with the radial position of the decay vertex, as a V0/cascade decaying beyond the region with additional or underestimated material budget should not be affected by it. However, it turns out that the decay radius of the V0 and/or cascade shows no influence on the azimuthal trend.
 \item Another attempt at an explanation concerns the alignement of the ALICE detector, and in particular the ITS. As in the first point with the material distribution, the discrepancy between the data and the MC may be related to residual misalignement. The strategy followed to test this hypothesis is to repeat the whole analysis but using TPC-standalone tracks instead of global tracks. The TPC is expected to be better calibrated and internally aligned than the ITS, a change in the azimuthal dependence on the measured mass would point towards an issue related to the alignment. After repeating the analysis with TPC standalone tracks, the shape of the structure changes slightly but a peak still emerges around an azimuthal angle of $\pi$.
-\item In order to shed light on that issue, the data sample has been divided into two sub-samples according to their magnetic field polarity. Maybe this trend originates only from periods with a specific magnetic field. The \fig\ref{fig:MassVsPhiVsB} shows the distribution of the measured mass as a function of $\varphi$. The same trend is observed in both sub-samples though, interestingly, the peaks in the vicinity of $\varphi = \pi$  for the particle and the anti-particle (\rmLambda and \rmAlambda, and \rmXiM and \rmAxiP) are swapped under an inversion of magnetic field polarity. This tells us that this structure is somehow related to the magnetic field.
-\item Similarly, the V0 and cascade candidates have been separated based on the longitudinal position of decay and, in particular, whether they locate on the positive or negative $z$-side. As mentioned in the header of \Sec\ref{subsec:ALICEDetector}, these are also referred as A-side and C-side respectively. The comparison of the azimuthal dependence on the measured mass in these two sides is displayed on \fig\ref{fig:MassVsACPhi}. On the left hand-side panels \figs\ref{fig:MassVsPhiCsideK0s},\ref{fig:MassVsPhiCsideLambda},\ref{fig:MassVsPhiCsideXi} corresponding to the C-side, the dependence is still present. However, it reduces significantly on the A-side (\figs\ref{fig:MassVsPhiAsideK0s},\ref{fig:MassVsPhiAsideLambda},\ref{fig:MassVsPhiAsideXi}), such that it almost follows a flat distribution. Although the \rmKzeroS masses still fluctuate with the azimuthal angle, the magnitude of the variations is smaller on the A-side. Therefore, the origin of such dependence has to be found on the C-side. Amongst its singularities, the most noteworthy are certainly the presence of the muon arm absorber and the dipole magnet. In the past, the former was observed to be the source of many secondary particles, originating from the interaction with absorber material. This can, in turn, distort the background distribution in the invariant mass spectra, leading possibly to a difference in terms of extracted mass. This is rather unlikely in the present conditions of the analysis; the tight selection on the cosine of the pointing angle allows to reach purities above 95\% for the V0s and 90\% for the cascades. At such level of background, it would be surprising to find it at the origin of this dependence\footnote{As a matter of fact, the level of background as a function of the azimuthal angle has been checked. No correlation with the azimuthal dependence on the measured mass has been seen.}. On the other hand, the dipole magnet has an influence on the magnetic field within the L3 magnet. The induced distortions have been assessed in the collaboration and accounted for in the detector calibration. However, there may still be some residual distortions that could affect the particle trajectory and ultimately lead to a variation of the reconstructed mass with the TPC sector. On top of that, the magnetic field is supposed to coincide with the $z$-axis, with the electric field in the TPC cage; if not (due to a distortion induced by the dipole magnet), the so-called $E\times B$ effects can bias the measurement of the particle trajectory, by curling the electrons around their main drift path towards the end plate. This would lead to a systematic displacement of the associated clusters, which later impact the tracking and finally the invariant mass.
+\item In order to shed light on that issue, the data sample has been divided into two sub-samples according to their magnetic field polarity. Maybe this trend originates only from periods with a specific magnetic field. \Fig\ref{fig:MassVsPhiVsB} shows the distribution of the measured mass as a function of $\varphi$. The same trend is observed in both sub-samples though, interestingly, the peaks in the vicinity of $\varphi = \pi$  for the particle and the anti-particle (\rmLambda and \rmAlambda, and \rmXiM and \rmAxiP) are swapped under an inversion of magnetic field polarity. This tells us that this structure is somehow related to the magnetic field.
+\item Similarly, the V0 and cascade candidates have been separated based on the longitudinal position of decay and, in particular, whether they locate on the positive or negative $z$-side\footnote{Here, this is a constraint on the whole decay. In other words, this means that the decay must happen on either the positive or negative $z$-side, and all the decay products have to remain on the very same side. Note also that the region of the central membrane of the TPC ($z = 0$) is excluded.}. As mentioned in the header of \Sec\ref{subsec:ALICEDetector}, these are also referred as A-side and C-side respectively. The comparison of the azimuthal dependence on the measured mass in these two sides is displayed on \fig\ref{fig:MassVsPhiAVsC}. On the left hand-side panels \figs\ref{fig:MassVsPhiCsideK0s},\ref{fig:MassVsPhiCsideLambda},\ref{fig:MassVsPhiCsideXi} corresponding to the C-side, the dependence is still present. However, it reduces significantly on the A-side (\figs\ref{fig:MassVsPhiAsideK0s},\ref{fig:MassVsPhiAsideLambda},\ref{fig:MassVsPhiAsideXi}), such that it almost follows a flat distribution. Although the \rmKzeroS masses still fluctuate with the azimuthal angle, the magnitude of the variations is smaller on the A-side. Therefore, the origin of such dependence has to be found on the C-side. Amongst its singularities, the most noteworthy are certainly the presence of the muon arm absorber and the dipole magnet. In the past, the former was observed to be the source of many secondary particles, originating from the interaction with absorber material. This can, in turn, distort the background distribution in the invariant mass spectra, leading possibly to a difference in terms of extracted mass. This is rather unlikely in the present conditions of the analysis; the tight selection on the cosine of the pointing angle allows to reach purities above 95\% for the V0s and 90\% for the cascades. At such level of background, it would be surprising to find it at the origin of this dependence\footnote{As a matter of fact, the level of background as a function of the azimuthal angle has been checked. No correlation with the azimuthal dependence on the measured mass has been seen.}. On the other hand, the dipole magnet has an influence on the magnetic field within the L3 magnet. The induced distortions have been assessed in the collaboration and accounted for in the detector calibration. However, there may still be some residual distortions that could affect the particle trajectory and ultimately lead to a variation of the reconstructed mass with the TPC sector. On top of that, the magnetic field is supposed to coincide with the $z$-axis, with the electric field in the TPC cage; if not (due to a distortion induced by the dipole magnet), the so-called $E\times B$ effects can bias the measurement of the particle trajectory, by curling the electrons around their main drift path towards the end plate. This would lead to a systematic displacement of the associated clusters, which later impact the tracking and finally the invariant mass.
 \end{enumerate}
 
-In summary, the origin of the azimuthal dependence cannot be claimed for sure. It appears clearly, from the \figs\ref{fig:MassVsACPhi} that the analysis should focus on the A-side of the detector. The residual variations of the measured mass, those that cannot be accounted for by other sources of systematic biases, should be evaluated and encapsulated as a systematic uncertainty. Hence, this systematic effect introduces an uncertainty of 0.256, 0.056, 0.084 and 0.081 \mmass on the mass values of the \rmKzeroS, \rmLambdaPM, \rmOmegaM and \rmAomegaP\footnote{Although not shown here for the sake of brievety, the \rmOmegaPM baryons have also been investigated along their possible azimuthal dependence.} respectively. Notice that only the \rmXi baryons remain  unaffected by the variation with the azimuth; this will be explained later in \Sec\ref{subsec:CorrectionOnTheExtractedMass}. In addition, the effect on the mass difference have been observed to be mild. Therefore, no additionnal systematic uncertainty is attributed to the mass difference values.
+In summary, the origin of the azimuthal dependence cannot be claimed for sure. It appears clearly, from \figs\ref{fig:MassVsPhiAVsC}, that the analysis should focus on the A-side of the detector. The residual variations of the measured mass, those that cannot be accounted for by other sources of systematic biases, should be evaluated and encapsulated as a systematic uncertainty. Hence, this systematic effect introduces an uncertainty of 0.256, 0.056, 0.084 and 0.081 \mmass on the mass values of the \rmKzeroS, \rmLambdaPM, \rmOmegaM and \rmAomegaP\footnote{Although not shown here for the sake of brievety, the \rmOmegaPM baryons have also been investigated along their possible azimuthal dependence.} respectively. Notice that only the \rmXi baryons remain  unaffected by the variation with the azimuth; this will be explained later in \Sec\ref{subsec:CorrectionOnTheExtractedMass}. In addition, the effect on the mass difference have been observed to be mild. Therefore, no additionnal systematic uncertainty is attributed to the mass difference values.
 
 \subsubsection{Dependence on the rapidity}
 \label{subsubsec:RapidityDependence}
 
-The dependence on the $z$ position has somehow already been investigated in the \Sec\ref{subsubsec:DependenceAzimuthalAngle} by scrutinising how the measured mass evolves for decays in the A- or C-side. As a cross-check, one can also study the influence of the Lorentz boost along the $z$-axis, namely the rapidity.
+The dependence on the $z$ position has somehow already been investigated in \Sec\ref{subsubsec:DependenceAzimuthalAngle} by scrutinising how the measured mass evolves for decays in the A- or C-side. As a cross-check, one can also study the influence of the Lorentz boost along the $z$-axis, namely the rapidity.
 
 \begin{figure}[h]
 %\centering
@@ -1181,13 +1213,13 @@ The dependence on the $z$ position has somehow already been investigated in the 
 	\label{fig:MassVsRap}
 \end{figure}
 
-The \fig\ref{fig:MassVsRap} shows the rapidity dependence on the extracted mass of the \rmLambda hyperon. Following the above discussion (\Sec\ref{subsubsec:DependenceAzimuthalAngle}), the mass is measured on the positive $z$ side of the detector. For that reason, there is no negative rapidity value. The results remain relatively stable over the whole rapidity range; in MC, the data points agree with a flat distribution at 38\% $\chi^{2}$ probability level for the \rmLambda and 48\% for the \rmAlambda. Concerning the data, all the fluctuations can be accounted by other systematic uncertainties. After investigations, we have been led to similar conclusions for \rmKzeroS, \rmXiPM and \rmOmegaPM.
+\Fig\ref{fig:MassVsRap} shows the rapidity dependence on the extracted mass of the \rmLambda hyperon. Following the above discussion (\Sec\ref{subsubsec:DependenceAzimuthalAngle}), the mass is measured on the positive $z$ side of the detector. For that reason, there is no negative rapidity value. The results remain relatively stable over the whole rapidity range; in MC, the data points agree with a flat distribution at 38\% $\chi^{2}$ probability level for the \rmLambda and 48\% for the \rmAlambda. Concerning the data, all the fluctuations can be accounted by other systematic uncertainties. After investigations, we have been led to similar conclusions for \rmKzeroS, \rmXiPM and \rmOmegaPM.
 
 
 \subsubsection{Dependence on the event multiplicity}
 \label{subsubsec:EventMultDependence}
 
-Along the same line as \Sec\ref{subsubsec:DataTakingDependence}, one may wonder whether the results change or not with the event activity, typically quantified by the charged particle multiplicity in the event. The latter is determined using the VZERO detectors as multiplicity estimator, as described in \Sec\ref{subsubsec:VZERO}. The total charge deposited in each VZERO arrays provides a measurement of the charge particle multiplicity, through the calculation of the summed signal amplitude denoted as VZERO-M\footnote{In fact, the VZERO multiplicity estimator corresponds rather to the VZERO-M$/\langle \text{VZERO-M}_{\rm MB}\rangle$. This normalisation allows to account for the ageing of the scintillator arrays, that become less transparent over time leading to a deterioration of the detector performances.}. 
+Along the same line as \Sec\ref{subsubsec:DataTakingDependence}, one may wonder whether the results change or not with the event activity, typically quantified by the charged particle multiplicity in the event. The latter is determined using the VZERO detectors as multiplicity estimator, as described in \Sec\ref{subsubsec:VZERO}. The total charge deposited in each VZERO arrays provides a measurement of the charge particle multiplicity, through the calculation of the summed signal amplitude denoted as VZERO-M\footnote{In fact, the VZERO multiplicity estimator corresponds rather to the\break VZERO-M$/\langle \text{VZERO-M}_{\rm MB}\rangle$. This normalisation allows to account for the ageing of the scintillator arrays, that become less transparent over time leading to a deterioration of the detector performances.}. 
 
 \begin{table}[h]
     \centering
@@ -1206,7 +1238,7 @@ Along the same line as \Sec\ref{subsubsec:DataTakingDependence}, one may wonder 
     \label{tab:MultiplicityClassesCPT}
 \end{table}
 
-The events are divided into ten multiplicity classes, as indicated in \tab\ref{tab:MultiplicityClassesCPT}. The \fig\ref{fig:MassVsMult} shows the dependence of the measured mass of the \rmLambda as a function of the multiplicity. Both in MC and in the data, the measured mass shows little dependence on the event multiplicity, it remains within 50 \kmass range. The same observation has been made for \rmKzeroS, \rmXiPM and \rmOmegaPM, such that the measured mass can reasonably be considered as stable with the event activity.
+The events are divided into ten multiplicity classes, as indicated in \tab\ref{tab:MultiplicityClassesCPT}. \Fig\ref{fig:MassVsMult} shows the dependence of the measured mass of the \rmLambda as a function of the multiplicity. Both in MC and in the data, the measured mass shows little dependence on the event multiplicity, it remains within 50 \kmass range. The same observation has been made for \rmKzeroS, \rmXiPM and \rmOmegaPM, such that the measured mass can reasonably be considered as stable with the event activity.
 
 \begin{figure}[h]
 %\centering
@@ -1233,19 +1265,19 @@ The dominant source of systematic uncertainty comes from the momentum scale cali
 As mentioned in \Sec\ref{subsubsec:DataTakingDependence}, the data sample has been collected with two opposite magnetic field polarities, $B = \pm 0.5$ T. The stability of the measured masses and mass differences have been checked, and the results in different magnetic field configuration have been found to be in good agreement. However, this only guarantees that the calibrations of the ALICE detector between periods of opposite polarities are compatible; nothing can be claimed concerning the precision of such calibrations, and in particular, its influence on the presented results.\\
 
 
-The measurement of the magnetic field in the L3 magnet has been performed in 2007 and is reported in \cite{shahoyanSummaryL3Magnet2007}. It uses 31 Hall probes, calibrated to a precision of 1 Gauss and distributed over two arms, that could rotate around the beam axis and translate along the very same axis. Based on a set of 480 measurement points, the field were interpolated in order to build the full magnetic field map within the L3 volume. Concerning the precision of the latter, the analysis \cite{shahoyanSummaryL3Magnet2007} concludes the following:
+The measurement of the magnetic field in the L3 magnet has been performed in 2007 and is reported in \cite{shahoyanSummaryL3Magnet2007}. It uses 31 Hall probes, calibrated to a precision of 1 Gauss and distributed over two arms, that could rotate around the beam axis and translate along the very same axis. Based on a set of 480 measurement points, the field was interpolated in order to build the full magnetic field map within the L3 volume. Concerning the precision of the latter, the analysis \cite{shahoyanSummaryL3Magnet2007} concludes the following:
 \begin{quote}
 \textit{ [...] the difference between the corrected data and the obtained parameterization which gives an estimate of the uncertainty for the latter (on top of the mentioned constant transverse field): within the TPC volume the differences are contained in 2 Gauss range although on the periphery of the scanned region there are points with difference reaching 5-6 Gauss (these points constitute less than 1 \% of all data).} 
 \end{quote} 
 
 Since the daughter tracks are required to cross at least 70 readout rows in the TPC, likely distributed over different sectors, the contribution of the points located in the periphery of the scanned region (1 \% of all data) can reasonably be considered as negligible. Therefore, for the whole L3 volume, a 2 Gauss uncertainty on the magnetic field is retained.\\
 
-An uncertainty on the magnetic field translates into a shift of the transverse momentum components of the decay daughters. Transverse momentum is related to magnetic field $B_{0}$ and the track curvature $R$ through the relation ${\pT}_{0} = q B_{0} R$. If the magnetic field $B$ is smaller or greater than its nominal value, $B_{0}$, by 2 Gauss, the transverse momentum would respectively be scaled down or up by a factor $B/B_{0}$ :
+An uncertainty on the magnetic field translates into a shift of the transverse momentum components of the decay daughters. Transverse momentum is related to magnetic field $B_{0}$ and the track curvature $R$ through the relation ${\pT}_{0} = q B_{0} R$. If the magnetic field $B$ is smaller or greater than its nominal value, $B_{0}$, by 2 Gauss, the transverse momentum would respectively be scaled down or up by a factor $B/B_{0}$:
 \begin{equation}
 {\pT}_{0} = q B_{0} R \qquad \Rightarrow \qquad \pT = \frac{B}{B_{0}} {\pT}_{0}
 \end{equation}
 
-Here is the strategy adopted to evaluate the impact of the magnetic field imprecision : the transverse components of all the decay daughters will be scaled up or down by $B/B_{0}$ -- with $B$ being equal to $B_{0}$ plus or minus 2 Gauss --, the mass will then be extracted as explained in \Sec\ref{subsec:MassExtraction} and the maximum deviation with respect to the measured mass with the nominal value of the magnetic field will be quoted as our uncertainty due to the $B$-field imprecision. The numerical value of the latter can be found in \tab\ref{tab:BFieldPrecision} for \rmKzeroS, \rmLambda, \rmXi and \rmOmega. 
+Here is the strategy adopted to evaluate the impact of the magnetic field imprecision: the transverse components of all the decay daughters will be scaled up or down by $B/B_{0}$ -- with $B$ being equal to $B_{0}$ plus or minus 2 Gauss --, the mass will then be extracted as explained in \Sec\ref{subsec:MassExtraction} and the maximum deviation with respect to the measured mass with the nominal value of the magnetic field will be quoted as our uncertainty due to the $B$-field imprecision. The numerical value of the latter can be found in \tab\ref{tab:BFieldPrecision} for \rmKzeroS, \rmLambda, \rmXi and \rmOmega. 
 
 \begin{table}[!h]
     \begin{center}
@@ -1280,14 +1312,14 @@ As expected, the magnetic field has no influence on the mass difference. Affecti
 
 Imperfect energy loss corrections only arise from their miscalculation. An example of such miscalculation has already been addressed in \Sec\ref{subsubsec:DecayRadiusDependence}. Another source of systematic effect related to the energy loss corrections comes from the limited knowledge on the material budget in the detector. If there is a discrepancy between the amount of \textit{known} crossed material and the actual one, the estimation of the energy loss will be directly impacted. 
 
-The material budget of the ALICE detector has been estimated experimentally by reconstructing pairs of electron-position originating from photons converted in the detectors. The photon conversion probability being sensitive to the geometry, the composition of detector or the material budget, it provides a precise description of the material distribution. In the LHC Run-2, the material budget in the central barrel of the ALICE detector is known with a precision of about 4.5\% \cite{alicecollaborationPerformanceALICEExperiment2014}\cite{alicecollaborationValidationALICEMaterial2022}\footnote{As a matter of fact, at the time of the writing of this manuscript, another photon conversion analysis \cite{alicecollaborationDatadrivenPrecisionDetermination2023} has been performed, that quotes an uncertainty on the material budget of 2.5\%. However, not only the precision has changed, but also the amount of material budget. However, as of 2023, there have been no re-processing of the data nor production of MC simulations using this updated version of the material distribution. For that reason, the latter will not be used in this work.}. 
+The material budget of the ALICE detector has been estimated experimentally by reconstructing pairs of electron-positron originating from photons converted in the detectors. The photon conversion probability being sensitive to the geometry, the composition of detector or the material budget, it provides a precise description of the material distribution. In the LHC Run-2, the material budget in the central barrel of the ALICE detector is known with a precision of about 4.5\% \cite{alicecollaborationPerformanceALICEExperiment2014}\cite{alicecollaborationValidationALICEMaterial2022}\footnote{As a matter of fact, at the time of the writing of this manuscript, another photon conversion analysis \cite{alicecollaborationDatadrivenPrecisionDetermination2023} has been performed, that quotes an uncertainty on the material budget of 2.5\%. Actually, not only the precision has changed, but also the amount of material budget. However, as of 2023, there have been no re-processing of the data nor production of MC simulations using this updated version of the material distribution. For that reason, the latter will not be used in this work.}. 
 
 
 By varying the material budget, the impact of the misknowledge on the actual material budget can be estimated. This kind of investigation is typically carried out on simulated data. The idea consists in running two simulations: one with an increased/decreased material density\footnote{There could be two ways to increase/decrease the material budget. One could increase the thickness of the detectors, but this option is rather disfavoured since it may introduce clipping, overlapping of detector volumes. An alternative is to vary the material density, such as changing the Si density by $\pm$ 4.5\%. This offers the same results as the first possibility without affecting the detector geometry.}, and another with the nominal one. In both cases, the event reconstruction uses the standard detector geometry, \ie with the standard amount of material budget. The comparison of the results from these two simulations allows to determine the systematic effect due to an uncertainty of 4.5\% on the material budget.
 
 In an ideal scenario, this study should rely on three MC productions: one with nominal material density serving as reference, another with a 4.5\% increase of the density with respect to the standard value, and a last one with a decrease by the same amount. In this way, the effect of a increase or decrease of the material budget can be fully assessed. 
 
-It turns out that there are no such MC productions in pp collisions at \sqrtS = 13 \tev. Instead, there exist only simulations with material budget increased 30\%. Here, the approach is slightly different: the goal is to change excessively the material density to guarantee the observation of a systematic effect. The latter is then scaled down to the actual precision on the material budget. In other words, by estimating the variation of the results induced by a 30\% increase of the material budget and by assuming linearity, the effect of increase of 4.5\% of the material density can derived. It is given by:
+It turns out that there are no such MC productions in pp collisions at \break\sqrtS~=~13~\tev. Instead, there exist only simulations with material budget increased 30\%. Here, the approach is slightly different: the goal is to change excessively the material density to guarantee the observation of a systematic effect. The latter is then scaled down to the actual precision on the material budget. In other words, by estimating the variation of the results induced by a 30\% increase of the material budget and by assuming linearity, the effect of an increase of 4.5\% of the material density can be derived. It is given by:
 \begin{equation}
 \begin{bmatrix}
 \textsc{\footnotesize Variation of the results due to}\\
@@ -1301,7 +1333,7 @@ It turns out that there are no such MC productions in pp collisions at \sqrtS = 
 \label{eq:EvaluationSystUncertaintyMatBudget}
 \end{equation}
 
-The aforementioned simulations are enriched\footnote{The enriched MC production has been obtained by filtering events containing the expected signal, as explained in \Sec\ref{subsec:DataSamples}. In our case, it is an enrichement in strange hadrons: \rmKzeroS, \rmLambda, \rmXi, \rmOmega.} MC productions, that uses \GeantFour for the transport and the interaction with the detector material. It may be interesting to compare it to one employing \GeantThree. However, most of the simulations in ALICE are general-purpose MC productions which, as mentioned in \Sec\ref{subsec:DataSamples}, uses the \GeantThree as propagator by default. As a consequence, it is possible to make a comparison between \GeantThree and \GeantFour, but certainly not with the \rmXi and \rmOmega baryons due to the lack of statistics.
+The aforementioned simulations are enriched\footnote{The enriched MC production has been obtained by filtering events containing the expected signal, as explained in \Sec\ref{subsec:DataSamples}. In our case, it is an enrichement in strange hadrons: \rmKzeroS,~\rmLambda,~\rmXi,~\rmOmega.} MC productions, that uses \break\GeantFour for the transport and the interaction with the detector material. It may be interesting to compare it to one employing \GeantThree. However, most of the simulations in ALICE are general-purpose MC productions which, as mentioned in \Sec\ref{subsec:DataSamples}, uses the \GeantThree as propagator by default. As a consequence, it is possible to make a comparison between \GeantThree and \GeantFour, but certainly not with the \rmXi and \rmOmega baryons due to lack of statistics.
 
 \begin{figure}[t]
 \centering
@@ -1319,9 +1351,9 @@ The aforementioned simulations are enriched\footnote{The enriched MC production 
 
 However, there also exist simulations with an increase/decrease of the material density by 4.5\%, but in Pb-Pb collisions at \sqrtSnn = 5.02 \tev. Although the collision systems are different, they are \textit{in principle} still usable for this study, since the systematic uncertainty is derived from the deviation with respect to a reference with the nominal amount of material budget. An alternative could be to evaluate this uncertainty using exclusively the simulations with a modified material density. As one would expect that the measured mass should scale with amount of material, the mass deviation should be approximately the same in both cases\footnote{Assuming that the material density is increased and decreased by the same amount in both MC simulations, as it is the case for those in Pb-Pb at \sqrtSnn = 5.02 \tev.}. Hence, the systematic uncertainty could simply be taken as the deviation between the results divided by two. Whatever the considered approach, in this study, the results obtained with these MC productions are compared to those derived above, \ie using simulations with an excessive amount of additional material in pp at \sqrtS = 13 \tev.\\
 
-The measured mass and mass differences in the different MC simulations are shown in \fig\ref{fig:MeasuredMassExtraMat}. If the actual amount of material turns out to be greater than the one implemented in the detector geometry, the energy loss calculation for a given track would be underestimated, leading to a track with less momentum and consequently a V0/cascade with a lower reconstructed mass. Conversely, a lack of material in the detector with respect to our knowledge would yield to a higher reconstructed mass. Here is what is expected.
+The measured mass and mass differences in the different MC simulations are shown in \fig\ref{fig:MeasuredMassExtraMat}. It is expected that if the actual amount of material turns out to be greater than the one implemented in the detector geometry, the energy loss calculation for a given track would be underestimated, leading to a track with less momentum and consequently a V0/cascade with a lower reconstructed mass. Conversely, a lack of material in the detector with respect to our knowledge would yield to a higher reconstructed mass. Here is what is expected.
 
-However, none of the panels in \fig\ref{fig:MeasuredMassExtraMat} follows this trend. In fact, the results are \say{odd}. On the \fig\ref{fig:MeasuredMassExtraMatPP}, particle and antiparticle do not go in the same direction. For instance, the \rmAomegaP mass decreases in a configuration 30\% extra material budget, whereas the \rmOmegaM barely moves. Similar abnormalities can be observed in the \fig\ref{fig:MeasuredMassExtraMatPbPb}: the \rmKzeroS mass decreases in case of additional material budget, but reduces even more if, in fact, there is a lack of material. Therefore, both MC productions in pp and Pb-Pb collisions exhibit unexpected behaviour. Concerning \GeantThree, it leads to a larger mass shift in the case of the \rmLambda and a smaller one for the \rmKzeroS. Considering the uncertainties, the results provided by \GeantThree agree with those obtained in simulations using \GeantFour.
+However, none of the panels in \figs\ref{fig:MeasuredMassExtraMat} follows this trend. In fact, the results are \say{odd}. In \fig\ref{fig:MeasuredMassExtraMatPP}, particle and antiparticle do not go in the same direction. For instance, the \rmAomegaP mass decreases in a configuration 30\% extra material budget, whereas the \rmOmegaM barely moves. Similar abnormalities can be observed in \fig\ref{fig:MeasuredMassExtraMatPbPb}: the \rmKzeroS mass decreases in case of additional material budget, but reduces even more if, in fact, there is a lack of material. Therefore, both MC productions in pp and Pb-Pb collisions exhibit unexpected behaviour. Concerning \GeantThree, it leads to a larger mass shift in the case of the \rmLambda and a smaller one for the \rmKzeroS. Considering the uncertainties, the results provided by \GeantThree agree with those obtained in simulations using \GeantFour.
 
 Finally, it is not clear which uncertainty should be quoted to account for the misknowledge on the material budget. On one hand, the results in \fig\ref{fig:MeasuredMassExtraMatPbPb} correspond to those with an increase or a decrease of the material by 4.5\%, meaning the actual value of uncertainty on the material budget. However, how to interpret and evaluate a systematic uncertainty when a decrease and an increase of the material budget yields to a diminution of the reconstructed mass. On the other hand, \fig\ref{fig:MeasuredMassExtraMatPbPb} highlights the impact of a 30\% increase of the material budget. It is not guaranteed that the linearity assumption in \eq\ref{eq:EvaluationSystUncertaintyMatBudget} remains valid for such an excessive increase of the material density.
 
@@ -1336,7 +1368,7 @@ The elements related to the mass extraction are also included in the present stu
 
 By exploiting different peak and background functions for the mass extraction, one can estimate the systematic effect due to the choice of model. The considered functions for each particle have been explained and detailed in \Sec\ref{subsubsec:SignalShape} and \ref{subsubsec:BackgroundShape}. In total, four combinations of peak and background models are tested, for which the masses and mass differences, as well as their statistical and systematic uncertainties, are measured using the procedure presented in \Sec\ref{subsec:SystTopoAndTrackSelections}. 
 
-The results from all combinations agree better than $1 \sigma$ with the standard fit function used, namely a sum of a triple Gaussian and an exponential function. In principle, as explained in the header of \Sec\ref{sec:SystStudy}, there would be no need to quote a systematic uncertainty due to the choice of the fit function. Nevertheless, this bias apparently does not stand as one of the dominant source of systematic uncertainties, so taking it into account should not affect significantly the final measurement. In order to account for the quality of each fit approprietely, the weighted average of the extracted mass over all the combinations of fit function is calculated. The absolute deviation between the results obtained with the standard function and the weighted average provides the systematic uncertainty on the measured mass. The same strategy also applies for the measured mass difference. \Tab\ref{tab:SystFitFunction} summarises the results.
+The results from all combinations agree better than $1 \sigma$ with the standard fit function used, namely a sum of a triple Gaussian and an exponential function. In principle, as explained in the header of \Sec\ref{sec:SystStudy}, there would be no need to quote a systematic uncertainty due to the choice of the fit function. Nevertheless, this bias apparently does not stand as one of the dominant source of systematic uncertainties, so taking it into account should not affect significantly the final measurement. In order to account for the quality of each fit appropriately, the weighted average of the extracted mass over all the combinations of fit function is calculated. The absolute deviation between the results obtained with the standard function and the weighted average provides the systematic uncertainty on the measured mass. The same strategy also applies for the measured mass difference. \Tab\ref{tab:SystFitFunction} summarises the results.
 
 \begin{table}[h]
     \centering
@@ -1355,7 +1387,7 @@ The results from all combinations agree better than $1 \sigma$ with the standard
     \rmAxiP & 0.009 & \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \rmOmegaM & 0.007 & \multirow{2}*{0.28} \\
-    \rmAomegaP & 0.019 & \\
+    \rmAomegaP & 0.007 & \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \end{tabular}
     \caption{Summary of the systematic uncertainties due to the choice of the fit function.}\label{tab:SystFitFunction}
@@ -1389,7 +1421,7 @@ Let us take two extreme cases : on one hand, if the fitting range is too extende
     \rmAomegaP & & &  0.001 & \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \end{tabular}
-    \caption{Randomization intervals on the bottom and top edges of the fitting range for \rmKzero, \rmLambda, \rmXi and \rmOmega. The adjustement ranges are generated according to an uniform law. The uncertainties due to the choice of the fitting range are indicated in the two last columns.}\label{tab:SystFittingRange}
+    \caption{Randomisation intervals on the bottom and top edges of the fitting range for \rmKzero, \rmLambda, \rmXi and \rmOmega. The adjustement ranges are generated according to an uniform law. The uncertainties due to the choice of the fitting range are indicated in the two last columns.}\label{tab:SystFittingRange}
 \end{table}
 
 This study is performed as follows: similarly as in \Sec\ref{subsubsec:SystTopoMass}, the analysis is repeated 20 000 times. At each round, a different fitting range is being used. The latter is randomly generated according to an uniform distribution on the range indicated in \tab\ref{tab:SystFittingRange}. This exercise only makes sense \textit{ceteris paribus}\footnote{\say{all other things being equal}.}. Therefore, this procedure is carried out by fixing the candidate selections to the values in \tab\ref{tab:V0Selections} and \ref{tab:CascadeSelections}. The standard deviation over the whole set of fitting ranges provides an estimation of the systematic bias induced by the choice of the fit interval. 
@@ -1429,17 +1461,17 @@ A contribution to the systematic uncertainty can also originate from the pile-up
     \rmAomegaP & 0.003 & \\
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \end{tabular}
-    \caption{Summary of the systematic uncertainties due to the out-of-bunch pile-up rejection on the extracted mass for \rmKzeroS, \rmLambda, \rmXi and \rmOmega.}\label{tab:SystCorrectedMass}
+    \caption{Summary of the systematic uncertainties due to the out-of-bunch pile-up rejection on the extracted mass for \rmKzeroS, \rmLambda, \rmXi and \rmOmega.}\label{tab:SystPileUp}
 \end{table}
 
-Pile-up events may induce a bias in the mass measurement due to the association of tracks coming from different collisions, which may possibly lead to the formation of a V0 or cascade candidate. Considering the tight selections applied on the candidate variables -- and most particularly, on the cosine of the pointing angle to the primary vertex (\tabs\ref{tab:V0Selections} and \ref{tab:CascadeSelections}) --, the probablity of such misassociation is expected to be relatively low. Therefore, the measurement is performed with and without the pile-up rejection cut. If the effect turns out to be statistically significant, the absolute deviation with respect to the standard configuration is taken as systematic uncertainty. As indicated in \tab\ref{tab:SystCorrectedMass}, the latter varies between a few \kmass for the \rmOmega baryons up to 29 \kmass for the \rmKzeroS. A negligible effect has been observed on the mass difference values.
+Pile-up events may induce a bias in the mass measurement due to the association of tracks coming from different collisions, which may possibly lead to the formation of a V0 or cascade candidate. Considering the tight selections applied on the candidate variables -- and most particularly, on the cosine of the pointing angle to the primary vertex (\tabs\ref{tab:V0Selections} and \ref{tab:CascadeSelections}) --, the probablity of such misassociation is expected to be relatively low. Therefore, the measurement is performed with and without the pile-up rejection cut. If the effect turns out to be statistically significant, the absolute deviation with respect to the standard configuration is taken as systematic uncertainty. As indicated in \tab\ref{tab:SystPileUp}, the latter varies between a few \kmass for the \rmOmega baryons up to 29 \kmass for the \rmKzeroS. A negligible effect has been observed on the mass difference values.
 
 \subsection{Correction on the extracted mass}
 \label{subsec:CorrectionOnTheExtractedMass}
 
 As discussed in \Sec\ref{subsubsec:CorrectionOnTheExtractedMass}, in order to correct for any remaining bias due to the data processing, the analysis or the fit procedure, the mass measured in data are corrected for the mass offset observed in simulations with respect to the injected mass. This correction can only be as precise as the extracted mass value in MC, which is constrained by the limited size of the simulated data sample. The systematic bias attached to that correction is thus driven by the statistical uncertainty in simulations. 
 
-\Tab\ref{tab:SystCorrectedMass} show the systematic uncertainties attached to the MC correction on the measured masses and mass differences. The latter values are obtained via propagation of the uncertainties assuming no correlation between the particle and antiparticle mass measurements in MC. 
+\Tab\ref{tab:SystCorrectedMass} shows the systematic uncertainties attached to the MC correction on the measured masses and mass differences. The latter values are obtained via propagation of the uncertainties assuming no correlation between the particle and antiparticle mass measurements in MC. 
 
 \begin{table}[h]
     \centering
@@ -1464,11 +1496,13 @@ As discussed in \Sec\ref{subsubsec:CorrectionOnTheExtractedMass}, in order to co
     \caption{Summary of the systematic uncertainties due to the MC correction on the extracted mass for \rmKzeroS, \rmLambda, \rmXi and \rmOmega.}\label{tab:SystCorrectedMass}
 \end{table}
 
-One may observe that systematic uncertainty introduced by this correction can be relatively high, such that it stands as one of the dominant systematic uncertainties, most notably in the case of the \rmXi hyperons. This originates from the various selections applied throughout the \Sec\ref{subsec:StabilityResults}; these being dependent of the decay kinematics, each candidate (\rmKzeroS, \rmLambda, \rmXi, \rmOmega) has its own selections. For instance, in order to reach a region with a stable measured mass for the \rmXi baryons, several tight cuts have been used, resulting in sizeable loss of statistics in the data as well as in simulations. The systematic uncertainty due to MC correction on the extracted mass being taken as the statistical uncertainty in simulations, this inevitably leads to a large systematic uncertainty for the \rmXi particles. Although the latter is somehow compressible, as it can be reduced by resorting to a larger MC sample. 
+One may observe that systematic uncertainty introduced by this correction can be relatively high, such that it stands as one of the dominant systematic uncertainties, most notably in the case of the \rmXi hyperons. This originates from the various selections applied throughout the \Sec\ref{subsec:StabilityResults}; these being dependent of the decay kinematics, each candidate (\rmKzeroS, \rmLambda, \rmXi, \rmOmega) has its own selections. For instance, in order to reach a region with a stable measured mass for the \rmXi baryons, several tight cuts have been used, resulting in sizeable loss of statistics in the data as well as in simulations. The systematic uncertainty due to the MC correction on the extracted mass being taken as the statistical uncertainty in simulations, this inevitably leads to a large systematic uncertainty for the \rmXi particles. 
+
+Notice that this systematic uncertainty can be further compressed, simply by using a MC production with more statistics.
 
 \subsection{Precision on the tabulated masses}
 
-The V0 and cascade masses are extracted from their invariant mass distribution, as explained in \Sec\ref{subsec:MassExtraction}. The \eq\ref{eq:LambdaInvMass} and \ref{eq:CascInvMass} highlight the quantities entering into the invariant mass calculation of a candidate, \ie the mass and momenta of each daughter particle. In particular, even for the \rmXiPM or \rmOmegaPM decay, it is not the reconstructed mass of the V0 that is being used for the \rmLambdaPM daughter, but it is always the tabulated mass in the PDG. However, as presented in \tab\ref{tab:PDGmass}, the latter has a finite precision. Although the PDG mass values of proton and pion are determined with a high degree of precision (\sigmaPDG < 1 \kmass), this is not the case of the \rmKPM and \rmLambdaPM (\sigmaPDG $\sim$\orderOf{10} \kmass). Consequently, they can possibly induce the systematic bias in the invariant mass calculation; all the more so for the cascades, since the latter is one of the products of the \rmXi decay, and both the former and the latter are the two decay daughters of the \rmOmega. 
+The V0 and cascade masses are extracted from their invariant mass distribution, as explained in \Sec\ref{subsec:MassExtraction}. \Eq\ref{eq:LambdaInvMass} and \ref{eq:CascInvMass} highlight the quantities entering into the invariant mass calculation of a candidate, \ie the mass and momenta of each daughter particle. In particular, even for the \rmXiPM or \rmOmegaPM decay, it is not the reconstructed mass of the V0 that is being used for the \rmLambdaPM daughter, but it is always the tabulated mass in the PDG. However, as presented in \tab\ref{tab:PDGmass}, the latter has a finite precision. Although the PDG mass values of proton and pion are determined with a high degree of precision (\sigmaPDG < 1 \kmass), this is not the case of the \rmKPM and \rmLambdaPM (\sigmaPDG $\sim$\orderOf{10} \kmass). Consequently, they can possibly induce the systematic bias in the invariant mass calculation; all the more so for the cascades, since the latter is one of the products of the \rmXi decay, and both the former and the latter are the two decay daughters of the \rmOmega. 
 
 \begin{table}[h]
     \begin{center}
@@ -1487,7 +1521,7 @@ The V0 and cascade masses are extracted from their invariant mass distribution, 
 
 Similarly as in \Sec\ref{subsec:SystTopoAndTrackSelections}, the mass of each decay daughter is varied randomly 20 000 times, according to a Gaussian distribution centred on the PDG value and with the associated uncertainty \sigmaPDG as standard deviation. In case, a systematic effect is observed, the standard deviation of the results over the whole set of generated particle masses is taken as systematic uncertainty.\\
 
-The \tab\ref{tab:SystPDGMass} presents the systematic uncertainties due to the finite precision on the decay daughter mass. They amount to a dozen of \kmass; the \rmOmega baryons are more impacted since their invariant mass involves the two least precise tabulated mass values in \tab\ref{tab:PDGmass}. A negligible effect can be observed on the measured mass of \rmKzeroS and \rmLambda; this is expected considering the high precision on the mass values of the proton and the pion. As in \Sec\ref{subsubsec:ImprecisionMagneticField} and \Sec\ref{subsubsec:ImperfectEnergyLossCorrections}, the measured mass difference remains unaffected as a change in the daughters mass introduces a similar shift for both particle and antiparticle, thus cancelling out in the mass difference.
+\Tab\ref{tab:SystPDGMass} presents the systematic uncertainties due to the finite precision on the decay daughter mass. They amount to a dozen of \kmass; the \rmOmega baryons are more impacted since their invariant mass involves the two least precise tabulated mass values in \tab\ref{tab:PDGmass}. A negligible effect can be observed on the measured mass of \rmKzeroS and \rmLambda; this is expected considering the high precision on the mass values of the proton and the pion. As in \Sec\ref{subsubsec:ImprecisionMagneticField} and \Sec\ref{subsubsec:ImperfectEnergyLossCorrections}, the measured mass difference remains unaffected as a change in the daughters mass introduces a similar shift for both particle and antiparticle, thus cancelling out in the mass difference.
 
 \begin{table}[h]
     \centering
@@ -1515,10 +1549,10 @@ The \tab\ref{tab:SystPDGMass} presents the systematic uncertainties due to the f
 
 
 \section{Results}
+\label{sec:FinalResultsCPT}
 
 \subsubsection{Summary of the systematic uncertainties}
-
-The \tabs\ref{tab:SystMassXi}, \ref{tab:SystMassOmega}, \ref{tab:SystMassDiffXi}, \ref{tab:SystMassDiffOmega} summarise the uncertainties retained on the measured masses and mass differences of \rmXiM, \rmAxiP, \rmOmegaM, \rmAomegaP in pp collisions at \sqrtS~=~13~\tev, after completing the study of the systematic biases. The same tables for \rmKzeroS, \rmLambda and \rmAlambda can be found in \appdx\ref{appendix:CPTAnalysis}. All these sources of systematic effects being \textit{a priori} independent, the total systematic uncertainties can be taken as the quadratic sum of all the contributions.
+\Tabs\ref{tab:SystMassXi}, \ref{tab:SystMassOmega}, \ref{tab:SystMassDiffXi}, \ref{tab:SystMassDiffOmega} summarise the uncertainties retained on the measured masses and mass differences of \rmXiM, \rmAxiP, \rmOmegaM, \rmAomegaP in pp collisions at \sqrtS~=~13~\tev, after completing the study of the systematic biases. The same tables for \rmKzeroS, \rmLambda and \rmAlambda can be found in \appdx\ref{appendix:CPTAnalysis}. All these sources of systematic effects being \textit{a priori} independent, the total systematic uncertainties can be taken as the quadratic sum of all contributions.
 
 \begin{table}[p]
     \centering
@@ -1571,7 +1605,7 @@ The \tabs\ref{tab:SystMassXi}, \ref{tab:SystMassOmega}, \ref{tab:SystMassDiffXi}
 \end{table}
 
 \begin{table}[p]
-    \centering
+    \hspace*{-0.5cm}
     \begin{tabular}{c|c|c}
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \bf  & \multicolumn{2}{c}{Uncertainties on the measured mass difference ($\times 10^{-5}$)} \\
@@ -1596,7 +1630,7 @@ The \tabs\ref{tab:SystMassXi}, \ref{tab:SystMassOmega}, \ref{tab:SystMassDiffXi}
 \end{table}
 
 \begin{table}[p]
-    \centering
+    \hspace*{-0.5cm}
     \begin{tabular}{c|c|c}
     \noalign{\smallskip}\hline \noalign{\smallskip}
     \bf  & \multicolumn{2}{c}{Uncertainties on the measured mass difference ($\times 10^{-5}$)} \\
@@ -1626,10 +1660,10 @@ The \tabs\ref{tab:SystMassXi}, \ref{tab:SystMassOmega}, \ref{tab:SystMassDiffXi}
 
 The final values of the \rmXiPM and \rmOmegaPM masses are:
 \begin{align*}
-    M\left(\rmXiM\right) &= 1321.968 \pm  0.025 \text{(stat.)} \pm 0.070 \text{(syst.)} \ \mmass ,\\
-    M\left(\rmAxiP\right) &= 1321.918 \pm  0.025 \text{(stat.)} \pm 0.075 \text{(syst.)} \ \mmass ,\\
-    M\left(\rmOmegaM\right) &= 1672.520 \pm  0.033 \text{(stat.)} \pm 0.102 \text{(syst.)} \ \mmass ,\\
-    M\left(\rmAomegaP\right) &= 1672.571 \pm  0.033 \text{(stat.)} \pm 0.101 \text{(syst.)} \ \mmass.
+    M(\rmXiM) &= 1321.968 \pm  0.025 \text{(stat.)} \pm 0.070 \text{(syst.)} \ \mmass ,\\
+    M(\rmAxiP) &= 1321.918 \pm  0.025 \text{(stat.)} \pm 0.075 \text{(syst.)} \ \mmass ,\\
+    M(\rmOmegaM) &= 1672.520 \pm  0.033 \text{(stat.)} \pm 0.102 \text{(syst.)} \ \mmass ,\\
+    M(\rmAomegaP) &= 1672.571 \pm  0.033 \text{(stat.)} \pm 0.101 \text{(syst.)} \ \mmass.
 \end{align*}
 
 The final relative mass difference between particle and anti-particle are:
@@ -1644,7 +1678,7 @@ The final relative mass difference between particle and anti-particle are:
 
 The final precision on the mass measurement is dominated by the systematic uncertainties, and more particularly the ones related to the identification of the candidates and the calibration of the detector. This covers the finite precision on the magnetic field, the limited knowledge on the amount of material budget, as well as residual momentum miscalibrations resulting in instabilities of the results. The latter also contributes in the statistical uncertainty, as the main approach to guarantee a robust measurement consisted in rejecting candidates instead of correcting them. Therefore, the magnitude of the statistical uncertainty can also be viewed as a consequence of the residual miscalibrations. This is particularly relevant for the measured mass difference, since these systematic effects on the mass values cancel out in the difference and only reflects in the statistical uncertainty.
 
-Speaking of which, the first mass extraction allowed to estimate the amount of multi-strange baryons available in the exploited data sample: approximately 2 500 000 \rmXi and about 133 000 \rmOmega. In contrast, after all the additional selections implemented throughout the systematic study, these numbers drop to 16 373 $\pm$ 133.3 \rmXiM and 15 611 $\pm$ 130 \rmAxiP with a purity better than 96\%, and 10 808 $\pm$ 115 \rmOmegaM and 10 539 $\pm$ 114 \rmAomegaP with a purity above 90\%. Although, the final measurement relies only on a fraction of the initial data sample, the present results are still based on a statistics of strange baryons that is much larger than those cited by the PDG.\\
+Speaking of which, the first mass extraction allowed to estimate the amount of multi-strange baryons available in the exploited data sample: approximately 2~500~000~\rmXi and about 133~000~\rmOmega. In contrast, after all the additional selections implemented throughout the systematic study, these numbers drop to 16~373~$\pm$~133.3~\rmXiM and 15~611~$\pm$~130~\rmAxiP with a purity better than 96\%, and 10~808~$\pm$~115~\rmOmegaM and 10~539~$\pm$~114~\rmAomegaP with a purity above 90\%. Although, the final measurement relies only on a fraction of the initial data sample, the present results are still based on a statistics of strange baryons that is much larger than those cited by the PDG.\\
 
 Furthermore, the \rmKzeroS meson and the \rmLambda hyperons have also been used as a benchmark for the mass measurement. The final values are:
 \begin{align*}
@@ -1659,11 +1693,11 @@ with a relative mass difference of
     &= \left[ 3.91 \pm 2.64 \text{(tot.)} \right] \times 10^{-5} .
 \end{align*}
 
-Their tabulated masses being at $\mPDG(\rmKzeroS) = 497.611 \pm 0.013$ \mmass and \mbox{$\mPDG(\rmLambda) = 1115.683 \pm 0.006$ \mmass}, the measured masses of \rmKzeroS and \rmLambda agree with the PDG mass values within approximately $1\sigma$. However, this is not the case for the \rmAlambda which, in turn, reflects in the relative mass difference\footnote{The relative mass difference between \rmLambda and \rmAlambda quoted in the PDG sits at $\left(-0.1 \pm 1.1\right)\times 10^{-5}$.}. This could suggest the presence of a remaining systematic bias in the analysis. Therefore, this deviation should be investigated in the future.\\
+Their tabulated masses being at $\mPDG(\rmKzeroS) = 497.611 \pm 0.013$ \mmass and \break\mbox{$\mPDG(\rmLambda) = 1115.683 \pm 0.006$ \mmass}, the measured masses of \rmKzeroS and \rmLambda agree with the PDG mass values within approximately $1\sigma$. However, this is not the case for the \rmAlambda which, in turn, reflects in the relative mass difference\footnote{The relative mass difference between \rmLambda and \rmAlambda quoted in the PDG sits at $\left(-0.1 \pm 1.1\right)\times 10^{-5}$.}. This could suggest the presence of a remaining systematic bias in the analysis. Therefore, this deviation should be investigated in the future.\\
 
-Our measurements of the multi-strange baryons should be compared to the current values quoted in the PDG, as well as to previous measurements in \fig\ref{fig:MassVsPDG}. Although the uncertainty on the \rmOmegaPM mass values has been reduced by more than a factor 2, the precision on the mass of the \rmXiPM particles turns out to be at the same level as the tabulated uncertainty. However, note that the PDG does not perform mass measurements, but provides a world average. As highlighted by the \figs\ref{fig:MassVsPDG}, these estimates are so far the most precise mass measurements in the multi-strange baryon sector. Looking at the mass values, it would seem that the \rmXi results disagree with the PDG value by more than $2\sigma$. This may be again an indication of a remaining bias in the analysis, that requires further investigation.
+Our measurements for the multi-strange baryons should be compared to the current values quoted in the PDG, as well as to previous measurements in \figs\ref{fig:MassVsPDG}. Although the uncertainty on the \rmOmegaPM mass values has been reduced by more than a factor 2, the precision on the mass of the \rmXiPM particles turns out to be at the same level as the tabulated uncertainty. However, note that the PDG does not perform mass measurements, but provides a world average. As highlighted by the \figs\ref{fig:MassVsPDG}, these estimates are so far the most precise mass measurements in the multi-strange baryon sector, improving the previous \emph{measurements} by approximately a factor 1.19 for the \rmXiPM and 9.26 for the \rmOmegaPM. Looking at the mass values, it would seem that the \rmXi results disagree with the PDG value by more than $2\sigma$. This may be again an indication of a remaining bias in the analysis, that requires further investigation.
 
-Concerning the relative mass differences, the precision has been improved by a factor 1.20 for the \rmXiPM and slighltly more than two for the \rmOmegaPM. Considering their uncertainties, both are compatible with zero, thus validating the CPT invariance.
+Concerning the relative mass differences (\figs\ref{fig:MassDiffVsPDG}), the precision has been improved by a factor 1.20 for the \rmXiPM and slighltly more than two for the \rmOmegaPM. Considering their uncertainties, both are compatible with zero, thus validating the CPT invariance.
 
 \begin{figure}[h]
 %\centering

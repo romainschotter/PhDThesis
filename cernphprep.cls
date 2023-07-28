@@ -321,20 +321,33 @@
 % at bottom of page: copyright notice 
 %
 \renewcommand\title[1]{\setlength{\unitlength}{1mm}%
+%\begin{center}
+%\LARGE\textsf{\bfseries Université de Strasbourg}\\
+%\LARGE\textsf{\bfseries \slshape \'Ecole Doctorale 182 -- Physique et Chimie-Physique}\\
+%\LARGE\textsf{\bfseries Institut Pluridisciplinaire Hubert Curien (IPHC), UMR 7178}
+%\end{center}
 \begin{center}
-\LARGE\textrm{Université de Strasbourg}\\
-\LARGE\textrm{\'Ecole Doctorale 182 -- Physique et Chimie-Physique}\\
-\LARGE\textrm{Institut Pluridisciplinaire Hubert Curien}
-\end{center}
+\LARGE\textsf{\bfseries UNIVERSIT\'E DE STRASBOURG}\\[4mm]
+%\mbox{}\\[4mm]
+\Large\textsf{\bfseries \'Ecole Doctorale 182 -- Physique et Chimie-Physique}\\[1mm]
+%\mbox{}\\[1mm]
+\Large\textsf{\bfseries Institut Pluridisciplinaire Hubert Curien (IPHC)}\\
+\large\textsf{\bfseries D\'epartement de Recherches Subatomiques}
+\end{center}    
 \begin{picture}(0.001,0.001)%
 %\graphpaper(0,-280)(210,290)
 %\put(80,-15){\makebox(0,0){\LARGE\itshape Final draft version \today}}
 %\put(80,10){\makebox(0,0){\LARGE EUROPEAN ORGANIZATION FOR NUCLEAR RESEARCH}}
 %----
 % Experiment's logo (optional) 
-\put(15,-32){\makebox(0,0)[lb]{\includegraphics[height=2.5cm]{Universite_logo.png}}}
+%\put(-10,-22){\makebox(0,0)[lb]{\includegraphics[height=2.5cm]{Universite_logo.png}}}
 % CERN logos
-\put(145,-35){\makebox(0,0)[rb]{\includegraphics[height=3.5cm]{IPHC_logo.png}}}
+%\put(145,-25){\makebox(0,0)[rb]{\includegraphics[height=3.5cm]{IPHC_logo.png}}}
+\textbf{\put(10,-32){\makebox(0,0)[lb]{\includegraphics[height=2.5cm]{Universite_logo.png}}}
+% CERN logos
+\put(135,-35){\makebox(0,0)[rb]{\includegraphics[height=3.5cm]{IPHC_logo.png}}}}
+% Experiment's preprint number (optional) 
+%\put(20,-45){\makebox(0,0)[lb]{\LARGE\textsf{\bfseries UNIVERSIT\'E DE STRASBOURG}}}
 % Experiment's preprint number (optional) 
 %\put(0,-25){\makebox(0,0)[lb]{\normalsize\@EXPnumber}}
 % Experiment date of approval
@@ -346,7 +359,7 @@
 %\put(0,-222){\makebox(0,0)[l]{\CERNCopyright}}
 %\put(0,-227){\makebox(0,0)[l]{Reproduction of this article or parts of it is allowed as specified in the 
 %\href{http://creativecommons.org/licenses/by/4.0}{CC-BY-4.0 license}.}}
-\end{picture}           
+\end{picture}       
 \mbox{}\\[55mm]
 \large\textsc{Doctoral Thesis in Physics}
 \mbox{}\\[3mm]
@@ -356,14 +369,14 @@
 %\rule{16 cm}{1pt} \\
 %\end{center}
 \begin{picture}(0.001,0.001)
-\put(120,-20){\makebox(0,0){\large\textsl{October 2020 -- September 2023}}}
+\put(120,-10){\makebox(0,0){\large\textsl{October 2020 -- September 2023}}}
 %\put(135,-45){\makebox(0,0){\large\textsl{Candidate:}}}
 %\put(135,-53){\makebox(0,0){\large\textbf{Romain Schotter}}}
 %\put(135,-63){\makebox(0,0){\large\textsl{Thesis advisors:}}}
 %\put(135,-71){\makebox(0,0){\large Boris Hyppolite}}
 %\put(135,-79){\makebox(0,0){\large Antonin Maire}}
 \end{picture}       
-\mbox{}\\[60mm]
+\mbox{}\\[40mm]
 \begin{minipage}{0.5\textwidth}
 \begin{flushleft}
         \large\textsl{Candidate: }\\\textbf{Romain Schotter}\\
@@ -377,8 +390,34 @@
 \end{minipage}
 \mbox{}
 \begin{center}
-\large January 2022
+\mbox{}\\[1mm]
+\large July 2023
 \end{center}
+
+\noindent\textsf{\bfseries Composition du jury\\Jury composition}\\[10mm]
+
+\begin{table}[h]
+\normalsize\sffamily\bfseries
+    \begin{tabular}{ll}
+    \multicolumn{2}{l}{TH\`ESE dirigée par / THESIS directed by:} \\
+    \hspace{0.5cm} Antonin MAIRE & \textmd{Chargé de recherche CNRS, IPHC} \\
+    \hspace{0.5cm} Boris HIPPOLYTE & \textmd{Professeur Unistra, IPHC}\\
+    & \\
+	\multicolumn{2}{l}{RAPPORTEURS / REFEREES:} \\  
+	\hspace{0.5cm} Patrick ROBBE & \textmd{Directeur de recherche CNRS, IJCLab}\\
+	\hspace{0.5cm} Raphael GRANIER DE CASSAGNAC & \textmd{Directeur de recherche CNRS, LLR}\\
+	& \\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    & \\
+    \multicolumn{2}{l}{AUTRES MEMBRES DU JURY / OTHER MEMBERS OF THE JURY:} \\
+	\hspace{0.5cm} Federico ANTINORI & \textmd{Directeur de recherche INFN, INFN Padova}\\
+	\hspace{0.5cm} Jérôme BAUDOT & \textmd{Professeur Unistra, IPHC}\\
+	\hspace{0.5cm} Tanguy PIEROG & \textmd{Wissenschaftlicher Mitarbeiter, KIT}\\
+	\hspace{0.5cm} Johanna STACHEL & \textmd{Professor, Physikalisches Institut Heidelberg}\\
+    \end{tabular}
+\end{table}
+
+
 \gdef\Title{#1}
 }%%  end of title
 % Submitted{}

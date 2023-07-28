@@ -56,15 +56,16 @@
 \newcommand{\ie}        {$i.e.$~}
 \newcommand{\eg}        {$e.g.$~}
 \newcommand{\Eg}        {$E.g.$~}
-\newcommand{\Fig}       {\textsc{f}ig.~}
-\newcommand{\fig}       {\Fig}
-\newcommand{\Figs}      {\textsc{f}igs.~}
-\newcommand{\figs}      {\Figs}
+\newcommand{\Fig}       {\textsc{F}ig.~}
+\newcommand{\fig}       {\textsc{f}ig.~}
+\newcommand{\Figs}      {\textsc{F}igs.~}
+\newcommand{\figs}      {\textsc{f}igs.~}
 \newcommand{\Figure}    {\textsc{f}igure~}
 \newcommand{\Figures}   {\textsc{f}igures~}
-\newcommand{\Tab}       {\textsc{t}ab.~}
-\newcommand{\tab}       {\Tab}
+\newcommand{\Tab}       {\textsc{T}ab.~}
+\newcommand{\tab}       {\textsc{t}ab.~}
 \newcommand{\tabs}      {\textsc{t}abs.~}
+\newcommand{\Tabs}      {\textsc{T}abs.~}
 \newcommand{\Table}     {\textsc{t}able~}
 \newcommand{\Tables}    {\textsc{t}ables~}
 \newcommand{\chap}      {\textsc{c}hap.~}
@@ -73,6 +74,7 @@
 \newcommand{\parag}     {\textsc{p}ar.~}
 \newcommand{\appdx}     {\textsc{a}pp.~}
 \newcommand{\eq}        {\textsc{e}q.~}
+\newcommand{\Eq}        {\textsc{E}q.~}
 \newcommand{\opt}        {\textsc{o}pt.~}
 
 \newcommand{\Sec}       {\textsc{S}ec.~}
@@ -210,7 +212,7 @@
 \ifthenelse{\equal{#1}{}}{\ensuremath{m_{\textsc{pdg}}}}{\ensuremath{m_{\textsc{pdg}}(#1)}}%
 }
 \newcommand {\mInv}[1][]      {%
-\ifthenelse{\equal{#1}{}}{\ensuremath{m_{ \textrm{inv} }}}{\ensuremath{m_{ \textrm{inv} }(#1)}}%
+\ifthenelse{\equal{#1}{}}{\ensuremath{m_{ \textrm{inv} }}}{\ensuremath{m_{ \textrm{inv} }\left(#1\right)}}%
 }
 %\newcommand {\mInv}[1] 	    {\ensuremath{m_{ \textrm{inv} }(#1)}}
 \newcommand {\mMassPart}[1] {\ensuremath{m_{ \textsc{#1} }}}
@@ -385,7 +387,7 @@
 
 \newcommand {\invmub}   {\mbox{$\mub^{-1}$}}
 \newcommand {\invnb}    {\mbox{$\nb^{-1}$}}
-\newcommand {\invpb}    {\mbox{$\pb^{-1}$}}
+\newcommand {\invpb}    {\mbox{$\pb^{-1}$}\xspace}
 \newcommand {\invfb}    {\mbox{$\fb^{-1}$}}
 \newcommand {\invb}     {\mbox{$\barn^{-1}$}}
 

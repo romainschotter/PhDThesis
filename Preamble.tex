@@ -46,7 +46,8 @@
 \usepackage[normalem]{ulem} % pour tuner le soulignage, [normalem] = pour préserver le comportement normale de emph
 \usepackage{longtable}
 \usepackage{float}
-\usepackage{cellspace, rotating, tabularx, booktabs}
+\usepackage{cellspace, tabularx, booktabs}
+\usepackage[figuresright]{rotating}
 %\usepackage{garamondx}
 \addparagraphcolumntypes{X}
 
@@ -77,6 +78,7 @@
 \usepackage{diagbox}
 \usepackage{cancel}
 \usepackage{url}
+\usepackage{scrextend}
 
 %%%%%%%%%%%%%package Romain
 % \usepackage[lofdepth,lotdepth,caption=false]{subfig}  
@@ -170,6 +172,8 @@
 % empêcher la réinterprétation de la commande \newblock de la bibliographie
 % En conséquence, tout ce qui est \newblock dans natbib.sty = changer pour "\\"
 
+
+%\renewcommand{\bibsection}{\chapter*{BIBLIOGRAPHIC REFERENCES}}
 \usepackage{array} 
         %pour avoir \extrarowheight = gestion de la hauteur de ligne (voir chap. 4)
         % Ajout de hauteur suppl aux lignes pour éviter que la ligne horizontale ne touche le texte.
@@ -189,6 +193,8 @@
 %\usepackage{tocbibind} %allow integration de biblio+index dans la TOC(a comparer avec addcontentsline)
 %\usepackage{bibunits} %permet de faire une biblio par partie, chapitre, section...
         
+\renewcommand{\listfigurename}{Figures}
+\renewcommand{\listtablename}{Tables}
 
 %__________ Redefine style of the header top line, with section names
         
@@ -392,6 +398,7 @@
 %   % FIXME {\normalfont\sffamily\huge\bfseries\color{Black}}
 %   {-- \chaptertitlename\ \thechapter~-- }{20pt}{\Huge}
 
+%\equal{#1}{\string german}
 % Title format: chapter
 \titleformat{\chapter}[display]
 	{\fontsize{30}{20}\selectfont\bfseries\filright}
@@ -399,10 +406,22 @@
 	{20pt}
 	{
 	\ifthenelse{\thechapter>0}
-	{\fontsize{60}{0}\selectfont\arabic{chapter}\hspace{0pt}\hspace{2mm}{|   }\hspace{0pt}}
+	{
+	\if\equal{\chaptertitlename}{\string Bibliography}
+	 	\hspace{0pt}
+	 \else
+	 	\fontsize{60}{0}\selectfont\arabic{chapter}\hspace{0pt}\hspace{2mm}{|   }\hspace{0pt}
+	 \fi
+	 }
 	{\hspace{0pt}}
 	\fontsize{30}{60}\bfseries 
 	}
+	
+\titleformat{name=\chapter, numberless}[display]
+	{\fontsize{30}{20}\selectfont\bfseries\filright}
+	{}
+	{20pt}
+	{\hspace{0pt}\fontsize{30}{20}\selectfont\bfseries\filright}\bfseries 
   
 %\titleclass{\section}{straight}  
 \titleformat{\section}[hang]

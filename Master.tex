@@ -48,7 +48,7 @@
 \begin{titlepage}
 %	\AddToShipoutPictureBG*{{\transparent{0.2}\includegraphics[width=\paperwidth,height=\paperheight]{ARP-backcover.pdf}}}
 	
-	\title{Precision measurements in the \\multi-strange baryon sector at the LHC with the ALICE experiment}
+	\title{\color{RoyalBlue4}Precision measurements in the \\multi-strange baryon sector at the LHC with the ALICE experiment}
 	
 %	\author{Romain}
     %
@@ -92,7 +92,20 @@
 %\include{Discussion} % Discusssion
 \include{Conclusion} % Conclusion
 
+\cleardoublepage
+\phantomsection
 
+
+%______________________________________________________________________________
+%______________________________________________________________ Appendices
+
+
+%%%%%%%%% appendix with author list
+\newpage
+\appendix
+
+\input{AppendixCPTAnalysis}
+\input{AppendixCorrelatedAnalysis}
 
 % http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Bibliography_in_the_table_of_contents
 \cleardoublepage % pour fermer le dernier paragraphe du chapitre précédent (ccl°)
@@ -121,21 +134,24 @@
 \addcontentsline{toc}{chapter}{References} 
 \bibliography{References}
 
-
-        
 \normalsize
 
 
-%______________________________________________________________________________
-%______________________________________________________________ Appendices
+\cleardoublepage 
+\phantomsection 
+
+\addcontentsline{toc}{chapter}{Figures} 
+\listoffigures
+
+\cleardoublepage 
+\phantomsection 
+
+\addcontentsline{toc}{chapter}{Tables} 
+\listoftables
+
+\cleardoublepage 
 
 
-%%%%%%%%% appendix with author list
-\newpage
-\appendix
-
-\input{AppendixCPTAnalysis}
-\input{AppendixCorrelatedAnalysis}
 %
 %\input{}               %%%%%%%%%%% put your appendices here
 %

@@ -361,11 +361,27 @@ FUNCTION {format.doi}
 % FIXME : Modified A.Maire (10 Aug 2019)
 %    inspired from https://stackoverflow.com/questions/3546396/bib-style-format-for-bibtext-bst-file-explained-by-an-example
 %    https://tex.stackexchange.com/questions/5660/redundancy-in-bib-file-conditionally-suppress-url-if-same-as-doi
+%FUNCTION {format.url}
+%{ eprint empty$      % check if the field eprint is provided (i.e. link arXiv under my JabRef conventions)
+%    { url empty$                % if field eprint = empty, then check for url
+%        { ""}
+%%        { "\href{" url * "}{\footnotesize \textrm{" * url #8 #100 substring$ * "}}" *}
+%        { "\href{" url * "}{\footnotesize \textrm{\textsc{url l}ink}}" *}
+%        if$
+%    }
+%    { ""}                         % if field eprint is provided, do not print url
+%    if$
+%}
+
+% FIXME : Modified R.Schotter (24 Jul 2023)
+%    inspired from https://stackoverflow.com/questions/3546396/bib-style-format-for-bibtext-bst-file-explained-by-an-example
+%    https://tex.stackexchange.com/questions/5660/redundancy-in-bib-file-conditionally-suppress-url-if-same-as-doi
 FUNCTION {format.url}
-{ eprint empty$      % check if the field eprint is provided (i.e. link arXiv under my JabRef conventions)
+{ doi empty$      % check if the field eprint is provided (i.e. link arXiv under my JabRef conventions)
     { url empty$                % if field eprint = empty, then check for url
         { ""}
-        { "\href{" url * "}{\footnotesize \textrm{" * url #8 #100 substring$ * "}}" *}
+%        { "\href{" url * "}{\footnotesize \textrm{" * url #8 #100 substring$ * "}}" *}
+        { "\href{" url * "}{\footnotesize \textrm{\textsc{url l}ink}}" *}
         if$
     }
     { ""}                         % if field eprint is provided, do not print url
