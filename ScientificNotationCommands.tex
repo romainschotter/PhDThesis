@@ -50,6 +50,13 @@
 \newcommand{\solidfill}[1]{\leaders\hrule\hfill}
 \makeatother
 
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+%\renewcommand*{\citedash}{\hbox{-}\penalty\citepunctpenalty}
+
+
 \newcommand {\stat}     {({\it stat.})~}
 \newcommand {\syst}     {({\it syst.})~}
 
@@ -85,14 +92,14 @@
 
 \newcommand{\orderOf}[1]{\ensuremath{\mathcal{O}}(#1)}
 
-\newcommand{\CheckGr}   {\textcolor{Green}{\normalsize \CheckmarkBold}} 
+\newcommand{\CheckGr}   {\textcolor{Green}{\normalsize \CheckmarkBold}\xspace} 
 \newcommand{\SurpriseGr}{\textcolor{Green}{\textbf{!}{\scriptsize !}}}
 \newcommand{\Wtf}       {\textcolor{IndianRed}{\textbf{?}!}}
 \newcommand{\NB}        {\textcolor{IndianRed}{\HandRight}}
 \newcommand{\Caution}   {\textcolor{IndianRed}{\scriptsize \textlhdbend}}
 \newcommand{\NoWay}     {\textcolor{IndianRed}{\normalsize \XSolidBrush}\xspace}
 \newcommand{\UnderWork} {\textcolor{Blue}{\Large \dsagricultural}}
-\newcommand{\ToDo}      {\textcolor{Gray}{\scriptsize \textsc{ToDo}}}
+\newcommand{\ToDo}      {\textcolor{Gray}{\scriptsize \textsc{ToDo}}\xspace}
 
 
 %
@@ -118,7 +125,7 @@
 \newcommand {\sigmapT}      {\mbox{$\sigma_{\pT}$}}
 \newcommand {\meanpT}       {\ensuremath{\langle p_{\textsc{t}} \kern-0.1em\rangle}}
 \newcommand {\mean}[1]      {\ensuremath{\langle #1 \kern-0.1em\rangle}} 
-\newcommand {\sqrtSnn}      {\ensuremath{\sqrt{s_\text{\textsc{nn}}}}}
+\newcommand {\sqrtSnn}      {\ensuremath{\sqrt{s_\text{\textsc{nn}}}}\xspace}
 \newcommand {\sqrtS}        {\ensuremath{\sqrt{s}}\xspace}
 \newcommand {\vTwo}         {\ensuremath{v_{\text{2}}}}
 \newcommand {\vThree}       {\ensuremath{v_{\text{3}}}}
@@ -409,7 +416,7 @@
 \newcommand{\etaZero}       {\mbox{$\mathrm {\eta^0}$}}
 \newcommand{\piZero}        {\mbox{$\mathrm {\pi^0}$}}
 \newcommand{\piMinus}       {\mbox{$\mathrm {\pi^-}$}}
-\newcommand{\piPlus}        {\mbox{$\mathrm {\pi^+}$}}
+\newcommand{\piPlus}        {\mbox{$\mathrm {\pi^+}$}\xspace}
 \newcommand{\piPlusMinus}   {\mbox{$\mathrm {\pi^{\pm}}$}}
 \newcommand{\piMinusPlus}   {\mbox{$\mathrm {\pi^{\mp}}$}}
 \newcommand{\rmPiPlusMinus} {\piPlusMinus}
@@ -426,8 +433,8 @@
 
 \newcommand{\rmKaon}     {\mbox{$\mathrm {K}$}\xspace}
 \newcommand{\Kzs}        {\mbox{$\mathrm {K^0_S}$}\xspace}
-\newcommand{\rmKzero}    {\ensuremath{\mathrm {K^0}}}
-\newcommand{\rmAKzero}   {\ensuremath{\mathrm {\overline{K^0}}}}
+\newcommand{\rmKzero}    {\ensuremath{\mathrm {K^0}}\xspace}
+\newcommand{\rmAKzero}   {\ensuremath{\mathrm {\overline{K^0}}}\xspace}
 \newcommand{\rmKzeroS}   {\Kzs}
 \newcommand{\rmAKzeroS}  {\ensuremath{\mathrm {\overline{K^0_S}}}}
 \newcommand{\Kzl}        {\mbox{$\mathrm {K^0_L}$}}
@@ -441,6 +448,7 @@
 \newcommand{\rmKPlus}    {\rmKplus}
 \newcommand{\rmKMinus}   {\rmKminus}
 \newcommand{\rmKPM}      {\Kplusmin}
+\newcommand{\rmKMP}      {\Kminplus}
 \newcommand{\rmAKstarZero}{\mbox{$\overline{\mathrm{K}}^{*0}$}\xspace}
 \newcommand{\rmKstarZero}{\mbox{$\mathrm{K}^{*0}$}\xspace}
 \newcommand{\rmKstarPlus}{\mbox{$\mathrm{K}^{*+}$}}

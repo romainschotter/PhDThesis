@@ -1,0 +1,168 @@
+\documentclass[ALICE,manyauthors]{cernphprep_ResumeInFrench}
+%\documentclass[12pt,oneside,a4paper]{book} % This style for A4 format. 
+
+\include{Preamble_ResumeInFrench}
+\include{ScientificNotationCommands}
+
+
+
+
+% Numbering of lines
+    \modulolinenumbers[2]
+    % \pagewiselinenumbers
+    \switchlinenumbers   % allow to put line numbers on the outer margins
+    %\linenumbers
+
+
+% Draft ID
+    \def\currentVersion{\version{$\beta.1$}{\input{|"git log -n1 | awk '/commit/ {print $2}' | cut -c 1-7"}}}
+%     \def\currentVersion{\version{$\beta.0$}{dummy}}
+%     \def\currentVersion{\version{$\beta.0$}{\input{|"svn info | awk -F : '/vision/ {print $2}' | head -n 1"}}}
+        % Trick to get the git rev:
+        %   do a grep (awk in fact) through a bash command called (even, piped) from LaTeX
+        % Inconvenience:
+        %   One needs to authorise the bash command to be executed, with --shell-escape
+        %   = pdflatex --shell-escape aliceCDSpreprint_hV0Correl_PbPb_Master.tex
+%    \backgroundsetup{contents=\currentVersion}
+    \backgroundsetup{contents=}
+        % define the draft watermark from the background package
+
+    
+
+    
+        % Trick to get the svn rev :
+        %   do a grep (awk in fact) through a bash command called (even, piped) from LaTeX 
+        % Inconvenience :
+        %   One needs to authorise the bash command to be executed, with --shell-escape
+        %   = pdflatex --shell-escape aliceCDSpreprint_Master.tex
+    %\backgroundsetup{contents=\currentVersion}
+        % define the draft watermark from the background package
+
+
+\begin{document}%
+
+%______________________________________________________________________________
+%______________________________________________________________ Title
+
+
+\begin{titlepage}
+%	\AddToShipoutPictureBG*{{\transparent{0.2}\includegraphics[width=\paperwidth,height=\paperheight]{ARP-backcover.pdf}}}
+	
+	\title{\color{RoyalBlue4}Mesures de précision dans le secteur des baryons multi-étranges au LHC avec l'expérience ALICE}
+	
+%	\author{Romain}
+    %
+%    \PHyear{2022}
+%    \PHnumber{XXX}      % required, will be obtained from PH
+%    \PHdate{\monthname[\month]}  % required, will be obtained from PH
+%    %
+%
+
+\end{titlepage}
+\setcounter{page}{2}
+
+
+%\include{Resume} % Resume
+%\include{Abstract} % Abstract
+
+%______________________________________________________________________________
+%______________________________________________________________ Acknowledgements
+
+%\newenvironment{acknowledgement}{\relax}{\relax}
+%\begin{acknowledgement}
+%\include{Acknowledgements}
+%\input{acknowledgements.tex}    %%%%%%% done by webmaster team
+%\end{acknowledgement}
+
+
+%______________________________________________________________________________
+%______________________________________________________________ Core document
+
+%\tableofcontents
+
+\cleardoublepage 
+\phantomsection 
+
+\include{AppendixExtendedAbstractFrench}
+%\include{Introduction} % Introduction
+%\include{StandardModel} % Data sets
+%\include{ALICEExperiment} % The ALICE experiment
+%\include{V0CascReconstruction} % V0 and cascade reconstruction
+%\include{CPTAnalysis} % The CPT analysis
+%\include{CorrelationAnalysis} % Correlation analysis
+%\include{Discussion} % Discusssion
+%\include{Conclusion} % Conclusion
+
+\cleardoublepage
+\phantomsection
+
+
+%______________________________________________________________________________
+%______________________________________________________________ Appendices
+
+
+%%%%%%%%% appendix with author list
+%\newpage
+%\appendix
+
+%\input{AppendixCPTAnalysis}
+%\input{AppendixCorrelatedAnalysis}
+
+
+% http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Bibliography_in_the_table_of_contents
+\cleardoublepage % pour fermer le dernier paragraphe du chapitre précédent (ccl°)
+\phantomsection % With hyperref package, you should also use \phantomsection command to enable hyperlinking from the table of contents to bibliography.
+
+
+
+
+%______________________________________________________________________________
+%______________________________________________________________ Bibliography
+% (In case of using bibtex generate the bbl requested by arXiv)
+
+
+
+
+\footnotesize
+
+%\bibliographystyle{utphys}   
+\bibliographystyle{myJHEP} % http://jhep.sissa.it/jhep/help/JHEP_TeXclass.jsp
+
+
+% http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Bibliography_in_the_table_of_contents
+\cleardoublepage % pour fermer le dernier paragraphe du chapitre précédent (ccl°)
+\phantomsection % With hyperref package, you should also use \phantomsection command to enable hyperlinking from the table of contents to bibliography.
+
+\addcontentsline{toc}{chapter}{References} 
+\bibliography{References}
+
+\normalsize
+
+
+\cleardoublepage 
+\phantomsection 
+
+%\addcontentsline{toc}{chapter}{Figures} 
+%\listoffigures
+
+\cleardoublepage 
+\phantomsection 
+
+%\addcontentsline{toc}{chapter}{Tables} 
+%\listoftables
+
+\cleardoublepage 
+
+
+%
+%\input{}               %%%%%%%%%%% put your appendices here
+%
+
+%\section*{The ALICE Collaboration}
+
+%\addcontentsline{toc}{section}{The ALICE collaboration} 
+%\label{app:collab}
+
+%\input{authorlist-preprint.tex}  %%%%%%% done by webmaster team
+
+\end{document}

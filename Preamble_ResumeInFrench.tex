@@ -1,0 +1,572 @@
+
+%_____________________________________________________________________________________
+%Pour les documentations sur les differents packages, voir le TeX catalogue on line 
+%        http://texcatalogue.sarovar.org/index.html,
+%_____________________________________________________________________________________
+
+
+\usepackage[T1]{fontenc}    
+    % for output font rendering, T1 rendering
+    % textsc into section title http://en.wikibooks.org/wiki/LaTeX/Fonts#Font_encoding
+ \usepackage{lmodern}
+%\usepackage[varg]{txfonts}   % Web of Conferences font
+    % choose specific font, lmodern (default : if installed = cm-super, rendering ok!)
+    % There is nothing to change in your document to use CM Super fonts (assuming they are installed), 
+    %      they will get loaded automatically if you use T1 encoding. 
+    %      For lmodern, you will need to load the package after the T1 encoding has been set
+    
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc} % for input source code, accented characters like French spelling...
+\usepackage{graphicx,subfigure}
+%\usepackage{subcaption} %for subfigures, added 10.dec.20
+
+%\usepackage[english,francais]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}  % boldsymbol, special characters
+\usepackage{mathrsfs} % pour le L du lagrangien ...
+\usepackage{MnSymbol} % pour fivedots
+\usepackage{bbding}   % pour checkmark spéciaux dans tableau d'inventaire
+\usepackage{dictsym}  % pour dsaagricultural du tableau d'inventaire
+\usepackage{manfnt}   % pour le signe "virage dangereux" \textlhdbend
+%\usepackage{marvosym}  % Special Fonts, if need be. http://texdoc.net/texmf-dist/doc/fonts/marvosym/marvodoc.pdf
+% \usepackage{eurosym}  % symbole de l'euro, \officialeuro
+%     \DeclareUnicodeCharacter{20AC}{\euro}  % i.e. make the translation € UTF-8 char to be the LaTeX € symbol
+\usepackage[retainorgcmds]{IEEEtrantools} % equation à la IEEE
+\usepackage{multirow}
+\usepackage{xspace} 
+\usepackage{lineno}     % for line numbering
+%\usepackage[showframe=false]{geometry}
+\usepackage{changepage} % for managing locally the width allowed for the text = useful for shifting leftwards too wide tables or figure
+                        % e.g. \begin{adjustwidth}{-1cm}{} ... \end{adjustwidth}
+\usepackage{threeparttable} % for enabling footnote within a table
+\usepackage{pdflscape}  % Rotation of tables (better handling), for pdflatex
+\usepackage{dcolumn}  % to align column on the decimal point
+\usepackage{enumitem} % to be able to have enumerate a,b... A,B... i,ii...
+                        % \begin{enumerate}[label=(\alph*)], [label=(\Alph*)], [label=(\roman*)]
+\usepackage[normalem]{ulem} % pour tuner le soulignage, [normalem] = pour préserver le comportement normale de emph
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{cellspace, tabularx, booktabs}
+\usepackage[figuresright]{rotating}
+%\usepackage{garamondx}
+\addparagraphcolumntypes{X}
+
+\usepackage{ifthen} % execute code with condition
+\usepackage{nicefrac} % to get nice fractions of type x / y
+
+\usepackage{indentfirst}
+
+\usepackage{titlesec} % controls title spacing
+\titlespacing{\section}{0pt}{4.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing{\subsection}{0pt}{4.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing{\subsubsection}{0pt}{4.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\usepackage{feynmp-auto} %to draw Feyman diagram
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+%\setlength{\unitlength}{1cm}
+
+% after babel
+\usepackage{datetime} % pour afficher l'heure avec la commande \currenttime = \xxivtime
+
+\usepackage[outercaption]{sidecap}
+\usepackage{afterpage}
+\usepackage{dirtytalk}
+\usepackage{textcomp}
+\usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
+\usepackage{tablefootnote}
+\usepackage{diagbox}
+\usepackage{cancel}
+\usepackage{url}
+\usepackage{scrextend}
+
+\usepackage{epigraph} 
+
+%%%%%%%%%%%%%package Romain
+% \usepackage[lofdepth,lotdepth,caption=false]{subfig}  
+    % FIXME pb incompatible with hyperref apparently, enable to compile the document locally
+    % https://tex.stackexchange.com/questions/129791/using-subfloat-with-hyperref
+%%%%%%%%%%%%%end package Romain
+
+
+% Package nécessaire pour les remerciements
+% \usepackage{endnotes}
+% \renewcommand{\notesname}{Notes de remerciements}
+
+
+
+%%% OPTION - pdflatex compiler
+\usepackage[pdftex,usenames,dvipsnames,table]{xcolor}
+%\usepackage{xcolor}
+%\usepackage[pdftex]{graphicx}
+\usepackage{eso-pic,graphicx, transparent}
+\usepackage{epstopdf}
+\DeclareGraphicsExtensions{.jpg,.eps,.png,.pdf}
+
+
+%%% OPTION - Latex compiler
+% \usepackage[usenames,dvipsnames]{color}
+% \usepackage[dvips]{graphicx}
+% \DeclareGraphicsExtensions{.jpg,.eps,.pdf,.png}
+% %\DeclareGraphicsRule{.jpg}{eps}{.jpg.bb}{`./jpeg2ps/jpeg2ps -h #1}
+% % % Truc de Julien : permet d'inclure des jpg au lieu d'eps ("wrapper" des jpeg en PS Level 2)
+% % % Particulièrement utile pour les fichiers images volumineux 
+% % % Voir également le shell script Jpg-DoBdngBox.sh et les fichiers *.jpg.bb
+% 
+% % \DeclareGraphicsRule{.eps.zip}{eps}{.eps.bb}{`unzip -p #1}%   zipped EPS
+% % \DeclareGraphicsRule{.eps.gz}{eps}{.eps.bb}{`gunzip -c #1}%   gzipped EPS
+% %         \DeclareGraphicsRule{.jpg}{eps}{.jpg.bb}{`convert #1 eps:-}%         JPEG
+% %         \DeclareGraphicsRule{.gif}{eps}{gif.bb}{`convert #1 eps:-}%      GIF
+% \DeclareGraphicsRule{.png}{eps}{.png.bb}{`convert #1 eps:-}%      PNG
+% %         \DeclareGraphicsRule{.tif}{eps}{.bb}{`convert #1 eps:-}%      TIFF
+% \DeclareGraphicsRule{.pdf}{eps}{.pdf.bb}{`convert #1 eps:-}%      PDF-graphics
+
+\usepackage[comma,square,numbers,sort&compress]{natbib}
+%\usepackage[numbers,sort&compress]{natbib}
+% \usepackage[numbers, sort&compress]{mynatbib} %pour avoir une génération automatique de réf. bib [1-6] au lieu de lister [1, 2, 3, 4, 5, 6].
+% \usepackage{hypernat} 
+% L'usage de mynatbib = version locale modifiée de natbib est fait pour 
+% empêcher la réinterprétation de la commande \newblock de la bibliographie
+% En conséquence, tout ce qui est \newblock dans natbib.sty = changer pour "\\"
+
+%\usepackage{cite}
+
+%\renewcommand{\bibsection}{\chapter*{BIBLIOGRAPHIC REFERENCES}}
+\usepackage{array} 
+        %pour avoir \extrarowheight = gestion de la hauteur de ligne (voir chap. 4)
+        % Ajout de hauteur suppl aux lignes pour éviter que la ligne horizontale ne touche le texte.
+%        \setlength{\extrarowheight}{3 pt}  %à mettre au dessus du tableau considérée. 0 pt = valeur par défaut
+        %Option m{largeur colonne} permet de centrer le texte verticalement (package array)
+        
+\usepackage{textpos}  % pour la realisation de la page de titre
+        \setlength{\TPHorizModule}{10mm}
+        \setlength{\TPVertModule}{10mm}
+                        % definition de l'unite de base de longueur pour le placement avec textpos
+
+\usepackage{epigraph} %allow rajout d'epigraphe (voir conclusion pour exemple)
+        \setlength{\epigraphwidth}{80mm}
+        \renewcommand{\epigraphsize}{\footnotesize}
+        
+%\usepackage{fancyhdr} %modification des bas de pages et en-tetes
+%\usepackage{tocbibind} %allow integration de biblio+index dans la TOC(a comparer avec addcontentsline)
+%\usepackage{bibunits} %permet de faire une biblio par partie, chapitre, section...
+        
+\renewcommand{\listfigurename}{Figures}
+\renewcommand{\listtablename}{Tables}
+
+%__________ Redefine style of the header top line, with section names
+        
+\def\MakeUppercase#1{{ \textsf{\small #1} }}
+% MakeUppercase is already defined into LaTeX
+
+
+
+
+
+%__________Mise en place des \newcommand generales
+%\newcommand{\Bluecite}[1]{\textcolor{Blue}{\cite{#1}}}
+\newcommand{\BoldSubSection}[1]{\noindent \textbf{\textsl{#1}}\\   \addcontentsline{toc}{subsection}{ \textsl{\textcolor{Gray}{\small #1 }}}  }
+
+\newcommand{\SlantedSubSubSection}[1]{ -- \textsl{#1}\\   \addcontentsline{toc}{subsubsection}{ \textsl{\textcolor{Gray}{\small #1 }}}  }
+
+
+\newcommand{\urlscpt}[1]{\hbox{\scriptsize \url{#1}}}
+        % reduce the size of Internet address
+
+\newcommand{\refmark}[1]{\hbox{\scriptsize $^{\ref{#1}}$}}
+        %pour pouvoir faire une référence multiple a une note de bas de page
+        % voir exemple dans le chap. 4
+
+\renewcommand\descriptionlabel[1]{\hspace\labelsep\normalfont\itshape #1 :}
+%in the environment "description", produce labels in italic, with colon at the end
+
+
+% write roman numbers in your text in lowercase or uppercase
+\newcommand{\upperRomannumeral}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\lowerromannumeral}[1]{\romannumeral#1\relax}
+
+
+%\renewcommand{\newblock}{\\}
+% pour revenir à la ligne après chaque bloc, dans la bibliographie = réinterpréter newblock en \\
+
+\newenvironment{BulletList}%
+{ \begin{list}%
+        {$\bullet$}%
+        {\setlength{\labelwidth}{30pt}%
+         \setlength{\leftmargin}{35pt}%
+         \setlength{\itemsep}{\parsep}%
+         \setlength{\topsep}{\parsep}}}
+{ \end{list} }
+
+
+
+
+
+%__________Definition of colours
+% http://cloford.com/resources/colours/500col.htm
+
+% in gray shades
+\definecolor{DarkGray}{RGB}{60,60,60}
+\definecolor{LightGray}{RGB}{145,145,145}
+
+% in red shades
+\definecolor{Sepia}{RGB}{94,38,18}
+\definecolor{IndianRed}{RGB}{176,23,31}
+\definecolor{OrangeRed4}{RGB}{139,37,0}
+\definecolor{DarkRed}{RGB}{139,0,0}
+
+% in orange shades
+\definecolor{Orange2}{RGB}{238,154,0}
+\definecolor{Goldenrod1}{RGB}{255,193,37}
+\definecolor{Goldenrod2}{RGB}{238,180,34} 
+
+% in blue shades
+\definecolor{DarkSlateBlue}{RGB}{72,61,139}
+\definecolor{Cobalt}{RGB}{61,89,171}
+\definecolor{RoyalBlue4}{RGB}{39,64,139}
+\definecolor{DodgerBlue4}{RGB}{16,78,139}
+\definecolor{SteelBlue4}{RGB}{54,100,139}
+\definecolor{DeepSkyBlue4}{RGB}{0,104,139}
+
+% in green shades
+\definecolor{LightGreen}{RGB}{0,200,0}
+
+
+
+
+
+%__________Insertion of source codes
+
+
+\usepackage{listings}
+% In order to include source code from various prog language
+% For documentation : 
+%   http://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+%   http://www.ctan.org/tex-archive/macros/latex/contrib/listings/
+
+
+\lstset{ %
+  backgroundcolor=\color{white},          % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize\ttfamily,      % the font and size that are used for the code
+  breakatwhitespace=false,                % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                        % sets automatic line breaking
+  captionpos=t,                           % sets the caption-position to top
+  commentstyle=\color{LightGray}\upshape, % comment style
+  deletekeywords={...},                   % if you want to delete keywords from the given language
+  %escapeinside={\%*}{*)},                % if you want to add LaTeX within your code
+  extendedchars=true,                     % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=tlbr,                             % adds a frame around the code : single, t b l r, T B L R
+  keepspaces=false,                        % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\bfseries\color{black},    % keyword style
+  identifierstyle=,
+  language=C,                        % the default language of the code
+  %morekeywords={*,...},                  % if you want to add more keywords to the set
+  numbers=left,                           % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=8pt,                          % how far the line-numbers are from the code
+  numberstyle=\tiny\color{LightGray},     % the style that is used for the line-numbers
+  rulecolor=\color{LightGray},            % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                       % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,                 % underline spaces within strings only
+  showtabs=false,                         % show tabs within strings adding particular underscores
+  stepnumber=1,                           % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{Goldenrod2},         % string literal style
+  tabsize=2,                              % sets default tabsize to 2 spaces
+  caption=\lstname,                       % show the filename of files included with \lstinputlisting; also try caption instead of title
+  xleftmargin=10pt,                       % size of the left margin
+  belowcaptionskip=1.2\baselineskip,
+  aboveskip=1\baselineskip,               % vertical skip above the listings envt
+  belowskip=1\baselineskip,
+}
+
+\lstdefinestyle{customC++}{
+  language=C++
+}
+
+\lstdefinestyle{customBash}{
+  language=bash
+}
+
+\lstdefinestyle{customCmnd}{
+  language=sh,
+  identifierstyle=\color{blue},
+  morecomment=[l][\color{LightGray}]{!\ } % define the rest of the whole line as comments
+}
+
+% look-up table to have the listings package fully compatible with UTF-8 extended char (extendedchars has to be true).
+\lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\'e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ò}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ò}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\EUR}}1 {£}{{\pounds}}1 
+}
+
+
+
+
+
+
+%__________Mise en place de la structure en chap., section ... + toc
+
+\renewcommand{\thepart} {\Alph{part}.}
+\renewcommand{\thechapter} {\arabic{chapter}}
+\renewcommand{\thesection} {\thechapter|{\small \Roman{section}}}
+\renewcommand{\thesubsection}   {\thesection-{\small \Alph{subsection}}}
+\renewcommand{\thesubsubsection} {\thesection-{\small \Alph{subsection}}.{\footnotesize \roman{subsubsection}}}
+% pour avoir une structure du type "I.A -1.i" au lieu de "1.1.1.1"
+
+
+% TOC normal
+\setcounter{tocdepth}{3}     % Arret au niveau des subsubsection
+\setcounter{secnumdepth}{3}  % Arret de la numerotation au niveau des subsubsections
+
+
+% - 1.
+\usepackage{titlesec}
+% definition utilisateur du style des chap., sections, ...
+
+        \usepackage{etoolbox}
+        % Bug in sectionning : plus de numéros apparent dans le texte
+        % Fix = http://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15
+        \makeatletter
+        \patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+        \patchcmd{\ttlh@hang}{\noindent}{}{}{}
+        \makeatother
+
+
+%font style = \sffamily, \ttfamily, \rmfamily
+%font series = \bfseries, \mdseries
+%font shape = \upshape, \itshape, \scshape, \slshape
+% http://www.math.jussieu.fr/~goutet/latex/seance_6/seance_6.pdf
+
+%\titleclass{\part}{straight}
+\titleformat{\part}[display]
+  {\normalfont\sffamily\huge\bfseries\color{OrangeRed4}}
+  % FIXME {\normalfont\sffamily\huge\bfseries\color{Black}}
+  {-- \partname\ \thepart}{20pt}{\Huge}
+
+% \titleformat{\chapter}[display]
+%   {\normalfont\sffamily\huge\bfseries\color{Sepia}}
+%   % FIXME {\normalfont\sffamily\huge\bfseries\color{Black}}
+%   {-- \chaptertitlename\ \thechapter~-- }{20pt}{\Huge}
+
+%\equal{#1}{\string german}
+% Title format: chapter
+\titleformat{\chapter}[display]
+	{\fontsize{30}{20}\selectfont\bfseries\filright}
+	{\chaptertitlename}
+	{20pt}
+	{
+	\ifthenelse{\thechapter>0}
+	{
+	\if\equal{\chaptertitlename}{\string Bibliography}
+	 	\hspace{0pt}
+	 \else
+	 	\fontsize{60}{0}\selectfont\arabic{chapter}\hspace{0pt}\hspace{2mm}{|   }\hspace{0pt}
+	 \fi
+	 }
+	{\hspace{0pt}}
+	\fontsize{30}{60}\bfseries 
+	}
+	
+\titleformat{name=\chapter, numberless}[display]
+	{\fontsize{30}{20}\selectfont\bfseries\filright}
+	{}
+	{20pt}
+	{\hspace{0pt}\fontsize{30}{20}\selectfont\bfseries\filright}\bfseries 
+  
+%\titleclass{\section}{straight}  
+\titleformat{\section}[hang]
+%  {\normalfont\rmfamily\Large\bfseries\color{OrangeRed4}}
+  {\normalfont\rmfamily\Large\bfseries\color{RoyalBlue4}}
+  % FIXME {\normalfont\rmfamily\Large\bfseries\color{Black}}
+  {\Roman{section}}{1em}{}
+
+\titleformat{\subsection}[hang]
+  {\normalfont\rmfamily\large\bfseries\color{DarkGray}}
+  % FIXME {\normalfont\rmfamily\large\bfseries\color{Black}}
+  {~~\Roman{section}-{\small \Alph{subsection}}}{1em}{}
+
+\titleformat{\subsubsection}[hang]
+  {\normalfont\rmfamily\large\bfseries\color{DarkGray}}
+  % FIXME {\itshape\rmfamily\large\bfseries\color{Black}}
+  {~~~~\Roman{section}-{\small \Alph{subsection}}.{\footnotesize \roman{subsubsection}}}{1em}{}
+
+% - 2.
+\usepackage{titletoc}
+% definition utilisateur du style du TOC ...
+
+\titlecontents{part}%
+[2em]% retrait à gauche
+{\addvspace{5em plus 0pt}\flushright\bfseries\color{MidnightBlue}}% matériel avant commun aux entrées numérotées ou pas
+{\contentslabel{2.0em}}% avant lorsqu'il y a un numéro
+{\hspace{-2.0em}}% avant lorsqu'il n'y a pas de numéro
+{}% points de suspension et numéro de page
+[\addvspace{2em}]% matériel après
+
+
+
+\titlecontents{chapter}%
+[2.5em]% retrait à gauche
+{\addvspace{3em plus 0pt}\bfseries}% matériel avant commun aux entrées numérotées ou pas
+{\contentslabel{2.5em}}% avant lorsqu'il y a un numéro
+{\hspace{-2.5em}}% avant lorsqu'il n'y a pas de numéro
+{\dotfill\contentspage}% points de suspension et numéro de page
+[\addvspace{0pt}]% matériel après
+
+
+\titlecontents{section}%
+[4.5em]% retrait à gauche
+%{\addvspace{8pt}\mdseries\color{OrangeRed4}}% matériel avant commun aux entrées numérotées ou pas
+{\addvspace{8pt}\mdseries\color{RoyalBlue4}}% matériel avant commun aux entrées numérotées ou pas
+{\contentslabel{3.5em}}% avant lorsqu'il y a un numéro
+{\hspace{-3.5em}}% avant lorsqu'il n'y a pas de numéro
+{\dotfill\contentspage}% points de suspension et numéro de page
+[\addvspace{0pt}]% matériel après
+
+
+\titlecontents{subsection}%
+[5.5em]% retrait à gauche
+{\mdseries\color{DarkGray}}% matériel avant commun aux entrées numérotées ou pas
+{\contentslabel{4.5em}}% avant lorsqu'il y a un numéro
+{\hspace{-4.5em}}% avant lorsqu'il n'y a pas de numéro
+{\dotfill\contentspage}% points de suspension et numéro de page
+[\addvspace{-0pt}]% matériel après
+
+
+\titlecontents{subsubsection}%
+[6.5em]% retrait à gauche
+{\mdseries\mdseries\color{DarkGray}}% matériel avant commun aux entrées numérotées ou pas
+{\contentslabel{5.5em}}% avant lorsqu'il y a un numéro
+{\hspace{-5.5em}}% avant lorsqu'il n'y a pas de numéro
+{\dotfill\contentspage}% points de suspension et numéro de page
+[\addvspace{-0pt}]% matériel après
+
+
+% - 3 : Corrections nécessaires pour les TOC partiels
+\makeatletter
+\AtBeginDocument{%
+    \def\ttl@gobblecontents#1#2#3#4{\ignorespaces}%
+}
+\makeatother
+
+% - 4 : Correction nécessaire pour améliorer la référence à une (sous-sous-)section
+
+%\newcommand{\refSection}[1]{\mbox{\kern-0.1em \ref{#1}}}
+\newcommand{\refSubSection}[1]{\mbox{\kern-0.6em \ref{#1}}}
+\newcommand{\refSubSubSection}[1]{\mbox{\kern-1.2em \ref{#1}}}
+        % suite à la redéfinition du style de la hiérarchie (II.A.1.i)
+        % faire référence à un paragraphe laisse beaucoup d'espace devant la référence : "Dans le paragaphe      I.C.2.i"
+
+
+
+
+
+
+
+
+
+
+
+
+
+%__________Option de draft : Définition de la version
+
+
+\newcommand{\version}[2]{ [Version {#1} - {\scriptsize (git rev.{#2})} -  \today, \currenttime] }
+
+
+% _____ Option 1 - Simple
+% to get a light mark in the diagonal of every page
+% drawback :    for people commenting on the pdf, the diagonal can mess up 
+%               the selection of words you would like to comment on.
+%               Said to be inconvenient.
+% \usepackage{draftwatermark}
+% \SetWatermarkLightness{0.90}
+% \SetWatermarkAngle{90}
+% \SetWatermarkScale{0.3}
+% \SetWatermarkText{\today, \currenttime}
+
+
+% _____ Option 2 - More complex : to get the draftwatermark in the right margin = https://ctan.org/pkg/background
+\usepackage[color=gray]{background}
+\backgroundsetup{
+    position={+8.7cm,-6cm},
+    firstpage=true, % does not work here apparently
+    angle=-90,
+    opacity=0.5,
+    scale=2,
+   %contents=Draft % the exact text is set in the master document
+}
+
+
+
+
+
+
+
+%__________Option de draft : notes en marge
+
+\usepackage[colorinlistoftodos]{todonotes} % disable, obeyDraft, obeyFinal
+
+
+
+
+\pagestyle{headings}
+
+\usepackage[bookmarks,backref=page]{hyperref}
+        % NOTE :
+        % For colour choices : https://en.wikibooks.org/wiki/LaTeX/Colors
+
+        \makeatletter
+        \Hy@AtBeginDocument{%
+        \def\@pdfborder{0 0 1}% Overrides border definition set with colorlinks=true
+        \def\@pdfborderstyle{/S/S/W 1}% Overrides border style set with colorlinks=true
+                                        % Hyperlink border style will be framed of width 1pt
+                                        % https://tex.stackexchange.com/questions/26071/how-can-i-have-colored-and-underlined-links-with-hyperref
+        }
+        \makeatother
+
+        \hypersetup{colorlinks=true, 
+        % NOTE:
+        %   - to have coloured frames + have coloured links, uncomment l.89+90 above and colorlinks=true
+        %   - to have coloured frames + kill coloured links,   comment l.89+90 above and colorlinks=false
+        %   - to kill coloured frames + have coloured links,   comment l.89+90 above and colorlinks=true
+        % See https://tex.stackexchange.com/questions/50747/options-for-appearance-of-links-in-hyperref
+                    linktocpage,
+                    citebordercolor=ForestGreen,
+                    linkbordercolor=Red,
+                    urlbordercolor=Cerulean,
+                    % menubordercolor= [rgb 1 0 0]
+                    % filebordercolor= [rgb 0 .5 .5]
+                    % runbordercolor= [rgb 0 .7 .7]
+                    %allbordercolors=Red
+                    citecolor=MidnightBlue, 
+                    filecolor=MidnightBlue, 
+                    linkcolor=MidnightBlue, 
+                    urlcolor=MidnightBlue}
+        % \hypersetup{colorlinks,  linktocpage, citecolor=Gray, filecolor=Gray, linkcolor=Gray, urlcolor=Gray} %FIXME : N&B
+        \urlstyle{sf} % change the url font for sans serif sf, else rm
+        
+%\usepackage[backref=page]{hyperref}
+\usepackage{backref}
+
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{\footnotesize[{\footnotesize%
+    \ifcase #1 Not cited.%
+          \or Cited on page~#2.%
+          \else Cited on pages #2.%
+    \fi%
+}]}     
+
+\usepackage{hypernat}
+
+\renewcommand{\chaptername}{Chapitre}   
+
+

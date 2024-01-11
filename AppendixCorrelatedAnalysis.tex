@@ -1,19 +1,292 @@
 %//------ Section 03 -------------------------------------------------------------------------------------------------
-\chapter{Complementary materials for the analysis:\\Analysis of the correlated production of strange hadrons}
+\chapter{Complementary materials for the analysis:\\Measurement of the correlated production of strange hadrons}
 \label{appendix:CorrelatedAnalysis}
 %//-----------------------------------------------------------------------//
 
-\section{Comparison between measurements and models}
+\section{Study of the systematic uncertainties}
 
-The model comparison articulates around two pictures, two approaches to describe the small and large systems: \Pythia and \Epos. The former relies its description of the hadronisation processes on the Lund string model, while the other employs a core-corona model. In the next paragraphs, each of these models will be introduced in details, and most particularly the hadronisation mechanisms used in the model comparison to the results.
+\subsection{Topological and track selections}
+
+\subsubsection{Multi-strange baryon identification}
+\label{subsubsec:AppSystMultiStrangeBaryonIdentification}
+
+\begin{figure}[!p]
+%	\hspace{-2.cm}
+\centering
+\subfigure[]
+	{
+	\includegraphics[width=1\textwidth, angle=0]{Figs/Chapter6/PerTriggerYield\_VsRap\_XiPhi\_SystCasc\_HM.eps}
+	\label{fig:SystPerTriggerYieldXiRapRatioHM}
+	}
+\centering
+\subfigure[]
+	{
+	\includegraphics[width=1\textwidth, angle=0]{Figs/Chapter6/PerTriggerYield\_VsPhi\_XiPhi\_SystCasc\_HM.eps}
+	\label{fig:SystPerTriggerYieldXiPhiRatioHM}
+	}
+\caption{Variations induced by the "very loose", "loose", "tight" and "very tight"  \rmXiPM selections on the per-trigger yield of \rmPhiMes resonance as a function of (a) the difference in rapidity, $\Delta y$, and (b) the difference in azimuth, $\Delta \varphi$, in \textbf{high-multiplicity} pp collisions at a centre-of-mass energy of 13 \tev.}
+	\label{fig:SystPerTriggerYieldXiRatioHM}
+\end{figure}
+
+\clearpage
+
+\begin{table}[!p]
+%	\hspace{-1.5cm}
+	\centering
+    \begin{tabular}{c|c|c|c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+     & \multicolumn{4}{c}{\bf Systematic uncertainties (\%)} \\
+     \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf $\Delta y$ & Very loose & Loose & Tight & Very Tight & \bf Retained uncertainty\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    -1.00 ; -0.50 &      &      &      &      &\bf 0.00\\
+    -0.50 ; -0.30 & 0.30 & 0.87 & 2.24 & 4.84 &\bf 4.84\\
+    -0.30 ; -0.15 & 1.61 & 1.38 & 0.90 & 1.53 &\bf 1.61\\
+    -0.15 ; 0.00  & 1.65 & 0.72 & 1.61 & 1.18 &\bf 1.65\\
+     0.00 ; 0.15  & 1.85 & 2.04 &      & 1.13 &\bf 2.04\\
+     0.15 ; 0.30  & 1.37 & 1.66 &      &      &\bf 1.66\\
+     0.30 ; 0.50  & 0.22 & 0.18 &      &      &\bf 0.22\\
+     0.50 ; 1.00  & 1.10 & 0.42 & 2.81 &      &\bf 2.81\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the systematic uncertainties due to the \rmXiPM selections in four different configurations (very loose, loose, tight, very tight) for the correlation function $1/N_{\rm trig.} \mathrm{d}^{2}N/\mathrm{d}y\mathrm{d}\Delta y$ in \textbf{high-multiplicity} pp collisions at \sqrtS = 13 \tev. When a value is missing, this means that it has an impact smaller than $2 \sigmaBarlow$ with respect to the default configuration, and is thus considered as negligible.}\label{tab:SystSummaryXiDeltaYHM}
+\end{table}
+
+\begin{table}[!p]
+%	\hspace{-1.5cm}
+	\centering
+    \begin{tabular}{c|c|c|c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+     & \multicolumn{4}{c}{\bf Systematic uncertainties (\%)} \\
+     \noalign{\smallskip}\hline \noalign{\smallskip}
+     $\Delta \varphi$ (radian) & Very loose & Loose & Tight & Very Tight & \bf Retained uncertainty\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+     $-\pi/2$ ; $-\pi/3$ & 3.07 & 1.32 & 1.11 & 7.89 & \bf 7.89\\
+     $-\pi/3$ ; $-\pi/6$ & 3.44 & 2.91 &      & 7.49 & \bf 7.49\\
+     $-\pi/6$ ; 0        & 0.83 & 0.48 &      & 1.12 & \bf 1.12\\
+     $0$ ; $\pi/6$       & 3.68 & 0.92 &      & 6.83 & \bf 6.83\\
+     $\pi/6$ ; $\pi/3$   & 4.68 & 2.42 &      &      & \bf 4.68\\
+     $4\pi/3$ ; $\pi/2$  &      &      &      &      & \bf 0.00\\
+     $4\pi/3$ ; $2\pi/3$ & 3.73 & 2.28 & 0.85 & 1.63 & \bf 3.73\\
+     $4\pi/3$ ; $5\pi/6$ & 3.48 & 0.51 & 2.25 & 5.65 & \bf 5.65\\
+     $4\pi/3$ ; $\pi$    & 3.60 &      &      & 5.08 & \bf 5.08\\
+     $4\pi/3$ ; $7\pi/6$ & 1.52 & 0.82 & 1.12 & 1.49 & \bf 1.52\\
+     $4\pi/3$ ; $4\pi/3$ & 1.11 & 1.03 &      & 1.87 & \bf 1.87\\
+     $4\pi/3$ ; $3\pi/2$ & 0.67 & 1.26 & 2.44 & 3.96 & \bf 3.96\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the systematic uncertainties due to the \rmXiPM selections in four different configurations (very loose, loose, tight, very tight) for the correlation function $1/N_{\rm trig.} \mathrm{d}^{2}N/\mathrm{d}y\mathrm{d}\Delta \varphi$ in \textbf{high-multiplicity} pp collisions at \sqrtS = 13 \tev. When a value is missing, this means that it has an impact smaller than $2 \sigmaBarlow$ with respect to the default configuration, and is thus considered as negligible.}\label{tab:SystSummaryXiDeltaPhiHM}
+\end{table}
+
+\clearpage
+
+\begin{figure}[!p]
+%	\hspace{-2.cm}
+\centering
+\subfigure[]
+	{
+	\includegraphics[width=1\textwidth, angle=0]{Figs/Chapter6/PerTriggerYield\_VsRap\_OmegaPhi\_SystCasc\_HM.eps}
+	\label{fig:SystPerTriggerYieldOmegaRapRatioHM}
+	}
+\centering
+\subfigure[]
+	{
+	\includegraphics[width=1\textwidth, angle=0]{Figs/Chapter6/PerTriggerYield\_VsPhi\_OmegaPhi\_SystCasc\_HM.eps}
+	\label{fig:SystPerTriggerYieldOmegaPhiRatioHM}
+	}
+\caption{Variations induced by the "very loose", "loose", "tight" and "very tight"  \rmOmegaPM selections on the per-trigger yield of \rmPhiMes resonance as a function of (a) the difference in rapidity, $\Delta y$, and (b) the difference in azimuth, $\Delta \varphi$, in \textbf{high-multiplicity} pp collisions at a centre-of-mass energy of 13 \tev.}
+	\label{fig:SystPerTriggerYieldOmegaRatioCascadeHM}
+\end{figure}
+
+\begin{table}[!p]
+%	\hspace{-1.5cm}
+	\centering
+    \begin{tabular}{c|c|c|c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+     & \multicolumn{4}{c}{\bf Systematic uncertainties (\%)} \\
+     \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf $\Delta y$ & Very loose & Loose & Tight & Very Tight & \bf Retained uncertainty\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    -1.00 ; -0.60 &       &       &       &       &\bf 0.00\\
+    -0.60 ; -0.30 & 13.50 & 19.15 & 6.35  & 16.26 &\bf 19.15\\
+    -0.30 ; 0.00  &       & 14.92 & 3.88  & 14.87 &\bf 14.92\\
+     0.00 ; 0.30  & 5.87  & 16.57 & 4.84  & 9.54  &\bf 16.57\\
+     0.30 ; 0.60  &       & 22.25 & 7.94  &       &\bf 22.25\\
+     0.60 ; 1.00  &       & 12.39 & 16.60 & 13.78 &\bf 16.60\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the systematic uncertainties due to the \rmOmegaPM selections in four different configurations (very loose, loose, tight, very tight) for the correlation function $1/N_{\rm trig.} \mathrm{d}^{2}N/\mathrm{d}y\mathrm{d}\Delta y$ in \textbf{high-multiplicity} pp collisions at \sqrtS = 13 \tev. When a value is missing, this means that it has an impact smaller than $2 \sigmaBarlow$ with respect to the default configuration, and is thus considered as negligible.}\label{tab:SystSummaryOmegaDeltaYHM}
+\end{table}
+
+\begin{table}[!p]
+%	\hspace{-1.5cm}
+	\centering
+    \begin{tabular}{c|c|c|c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+     & \multicolumn{4}{c}{\bf Systematic uncertainties (\%)} \\
+     \noalign{\smallskip}\hline \noalign{\smallskip}
+     $\Delta \varphi$ (radian) & Very loose & Loose & Tight & Very Tight & \bf Retained uncertainty\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+     $-\pi/2$ ; $-\pi/4$ & 4.80 & 6.92  & 14.76 & 12.10 & \bf 14.76\\
+     $-\pi/4$ ; 0 		& 9.11 &       & 6.51 & 5.83   & \bf 9.11\\
+     0 ; $\pi/4$         &      &       & 5.47  & 	      & \bf 5.47\\
+     $\pi/4$ ; $\pi/2$   &      &       &       &       & \bf 0.00\\
+     $\pi/2$ ; $3\pi/4$  &      & 7.25  & 3.93  & 9.33  & \bf 9.33\\
+     $3\pi/4$ ; $\pi$    &      & 5.27  &       &       & \bf 5.27\\
+     $\pi$ ; $5\pi/4$    &      & 7.58  & 7.31 & 12.08 & \bf 12.08\\
+     $5\pi/4$ ; $3\pi/2$ & 5.92 & 13.43 & 9.47  &       & \bf 13.43\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the systematic uncertainties due to the \rmOmegaPM selections in four different configurations (very loose, loose, tight, very tight) for the correlation function $1/N_{\rm trig.} \mathrm{d}^{2}N/\mathrm{d}y\mathrm{d}\Delta \varphi$ in \textbf{high-multiplicity} pp collisions at \sqrtS = 13 \tev. When a value is missing, this means that it has an impact smaller than $2 \sigmaBarlow$ with respect to the default configuration, and is thus considered as negligible.}\label{tab:SystSummaryOmegaDeltaPhiHM}
+\end{table}
+
+\clearpage
+
+\subsubsection{\rmPhiMes meson identification}
+\label{subsubsec:AppSystPhiMesonIdentification}
+
+\begin{figure}[!h]
+%	\hspace{-2.cm}
+\centering
+\subfigure[]
+	{
+	\includegraphics[width=1\textwidth, angle=0]{Figs/Chapter6/PerTriggerYield\_VsRap\_XiPhi\_Syst\_HM.eps}
+	\label{fig:SystPerTriggerYieldXiRapRatioHMRsn}
+	}
+\centering
+\subfigure[]
+	{
+	\includegraphics[width=1\textwidth, angle=0]{Figs/Chapter6/PerTriggerYield\_VsPhi\_XiPhi\_Syst\_HM.eps}
+	\label{fig:SystPerTriggerYieldXiPhiRatioHMRsn}
+	}
+\caption{Variations induced by the selections in \tab\ref{tab:SystTrackSelectionPhi} on the per-trigger yield of \rmPhiMes resonances as a function of (a) the difference in rapidity, $\Delta y$, and (b) the difference in azimuth, $\Delta \varphi$, with respect to a \rmXi hyperon, in \textbf{high-multiplicity} pp collisions at a centre-of-mass energy of 13 \tev.}
+	\label{fig:SystPerTriggerYieldXiRatioHMRsn}
+\end{figure}
+
+\begin{table}[!p]
+%	\hspace{-1.5cm}
+	\centering
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+     & \multicolumn{9}{c}{\bf Systematic uncertainties (\%)} \\
+     \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf $\Delta y$ & \begin{turn}{-90}PID selections\end{turn} & \begin{turn}{-90}Nbr of crossed TPC readout rows\end{turn} & \begin{turn}{-90}$N_{\rm crossed\ rows} / N_{\rm findable}$\end{turn} & \begin{turn}{-90}$\chi_\textsc{ITS}^2 / N_{\rm cluster}$\end{turn} & \begin{turn}{-90}$\chi_\textsc{TPC}^2 / N_{\rm cluster}$\end{turn} & \begin{turn}{-90}$\chi_\textsc{TPC-CG}^2$\end{turn} & \begin{turn}{-90}Nbr of associated SPD clusters\end{turn} & \begin{turn}{-90}DCA to prim. vtx\end{turn} & \begin{turn}{-90}DCA to prim. vtx along $z$\end{turn} & \begin{turn}{-90}\bf Retained uncertainty\end{turn}\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    -1.00 ; -0.50 &      &      &      &      &      &      &      &      &      &\bf 0.00\\
+    -0.50 ; -0.30 & 1.45 & 0.11 & 0.89 &      &      &      &      & 0.65 & 0.13 &\bf 1.45\\
+    -0.30 ; -0.15 & 0.59 & 0.15 &      & 	 & 0.04 & 0.16 &      & 0.35 & 0.30 &\bf 0.59\\
+    -0.15 ; 0.00  & 1.57 &      & 1.38 &      &      & 0.08 &      &      & 0.17 &\bf 1.57\\
+     0.00 ; 0.15  & 1.38 & 0.13 & 0.60 &      &      & 0.16 &      & 1.01 & 0.19 &\bf 1.38\\
+     0.15 ; 0.30  & 0.41 &      & 1.05 &      &      &      &      &      & 0.19 &\bf 1.05\\
+     0.30 ; 0.50  & 1.07 & 0.07 &      & 0.04 &      &      & 0.04 & 0.77 & 0.17 &\bf 1.07\\
+     0.50 ; 1.00  & 1.12 &      & 0.93 &      &      & 0.19 &      & 0.49 & 0.18 &\bf 1.12\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the systematic uncertainties due to the resonance selections,  point by point, in percentage for the correlation function $1/N_{\rm trig.} \mathrm{d}^{2}N/\mathrm{d}y\mathrm{d}\Delta y$, with a \rmXiPM as trigger particle, in \textbf{high-multiplicity} pp collisions at \sqrtS = 13 \tev. When a value is missing, this means that it has an impact smaller than $2 \sigmaBarlow$ with respect to the default configuration, and is thus considered as negligible.}\label{tab:SystSummaryRsnDeltaYXiHM}
+\end{table}
+
+\begin{table}[!p]
+%	\hspace{-1.5cm}
+	\centering
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+     & \multicolumn{9}{c}{\bf Systematic uncertainties (\%)} \\
+     \noalign{\smallskip}\hline \noalign{\smallskip}
+     $\Delta \varphi$ (radian) & \begin{turn}{-90}PID selections\end{turn} & \begin{turn}{-90}Nbr of crossed TPC readout rows\end{turn} & \begin{turn}{-90}$N_{\rm crossed\ rows} / N_{\rm findable}$\end{turn} & \begin{turn}{-90}$\chi_\textsc{ITS}^2 / N_{\rm cluster}$\end{turn} & \begin{turn}{-90}$\chi_\textsc{TPC}^2 / N_{\rm cluster}$\end{turn} & \begin{turn}{-90}$\chi_\textsc{TPC-CG}^2$\end{turn} & \begin{turn}{-90}Nbr of associated SPD clusters\end{turn} & \begin{turn}{-90}DCA to prim. vtx\end{turn} & \begin{turn}{-90}DCA to prim. vtx along $z$\end{turn} & \begin{turn}{-90}\bf Retained uncertainty\end{turn}\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+     $-\pi/2$ ; $-\pi/3$ &      &      & 1.74 &  & 0.13 &      & &      & 0.16 &\bf 1.74\\
+     $-\pi/3$ ; $-\pi/6$ & 3.08 &      &      &  & 0.10 &      & & 0.71 & 0.50 &\bf 3.08\\
+     $-\pi/6$ ; 0        & 1.05 & 0.13 & 0.88 &  & 0.09 & 0.21 & & 0.82 & 0.29 &\bf 1.05\\
+     $0$ ; $\pi/6$       & 1.94 &      &      &  & 0.07 & 0.14 & &      & 0.16 &\bf 1.94\\
+     $\pi/6$ ; $\pi/3$   & 0.84 & 0.20 & 1.13 &  &      & 0.17 & &      & 0.21 &\bf 1.13\\
+     $4\pi/3$ ; $\pi/2$  &      &      &      &  &      &      & &      &      &\bf \\
+     $4\pi/3$ ; $2\pi/3$ &      & 0.30 & 0.97 &  &      &      & &      & 0.27 &\bf 0.97\\
+     $4\pi/3$ ; $5\pi/6$ &      & 0.05 &      &  & 0.11 &      & & 0.33 & 0.41 &\bf 0.41\\
+     $4\pi/3$ ; $\pi$    & 1.87 & 0.30 &      &  &      &      & &      & 0.19 &\bf 1.87\\
+     $4\pi/3$ ; $7\pi/6$ & 0.46 & 0.17 &      &  &      &      & &      & 0.19 &\bf 0.46\\
+     $4\pi/3$ ; $4\pi/3$ & 1.97 & 0.29 &      &  & 0.07 &      & & 0.56 & 0.28 &\bf 1.97\\
+     $4\pi/3$ ; $3\pi/2$ & 0.98 & 0.20 & 2.75 &  & 0.02 &      & & 0.36 & 0.27 &\bf 2.75\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the systematic uncertainties due to the resonance selections, point by point, in percentage for the correlation function $1/N_{\rm trig.} \mathrm{d}^{2}N/\mathrm{d}y\mathrm{d}\Delta \varphi$, with a \rmXiPM as trigger particle, in \textbf{high-multiplicity} pp collisions at \sqrtS = 13 \tev. When a value is missing, this means that it has an impact smaller than $2 \sigmaBarlow$ with respect to the default configuration, and is thus considered as negligible.}\label{tab:SystSummaryRsnDeltaPhiXiHM}
+\end{table}
+
+\clearpage 
+
+\begin{figure}[!p]
+%	\hspace{-2.cm}
+\centering
+\subfigure[]
+	{
+	\includegraphics[width=1\textwidth, angle=0]{Figs/Chapter6/PerTriggerYield\_VsRap\_OmegaPhi\_Syst\_HM.eps}
+	\label{fig:SystPerTriggerYieldXiRapRatioRsn}
+	}
+\centering
+\subfigure[]
+	{
+	\includegraphics[width=1\textwidth, angle=0]{Figs/Chapter6/PerTriggerYield\_VsPhi\_OmegaPhi\_Syst\_HM.eps}
+	\label{fig:SystPerTriggerYieldXiPhiRatioRsn}
+	}
+\caption{Variations induced by the selections in \tab\ref{tab:SystTrackSelectionPhi} on the per-trigger yield of \rmPhiMes resonances as a function of (a) the difference in rapidity, $\Delta y$, and (b) the difference in azimuth, $\Delta \varphi$, with respect to a \rmOmega hyperon, in \textbf{high-multiplicity} pp collisions at a centre-of-mass energy of 13 \tev.}
+	\label{fig:SystPerTriggerYieldXiRatioRsn}
+\end{figure}
+
+\begin{table}[!p]
+%	\hspace{-1.5cm}
+	\centering
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+     & \multicolumn{9}{c}{\bf Systematic uncertainties (\%)} \\
+     \noalign{\smallskip}\hline \noalign{\smallskip}
+    \bf $\Delta y$ & \begin{turn}{-90}PID selections\end{turn} & \begin{turn}{-90}Nbr of crossed TPC readout rows\end{turn} & \begin{turn}{-90}$N_{\rm crossed\ rows} / N_{\rm findable}$\end{turn} & \begin{turn}{-90}$\chi_\textsc{ITS}^2 / N_{\rm cluster}$\end{turn} & \begin{turn}{-90}$\chi_\textsc{TPC}^2 / N_{\rm cluster}$\end{turn} & \begin{turn}{-90}$\chi_\textsc{TPC-CG}^2$\end{turn} & \begin{turn}{-90}Nbr of associated SPD clusters\end{turn} & \begin{turn}{-90}DCA to prim. vtx\end{turn} & \begin{turn}{-90}DCA to prim. vtx along $z$\end{turn} & \begin{turn}{-90}\bf Retained uncertainty\end{turn}\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    -1.00 ; -0.60 &       &      &      &      &      &      &  &      &      &\bf 0.00\\
+    -0.60 ; -0.30 & 5.74  &      & 5.05 &      & 1.02 & 2.31 &  & 1.84 & 2.11 &\bf 5.74\\
+    -0.30 ; 0.00  & 5.57  & 0.92 & 1.54 & 0.02 & 1.32 & 2.02 &  & 1.29 & 2.42 &\bf 5.57\\
+     0.00 ; 0.30  & 4.68  &      & 0.91 &      & 1.12 & 2.25 &  &      & 1.43 &\bf 4.68\\
+     0.30 ; 0.60  & 8.17  &      & 3.39 &      & 1.01 & 3.23 &  &      & 2.10 &\bf 8.17\\
+     0.60 ; 1.00  & 15.32 & 3.06 &      &      &      & 5.31 &  &      &      &\bf 15.32\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the systematic uncertainties due to the resonance selections,  point by point, in percentage for the correlation function $1/N_{\rm trig.} \mathrm{d}^{2}N/\mathrm{d}y\mathrm{d}\Delta y$, with a \rmOmegaPM as trigger particle, in \textbf{high-multiplicity} pp collisions at \sqrtS = 13 \tev. When a value is missing, this means that it has an impact smaller than $2 \sigmaBarlow$ with respect to the default configuration, and is thus considered as negligible.}\label{tab:SystSummaryRsnDeltaYOmegaHM}
+\end{table}
+
+\begin{table}[!p]
+%	\hspace{-1.5cm}
+	\centering
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+     & \multicolumn{9}{c}{\bf Systematic uncertainties (\%)} \\
+     \noalign{\smallskip}\hline \noalign{\smallskip}
+     $\Delta \varphi$ (radian) & \begin{turn}{-90}PID selections\end{turn} & \begin{turn}{-90}Nbr of crossed TPC readout rows\end{turn} & \begin{turn}{-90}$N_{\rm crossed\ rows} / N_{\rm findable}$\end{turn} & \begin{turn}{-90}$\chi_\textsc{ITS}^2 / N_{\rm cluster}$\end{turn} & \begin{turn}{-90}$\chi_\textsc{TPC}^2 / N_{\rm cluster}$\end{turn} & \begin{turn}{-90}$\chi_\textsc{TPC-CG}^2$\end{turn} & \begin{turn}{-90}Nbr of associated SPD clusters\end{turn} & \begin{turn}{-90}DCA to prim. vtx\end{turn} & \begin{turn}{-90}DCA to prim. vtx along $z$\end{turn} & \begin{turn}{-90}\bf Retained uncertainty\end{turn}\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+     $-\pi/2$ ; $-\pi/4$ & 6.90  & 0.57 &      &      &      & 0.64 & & 1.12 & 1.30 &\bf 6.90\\
+     $-\pi/4$ ; 0        & 12.08 &      & 3.74 &      & 1.19 &      & & 2.70 &      &\bf 12.08\\
+     $0$ ; $\pi/4$       & 3.98  &      &      & 0.33 &      & 0.97 & &      & 1.48 &\bf 3.98\\
+     $\pi/4$ ; $\pi/2$   &       &      &      &      &      &      & &      &      &\bf 0.00\\
+     $\pi/2$ ; $3\pi/4$  & 2.18  & 0.29 &      & 0.03 &      &      & & 2.45 & 1.04 &\bf 2.45\\
+     $3\pi/4$ ; $\pi$    &       &      & 8.78 &      &      & 1.59 & &      & 3.56 &\bf 8.78\\
+     $\pi$ ; $5\pi/4$    & 13.05 &      & 3.08 &      & 0.18 &      & & 1.38 &      &\bf 13.05\\
+     $5\pi/4$ ; $3\pi/2$ & 6.02  &      &      &      &      &      & &      &      &\bf 6.02\\
+    \noalign{\smallskip}\hline \noalign{\smallskip}
+    \end{tabular}
+    \caption{Summary of the systematic uncertainties due to the resonance selections, point by point, in percentage for the correlation function $1/N_{\rm trig.} \mathrm{d}^{2}N/\mathrm{d}y\mathrm{d}\Delta \varphi$, with a \rmOmegaPM as trigger particle, in \textbf{high-multiplicity} pp collisions at \sqrtS = 13 \tev. When a value is missing, this means that it has an impact smaller than $2 \sigmaBarlow$ with respect to the default configuration, and is thus considered as negligible.}\label{tab:SystSummaryRsnDeltaPhiOmegaHM}
+\end{table}
+
+\clearpage
+
+\section{QCD-inspired MC models}
+\label{sec:QCDMCModels}
+
+The model comparison articulates around two pictures, two approaches to describe small and large systems: \Pythia and \Epos. The former relies its description of the hadronisation processes on the Lund string model, while the other employs a core-corona model. In the next paragraphs, each of these models will be introduced in details, and most particularly the hadronisation mechanisms used in the model comparison to the results.
 
 \subsection{\Pythia}
 
 \Pythia's hadronisation mechanisms are based solely on the Lund string model. The starting point of this framework is the spring-like nature of the QCD interaction between two quarks, supported by lattice QCD studies (\Sec\ref{subsubsec:confinement}, and in particular \eq\ref{eq:QCDPotential}). 
 
-The gluon field between two colour charges can be viewed as a colour flux tube, a string of tension $\kappa \simeq 1$ \gev/\fm with a potential energy increasing linearly with the distance between the quarks \cite{bierlichComprehensiveGuidePhysics2022}. As the partons move apart, their kinetic energy is progressively converted into potential energy, until it has been fully transferred to the string . At this point, the string reaches its maximal extension, $E/2\kappa$, and the partons move back to their starting point and meet again. The string has completed a full period. This so-called \say{yo-yo} motion corresponds to a meson in the Lund string picture. If the partons move further apart than the maximum, the original string breaks up giving rise to a new $q \bar{q}$ pair\footnote{The typical break-up time of a string is about 2 \fmC \cite{bierlichComprehensiveGuidePhysics2022}.}. It is through this mechanism that mesons are produced. In order to form a baryon, the string must fragment into diquark--anti-diquark pairs\footnote{Any quark flavour can be obtained in principle, but the heavier the quark, the more suppressed it is. For instance, the production of light flavour quarks is almost inexpensive, while strange and charm quarks have to pay a suppression factor of $0.3$ and $10^{-11}$. Consequently, the yield of heavy quark flavour can basically be ignored with the string breaking mechanism, they are produced in other processes in the perturbative regime of QCD \cite{sjostrandIntroductionPYTHIA2015}.}. 
+The gluon field between two colour charges can be viewed as a colour flux tube, a string of tension $\kappa \simeq 1$ \gev/\fm with a potential energy increasing linearly with the distance between the quarks \cite{bierlichComprehensiveGuidePhysics2022}. As the partons move apart, their kinetic energy is progressively converted into potential energy, until it has been fully transferred to the string. At this point, the string reaches its maximal extension, $E/2\kappa$, and the partons move back to their starting point and meet again. The string has completed a full period. This so-called \say{yo-yo} motion corresponds to a meson in the Lund-string picture. If the partons move further apart than the maximum, the original string breaks up giving rise to a new $q \bar{q}$ pair\footnote{The typical break-up time of a string is about 2 \fmC \cite{bierlichComprehensiveGuidePhysics2022}.}. It is through this mechanism that mesons are produced. In order to form a baryon, the string must fragment into diquark--anti-diquark pairs\footnote{Any quark flavour can be obtained in principle, but the heavier the quark, the more suppressed it is. For instance, the production of light flavour quarks is almost inexpensive, while strange and charm quarks have to pay a suppression factor of $0.3$ and $10^{-11}$. Consequently, the yield of heavy quark flavour can basically be ignored with the string breaking mechanism, they are produced in other processes in the perturbative regime of QCD \cite{sjostrandIntroductionPYTHIA2015}.}. 
 
-This picture received further developments over the years, amongst the most important: the multiparton interaction (MPI) model and the colour reconnection (CR) mechanisms. The former stems from the composite nature of the hadrons, that leads possibly to several parton-parton interactions when colliding two hadrons \cite{sjostrandDevelopmentMPIModelling2017}. The MPI model basically comprises all the processes involving multiple partons. The CR mechanisms allow colour strings in \textit{causal contact}\footnote{This point is extremely important as the space-time separation between two MPIs is not taken into account by default.} to re-arrange and form a different configuration. An example of colour reconnection is the string junction, which opens the way towards additional mechanisms for baryon production as illustrated in \fig\ref{fig:BaryonProductionMechanisms} \cite{heleniusRecentPythiaDevelopments2016}.\\
+This picture received further developments over the years, amongst the most important: the multiparton interaction (MPI) model and the colour reconnection (CR) mechanisms. The former stems from the composite nature of the hadrons, that leads possibly to several parton-parton interactions when colliding two hadrons~\cite{sjostrandDevelopmentMPIModelling2017}. The MPI model basically comprises all the processes involving multiple partons. The CR mechanisms allow colour strings in \textit{causal contact}\footnote{This point is extremely important as the space-time separation between two MPIs is not taken into account by default.} to re-arrange and form a different configuration. An example of colour reconnection is the string junction, which opens the way towards additional mechanisms for baryon production as illustrated in \fig\ref{fig:BaryonProductionMechanisms} \cite{heleniusRecentPythiaDevelopments2016}.\\
 
 \begin{figure}[t]
 %\centering
@@ -30,7 +303,7 @@ This picture received further developments over the years, amongst the most impo
 	\label{fig:BaryonProductionMechanisms}
 \end{figure}
 
-\Pythia has historically focused on electroweak and hard QCD processes, parton shower, hadronisation, particularly in small systems where no QGP formation is considered. The discovery of long-range particle correlations in high-multiplicity pp collisions in 2010 \cite{cmscollaborationObservationLongRangeNearSide2010}\cite{chatrchyanObservationLongrangeNearside2013}\cite{rolandLongrangeCorrelationsHigh2015}, followed by the observation of the strangeness enhancement in small systems in 2017 \cite{alicecollaborationEnhancedProductionMultistrange2017}, forced to re-consider the QGP-like effects in pp collisions. The aforementioned models could offer a qualitative description of some of those effects, while being completely off on some other observables like the anisotropic flow. New developments were needed. To that end, additional interactions between the strings have \say{recently} been implemented, namely the rope hadronisation (or also refered as colour rope) and string shoving \cite{bierlichComprehensiveGuidePhysics2022}.
+\Pythia has historically focused on electroweak and hard QCD processes, parton shower, hadronisation, particularly in small systems where no QGP formation is considered. The discovery of long-range particle correlations in high-multiplicity pp collisions in 2010 \cite{cmscollaborationObservationLongRangeNearSide2010, chatrchyanObservationLongrangeNearside2013, rolandLongrangeCorrelationsHigh2015}, followed by the observation of the strangeness enhancement in small systems in 2017 \cite{alicecollaborationEnhancedProductionMultistrange2017}, forced to re-consider the QGP-like effects in pp collisions. The aforementioned models could offer a qualitative description of some of those effects, while being completely off on some other observables like the anisotropic flow. New developments were needed. To that end, additional interactions between the strings have \say{recently} been implemented, namely the rope hadronisation (or also referred as colour rope) and string shoving \cite{bierlichComprehensiveGuidePhysics2022}.
 
 The rope hadronisation follows somehow the same idea as the string junction, namely that strings may form in a cluster of partons. When multiple strings overlap, their colour fields act coherently, forming a stronger field. These cluster of strings can then be viewed as a string with an effective tension $\tilde{\kappa}$ greater than $\kappa$, that is a colour rope. This increased string tension leads to an increase\footnote{This increase actually depends on the colour configuration of the different strings. Quarks with the same colour charges can form a coherent state, increasing $\tilde{\kappa}$; whereas, with opposite/incoherent colour charges, they combine into an anti-colour, thus reducing $\tilde{\kappa}$.} of the strangeness production (or equivalently, it decreases its suppression factor), that can subsequently be used to model the strangeness enhancement.
 
@@ -40,7 +313,7 @@ Another effect of the overlapping of strings is the string shoving. Strings occu
 
 Originally designed to reproduce heavy-ion interactions, \Epos employs a core-corona model, a unique approach when all the other high-energy physics MC generators (\Pythia, \Herwig, etc) are corona-like models. 
 
-The basic idea behind this framework starts with the observation that a hadron-hadron collision corresponds in fact to many elementary collisions happening simultaneously, that can be modelled via the formation of parton ladders -- similar to the MPI concept, describing the multiple parton scatterings -- or (cut-)Pomerons\footnote{A Pomeron -- named after Isaak Pomeranchuk -- is a concept incorporated by Vladimir Gribov into the Regge theory, developed by Tullio Regge in 1959 \cite{reggeIntroductionComplexOrbital1959}. This theory attempts to describe the total cross section of hadronic collisions at high energies, at a time when the quark model does not exist yet. In this theory, a particle and all its excitations -- for instance, the \rhoMes meson spin-1, spin-3, spin-5, etc -- lie on the same trajectory, the Regge trajectory. Each resonance contributes to the scattering amplitudes; their combined contribution is viewed as an exchange of an object named Reggeon \cite{levinEverythingReggeonsPart1998}. Although the Regge theory provides a good description of the total cross section at low energies, it predicts a decreasing trend at high energies while it is in fact flat. The solution to this problem is brought by Gribov, who introduces a new Reggeon: the Pomeron. In modern particle physics, the Pomeron corresponds to various processes at high energy, such as a parton ladder. \Epos' main theoretical tool being the S-matrix theory inspired by the Gribov-Regge picture \cite{wernerCorecoronaProcedureMicrocanonical2023}, it is not surprising to encounter the concept of parton ladder in such phenomenological model. One can distinguish two sorts of Pomeron: the cut and the uncut version. Basically, the latter corresponds to an elastic contribution to the scattering amplitude, whereas the former represents an inelastic contribution \cite{wernerMonteCarloEvent2022}.}. It turns out the parton ladder can be viewed as a colour flux tube, a string like in the Lund string model that breaks via the production of a $q\bar{q}$ pair into string segments often referred as \say{pre-hadrons}. These serves as initial conditions for the hadronisation.
+The basic idea behind this framework starts with the observation that a hadron-hadron collision corresponds in fact to many elementary collisions happening simultaneously, that can be modelled via the formation of parton ladders -- similarly to the MPI concept, describing the multiple parton scatterings -- or (cut-)Pomerons\footnote{A Pomeron -- named after Isaak Pomeranchuk -- is a concept incorporated by Vladimir Gribov into the Regge theory, developed by Tullio Regge in 1959 \cite{reggeIntroductionComplexOrbital1959}. This theory attempts to describe the total cross section of hadronic collisions at high energies, at a time when the quark model does not exist yet. In this theory, a particle and all its excitations -- for instance, the \rhoMes meson spin-1, spin-3, spin-5, etc -- lie on the same trajectory, the Regge trajectory. Each resonance contributes to the scattering amplitudes; their combined contribution is viewed as an exchange of an object named Reggeon \cite{levinEverythingReggeonsPart1998}. Although the Regge theory provides a good description of the total cross section at low energies, it predicts a decreasing trend at high energies while it is in fact flat. The solution to this problem is brought by Gribov, who introduces a new Reggeon: the Pomeron. In modern particle physics, the Pomeron corresponds to various processes at high energy, such as a parton ladder. \Epos' main theoretical tool being the S-matrix theory inspired by the Gribov-Regge picture \cite{wernerCorecoronaProcedureMicrocanonical2023}, it is not surprising to encounter the concept of parton ladder in such phenomenological model. One can distinguish two sorts of Pomeron: the cut and the uncut version. Basically, the latter corresponds to an elastic contribution to the scattering amplitude, whereas the former represents an inelastic contribution \cite{wernerMonteCarloEvent2022}.}. It turns out the parton ladder can be viewed as a colour flux tube, a string like in the Lund string model that breaks via the production of a $q\bar{q}$ pair into string segments often referred as \say{pre-hadrons}. These serves as initial conditions for the hadronisation.
 
 \begin{figure}[t]
 \centering
@@ -51,7 +324,7 @@ The basic idea behind this framework starts with the observation that a hadron-h
 
 Based on these pre-hadrons, the core-corona procedure illustrated in \fig\ref{fig:CoreCorona} comes into play. In the regions with a high density (above a certain threshold, easily reached in heavy-ion collisions) of string segments, these may overlap and fuse into a fluid. This corresponds to the \say{core} of the system as opposed to the \say{corona}, usually located in the peripheral regions of the system (by definition), where the string density is lower. The pre-hadrons in the core loose their energy and evolve according to hydrodynamics, until the energy density falls below a critical value. At this stage, the fluid undergoes a collective hadronisation via a micro-canonical procedure\footnote{The string segments constituting the core are gathered in different clusters for each pseudo-rapidity bin. The hadronisation is performed in each cluster separately using the micro-canonical ensemble formalism \cite{pierogEPOSLHCTest2015}.} at the freeze-out surface (\fig\ref{fig:CoreCorona}), in order to ensure energy, momentum and flavour conservations. The formed hadrons receive a Lorentz boost according to the radial and longitudinal expansions of the fluid core. For what concerns the string segments in the corona part, they hadronise through string fragmentations as in \Pythia.\\
 
-This presentation of \Epos corresponds to the current implementation of the model, \EposFour. This procedure is applied for simulating both pp and heavy-ion collisions. Thereby, this model assumes the formation of, at least, a QGP droplet in small systems (\fig\ref{fig:CoreCoronaPbPbpp}). There exists also different configurations that considers only the \say{core} or the \say{corona}.
+This presentation of \Epos corresponds to the current implementation of the model, \EposFour. This procedure is applied for simulating both pp and heavy-ion collisions. Thereby, this model assumes the formation of, at least, a QGP droplet in small systems (\fig\ref{fig:CoreCoronaPbPbpp}). 
 
 \begin{figure}[t]
 \centering
@@ -65,13 +338,13 @@ This presentation of \Epos corresponds to the current implementation of the mode
 	\label{fig:CoreCoronaPbPbpp}
 \end{figure}
 
-\section{\Epos configuration}
-\begin{verbatim}
-!-------------------------------------------------------------
-!  proton-proton parameterized fluid expansion (mimic hydro)
-!    much faster than full hydro
-!-------------------------------------------------------------
+\clearpage
 
+
+\section{\Epos configuration}
+\label{sec:AppEpos}
+
+\begin{verbatim}
 application hadron !hadron-hadron, hadron-nucleus, or nucleus-nucleus
 set laproj 1       !projectile atomic number
 set maproj 1       !projectile mass number
@@ -93,7 +366,7 @@ nodecays
 end
 
 set ninicon 1            !number of initial conditions used for hydro evolution
-core PFE                 !parameterized fluid expansion (mimic hydro) : PFE, full, off
+core PFE                 !parameterized fluid expansion (mimic hydro)
 hydro off                !hydro not activated (hlle, off)
 eos off                  !eos not activated (x3ff, off)
 hacas full               !hadronic cascade activated  (full, off)
@@ -104,12 +377,10 @@ set centrality 0         ! 0=min bias
 
 !print * 2                !printout of event to ...check file
 
-!-----put here online analysis part----
-!       see expl1,2,3
-!--------------------------------------
 \end{verbatim}
 
 \section{\Pythiaeight, Monash 2013 configuration}
+\label{sec:AppPythia8}
 
 \begin{verbatim}
 #Beams
@@ -137,9 +408,6 @@ PhaseSpace:pTHatMax = 13000   # max pT
 PhaseSpace:mHatMin = 0   # min mHat
 PhaseSpace:mHatMax = $SQRTS   # max mHat
 
-# Makes particles with c*tau0 > 10 mm stable: (default value = 10.0 in mm / Here = 10 m)
-# See http://home.thep.lu.se/~torbjorn/pythia81html/ParticleDecays.html
-# tau0 = seems to deal with particle species by species, i.e. selection based on 'cTau(PDG)'
 ParticleDecays:limitTau0 = On
 ParticleDecays:tau0Max = 10000.0
 
@@ -148,6 +416,7 @@ Tune:pp=14
 \end{verbatim}
 
 \section{\Pythiaeight, configuration with colour reconnection enabled}
+\label{sec:AppPythia8CR}
 \begin{verbatim}
 # Parameter of the MPI model to keep total multiplicity reasonable
 MultiPartonInteractions:pT0Ref = 2.15
@@ -189,5 +458,26 @@ PartonVertex:setVertex = on
 PartonVertex:protonRadius = 0.7
 PartonVertex:emissionWidth = 0.1
 \end{verbatim}
+
+\section{QCD-inspired MC predictions of the \rmOmegaPM-\rmPhiMes correlation}
+\label{sec:MCPredictionsOmegaMB}
+
+\begin{figure}[!p]
+%	\hspace{-2.cm}
+\centering
+\subfigure[]
+	{
+	\includegraphics[width=1\textwidth, angle=0]{Figs/Chapter6/CorrelationOmegaVsDeltaRap\_MB\_Pythia8.eps}
+	\label{fig:MCPredictionsOmegaRap}
+	}
+\centering
+\subfigure[]
+	{
+	\includegraphics[width=1\textwidth, angle=0]{Figs/Chapter6/CorrelationOmegaVsDeltaPhi\_MB\_Pythia8.eps}
+	\label{fig:MCPredictionsOmegaPhi}
+	}
+\caption{Different MC predictions (\Pythiaeight Monash 2013, \Pythiaeight including colour rope and colour reconnection mechanisms, \EposFour using a parametrised fluid expansion) for the \rmOmegaPM-\rmPhiMes correlation in (a) $\Delta y$ and (b) $\Delta \varphi$ in \textbf{minimum-bias} pp collisions at \sqrtS = 13 \tev.}
+	\label{fig:MCPredictionsOmega}
+\end{figure}
 
 

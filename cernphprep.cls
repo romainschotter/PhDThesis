@@ -241,13 +241,13 @@
   \setcounter{figure}{0}%
   \setcounter{table}{0}%
   \setcounter{equation}{0}%
-  \gdef\thesection{\@Alph\c@section}%
-  \gdef\thesubsection{\@Alph\c@section.\@arabic\c@subsection}
-  \gdef\theequation{\@Alph\c@section.\@arabic\c@equation}
+  \gdef\thesection{\@arabic\c@chapter|\small\@Roman\c@section}%
+  \gdef\thesubsection{\@arabic\c@chapter|\small\@Roman\c@section-\small\@Alph\c@subsection}
+  \gdef\theequation{\@Alph\c@chapter.\@arabic\c@equation}
   \@addtoreset {equation}{section}%
-  \gdef\thetable{\@Alph\c@section.\@arabic\c@table}%
+  \gdef\thetable{\@arabic\c@chapter.\@arabic\c@table}%
   \@addtoreset {table}{section}%
-  \gdef\thefigure{\@Alph\c@section.\@arabic\c@figure}%
+  \gdef\thefigure{\@arabic\c@chapter.\@arabic\c@figure}%
   \@addtoreset {figure}{section}%
 }
 

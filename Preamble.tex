@@ -80,6 +80,8 @@
 \usepackage{url}
 \usepackage{scrextend}
 
+\usepackage{epigraph} 
+
 %%%%%%%%%%%%%package Romain
 % \usepackage[lofdepth,lotdepth,caption=false]{subfig}  
     % FIXME pb incompatible with hyperref apparently, enable to compile the document locally
@@ -119,59 +121,15 @@
 % %         \DeclareGraphicsRule{.tif}{eps}{.bb}{`convert #1 eps:-}%      TIFF
 % \DeclareGraphicsRule{.pdf}{eps}{.pdf.bb}{`convert #1 eps:-}%      PDF-graphics
 
-
-
-\usepackage[bookmarks,backref=page]{hyperref}
-        % NOTE :
-        % For colour choices : https://en.wikibooks.org/wiki/LaTeX/Colors
-
-        \makeatletter
-        \Hy@AtBeginDocument{%
-        \def\@pdfborder{0 0 1}% Overrides border definition set with colorlinks=true
-        \def\@pdfborderstyle{/S/S/W 1}% Overrides border style set with colorlinks=true
-                                        % Hyperlink border style will be framed of width 1pt
-                                        % https://tex.stackexchange.com/questions/26071/how-can-i-have-colored-and-underlined-links-with-hyperref
-        }
-        \makeatother
-
-        \hypersetup{colorlinks=true, 
-        % NOTE:
-        %   - to have coloured frames + have coloured links, uncomment l.89+90 above and colorlinks=true
-        %   - to have coloured frames + kill coloured links,   comment l.89+90 above and colorlinks=false
-        %   - to kill coloured frames + have coloured links,   comment l.89+90 above and colorlinks=true
-        % See https://tex.stackexchange.com/questions/50747/options-for-appearance-of-links-in-hyperref
-                    linktocpage,
-                    citebordercolor=ForestGreen,
-                    linkbordercolor=Red,
-                    urlbordercolor=Cerulean,
-                    % menubordercolor= [rgb 1 0 0]
-                    % filebordercolor= [rgb 0 .5 .5]
-                    % runbordercolor= [rgb 0 .7 .7]
-                    %allbordercolors=Red
-                    citecolor=MidnightBlue, 
-                    filecolor=MidnightBlue, 
-                    linkcolor=MidnightBlue, 
-                    urlcolor=MidnightBlue}
-        % \hypersetup{colorlinks,  linktocpage, citecolor=Gray, filecolor=Gray, linkcolor=Gray, urlcolor=Gray} %FIXME : N&B
-        \urlstyle{sf} % change the url font for sans serif sf, else rm
-        
-%\usepackage[backref=page]{hyperref}
-
-\renewcommand*{\backref}[1]{}
-\renewcommand*{\backrefalt}[4]{\footnotesize[{\footnotesize%
-    \ifcase #1 Not cited.%
-          \or Cited on page~#2.%
-          \else Cited on pages #2.%
-    \fi%
-}]}       
-
 \usepackage[comma,square,numbers,sort&compress]{natbib}
+%\usepackage[numbers,sort&compress]{natbib}
 % \usepackage[numbers, sort&compress]{mynatbib} %pour avoir une génération automatique de réf. bib [1-6] au lieu de lister [1, 2, 3, 4, 5, 6].
 % \usepackage{hypernat} 
 % L'usage de mynatbib = version locale modifiée de natbib est fait pour 
 % empêcher la réinterprétation de la commande \newblock de la bibliographie
 % En conséquence, tout ce qui est \newblock dans natbib.sty = changer pour "\\"
 
+%\usepackage{cite}
 
 %\renewcommand{\bibsection}{\chapter*{BIBLIOGRAPHIC REFERENCES}}
 \usepackage{array} 
@@ -561,5 +519,52 @@
 
 
 \pagestyle{headings}
+
+\usepackage[bookmarks,backref=page]{hyperref}
+        % NOTE :
+        % For colour choices : https://en.wikibooks.org/wiki/LaTeX/Colors
+
+        \makeatletter
+        \Hy@AtBeginDocument{%
+        \def\@pdfborder{0 0 1}% Overrides border definition set with colorlinks=true
+        \def\@pdfborderstyle{/S/S/W 1}% Overrides border style set with colorlinks=true
+                                        % Hyperlink border style will be framed of width 1pt
+                                        % https://tex.stackexchange.com/questions/26071/how-can-i-have-colored-and-underlined-links-with-hyperref
+        }
+        \makeatother
+
+        \hypersetup{colorlinks=true, 
+        % NOTE:
+        %   - to have coloured frames + have coloured links, uncomment l.89+90 above and colorlinks=true
+        %   - to have coloured frames + kill coloured links,   comment l.89+90 above and colorlinks=false
+        %   - to kill coloured frames + have coloured links,   comment l.89+90 above and colorlinks=true
+        % See https://tex.stackexchange.com/questions/50747/options-for-appearance-of-links-in-hyperref
+                    linktocpage,
+                    citebordercolor=ForestGreen,
+                    linkbordercolor=Red,
+                    urlbordercolor=Cerulean,
+                    % menubordercolor= [rgb 1 0 0]
+                    % filebordercolor= [rgb 0 .5 .5]
+                    % runbordercolor= [rgb 0 .7 .7]
+                    %allbordercolors=Red
+                    citecolor=MidnightBlue, 
+                    filecolor=MidnightBlue, 
+                    linkcolor=MidnightBlue, 
+                    urlcolor=MidnightBlue}
+        % \hypersetup{colorlinks,  linktocpage, citecolor=Gray, filecolor=Gray, linkcolor=Gray, urlcolor=Gray} %FIXME : N&B
+        \urlstyle{sf} % change the url font for sans serif sf, else rm
+        
+%\usepackage[backref=page]{hyperref}
+\usepackage{backref}
+
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{\footnotesize[{\footnotesize%
+    \ifcase #1 Not cited.%
+          \or Cited on page~#2.%
+          \else Cited on pages #2.%
+    \fi%
+}]}     
+
+\usepackage{hypernat}   
 
 
